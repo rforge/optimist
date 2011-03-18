@@ -12,24 +12,24 @@ savgol(T, fl, forder = 4, dorder = 0)
 \arguments{
   \item{T}{Vector of signals to be filtered.}
   \item{fl}{Filter length (for instance fl = 51..151), has to be odd.}
-  \item{forder}{Filter order (2 = quadratic filter, 4= quartic).}
+  \item{forder}{Filter order (2 = quadratic filter, 4 = quartic).}
   \item{dorder}{Derivative order (0 = smoothing, 1 = first derivative, etc.).}
 }
 \details{
-  Savitzky–Golay smoothing performs a local polynomial regression on a
+  Savitzky-Golay smoothing performs a local polynomial regression on a
   series of values which are treated as being equally spaced to determine
   the smoothed value for each point.
   Methods are also provided for calculating derivatives.
 }
 \value{
-  Smoothed time series.
+  Vector representing the smoothed time series.
 }
 \references{
   See Numerical Recipes, 1992, Chapter 14.8, for details.
 }
 \author{
-  Copyright (C) 2001 Peter Riegler for a Matlab implementation; and\cr
-  Copyright (C) 2003 Hans W. Borchers for the implementation in R.
+  Peter Riegler implemented a Matlab version in 2001. Based on this,
+  Hans W. Borchers did an implementation in R in 2003.
 }
 \note{
   For derivatives T2 has to be divided by the step size to the order\cr

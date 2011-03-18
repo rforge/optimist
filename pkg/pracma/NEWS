@@ -1,6 +1,17 @@
 ------------------------------------------------------------------------------
-  matlab4r                                                              NEWS
+  pracma                                                                NEWS
 ------------------------------------------------------------------------------
+
+CHANGES IN VERSION 0.2-2
+
+  NEW FUNCTIONS
+
+    o vnorm() vector norm
+
+  CORRECTIONS
+
+    o Warning about a nasty "non-ASCII input" in the savgol.RD file
+      has been resolved.
 
 CHANGES IN VERSION 0.2-1
 

@@ -18,8 +18,8 @@ Practical Numerical Math Routines
 \tabular{ll}{
 Package: \tab pracma\cr
 Type: \tab Package\cr
-Version: \tab 0.2-1\cr
-Date: \tab 2011-03-15\cr
+Version: \tab 0.2-2\cr
+Date: \tab 2011-03-18\cr
 License: \tab GPLv3\cr
 LazyLoad: \tab yes\cr
 }
@@ -31,6 +31,9 @@ Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 }
 \references{
+  Press, Teukolsky, Vetterling, and Flannery (1992). Numerical Recipes in C -
+  The Art of Numerical Computing. Second Edition, Cambridge University Press.
+
   Quarteroni, A., and F. Saleri (2006). Scientific Computing with Matlab
   and Octave. Second Edition, Springer-Verlag, Berlin Heidelberg.
 }
