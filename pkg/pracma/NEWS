@@ -2,6 +2,29 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+PLANNED IN VERSION 0.2-4
+
+  NEW FUNCTIONS
+
+    o primroot() finds the smallest primitive root modulo a given n;
+      needed functions are modpower() and modorder().
+
+    o Barycentric interpolation through barylag() and barylag2d().
+
+    o outlier_mad(), findpeaks(), and piecewise()
+
+    o polycnv() for polynomial multiplication.
+
+CHANGES IN VERSION 0.2-3
+
+  NEW FUNCTIONS
+
+    o strfind() and findstr().
+
+    o circlefit() fitting a circle to plane points.
+
+    o mldivide() and mrdivide(), emulating the Matlab backslash operator.
+
 CHANGES IN VERSION 0.2-2
 
   NEW FUNCTIONS
