@@ -1,14 +1,207 @@
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
-mldivide <- function(A, B) {#
-    stopifnot(is.numeric(A) || is.complex(A),#
-              is.numeric(B) || is.complex(B))#
-    if (is.vector(A)) A <- as.matrix(A)#
-    if (is.vector(B)) B <- as.matrix(B)#
-    if (nrow(A) != nrow(A))#
-        stop("Matrices 'A' and 'B' must have the same number of rows.")#
+outlierMAD <- function (x, k)#
+{#
+    #   x:  vector or time series#
+    #   k:  window [x_(i-k),...,x_i,...,x_(i+k)]#
+    n   <- length(x)#
+    y   <- x         # corrected x vector#
+    ind <- c()       # indices of outliers#
 #
-    qr.solve(A, B)#
+    L  <- 1.4826     # constants for normal distributions#
+    t0 <- 3          # Pearson's 3 sigma edit rule#
+#
+    # we don't look at outliers at the end parts of x !#
+    for ( i in (k+1):(n-k) ) {#
+        x0 <- median( x[(i-k):(i+k)] )#
+        S0 <- L * median( abs(x[(i-k):(i+k)] - x0) )#
+        if ( abs(x[i]-x0) > t0 * S0 ) {#
+            y[i] <- x0#
+            ind  <- c(ind, i)#
+        }#
+    }#
+    # return a list with 2 components#
+    list(y=y, ind=ind)#
 }
-A <- matrix(c(8,1,6, 3,5,7, 4,9,2), nrow = 3, ncol = 3, byrow = TRUE)#
-b <- c(1, 1, 1)#
-mldivide(A, b)  # 0.06666667 0.06666667 0.06666667
+prompt("outlierMAD", force=TRUE)
+x <- seq(0, 1, len = 1024)#
+pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.40, 0.44, 0.65, 0.76, 0.78, 0.81)#
+hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)#
+wdt <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 0.005)#
+#
+pSignal <- numeric(length(x))#
+for (i in seq(along=pos)) {#
+	pSignal <- pSignal + hgt[i]/(1 + abs((x - pos[i])/wdt[i]))^4#
+}
+outlierMAD(pSignal, 100)
+outlierMAD(pSignal, 200)
+outlierMAD(pSignal, 500)
+outlierMAD(pSignal, 400)
+outlierMAD(pSignal, 300)
+outlierMAD(pSignal, 30)
+plot(pSignal, type="l", col="navy")#
+grid()
+o <- outlierMAD(pSignal, 30)
+points(o, pSignal[o], col = "red")
+points(o$ind, pSignal[o$ind], col = "red")
+o <- outlierMAD(pSignal, 10)
+o
+points(o$ind, pSignal[o$ind], col = "red", pch=20)
+lines(o$y, col="navy", lwd=2)
+x <- numeric(1024)#
+z <- randn(1024)#
+x[1] <- z[1]#
+for (i in 2:1024) {#
+	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
+}#
+#
+plot(1:1024, x, type="l")
+z
+x <- numeric(1024)#
+z <- rnorm(1024)#
+x[1] <- z[1]#
+for (i in 2:1024) {#
+	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
+}#
+#
+plot(1:1024, x, type="l")
+plot(x, type="l", col="lightblue")
+outlierMAD(x, k=20)
+outlierMAD(x, k=128)
+outlierMAD(x, k=256)
+omad <- outlierMAD(x, k=256)
+points(omad$ind, pch=21, col="blue")
+omad$ind
+points(omad$ind, x[omad$ind], pch=21, col="blue")
+omad <- outlierMAD(x, k=128)
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+set.seed(8421)#
+x <- numeric(1024)#
+z <- 0.1*rnorm(1024)#
+x[1] <- z[1]#
+for (i in 2:1024) {#
+	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
+}#
+#
+plot(1:1024, x, type="l")
+omad <- outlier(x, k=64)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+set.seed(8421)#
+x <- numeric(1024)#
+z <- 2.0*rnorm(1024)#
+x[1] <- z[1]#
+for (i in 2:1024) {#
+	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
+}#
+omad <- outlier(x, k=64)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+set.seed(8421)#
+x <- numeric(1024)#
+z <- rnorm(1024)#
+x[1] <- z[1]#
+for (i in 2:1024) {#
+	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
+}#
+omad <- outlier(x, k=64)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+plot(x[1:1023], x[2:1024])
+x <- runif(1024)
+plot(x)
+x <- runif(512)
+plot(x, type="l")
+outlierMAD(x)
+outlierMAD(x, 20)
+plot(x[60:80])
+plot(x[61:80], type="l")
+plot(x[50:90], type="l")
+points(20, x[20])
+points(21, x[21])
+points(21, x[70])
+median(x[50:90])
+x
+k <- 20
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+    n   <- length(x)#
+    y   <- x         # corrected x vector#
+    ind <- c()       # indices of outliers#
+#
+    L  <- 1.4826     # constants for normal distributions#
+    t0 <- 3          # Pearson's 3 sigma edit rule
+i <- 70
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+        x0 <- median( x[(i-k):(i+k)] )#
+        S0 <- L * median( abs(x[(i-k):(i+k)] - x0) )
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+abs(x[i]-x0)
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+t0 * S0
+x0
+median( abs(x[(i-k):(i+k)] - x0) )
+S0
+library(pastecs)
+decmedian
+?decmedian
+data(marbio)#
+ClausoB.ts <- ts(log(marbio$ClausocalanusB + 1))#
+ClausoB.dec <- decmedian(ClausoB.ts, order=2, times=10, ends="fill")
+plot(ClausoB.ts)
+lines(ClausoB.dec, col="navy")
+ClausoB.dec
+str(ClausoB.dec)
+str(ClausoB.dec$mts)
+str(ClausoB.dec$series)
+outlierMAD(ClausoB.ts)
+outlierMAD(ClausoB.ts, k=1)
+x <- ClausoB.ts
+o <- outlierMAD(ClausoB.ts, k=1)
+plot(o$ind, x[o$ind])
+plot(ClausoB.ts)
+plot(o$ind, x[o$ind], add=TRUE)
+plot(ClausoB.ts)
+points(o$ind, x[o$ind])
+o <- outlierMAD(ClausoB.ts, k=10)
+o
+points(o$ind, x[o$ind], col="red")
+o <- outlierMAD(ClausoB.ts, k=20)
+o
+o <- outlierMAD(ClausoB.ts, k=50)
+set.seed(8421)#
+x <- numeric(1024)#
+z <- rnorm(1024)#
+x[1] <- z[1]#
+for (i in 2:1024) {#
+	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
+}#
+omad <- outlier(x, k=64)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")#
+#
+plot(x[1:1023], x[2:1024], )
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+omad <- outlier(x, k=4)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+omad <- outlierMAD(x, k=4)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+omad <- outlierMAD(x, k=8)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+omad <- outlierMAD(x, k=2)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")
+omad <- outlierMAD(x, k=20)#
+#
+plot(1:1024, x, type="l")#
+points(omad$ind, x[omad$ind], pch=21, col="darkred")

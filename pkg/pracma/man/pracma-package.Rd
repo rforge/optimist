@@ -18,8 +18,8 @@ Practical Numerical Math Routines
 \tabular{ll}{
 Package: \tab pracma\cr
 Type: \tab Package\cr
-Version: \tab 0.2-3\cr
-Date: \tab 2011-03-31\cr
+Version: \tab 0.2-4\cr
+Date: \tab 2011-03-27\cr
 License: \tab GPLv3\cr
 LazyLoad: \tab yes\cr
 }
@@ -36,6 +36,9 @@ Maintainer: HwB <hwborchers@googlemail.com>
 
   Quarteroni, A., and F. Saleri (2006). Scientific Computing with Matlab
   and Octave. Second Edition, Springer-Verlag, Berlin Heidelberg.
+
+  Skiena, St. S. (2008). The Algorithm Design Manual. Second Edition,
+  Springer-Verlag, London.
 }
 \keyword{ package }
 \seealso{

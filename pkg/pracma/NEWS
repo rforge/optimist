@@ -2,7 +2,13 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED IN VERSION 0.2-4
+PLANNED IN VERSION 0.2-5
+
+  NEW FUNCTIONS
+
+    o  fquad() for adaptive quadrature (integration).
+
+CHANGES IN VERSION 0.2-4
 
   NEW FUNCTIONS
 
@@ -11,15 +17,20 @@ PLANNED IN VERSION 0.2-4
 
     o Barycentric interpolation through barylag() and barylag2d().
 
-    o outlier_mad(), findpeaks(), and piecewise()
+    o outlierMAD(), findpeaks(), and piecewise()
 
     o polycnv() for polynomial multiplication.
+
+  OTHER CHANGES
+
+    o Functions extgcd(), gcd(), and lcm() have been renamed to extGCD(),
+      GCD(), and LCM() respectively.
 
 CHANGES IN VERSION 0.2-3
 
   NEW FUNCTIONS
 
-    o strfind() and findstr().
+    o strfind(), strfindi(), and findstr().
 
     o circlefit() fitting a circle to plane points.
 

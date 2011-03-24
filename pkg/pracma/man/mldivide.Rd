@@ -1,4 +1,4 @@
-\name{mldivide, mrdivide}
+\name{mldivide}
 \alias{mldivide}
 \alias{mrdivide}
 \title{Matlab backslash operator}

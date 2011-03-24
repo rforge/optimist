@@ -1,5 +1,6 @@
 \name{strfind}
 \alias{strfind}
+\alias{strfindi}
 \alias{findstr}
 \title{Find Substrings}
 \description{
@@ -7,6 +8,8 @@
 }
 \usage{
 strfind(s1, s2, overlap = TRUE)
+strfindi(s1, s2, overlap = TRUE)
+
 findstr(s1, s2, overlap = TRUE)
 }
 \arguments{
@@ -16,11 +19,12 @@ findstr(s1, s2, overlap = TRUE)
 }
 \details{
   \code{strfind} finds positions of substrings within \code{s1} that
-  match exactly with \code{s2}, small and capital letters are different,
-  no regular patterns.
+  match exactly with \code{s2}, and is case sensitive; no regular patterns.
+
+  \code{strfindi} does not distinguish between lower and upper case.
 
   \code{findstr} should only be used as internal function, in Matlab it is
-  deprecated.
+  deprecated. It searches for the shorter string within the longer one.
 }
 \value{
   Returns a vector of indices, or a list of such index vectors if
@@ -33,6 +37,7 @@ findstr(s1, s2, overlap = TRUE)
 S <- c("", "ab", "aba", "aba aba", "abababa")
 s <- "aba"
 strfind(S, s)
+strfindi(toupper(S), s)
 strfind(S, s, overlap = FALSE)
 }
 \keyword{ string }

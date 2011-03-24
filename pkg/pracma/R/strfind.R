@@ -21,6 +21,12 @@ strfind <- function(s1, s2, overlap = TRUE) {
 	return(L)
 }
 
+strfindi <- function(s1, s2, overlap = TRUE) {
+    stopifnot(is.character(s1), is.character(s2))
+
+    strfind(tolower(s1), tolower(s2), overlap=overlap)
+}
+
 findstr <- function(s1, s2, overlap = TRUE) {
 	stopifnot(is.character(s1), is.character(s2))
 	if (length(s1) != 1 || length(s2) != 1)
