@@ -15,4 +15,4 @@ strcmp(" empty", " empty")               # TRUE
 strcmp(c("yes", "no"), c("yes", "no"))   # TRUE
 
 strcmpi("string", "String")              # TRUE
-strcmp(c("yes", "no"), c("Yes", "No"))   # TRUE
+strcmpi(c("yes", "no"), c("Yes", "No"))  # TRUE

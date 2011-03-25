@@ -1,20 +1,13 @@
 ##
-##  f i n d p e a k s . R  Test suite
+##  p i e c e w i s e . R  Test suite
 ##
 
 
-findpeaks <- pracma::findpeaks
+piecewise <- pracma::piecewise
 
-x <- c(2, 12, 4, 6, 9, 4, 3, 1, 19, 7)
-identical(findpeaks(x),
-          matrix(c(12,9,19, 2,5,9, 1,3,8, 2,7,9), nrow=3, ncol=4))
-identical(findpeaks(x, npeaks = 1, sortstr = TRUE),
-          c(19, 9, 8, 9))
-identical(findpeaks(x, minpeakheight = 15),
-          c(19, 9, 8, 9))
-# identical(findpeaks(x, threshold = 10),
-#           c(19, 9, 8, 9))
-# Not yet implemented
-# identical(findpeaks(x, threshold = 10),
-#           c(19, 9, 8, 9))
-
+x <- c(0, 1,  2, 3, 4, 5)
+y <- c(1, 1, -1, 0, 1, 0)
+identical(piecewise(x, y)$area,  1.5)
+identical(piecewise(x, y)$zeros, c(1.5, 3, 5))
+identical(piecewise(x, y, abs = TRUE)$area,  3.0)
+identical(piecewise(x, y, abs = TRUE)$zeros, c(1.5, 3, 5))
