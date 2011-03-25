@@ -1,207 +1,362 @@
+cbind(2,3)
+y <- matrix(c(1,2,3,4), 2, 2)
+y
+y[1,]
+y <- c(5, 7, 10, 15, 18, 20)
+dist(y)
+diff(y)
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
-outlierMAD <- function (x, k)#
+findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL, #
+                      # peakpat = "[+]{2,}[0]*[-]{2,}", #
+                      minpeakheight = -Inf, minpeakdistance = 1,#
+                      threshold = 0, npeaks = 0, sortstr = FALSE)#
 {#
-    #   x:  vector or time series#
-    #   k:  window [x_(i-k),...,x_i,...,x_(i+k)]#
-    n   <- length(x)#
-    y   <- x         # corrected x vector#
-    ind <- c()       # indices of outliers#
+    stopifnot(is.vector(x, mode="numeric"))#
+    if (! zero %in% c('0', '+', '-'))#
+        stop("Argument 'zero' can only be '0', '+', or '-'.")#
 #
-    L  <- 1.4826     # constants for normal distributions#
-    t0 <- 3          # Pearson's 3 sigma edit rule#
+    # transform x into a "+-+...-+-" character string#
+    xc <- paste(as.character(sign(diff(x))), collapse="")#
+    xc <- gsub("1", "+", gsub("-1", "-", xc))#
+    # transform '0' to zero#
+    if (zero != '0') xc <- gsub("0", zero, xc)#
 #
-    # we don't look at outliers at the end parts of x !#
-    for ( i in (k+1):(n-k) ) {#
-        x0 <- median( x[(i-k):(i+k)] )#
-        S0 <- L * median( abs(x[(i-k):(i+k)] - x0) )#
-        if ( abs(x[i]-x0) > t0 * S0 ) {#
-            y[i] <- x0#
-            ind  <- c(ind, i)#
-        }#
+    # generate the peak pattern with no of ups and downs#
+    if (is.null(peakpat)) {#
+        peakpat <- sprintf("[+]{%d,}[-]{%d,}", nups, ndowns)#
     }#
-    # return a list with 2 components#
-    list(y=y, ind=ind)#
+#
+    # generate and apply the peak pattern#
+    rc <- gregexpr(peakpat, xc)[[1]]#
+    if (rc[1] < 0) return(NULL)#
+#
+    # get indices from regular expression parser#
+    x1 <- rc#
+    x2 <- rc + attr(rc, "match.length") - 1#
+    attributes(x1) <- NULL#
+    attributes(x2) <- NULL#
+#
+    # find index positions and maximum values#
+    n <- length(x1)#
+    xv <- xp <- numeric(n)#
+    for (i in 1:n) {#
+        xp[i] <- which.max(x[x1[i]:x2[i]]) + x1[i] - 1#
+        xv[i] <- x[xp[i]]#
+    }#
+#
+    # eliminate peaks that are too low#
+    inds <- which(xv >= minpeakheight & xv - pmax(x[x1], x[x2]) >= threshold)#
+#
+    # combine into a matrix format#
+    X <- cbind(xv[inds], xp[inds], x1[inds], x2[inds])#
+#
+    # eliminate peaks that are near by#
+    if (minpeakdistance != 1)#
+        warning("Handling 'minpeakdistance' has not yet been implemented.")#
+#
+    # Sort according to peak height#
+    if (sortstr) {#
+        sl <- sort.list(X[, 1], na.last = NA, decreasing = TRUE)#
+        X <- X[sl, ]#
+    }#
+#
+    # Return only the first 'npeaks' peaks#
+    if (npeaks > 0 && npeaks < nrow(X)) {#
+        X <- X[1:npeaks, ]#
+    }#
+#
+    if (length(X) == 0)    return(c())#
+    else if (nrow(X) == 1) return(drop(X))#
+    else return(X)#
 }
-prompt("outlierMAD", force=TRUE)
-x <- seq(0, 1, len = 1024)#
-pos <- c(0.1, 0.13, 0.15, 0.23, 0.25, 0.40, 0.44, 0.65, 0.76, 0.78, 0.81)#
-hgt <- c(4, 5, 3, 4, 5, 4.2, 2.1, 4.3, 3.1, 5.1, 4.2)#
-wdt <- c(0.005, 0.005, 0.006, 0.01, 0.01, 0.03, 0.01, 0.01, 0.005, 0.008, 0.005)#
-#
-pSignal <- numeric(length(x))#
-for (i in seq(along=pos)) {#
-	pSignal <- pSignal + hgt[i]/(1 + abs((x - pos[i])/wdt[i]))^4#
-}
-outlierMAD(pSignal, 100)
-outlierMAD(pSignal, 200)
-outlierMAD(pSignal, 500)
-outlierMAD(pSignal, 400)
-outlierMAD(pSignal, 300)
-outlierMAD(pSignal, 30)
-plot(pSignal, type="l", col="navy")#
-grid()
-o <- outlierMAD(pSignal, 30)
-points(o, pSignal[o], col = "red")
-points(o$ind, pSignal[o$ind], col = "red")
-o <- outlierMAD(pSignal, 10)
-o
-points(o$ind, pSignal[o$ind], col = "red", pch=20)
-lines(o$y, col="navy", lwd=2)
-x <- numeric(1024)#
-z <- randn(1024)#
-x[1] <- z[1]#
-for (i in 2:1024) {#
-	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
-}#
-#
-plot(1:1024, x, type="l")
-z
-x <- numeric(1024)#
-z <- rnorm(1024)#
-x[1] <- z[1]#
-for (i in 2:1024) {#
-	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
-}#
-#
-plot(1:1024, x, type="l")
-plot(x, type="l", col="lightblue")
-outlierMAD(x, k=20)
-outlierMAD(x, k=128)
-outlierMAD(x, k=256)
-omad <- outlierMAD(x, k=256)
-points(omad$ind, pch=21, col="blue")
-omad$ind
-points(omad$ind, x[omad$ind], pch=21, col="blue")
-omad <- outlierMAD(x, k=128)
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-set.seed(8421)#
-x <- numeric(1024)#
-z <- 0.1*rnorm(1024)#
-x[1] <- z[1]#
-for (i in 2:1024) {#
-	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
-}#
-#
-plot(1:1024, x, type="l")
-omad <- outlier(x, k=64)#
-#
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-set.seed(8421)#
-x <- numeric(1024)#
-z <- 2.0*rnorm(1024)#
-x[1] <- z[1]#
-for (i in 2:1024) {#
-	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
-}#
-omad <- outlier(x, k=64)#
-#
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-set.seed(8421)#
-x <- numeric(1024)#
-z <- rnorm(1024)#
-x[1] <- z[1]#
-for (i in 2:1024) {#
-	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
-}#
-omad <- outlier(x, k=64)#
-#
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-plot(x[1:1023], x[2:1024])
-x <- runif(1024)
-plot(x)
-x <- runif(512)
-plot(x, type="l")
-outlierMAD(x)
-outlierMAD(x, 20)
-plot(x[60:80])
-plot(x[61:80], type="l")
-plot(x[50:90], type="l")
-points(20, x[20])
-points(21, x[21])
-points(21, x[70])
-median(x[50:90])
+x <- c(2, 12, 4, 6, 9, 4, 3, 1, 19, 7)
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),
+c(19, 9, 8, 9))
+options(error=recover)
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),
+options(error=recover)
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),
+c(19, 9, 8, 9))
 x
-k <- 20
+X
+n
+y <- matrix(0 + 1:12, 3, 4)
+y
+y[1, ]
+y[1, , drop=FALSE]
+y[1, , drop=FALSE]
+findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL, #
+                      # peakpat = "[+]{2,}[0]*[-]{2,}", #
+                      minpeakheight = -Inf, minpeakdistance = 1,#
+                      threshold = 0, npeaks = 0, sortstr = FALSE)#
+{#
+    stopifnot(is.vector(x, mode="numeric"))#
+    if (! zero %in% c('0', '+', '-'))#
+        stop("Argument 'zero' can only be '0', '+', or '-'.")#
+#
+    # transform x into a "+-+...-+-" character string#
+    xc <- paste(as.character(sign(diff(x))), collapse="")#
+    xc <- gsub("1", "+", gsub("-1", "-", xc))#
+    # transform '0' to zero#
+    if (zero != '0') xc <- gsub("0", zero, xc)#
+#
+    # generate the peak pattern with no of ups and downs#
+    if (is.null(peakpat)) {#
+        peakpat <- sprintf("[+]{%d,}[-]{%d,}", nups, ndowns)#
+    }#
+#
+    # generate and apply the peak pattern#
+    rc <- gregexpr(peakpat, xc)[[1]]#
+    if (rc[1] < 0) return(NULL)#
+#
+    # get indices from regular expression parser#
+    x1 <- rc#
+    x2 <- rc + attr(rc, "match.length") - 1#
+    attributes(x1) <- NULL#
+    attributes(x2) <- NULL#
+#
+    # find index positions and maximum values#
+    n <- length(x1)#
+    xv <- xp <- numeric(n)#
+    for (i in 1:n) {#
+        xp[i] <- which.max(x[x1[i]:x2[i]]) + x1[i] - 1#
+        xv[i] <- x[xp[i]]#
+    }#
+#
+    # eliminate peaks that are too low#
+    inds <- which(xv >= minpeakheight & xv - pmax(x[x1], x[x2]) >= threshold)#
+#
+    # combine into a matrix format#
+    X <- cbind(xv[inds], xp[inds], x1[inds], x2[inds])#
+#
+    # eliminate peaks that are near by#
+    if (minpeakdistance != 1)#
+        warning("Handling 'minpeakdistance' has not yet been implemented.")#
+#
+    # Sort according to peak height#
+    if (sortstr) {#
+        sl <- sort.list(X[, 1], na.last = NA, decreasing = TRUE)#
+        X <- X[sl, , drop = FALSE]#
+    }#
+#
+    # Return only the first 'npeaks' peaks#
+    if (npeaks > 0 && npeaks < nrow(X)) {#
+        X <- X[1:npeaks, , drop = FALSE]#
+    }#
+#
+    if (length(X) == 0)    return(c())#
+    # else if (nrow(X) == 1) return(drop(X))#
+    else return(X)#
+}
+x <- c(2, 12, 4, 6, 9, 4, 3, 1, 19, 7)#
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 2,7,9), nrow=3, ncol=4))#
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          c(19, 9, 8, 9))#
+identical(findpeaks(x, minpeakheight = 15),#
+          c(19, 9, 8, 9))
+findpeaks(x, threshold = 10)
+x
+nups <- ndowns <- 1
+zero <- '0'
+peakpat <- NULL
+minpeakheight = -Inf; minpeakdistance = 1
+threshold = 10; npeaks = 0; sortstr = FALSE
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
-    n   <- length(x)#
-    y   <- x         # corrected x vector#
-    ind <- c()       # indices of outliers#
+    xc <- paste(as.character(sign(diff(x))), collapse="")#
+    xc <- gsub("1", "+", gsub("-1", "-", xc))#
+    # transform '0' to zero#
+    if (zero != '0') xc <- gsub("0", zero, xc)#
 #
-    L  <- 1.4826     # constants for normal distributions#
-    t0 <- 3          # Pearson's 3 sigma edit rule
-i <- 70
+    # generate the peak pattern with no of ups and downs#
+    if (is.null(peakpat)) {#
+        peakpat <- sprintf("[+]{%d,}[-]{%d,}", nups, ndowns)#
+    }
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
-        x0 <- median( x[(i-k):(i+k)] )#
-        S0 <- L * median( abs(x[(i-k):(i+k)] - x0) )
+    rc <- gregexpr(peakpat, xc)[[1]]#
+    if (rc[1] < 0) return(NULL)#
+#
+    # get indices from regular expression parser#
+    x1 <- rc#
+    x2 <- rc + attr(rc, "match.length") - 1#
+    attributes(x1) <- NULL#
+    attributes(x2) <- NULL
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
-abs(x[i]-x0)
+    n <- length(x1)#
+    xv <- xp <- numeric(n)#
+    for (i in 1:n) {#
+        xp[i] <- which.max(x[x1[i]:x2[i]]) + x1[i] - 1#
+        xv[i] <- x[xp[i]]#
+    }
+xp
+xv
+xv - pmax(x[x1], x[x2])
+cbind(xv, xp, x1, x2)
+pmax(x[x1], x[x2])
+x[x1]
+x[x2]
+x
 setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
-t0 * S0
-x0
-median( abs(x[(i-k):(i+k)] - x0) )
-S0
-library(pastecs)
-decmedian
-?decmedian
-data(marbio)#
-ClausoB.ts <- ts(log(marbio$ClausocalanusB + 1))#
-ClausoB.dec <- decmedian(ClausoB.ts, order=2, times=10, ends="fill")
-plot(ClausoB.ts)
-lines(ClausoB.dec, col="navy")
-ClausoB.dec
-str(ClausoB.dec)
-str(ClausoB.dec$mts)
-str(ClausoB.dec$series)
-outlierMAD(ClausoB.ts)
-outlierMAD(ClausoB.ts, k=1)
-x <- ClausoB.ts
-o <- outlierMAD(ClausoB.ts, k=1)
-plot(o$ind, x[o$ind])
-plot(ClausoB.ts)
-plot(o$ind, x[o$ind], add=TRUE)
-plot(ClausoB.ts)
-points(o$ind, x[o$ind])
-o <- outlierMAD(ClausoB.ts, k=10)
-o
-points(o$ind, x[o$ind], col="red")
-o <- outlierMAD(ClausoB.ts, k=20)
-o
-o <- outlierMAD(ClausoB.ts, k=50)
-set.seed(8421)#
-x <- numeric(1024)#
-z <- rnorm(1024)#
-x[1] <- z[1]#
-for (i in 2:1024) {#
-	x[i] <- 0.4*x[i-1] + 0.8*x[i-1]*z[i-1] + z[i]#
-}#
-omad <- outlier(x, k=64)#
+    xc <- paste(as.character(sign(diff(x))), collapse="")#
+    xc <- gsub("1", "+", gsub("-1", "-", xc))#
+    # transform '0' to zero#
+    if (zero != '0') xc <- gsub("0", zero, xc)#
 #
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")#
+    # generate the peak pattern with no of ups and downs#
+    if (is.null(peakpat)) {#
+        peakpat <- sprintf("[+]{%d,}[-]{%d,}", nups, ndowns)#
+    }#
 #
-plot(x[1:1023], x[2:1024], )
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-omad <- outlier(x, k=4)#
+    # generate and apply the peak pattern#
+    rc <- gregexpr(peakpat, xc)[[1]]#
+    if (rc[1] < 0) return(NULL)
+rc
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+    x1 <- rc#
+    x2 <- rc + attr(rc, "match.length")#
+    attributes(x1) <- NULL#
+    attributes(x2) <- NULL
+cbind(x1, x2)
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+    n <- length(x1)#
+    xv <- xp <- numeric(n)#
+    for (i in 1:n) {#
+        xp[i] <- which.max(x[x1[i]:x2[i]]) + x1[i] - 1#
+        xv[i] <- x[xp[i]]#
+    }
+cbind(xv, xp, x1, x2)
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+xv - pmax(x[x1], x[x2])
+x[x1]
+x[x2]
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+which(xv >= minpeakheight & xv - pmax(x[x1], x[x2]) >= threshold)
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+    inds <- which(xv >= minpeakheight & xv - pmax(x[x1], x[x2]) >= threshold)#
 #
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-omad <- outlierMAD(x, k=4)#
+    # combine into a matrix format#
+    X <- cbind(xv[inds], xp[inds], x1[inds], x2[inds])
+X
+sortstr
+sortstr <- TRUE
+setwd('/Users/HwB/Work/myRforge/optimist/pkg/pracma/R')
+    if (sortstr) {#
+        sl <- sort.list(X[, 1], na.last = NA, decreasing = TRUE)#
+        X <- X[sl, , drop = FALSE]#
+    }
+X
+findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL, #
+                      # peakpat = "[+]{2,}[0]*[-]{2,}", #
+                      minpeakheight = -Inf, minpeakdistance = 1,#
+                      threshold = 0, npeaks = 0, sortstr = FALSE)#
+{#
+    stopifnot(is.vector(x, mode="numeric"))#
+    if (! zero %in% c('0', '+', '-'))#
+        stop("Argument 'zero' can only be '0', '+', or '-'.")#
 #
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-omad <- outlierMAD(x, k=8)#
+    # transform x into a "+-+...-+-" character string#
+    xc <- paste(as.character(sign(diff(x))), collapse="")#
+    xc <- gsub("1", "+", gsub("-1", "-", xc))#
+    # transform '0' to zero#
+    if (zero != '0') xc <- gsub("0", zero, xc)#
 #
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-omad <- outlierMAD(x, k=2)#
+    # generate the peak pattern with no of ups and downs#
+    if (is.null(peakpat)) {#
+        peakpat <- sprintf("[+]{%d,}[-]{%d,}", nups, ndowns)#
+    }#
 #
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
-omad <- outlierMAD(x, k=20)#
+    # generate and apply the peak pattern#
+    rc <- gregexpr(peakpat, xc)[[1]]#
+    if (rc[1] < 0) return(NULL)#
 #
-plot(1:1024, x, type="l")#
-points(omad$ind, x[omad$ind], pch=21, col="darkred")
+    # get indices from regular expression parser#
+    x1 <- rc#
+    x2 <- rc + attr(rc, "match.length")#
+    attributes(x1) <- NULL#
+    attributes(x2) <- NULL#
+#
+    # find index positions and maximum values#
+    n <- length(x1)#
+    xv <- xp <- numeric(n)#
+    for (i in 1:n) {#
+        xp[i] <- which.max(x[x1[i]:x2[i]]) + x1[i] - 1#
+        xv[i] <- x[xp[i]]#
+    }#
+#
+    # eliminate peaks that are too low#
+    inds <- which(xv >= minpeakheight & xv - pmax(x[x1], x[x2]) >= threshold)#
+#
+    # combine into a matrix format#
+    X <- cbind(xv[inds], xp[inds], x1[inds], x2[inds])#
+#
+    # eliminate peaks that are near by#
+    if (minpeakdistance != 1)#
+        warning("Handling 'minpeakdistance' has not yet been implemented.")#
+#
+    # Sort according to peak height#
+    if (sortstr) {#
+        sl <- sort.list(X[, 1], na.last = NA, decreasing = TRUE)#
+        X <- X[sl, , drop = FALSE]#
+    }#
+#
+    # Return only the first 'npeaks' peaks#
+    if (npeaks > 0 && npeaks < nrow(X)) {#
+        X <- X[1:npeaks, , drop = FALSE]#
+    }#
+#
+    if (length(X) == 0)    return(c())#
+    # else if (nrow(X) == 1) return(drop(X))#
+    else return(X)#
+}
+x <- c(2, 12, 4, 6, 9, 4, 3, 1, 19, 7)#
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 2,7,9), nrow=3, ncol=4))#
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          matrix(c(19, 9, 8, 9), nrow = 1)#
+identical(findpeaks(x, minpeakheight = 15),#
+          matrix(c(19, 9, 8, 9), nrow = 1)#
+identical(findpeaks(x, threshold = 10),#
+          c(19, 9, 8, 9))
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 2,7,9), nrow=3, ncol=4))
+findpeaks(x)
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          matrix(c(19, 9, 8, 9), nrow = 1))
+findpeaks(x, npeaks = 1, sortstr = TRUE)
+matrix(c(19, 9, 8, 9), nrow = 1)
+str(findpeaks(x, npeaks = 1, sortstr = TRUE))
+str(matrix(c(19, 9, 8, 9), nrow = 1))
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 3,8,10), nrow=3, ncol=4))#
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, minpeakheight = 15),#
+          matrix(c(19, 9, 8, 10), nrow = 1)#
+identical(findpeaks(x, threshold = 10),#
+          c(19, 9, 8, 10))
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 3,8,10), nrow=3, ncol=4))#
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, minpeakheight = 15),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, threshold = 10),#
+          c(19, 9, 8, 10))
+findpeaks(x, threshold = 10)
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 3,8,10), nrow=3, ncol=4))#
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, minpeakheight = 15),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, threshold = 10),#
+          matrix(c(19, 9, 8, 10), nrow = 1)
+)
+identical(findpeaks(x),#
+          matrix(c(12,9,19, 2,5,9, 1,3,8, 3,8,10), nrow=3, ncol=4))#
+identical(findpeaks(x, npeaks = 1, sortstr = TRUE),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, minpeakheight = 15),#
+          matrix(c(19, 9, 8, 10), nrow = 1))#
+identical(findpeaks(x, threshold = 10),#
+          matrix(c(19, 9, 8, 10), nrow = 1))

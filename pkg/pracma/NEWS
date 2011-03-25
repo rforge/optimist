@@ -6,7 +6,15 @@ PLANNED IN VERSION 0.2-5
 
   NEW FUNCTIONS
 
-    o  fquad() for adaptive quadrature (integration).
+    o fquad() for adaptive quadrature (integration).
+
+    o conv(), deconv(), and detrend().
+    
+    o Functions sinc() and bump().
+
+    o String functions strjust(), strtrim(), and strrep().
+
+    o Regular expression functions regexp(), regexpi().
 
 CHANGES IN VERSION 0.2-4
 

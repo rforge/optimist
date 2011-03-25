@@ -24,7 +24,7 @@ findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
 
     # get indices from regular expression parser
     x1 <- rc
-    x2 <- rc + attr(rc, "match.length") - 1
+    x2 <- rc + attr(rc, "match.length")
     attributes(x1) <- NULL
     attributes(x2) <- NULL
 
@@ -42,17 +42,22 @@ findpeaks <- function(x,nups = 1, ndowns = nups, zero = "0", peakpat = NULL,
     # combine into a matrix format
     X <- cbind(xv[inds], xp[inds], x1[inds], x2[inds])
 
+    # eliminate peaks that are near by
+    if (minpeakdistance != 1)
+        warning("Handling 'minpeakdistance' has not yet been implemented.")
 
     # Sort according to peak height
     if (sortstr) {
         sl <- sort.list(X[, 1], na.last = NA, decreasing = TRUE)
-        X <- X[sl, ]
+        X <- X[sl, , drop = FALSE]
     }
 
     # Return only the first 'npeaks' peaks
     if (npeaks > 0 && npeaks < nrow(X)) {
-        X <- X[1:npeaks, ]
+        X <- X[1:npeaks, , drop = FALSE]
     }
 
-    return(X)
+    if (length(X) == 0)    return(c())
+    # else if (nrow(X) == 1) return(drop(X))
+    else return(X)
 }

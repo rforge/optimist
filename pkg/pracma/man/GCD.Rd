@@ -1,4 +1,4 @@
-\name{GCD}
+\name{GCD, LCM}
 \alias{GCD}
 \alias{LCM}
 \title{GCD and LCM Integer Functions}
