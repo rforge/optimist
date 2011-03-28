@@ -10,7 +10,7 @@ PLANNED IN VERSION 0.2-5
 
     o conv(), deconv(), and detrend().
     
-    o Functions sinc() and bump().
+    o Barycentric interpolation through barylag() and barylag2d().
 
     o String functions strjust(), strtrim(), and strrep().
 
@@ -23,7 +23,9 @@ CHANGES IN VERSION 0.2-4
     o primroot() finds the smallest primitive root modulo a given n;
       needed functions are modpower() and modorder().
 
-    o Barycentric interpolation through barylag() and barylag2d().
+    o humps() and sinc(): Matlab test functions
+
+    o Root finding through bisection: bisect(), regulaFalsi()
 
     o outlierMAD(), findpeaks(), and piecewise()
 
