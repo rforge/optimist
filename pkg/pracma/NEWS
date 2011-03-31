@@ -2,7 +2,7 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED IN VERSION 0.2-5
+PLANNED IN VERSION 0.2-6
 
   NEW FUNCTIONS
 
@@ -15,6 +15,12 @@ PLANNED IN VERSION 0.2-5
     o String functions strjust(), strtrim(), and strrep().
 
     o Regular expression functions regexp(), regexpi().
+
+CHANGES IN VERSION 0.2-5
+
+  NEW FUNCTIONS
+
+    o Matlab functions mode() and beep().
 
 CHANGES IN VERSION 0.2-4
 
