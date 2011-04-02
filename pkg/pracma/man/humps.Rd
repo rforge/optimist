@@ -28,8 +28,10 @@ sinc(x)
   Numeric scalar or vector.
 }
 \examples{
+\dontrun{
 plot(humps(), type="l"); grid()
 
 x <- seq(0, 10, length=101)
 plot(x, sinc(x), type="l"); grid()
+}
 }

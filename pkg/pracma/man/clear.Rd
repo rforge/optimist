@@ -1,7 +1,7 @@
 \name{clear}
 \alias{clear}
 \title{
-Matlab clear function
+Clear function (Matlab style)
 }
 \description{
   Remove items from workspace.

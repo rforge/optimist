@@ -1,7 +1,7 @@
 \name{mode}
 \alias{mode}
 \title{
-Matlab mode function
+Mode function (Matlab style)
 }
 \description{
   Most frequent value in vector or matrix

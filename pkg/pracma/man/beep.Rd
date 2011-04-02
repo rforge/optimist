@@ -1,7 +1,7 @@
 \name{beep}
 \alias{beep}
 \title{
-Matlab beep function
+Beep function (Matlab style)
 }
 \description{
   Produce beep sound.

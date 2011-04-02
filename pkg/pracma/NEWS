@@ -2,7 +2,7 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED IN VERSION 0.2-6
+PLANNED IN NEXT VERSION
 
   NEW FUNCTIONS
 
@@ -12,15 +12,22 @@ PLANNED IN VERSION 0.2-6
     
     o Barycentric interpolation through barylag() and barylag2d().
 
-    o String functions strjust(), strtrim(), and strrep().
-
     o Regular expression functions regexp(), regexpi().
+
+CHANGES IN VERSION 0.2-6
+
+  NEW FUNCTIONS
+
+    o String functions blanks(), strtrim(), deblank(), strjust(),
+      and strrep().
+
+    o interp1() one-dimensional interpolation (incl. spline)
 
 CHANGES IN VERSION 0.2-5
 
   NEW FUNCTIONS
 
-    o Matlab functions mode() and beep().
+    o Matlab functions mode(), clear() and beep().
 
 CHANGES IN VERSION 0.2-4
 
