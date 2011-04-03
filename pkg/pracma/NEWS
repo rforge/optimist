@@ -12,7 +12,12 @@ PLANNED IN NEXT VERSION
     
     o Barycentric interpolation through barylag() and barylag2d().
 
-    o Regular expression functions regexp(), regexpi().
+CHANGES IN VERSION 0.2-7
+
+  NEW FUNCTIONS
+
+    o Regular expression functions regexp(), regexpi(), regexprep() and
+      regexpall().
 
 CHANGES IN VERSION 0.2-6
 
