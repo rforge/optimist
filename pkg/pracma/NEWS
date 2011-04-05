@@ -6,18 +6,26 @@ PLANNED IN NEXT VERSION
 
   NEW FUNCTIONS
 
-    o fquad() for adaptive quadrature (integration).
-
     o conv(), deconv(), and detrend().
     
     o Barycentric interpolation through barylag() and barylag2d().
+
+CHANGES IN VERSION 0.2-8
+
+  NEW FUNCTIONS
+
+    o quad() adaptive Simpson quadrature.
+
+    o Minimum finding with fibsearch() and golden_ratio().
+
+    o Root finding with newton(), secant(), and brentDekker().
 
 CHANGES IN VERSION 0.2-7
 
   NEW FUNCTIONS
 
     o Regular expression functions regexp(), regexpi(), regexprep() and
-      regexpall().
+      refindall().
 
 CHANGES IN VERSION 0.2-6
 
