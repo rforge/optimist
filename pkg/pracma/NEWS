@@ -7,8 +7,18 @@ PLANNED IN NEXT VERSION
   NEW FUNCTIONS
 
     o conv(), deconv(), and detrend().
-    
+
     o Barycentric interpolation through barylag() and barylag2d().
+
+CHANGES IN VERSION 0.2-9
+
+  NEW FUNCTIONS
+
+    o fnorm() and the Runge function runge().
+
+    o contfrac(), rat(), and rats() for continuous fractions.
+
+    o meshgrid() and magic().
 
 CHANGES IN VERSION 0.2-8
 
