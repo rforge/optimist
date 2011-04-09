@@ -6,9 +6,15 @@ PLANNED IN NEXT VERSION
 
   NEW FUNCTIONS
 
-    o conv(), deconv(), and detrend().
-
     o Barycentric interpolation through barylag() and barylag2d().
+
+CHANGES IN VERSION 0.3-0
+
+  OTHER CHANGES
+
+    o New version of news.Rd, news.pdf.
+
+    o More test functions for root finding and quadrature.
 
 CHANGES IN VERSION 0.2-9
 
@@ -59,11 +65,11 @@ CHANGES IN VERSION 0.2-4
     o primroot() finds the smallest primitive root modulo a given n;
       needed functions are modpower() and modorder().
 
-    o humps() and sinc(): Matlab test functions
+    o humps() and sinc(): Matlab test functions.
 
-    o Root finding through bisection: bisect(), regulaFalsi()
+    o Root finding through bisection: bisect(), regulaFalsi().
 
-    o outlierMAD(), findpeaks(), and piecewise()
+    o outlierMAD(), findpeaks(), and piecewise().
 
     o polycnv() for polynomial multiplication.
 
@@ -133,7 +139,7 @@ CHANGES IN VERSION 0.1-8
 
   NEW FUNCTIONS
 
-    o std() as refinement of standard deviation function.
+    o std() as refinement of the standard deviation function.
 
     o ceil() and fix() as aliases for ceiling() and trunc().
       [floor() and round() already exist in R.]
@@ -183,6 +189,11 @@ CHANGES IN VERSION 0.1-5
 CHANGES IN VERSION 0.1-4
 
   NEW FUNCTIONS:
+
+    o Added functions for generating sequences of (log-)linearly spaced
+      numeric values: linspace() and logspace(). Note that the functions
+      in the `matlab' package are not exactly mimicking the corresponding
+      Matlab/Octave functions.
 
     o Added basic complex functions real(), imag(), conj(), and angle()
       which are essentially only aliases of the R functions Re(), Im(), 

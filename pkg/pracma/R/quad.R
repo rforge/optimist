@@ -50,5 +50,3 @@ quad <- function(f, xa, xb, tol = .Machine$double.eps^0.5, trace = FALSE, ...)
     }
     return(Q)
 }
-
-### ------------------------------------------------------ T h e  E n d ------
