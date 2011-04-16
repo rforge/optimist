@@ -8,6 +8,13 @@ PLANNED IN NEXT VERSION
 
     o Barycentric interpolation through barylag() and barylag2d().
 
+CHANGES IN VERSION 0.3-1
+
+  NEW FUNCTIONS
+
+    o Chebyshev polynomials of the first kind: chebPoly(), chebCoeff(),
+      and chebApprox().
+
 CHANGES IN VERSION 0.3-0
 
   OTHER CHANGES
