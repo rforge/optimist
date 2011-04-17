@@ -12,7 +12,9 @@ CHANGES IN VERSION 0.3-2
 
   NEW FUNCTIONS
 
-    o Sorting functions:
+    o Sorting functions: bubbleSort(), insertionSort(), selectionSort(),
+      shellSort(), heapSort(), mergeSort(), mergeOrdered(), quickSort(),
+      quickSortx(), is.sorted(), and testSort().
 
     o Functions from number theory: eulersPhi(), moebiusFun() and the 
       mertensFun(), sigma(), tau(), omega(), and Omega().
