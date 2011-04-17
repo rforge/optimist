@@ -8,6 +8,15 @@ PLANNED IN NEXT VERSION
 
     o Barycentric interpolation through barylag() and barylag2d().
 
+CHANGES IN VERSION 0.3-2
+
+  NEW FUNCTIONS
+
+    o Sorting functions:
+
+    o Functions from number theory: eulersPhi(), moebiusFun() and the 
+      mertensFun(), sigma(), tau(), omega(), and Omega().
+
 CHANGES IN VERSION 0.3-1
 
   NEW FUNCTIONS
