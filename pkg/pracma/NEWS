@@ -8,6 +8,25 @@ PLANNED IN NEXT VERSION
 
     o Barycentric interpolation through barylag() and barylag2d().
 
+CHANGES IN VERSION 0.3-3
+
+  NEW FUNCTIONS
+
+    o hornerdefl() for also returning the deflated polynomial.
+
+    o newtonHorner() combining Newton's method and the Horner scheme for
+      for root finding for polynomials.
+
+    o jacobian() computes the Jacobian of a function R^n --> R^n as simple
+      numerical derivative.
+
+    o newtonsys() applies Newton's method to functions R^n --> R^n with
+      special application to root finding of complex functions.
+
+  OTHER CHANGES
+
+    o newton() renamed to newtonRaphson().
+
 CHANGES IN VERSION 0.3-2
 
   NEW FUNCTIONS
