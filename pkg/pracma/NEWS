@@ -2,11 +2,37 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED IN NEXT VERSION
+PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o Barycentric interpolation through barylag() and barylag2d().
+    o rank(), kernel, image(),  and subspace() matrix functions.
+
+    o pchip() and option `cubic' for interp1() interpolation.
+
+    o conv(), deconv(), and detrend().
+
+    o barylag2d() und maybe interp2().
+
+CHANGES IN VERSION 0.3-5
+
+  NEW FUNCTIONS
+
+    o gradient() for numerical differentiation.
+
+    o ``Complex Step'' derivation with complexstep() and jacobiancsd().
+
+CHANGES IN VERSION 0.3-4
+
+  NEW FUNCTIONS
+
+    o Barycentric Lagrange interpolation through barylag().
+
+    o polyfit2() fits a polynomial that exactly meets one additional point.
+
+  OTHER CHANGES
+
+    o Added more references to help entry for pracma-package.Rd.
 
 CHANGES IN VERSION 0.3-3
 
@@ -17,7 +43,7 @@ CHANGES IN VERSION 0.3-3
     o newtonHorner() combining Newton's method and the Horner scheme for
       for root finding for polynomials.
 
-    o jacobian() computes the Jacobian of a function R^n --> R^n as simple
+    o jacobian() computes the Jacobian of a function R^n --> R^m as simple
       numerical derivative.
 
     o newtonsys() applies Newton's method to functions R^n --> R^n with
