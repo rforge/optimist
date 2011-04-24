@@ -15,9 +15,10 @@ jacobian <- function(f, x, h.eps=.Machine$double.eps^(1/3), ...) {
 	h <- numeric(n)
 	for (i in 1:n) {
 		h[i] <- h.eps
-		for (j in 1:m) {  # *this* should be vectorized
-			jacob[j, i] <- (f(x+h, ...)[j] - f(x-h, ...)[j])/(2*h.eps)
-		}
+		jacob[, i] <- (f(x+h, ...) - f(x-h, ...))/(2*h.eps)
+		# for (j in 1:m) {  # *this* should be vectorized
+		# 	# jacob[j, i] <- (f(x+h, ...)[j] - f(x-h, ...)[j])/(2*h.eps)
+		# }
 		h[i] <- 0
 	}
 	return(jacob)

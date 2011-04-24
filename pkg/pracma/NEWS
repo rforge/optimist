@@ -6,7 +6,7 @@ PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o rank(), kernel, image(),  and subspace() matrix functions.
+    o rank(), kernel, image(), and subspace() matrix functions.
 
     o pchip() and option `cubic' for interp1() interpolation.
 
@@ -14,11 +14,15 @@ PLANNED IN NEW VERSION
 
     o barylag2d() und maybe interp2().
 
+    o Numerical differentiation with gradient().
+
 CHANGES IN VERSION 0.3-5
 
   NEW FUNCTIONS
 
-    o gradient() for numerical differentiation.
+    o agm() for the arithmetic-geometric mean.
+
+    o Lambert W function lambertWp() for the real principal branch.
 
     o ``Complex Step'' derivation with complexstep() and jacobiancsd().
 
@@ -32,7 +36,7 @@ CHANGES IN VERSION 0.3-4
 
   OTHER CHANGES
 
-    o Added more references to help entry for pracma-package.Rd.
+    o Added more references to the help entry `pracma-package.Rd'.
 
 CHANGES IN VERSION 0.3-3
 

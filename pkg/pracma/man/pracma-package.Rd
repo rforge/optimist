@@ -18,8 +18,8 @@ Practical Numerical Math Routines
 \tabular{ll}{
 Package: \tab pracma\cr
 Type: \tab Package\cr
-Version: \tab 0.3-4\cr
-Date: \tab 2011-04-20\cr
+Version: \tab 0.3-5\cr
+Date: \tab 2011-04-24\cr
 License: \tab GPLv3\cr
 LazyLoad: \tab yes\cr
 }
