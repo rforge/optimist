@@ -6,17 +6,42 @@ PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o rank(), kernel, image(), and subspace() matrix functions.
-
     o pchip() and option `cubic' for interp1() interpolation.
 
     o conv(), deconv(), and detrend().
 
     o barylag2d() und maybe interp2().
 
-    o Numerical differentiation with gradient().
+    o gammaz() and other complex(!) functions.
 
-CHANGES IN VERSION 0.3-5
+CHANGES IN VERSION 0.3-7 (2011-05-??)
+
+  NEW FUNCTIONS
+
+    o rank(), kernel(), and subspace() matrix functions.
+
+    o Numerical differentiation with deriv() and hessian(), and
+      Richardson's extrapolation in gradient().
+
+CHANGES IN VERSION 0.3-6 (2011-04-30)
+
+  NEW FUNCTIONS
+
+    o fact(), more accurate than the R internal function `factorial'.
+
+    o ezplot() as an alias for curve(), but with option ``fill = TRUE''.
+
+    o aitken() for accelerating iterations.
+
+  OTHER CHANGES
+
+    o Renamed polycnv() to polymul().
+
+    o Renamed outlierMAD() to hampel().
+
+    o Renamed barylag() to barycentricInterp().
+
+CHANGES IN VERSION 0.3-5 (2011-04-23)
 
   NEW FUNCTIONS
 
@@ -26,7 +51,7 @@ CHANGES IN VERSION 0.3-5
 
     o ``Complex Step'' derivation with complexstep() and jacobiancsd().
 
-CHANGES IN VERSION 0.3-4
+CHANGES IN VERSION 0.3-4 (2011-04-21)
 
   NEW FUNCTIONS
 
@@ -38,7 +63,7 @@ CHANGES IN VERSION 0.3-4
 
     o Added more references to the help entry `pracma-package.Rd'.
 
-CHANGES IN VERSION 0.3-3
+CHANGES IN VERSION 0.3-3 (2011-04-19)
 
   NEW FUNCTIONS
 
@@ -57,7 +82,7 @@ CHANGES IN VERSION 0.3-3
 
     o newton() renamed to newtonRaphson().
 
-CHANGES IN VERSION 0.3-2
+CHANGES IN VERSION 0.3-2 (2011-04-17)
 
   NEW FUNCTIONS
 
@@ -68,14 +93,14 @@ CHANGES IN VERSION 0.3-2
     o Functions from number theory: eulersPhi(), moebiusFun() and the 
       mertensFun(), sigma(), tau(), omega(), and Omega().
 
-CHANGES IN VERSION 0.3-1
+CHANGES IN VERSION 0.3-1 (2011-04-16)
 
   NEW FUNCTIONS
 
     o Chebyshev polynomials of the first kind: chebPoly(), chebCoeff(),
       and chebApprox().
 
-CHANGES IN VERSION 0.3-0
+CHANGES IN VERSION 0.3-0 (2011-04-09)
 
   OTHER CHANGES
 

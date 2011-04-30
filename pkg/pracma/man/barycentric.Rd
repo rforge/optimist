@@ -1,20 +1,19 @@
-\name{barylag}
-\alias{barylag}
-\alias{barylag2d}
+\name{barycentricInterp}
+\alias{barycentricInterp}
 \title{Barycentric Lagrange Interpolation}
 \description{
-  Barycentric Lagrange interpolation in one and two dimensions.
+  Barycentric Lagrange interpolation in one dimension.
 }
 \usage{
-barylag(xi, yi, x)
+barycentricInterp(xi, yi, x)
 }
 \arguments{
   \item{xi, yi}{x- and y-coordinates of supporting nodes.}
   \item{x}{x-coordinates of interpolation points.}
 }
 \details{
-  \code{barylag} interpolates the given data using the barycentric Lagrange
-  interpolation formula (vectorized to remove all loops).
+  \code{barycentricInterp} interpolates the given data using the barycentric
+  Lagrange interpolation formula (vectorized to remove all loops).
 }
 \value{
   Values of interpolated data at points \code{x}.
@@ -33,8 +32,7 @@ barylag(xi, yi, x)
 Lagrange or Newton interpolation.
 }
 \examples{
-##  Example  b a r y l a g
-# Generates an example with plot.
+##  Generates an example with plot.
 # Input:
 #   fun  ---  function that shall be 'approximated'
 #   a, b ---  interval [a, b] to be used for the example
@@ -44,13 +42,13 @@ Lagrange or Newton interpolation.
 #   plot of function, interpolation, and nodes
 #   return value is NULL (invisible)
 \dontrun{
-barylagExample <- function(fun, a, b, n, m)
+barycentricExample <- function(fun, a, b, n, m)
 {
 	xi <- seq(a, b, len=n)
 	yi <- fun(xi)
 	x  <- seq(a, b, len=m)
 
-	y <- barylag(xi, yi, x)
+	y <- barycentricInterp(xi, yi, x)
 	plot(xi, yi, col="red", xlab="x", ylab="y",
 		main="Example of barycentric interpolation")
 
@@ -60,8 +58,8 @@ barylagExample <- function(fun, a, b, n, m)
 	grid()
 }
 
-barylagExample(sin, -pi, pi, 11, 101)  # good interpolation
-barylagExample(runge, -1, 1, 21, 101)  # bad interpolation
+barycentricExample(sin, -pi, pi, 11, 101)  # good interpolation
+barycentricExample(runge, -1, 1, 21, 101)  # bad interpolation
 }
 }
 \keyword{ math }

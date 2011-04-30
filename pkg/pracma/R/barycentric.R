@@ -1,9 +1,9 @@
 ##
-##  b a r y l a g .R  Barycentric Lagrange Interpolation
+##  b a r y l a g . R  Barycentric Lagrange Interpolation
 ##
 
 
-barylag <- function(xi, yi, x) {
+barycentricInterp <- function(xi, yi, x) {
     stopifnot(is.vector(xi, mode="numeric"), is.vector(xi, mode="numeric"))
     if (!is.numeric(x))
         stop("Argument 'x' must be a numeric vector or matrix.")
