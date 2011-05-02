@@ -15,7 +15,13 @@ PLANNED IN NEW VERSION
     o Numerical differentiation with deriv() and hessian(), and
       Richardson's extrapolation in gradient().
 
-CHANGES IN VERSION 0.3-7 (2011-05-02)
+CHANGES IN VERSION 0.3-8 (2011-05-05)
+
+  NEW FUNCTIONS
+
+    o hadamard() matrices.
+
+CHANGES IN VERSION 0.3-7 (2011-05-04)
 
   NEW FUNCTIONS
 
