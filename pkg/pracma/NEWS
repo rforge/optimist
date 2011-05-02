@@ -10,18 +10,26 @@ PLANNED IN NEW VERSION
 
     o conv(), deconv(), and detrend().
 
-    o barylag2d() und maybe interp2().
-
     o gammaz() and other complex(!) functions.
-
-CHANGES IN VERSION 0.3-7 (2011-05-??)
-
-  NEW FUNCTIONS
-
-    o rank(), kernel(), and subspace() matrix functions.
 
     o Numerical differentiation with deriv() and hessian(), and
       Richardson's extrapolation in gradient().
+
+CHANGES IN VERSION 0.3-7 (2011-05-02)
+
+  NEW FUNCTIONS
+
+    o Rank of a matrix, mrank(), and kernel() for the nullspace.
+
+    o orth(), orthogonal basis of the image space, and subspace()
+      determines the angle between two subspaces.
+
+    o normest() for estimating the (Frobenius) norm of a matrix, and
+      cond() determines the condition number of a matrix.
+
+  OTHER CHANGES
+
+    o Renamed vnorm() to vectornorm() to differentiate it from matrix norms.
 
 CHANGES IN VERSION 0.3-6 (2011-04-30)
 
