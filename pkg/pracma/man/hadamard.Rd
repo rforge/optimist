@@ -27,6 +27,8 @@ hadamard(n)
   \code{\link{hankel}}, \code{\link{toeplitz}}
 }
 \examples{
-hadamard(8)
+hadamard(4)
+H <- hadamard(8)
+t(H) %*% H        # t(H) %*% H == diag(n, n, n)
 }
 \keyword{ array }

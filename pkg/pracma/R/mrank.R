@@ -23,7 +23,7 @@ mrank <- function(M) {
 }
 
 
-kernel <- function(M) {
+nullspace <- function(M) {
     if (!is.numeric(M))
         stop("Argument 'M' must be a numeric matrix.")
     if (is.vector(M))

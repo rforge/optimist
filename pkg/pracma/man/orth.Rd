@@ -27,7 +27,7 @@ orth(M)
   Philadelphia. 
 }
 \seealso{
-  \code{\link{kernel}}
+  \code{\link{nullspace}}
 }
 \examples{
 M <- matrix(1:12, 3, 4)

@@ -6,20 +6,26 @@ PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o pchip() and option `cubic' for interp1() interpolation.
-
     o conv(), deconv(), and detrend().
 
-    o gammaz() and other complex(!) functions.
+    o Riemann's Zeta Function zeta().
 
     o Numerical differentiation with deriv() and hessian(), and
       Richardson's extrapolation in gradient().
 
-CHANGES IN VERSION 0.3-8 (2011-05-05)
+CHANGES IN VERSION 0.3-8 (2011-05-06)
 
   NEW FUNCTIONS
 
-    o hadamard() matrices.
+    o pchip() and option `cubic' for interp1() interpolation.
+
+    o The complex gamma functions gammaz(), lgammaz().
+
+    o hadamard() and toeplitz() matrices.
+
+  OTHER CHANGES
+
+    o Renamed kernel() to nullspace() because of name clash.
 
 CHANGES IN VERSION 0.3-7 (2011-05-04)
 
@@ -35,7 +41,8 @@ CHANGES IN VERSION 0.3-7 (2011-05-04)
 
   OTHER CHANGES
 
-    o Renamed vnorm() to vectornorm() to differentiate it from matrix norms.
+    o Renamed vnorm() to vectornorm() to differentiate it from other
+      matrix norms.
 
 CHANGES IN VERSION 0.3-6 (2011-04-30)
 

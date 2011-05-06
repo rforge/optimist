@@ -19,7 +19,7 @@ Practical Numerical Math Routines
 Package: \tab pracma\cr
 Type: \tab Package\cr
 Version: \tab 0.3-8\cr
-Date: \tab 2011-05-05\cr
+Date: \tab 2011-05-06\cr
 License: \tab GPLv3\cr
 LazyLoad: \tab yes\cr
 }

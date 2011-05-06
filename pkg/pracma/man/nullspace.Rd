@@ -1,5 +1,5 @@
-\name{kernel}
-\alias{kernel}
+\name{nullspace}
+\alias{nullspace}
 \title{
   Kernel or Nullspace
 }
@@ -7,7 +7,7 @@
   Kernel of the linear map defined by matrix \code{M}.
 }
 \usage{
-kernel(M)
+nullspace(M)
 }
 \arguments{
   \item{M}{Numeric matrix; vectors will be considered as column vectors.}
@@ -19,14 +19,14 @@ kernel(M)
 }
 \value{
   If \code{M} is an \code{n}-by-\code{m} (operating from right on
-  \code{n}-dimensional row vectors), then \code{N=kernel(M)} is a
+  \code{n}-dimensional row vectors), then \code{N=nullspace(M)} is a
   \code{k}-by-\code{n} matrix whose rows define a (linearly independent)
   basis of the \code{k}-dimensional kernel in \code{R^n}.
 
   As the rank of a matrix is also the dimension of its image, the following
   relation is true:
 
-  \code{n = dim(kernel(M)) + rank(M)}
+  \code{n = dim(nullspace(M)) + rank(M)}
 }
 \references{
   Trefethen, L. N., and D. Bau III. (1997). Numerical Linear Algebra. SIAM,
@@ -41,13 +41,13 @@ kernel(M)
 \examples{
 M <- matrix(1:12, 3, 4)
 mrank(M)                 #=> 2
-N <- kernel(M)
+N <- nullspace(M)
 #           [,1]       [,2]      [,3]
 # [1,] 0.4082483 -0.8164966 0.4082483
 N %*% M                  # almost c(0, 0, 0)
 
 M <- magic(5)
 rank(M)                  #=> 5
-kernel(M)                #=> 0 0 0 0 0
+nullspace(M)             #=> 0 0 0 0 0
 }
 \keyword{ array }

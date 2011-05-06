@@ -32,7 +32,7 @@ mrank(M)
   has a different meaning in R.
 }
 \seealso{
-  \code{\link{kernel}}
+  \code{\link{nullspace}}
 }
 \examples{
 mrank(magic(10))   #=> 7
