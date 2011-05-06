@@ -3,7 +3,7 @@ Type: Package
 Title: Practical Numerical Math Functions
 Version: 0.3-8
 Depends: R (>= 2.10.1)
-Date: 2011-05-05
+Date: 2011-05-06
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Description: This package provides R implementations of more advanced
