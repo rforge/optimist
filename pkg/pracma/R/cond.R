@@ -4,6 +4,8 @@
 
 
 cond <- function(M, p = 2) {
+    if (length(M) == 0)
+        return(0)
     if (!is.numeric(M))
         stop("Argument 'M' must be a numeric matrix.")
     if (is.vector(M))
@@ -25,6 +27,8 @@ cond <- function(M, p = 2) {
 
 
 normest <- function(M, maxiter = 100, tol = .Machine$double.eps^(1/2)) {
+    if (length(M) == 0)
+        return(0)
     if (!is.numeric(M))
         stop("Argument 'M' must be a numeric matrix.")
     if (is.vector(M))

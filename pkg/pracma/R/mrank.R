@@ -4,6 +4,8 @@
 
 
 mrank <- function(M) {
+    if (length(M) == 0)
+        return(0)
     if (!is.numeric(M))
         stop("Argument 'M' must be a numeric matrix.")
     if (is.vector(M))

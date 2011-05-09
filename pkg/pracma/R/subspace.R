@@ -3,6 +3,8 @@
 
 
 orth <- function(M) {
+    if (length(M) == 0)
+        return(c())
     if (!is.numeric(M))
         stop("Argument 'M' must be a numeric matrix.")
     if (is.vector(M))
