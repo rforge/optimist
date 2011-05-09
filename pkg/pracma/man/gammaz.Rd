@@ -18,6 +18,8 @@ gammaz(z)
 
   Accuracy is 15 significant digits along the real axis and 13 significant
   digits elsewhere.
+
+  To compute the logarithmic Gamma function use \code{log(gammaz(z))}.
 }
 \value{
   Returns a complex vector of function values.
@@ -36,7 +38,7 @@ gammaz(z)
   Numerical Recipes used a 7 terms formula for a less effective approximation.
 }
 \seealso{
-  \code{\link{gamma}}, \code{\link{lgammaz}}
+  \code{\link{gamma}}, \code{gsl::lngamma_complex}
 }
 \examples{
 max(gamma(1:10) - gammaz(1:10))
