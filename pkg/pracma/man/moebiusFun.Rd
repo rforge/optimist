@@ -45,10 +45,11 @@ sapply(1:16, mertensFun)
 x <- 1:50; y <- sapply(x, moebiusFun)
 plot(c(1, 50), c(-3, 3), type="n")
 grid()
-points(1:50, y, pch=18, col="blue")}
+points(1:50, y, pch=18, col="blue")
 
 x <- 1:100; y <- sapply(x, mertensFun)
 plot(c(1, 100), c(-5, 3), type="n")
 grid()
 lines(1:100, y, col="red", type="s")}
+}
 \keyword{ math }

@@ -2,7 +2,7 @@
 \alias{pchip}
 \title{Hermitean Interpolation Polynomials}
 \description{
-  Piecwise Cubic Hermitean Interpolation Polynomials.
+  Piecewise Cubic Hermitean Interpolation Polynomials.
 }
 \usage{
 pchip(xi, yi, x)
