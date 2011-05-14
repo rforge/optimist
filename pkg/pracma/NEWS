@@ -6,12 +6,22 @@ PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o conv(), deconv(), and detrend().
-
-    o Riemann's Zeta Function zeta().
-
     o Numerical differentiation with deriv() and hessian(), and
       Richardson's extrapolation in gradient().
+
+    o inpolygon() and segment distances
+
+CHANGES IN VERSION 0.4-1 (2011-05-13)
+
+  NEW FUNCTIONS
+
+    o polyadd() polynomial addition.
+
+    o conv() and deconv() time series (de)convolution.
+
+    o detrend() removes (piecewise) linear trends.
+
+    o ifft() for normalized inverse Fast Fourier Transform.
 
 CHANGES IN VERSION 0.4-0 (2011-05-10)
 
@@ -23,11 +33,7 @@ CHANGES IN VERSION 0.3-9 (2011-05-09)
 
   NEW FUNCTIONS
 
-    o and() and or() aliases for all(), any().
-
-  OHER CHANGES
- 
-    o Removed lgammaz() because of a serious bug.
+    o and() and or().
 
 CHANGES IN VERSION 0.3-8 (2011-05-06)
 
@@ -35,19 +41,15 @@ CHANGES IN VERSION 0.3-8 (2011-05-06)
 
     o pchip() and option `cubic' for interp1() interpolation.
 
-    o The complex gamma functions gammaz(), lgammaz().
+    o The complex gamma functions gammaz().
 
     o hadamard() and toeplitz() matrices.
-
-  OTHER CHANGES
-
-    o Renamed kernel() to nullspace() because of name clash.
 
 CHANGES IN VERSION 0.3-7 (2011-05-04)
 
   NEW FUNCTIONS
 
-    o Rank of a matrix, mrank(), and kernel() for the nullspace.
+    o Rank of a matrix, mrank(), and nullspace() for the kernel.
 
     o orth(), orthogonal basis of the image space, and subspace()
       determines the angle between two subspaces.
