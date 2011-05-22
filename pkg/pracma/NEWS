@@ -9,13 +9,27 @@ PLANNED IN NEW VERSION
     o Numerical differentiation with deriv() and hessian(), and
       Richardson's extrapolation in gradient().
 
+    o rk4s() and ode23() for solving differential equations.
+
+    o rmserror() different accuracy measures.
+
+CHANGES IN VERSION 0.4-3 (2001-05-22)
+
+  NEW FUNCTIONS
+
+    o polypow() and polytrans() for polynomials.
+
+    o polyApprox() polynomial approximation using Chebyshev.
+
+    o trigPoly(), trigApprox() for trigonometric regression.
+
 CHANGES IN VERSION 0.4-2 (2001-05-17)
 
   NEW FUNCTIONS
 
-    o segm_intersect() and segm_distance() segment distances
+    o segm_intersect() and segm_distance() segment distances.
 
-    o inpolygon()
+    o inpolygon().
 
 CHANGES IN VERSION 0.4-1 (2011-05-13)
 
