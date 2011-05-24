@@ -11,6 +11,14 @@ PLANNED IN NEW VERSION
 
     o rk4s() and ode23() for solving first order differential equations.
 
+CHANGES IN VERSION 0.4-5 (2011-05-24)
+
+  NEW FUNCTIONS
+
+    o Lebesgue coefficient: lebesgue().
+
+    o poly2str() for string representation of a polynomial
+
 CHANGES IN VERSION 0.4-4 (2001-05-23)
 
   NEW FUNCTIONS
