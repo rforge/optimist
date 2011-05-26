@@ -9,7 +9,15 @@ PLANNED IN NEW VERSION
     o Numerical differentiation with deriv() and hessian(), and
       Richardson's extrapolation in gradient().
 
-    o rk4s() and ode23() for solving first order differential equations.
+    o ode23() solving first order differential equations.
+
+CHANGES IN VERSION 0.4-6 (2011-05-26)
+
+    o Laguerre's method laguerre().
+
+    o rk4() and rk4sys() classical Runge-Kutta.
+
+    o deval() deeve() evaluate ODE solutions.
 
 CHANGES IN VERSION 0.4-5 (2011-05-24)
 
@@ -17,7 +25,7 @@ CHANGES IN VERSION 0.4-5 (2011-05-24)
 
     o Lebesgue coefficient: lebesgue().
 
-    o poly2str() for string representation of a polynomial
+    o poly2str() for string representation of a polynomial.
 
 CHANGES IN VERSION 0.4-4 (2001-05-23)
 
