@@ -14,7 +14,8 @@ deval(x, y, xp, idx = NULL)
            has been solved.}
   \item{y}{values of the function(s) that have been computed for the
            given (time) points.}
-  \item{xp}{point or numeric vector at which the solution is wanted.}
+  \item{xp}{point or numeric vector at which the solution is wanted;
+            must be sorted.}
   \item{idx}{index of functions whose vales shall be returned.}
 }
 \details{
