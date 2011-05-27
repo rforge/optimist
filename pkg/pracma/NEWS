@@ -9,15 +9,19 @@ PLANNED IN NEW VERSION
     o Numerical differentiation with fderiv() and hessian(), and
       Richardson's extrapolation in gradient().
 
-CHANGES IN VERSION 0.4-7 (2011-05-28)
+    o ode23() solving first order differential equations.
+
+CHANGES IN VERSION 0.4-7 (2011-05-27)
 
   NEW FUNCTIONS
-
-    o ode23() solving first order differential equations.
 
     o plot vector fields: quiver() and vectorfield().
     
     o findintervals()
+
+  OTHER CHANGES
+
+    o Corrections in deval(), deeve(), using findintervals().
 
 CHANGES IN VERSION 0.4-6 (2011-05-26)
 
@@ -108,11 +112,6 @@ CHANGES IN VERSION 0.3-7 (2011-05-04)
 
     o normest() for estimating the (Frobenius) norm of a matrix, and
       cond() determines the condition number of a matrix.
-
-  OTHER CHANGES
-
-    o Renamed vnorm() to vectornorm() to differentiate it from other
-      matrix norms.
 
 CHANGES IN VERSION 0.3-6 (2011-04-30)
 
