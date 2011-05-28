@@ -6,10 +6,21 @@ PLANNED IN NEW VERSION
 
   NEW FUNCTIONS
 
-    o Numerical differentiation with fderiv() and hessian(), and
-      Richardson's extrapolation in gradient().
-
     o ode23() solving first order differential equations.
+
+    o Richardson's extrapolation in richardson().
+
+    o Discrete numerical derivatives: gradient().
+
+CHANGES IN VERSION 0.4-8 (2011-05-28)
+
+  NEW FUNCTIONS
+
+    o Numerical function derivatives: fderiv(), grad().
+
+    o Specialized operators: hessian(), laplacian().
+
+    o Applications: taylor(), pade().
 
 CHANGES IN VERSION 0.4-7 (2011-05-27)
 
