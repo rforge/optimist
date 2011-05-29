@@ -49,7 +49,7 @@ fderiv(f, x, n = 1, h = 0,
   and truncation errors. 
 }
 \seealso{
-  \code{gradient}, \code{\link{taylor}}
+  \code{\link{numderiv}}, \code{\link{taylor}}
 }
 \examples{
 \dontrun{
