@@ -2,15 +2,23 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-CHANGES IN VERSION 0.4-9 (2011-05-30)
+PLANNED FOR NEXT VERSION
 
   NEW FUNCTIONS
 
     o ode23() solving first order differential equations.
 
-    o Richardson's extrapolation in richardson().
+    o interp2() for options 'nearest', 'constant', 'linear'.
 
-    o Discrete numerical derivatives: gradient().
+CHANGES IN VERSION 0.4-9 (2011-05-30)
+
+  NEW FUNCTIONS
+
+    o Numerical integration: romberg() and quadAK15().
+
+    o Richardson's extrapolation in numderiv(), numdiff().
+
+    o Discrete numerical derivatives (one dimension): gradient().
 
 CHANGES IN VERSION 0.4-8 (2011-05-28)
 
