@@ -1,0 +1,13 @@
+Package: optitest
+Type: Package
+Title: Optimization Test Functions
+Version: 0.1-0
+Date: 2011-05-31
+Author: Hans W Borchers
+Maintainer: HwB <hwborchers@googlemail.com>
+Description: Optitest provides test functions for local and global
+    optimization, both constrained and unconstrained, and includes
+    a simple evolutionary algorithm for test purposes.
+License: GPL (>= 3)
+LazyLoad: yes
+LazyData: yes

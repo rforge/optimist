@@ -1,0 +1,10 @@
+##
+##  NAMESPACE
+##
+
+# Public routines
+export(simpleEA)
+export(trefethen)
+export(wagon)
+
+# S4 Methods
