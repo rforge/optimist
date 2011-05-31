@@ -18,7 +18,7 @@ inpolygon(x, y, xp, yp, boundary = FALSE)
 \details{
   For a polygon defined by points \code{(xp, yp)}, determine if the
   points \code{(x, y)} are inside or outside the polygon. The boundary
-  can be included or excluded (default) for the inside.
+  can be included or excluded (default) for the interior.
 }
 \value{
   Logical vector, the same length as \code{x}.

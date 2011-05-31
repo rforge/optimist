@@ -6,9 +6,13 @@ PLANNED FOR NEXT VERSION
 
   NEW FUNCTIONS
 
-    o ode23() solving first order differential equations.
+    o ode23() solving first order (systems of) differential equations.
 
-    o interp2() for options 'nearest', 'constant', 'linear'.
+CHANGES IN VERSION 0.5-0 (2011-05-31)
+
+  OTHER CHANGES
+
+    o Corrections to help pages.
 
 CHANGES IN VERSION 0.4-9 (2011-05-30)
 

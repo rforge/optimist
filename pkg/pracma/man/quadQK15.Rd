@@ -15,7 +15,7 @@ quadQK15(f, a, b, ...)
   \item{...}{variables to be passed to the function.}
 }
 \details{
-  Gaussian quadrature of degree 15 with Gauss-K for error estimation.
+  Gaussian quadrature of degree 15 with Gauss-Kronrod for error estimation.
 }
 \value{
   List of value and absolute error.
@@ -26,6 +26,9 @@ quadQK15(f, a, b, ...)
 }
 \author{
   HwB  email: <hwborchers@googlemail.com>
+}
+\note{
+  The function needs to be vectorized (though this could easily be changed).
 }
 \seealso{
   \code{\link{romberg}}

@@ -30,6 +30,9 @@ romberg(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
 \author{
   HwB  email: <hwborchers@googlemail.com>
 }
+\note{
+  The function needs \emph{not} be vectorized.
+}
 \seealso{
   \code{\link{quadQK15}}
 }
