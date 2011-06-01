@@ -8,6 +8,13 @@ PLANNED FOR NEXT VERSION
 
     o ode23() solving first order (systems of) differential equations.
 
+CHANGES IN VERSION 0.5-1 (2011-06-01)
+
+  o NEW FUNCTIONS
+
+    o fzero(), fminbnd(), fminsearch(), fsolve() as aliases for
+      uniroot(), optimize(), optim() with Nelder-Mead, newtonsys().
+
 CHANGES IN VERSION 0.5-0 (2011-05-31)
 
   OTHER CHANGES
