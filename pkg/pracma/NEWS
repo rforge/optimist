@@ -8,6 +8,18 @@ PLANNED FOR NEXT VERSION
 
     o ode23() solving first order (systems of) differential equations.
 
+    o barycentricInterp2d() 2-dimensional barycentric Lagrange interpolation.
+
+CHANGES IN VERSION 0.5-2 (2011-06-04)
+
+  o NEW FUNCTIONS
+
+    o interp2() for two-dimensional interpolation.
+
+  OTHER CHANGES
+
+    o gradient() now works in two dimensions too.
+
 CHANGES IN VERSION 0.5-1 (2011-06-01)
 
   o NEW FUNCTIONS
