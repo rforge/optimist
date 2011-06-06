@@ -1,7 +1,7 @@
 Package: optitest
 Type: Package
 Title: Optimization Test Functions
-Version: 0.1-0
+Version: 0.1-1
 Date: 2011-05-31
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>

@@ -34,7 +34,7 @@ lebesgue(x, refine = 4, plotting = FALSE)
   algorithm).
 }
 \seealso{
-\code{\link{barycentricInterp}}
+\code{\link{barylag}}
 }
 \examples{
 lebesgue(seq(0, 1, length.out = 6))  #=> 3.100425

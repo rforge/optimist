@@ -2,13 +2,13 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-PLANNED FOR NEXT VERSION
+CHANGES IN VERSION 0.5-3 (2011-06-06)
 
   NEW FUNCTIONS
 
     o ode23() solving first order (systems of) differential equations.
 
-    o barycentricInterp2d() 2-dimensional barycentric Lagrange interpolation.
+    o barylag2d() 2-dimensional barycentric Lagrange interpolation.
 
 CHANGES IN VERSION 0.5-2 (2011-06-04)
 
@@ -37,7 +37,7 @@ CHANGES IN VERSION 0.4-9 (2011-05-30)
 
   NEW FUNCTIONS
 
-    o Numerical integration: romberg() and quadAK15().
+    o Numerical integration: romberg() and quadQK15().
 
     o Richardson's extrapolation in numderiv(), numdiff().
 
@@ -170,8 +170,6 @@ CHANGES IN VERSION 0.3-6 (2011-04-30)
     o Renamed polycnv() to polymul().
 
     o Renamed outlierMAD() to hampel().
-
-    o Renamed barylag() to barycentricInterp().
 
 CHANGES IN VERSION 0.3-5 (2011-04-23)
 

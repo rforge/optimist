@@ -38,7 +38,7 @@ rk4sys(f, a, b, y0, n)
   This function serves demonstration purposes only.
 }
 \seealso{
-  \code{ode23}, \code{\link{deval}}
+  \code{\link{ode23}}, \code{\link{deval}}
 }
 \examples{
 ##  Example1: ODE
@@ -52,7 +52,7 @@ f <- function(x, y) {
 sol <- rk4(f, 0, 2, 0, 50)
 \dontrun{
 x <- seq(0, 2, length.out = 51)
-plot(xs, x*exp(-x^2), type = "l", col = "red")
+plot(x, x*exp(-x^2), type = "l", col = "red")
 points(sol$x, sol$y, pch = "*")
 grid()}
 

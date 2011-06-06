@@ -45,10 +45,10 @@
 \note{
   The corresponding Matlab function has also the methods ``cubic'' and
   ``spline''. If in need of a nonlinear interpolation, take a look at
-  \code{barycentricInterp2} in this package and the example therein.
+  \code{barylag2d} in this package and the example therein.
 }
 \seealso{
-  \code{\link{interp1}}, \code{barycentricInterp2}
+  \code{\link{interp1}}, \code{barylag2d}
 }
 \examples{
 \dontrun{
