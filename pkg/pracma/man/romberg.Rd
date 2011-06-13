@@ -31,10 +31,12 @@ romberg(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
   HwB  email: <hwborchers@googlemail.com>
 }
 \note{
-  The function needs \emph{not} be vectorized.
+  The function does \emph{not} need to be vectorized.
+  The relative error can sometimes be scaringly high. It may help
+  to interchange the integration limits.
 }
 \seealso{
-  \code{\link{quadQK15}}
+  \code{\link{quadgk}}
 }
 \examples{
 romberg(sin, 0, pi)  #  2.000000000000001 , rel.error: 6.6e-13

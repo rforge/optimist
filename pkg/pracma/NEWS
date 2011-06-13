@@ -2,6 +2,20 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 0.5-4 (2011-06-12)
+
+  NEW FUNCTIONS
+
+    o gaussLegendre() computes coefficients for Gauss Quadrature,
+      and quad2d() uses these weights for 2-dimensional integration.
+
+    o quadinf() wrapper for quad() on infinite intervals, and
+      quadv() for vector-valued functions.
+
+    o Renamed quadQK15() to quadgk() to be compatible with Matlab.
+
+    o Added a version for rapid pi conmputation to the agm() examples.
+
 CHANGES IN VERSION 0.5-3 (2011-06-06)
 
   NEW FUNCTIONS
@@ -16,8 +30,6 @@ CHANGES IN VERSION 0.5-2 (2011-06-04)
 
     o interp2() for two-dimensional interpolation.
 
-  OTHER CHANGES
-
     o gradient() now works in two dimensions too.
 
 CHANGES IN VERSION 0.5-1 (2011-06-01)
@@ -28,8 +40,6 @@ CHANGES IN VERSION 0.5-1 (2011-06-01)
       uniroot(), optimize(), optim() with Nelder-Mead, newtonsys().
 
 CHANGES IN VERSION 0.5-0 (2011-05-31)
-
-  OTHER CHANGES
 
     o Corrections to help pages.
 
@@ -60,8 +70,6 @@ CHANGES IN VERSION 0.4-7 (2011-05-27)
     o plot vector fields: quiver() and vectorfield().
     
     o findintervals()
-
-  OTHER CHANGES
 
     o Corrections in deval(), deeve(), using findintervals().
 
@@ -123,8 +131,6 @@ CHANGES IN VERSION 0.4-1 (2011-05-13)
 
 CHANGES IN VERSION 0.4-0 (2011-05-10)
 
-  OTHER CHANGES
-
     o Added tests for functions since version 0.3-7.
 
 CHANGES IN VERSION 0.3-9 (2011-05-09)
@@ -165,8 +171,6 @@ CHANGES IN VERSION 0.3-6 (2011-04-30)
 
     o aitken() for accelerating iterations.
 
-  OTHER CHANGES
-
     o Renamed polycnv() to polymul().
 
     o Renamed outlierMAD() to hampel().
@@ -189,8 +193,6 @@ CHANGES IN VERSION 0.3-4 (2011-04-21)
 
     o polyfit2() fits a polynomial that exactly meets one additional point.
 
-  OTHER CHANGES
-
     o Added more references to the help entry `pracma-package.Rd'.
 
 CHANGES IN VERSION 0.3-3 (2011-04-19)
@@ -207,8 +209,6 @@ CHANGES IN VERSION 0.3-3 (2011-04-19)
 
     o newtonsys() applies Newton's method to functions R^n --> R^n with
       special application to root finding of complex functions.
-
-  OTHER CHANGES
 
     o newton() renamed to newtonRaphson().
 
@@ -231,8 +231,6 @@ CHANGES IN VERSION 0.3-1 (2011-04-16)
       and chebApprox().
 
 CHANGES IN VERSION 0.3-0 (2011-04-09)
-
-  OTHER CHANGES
 
     o New version of news.Rd, news.pdf.
 
@@ -295,8 +293,6 @@ CHANGES IN VERSION 0.2-4
 
     o polycnv() for polynomial multiplication.
 
-  OTHER CHANGES
-
     o Functions extgcd(), gcd(), and lcm() have been renamed to extGCD(),
       GCD(), and LCM() respectively.
 
@@ -336,8 +332,6 @@ RESTARTED AS VERSION 0.2-0
 
     o Package renamed to 'pracma' to avoid name clashes with packages
       such as 'matlab' that are sticking closer to the original.
-
-  OTHER CHANGES
 
     o Added 'pracma-package' section to the manual.
 
@@ -396,8 +390,6 @@ CHANGES IN VERSION 0.1-6
     o Generate special matrices hankel(), rosser(), and wilkinson().
       kron() is an alias for the R function kronecker().
 
-  OTHER CHANGES
-
     o Renamed factors() to ifactor() to distiguish it more clearly from
       factors as used in R.
 
@@ -435,8 +427,6 @@ CHANGES IN VERSION 0.1-3
       polyint(), and polyval().
 
     o roots() returns real and complex roots of polynomials.
-
-  OTHER CHANGES
 
     o Simplified the trapz() function.
 

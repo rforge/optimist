@@ -1,13 +1,13 @@
-\name{quadQK15}
-\alias{quadQK15}
+\name{quadgk}
+\alias{quadgk}
 \title{
-  Gaussian Quadrature
+  Gauss-Kronrod Quadrature
 }
 \description{
-  Gaussian quadrature.
+  Gaussian-Kronrod quadrature formula.
 }
 \usage{
-quadQK15(f, a, b, ...)
+quadgk(f, a, b, ...)
 }
 \arguments{
   \item{f}{function to be integrated.}
@@ -15,7 +15,8 @@ quadQK15(f, a, b, ...)
   \item{...}{variables to be passed to the function.}
 }
 \details{
-  Gaussian quadrature of degree 15 with Gauss-Kronrod for error estimation.
+  Gaussian quadrature of degree 15 with Gauss-Kronrod for error estimation,
+  the \code{quadQK15} procedure in the QUADPACK library.
 }
 \value{
   List of value and absolute error.
@@ -28,14 +29,15 @@ quadQK15(f, a, b, ...)
   HwB  email: <hwborchers@googlemail.com>
 }
 \note{
-  The function needs to be vectorized (though this could easily be changed).
+  The function needs to be vectorized (though this could easily be changed),
+  but the function does not need to be defined at the end points.
 }
 \seealso{
   \code{\link{romberg}}
 }
 \examples{
-quadQK15(sin, 0, pi)  #  2.000000000001791 , rel.error: 1.14e-12
-quadQK15(exp, 0, 1)   #  1.718281828459045 , rel.error: 0
+quadgk(sin, 0, pi)  #  2.000000000001791 , rel.error: 1.14e-12
+quadgk(exp, 0, 1)   #  1.718281828459045 , rel.error: 0
                       #  1.718281828459045 , i.e. exp(1) - 1
 }
 \keyword{ math }

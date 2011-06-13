@@ -6,7 +6,9 @@
 romberg <- function(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
 {
     stopifnot(is.numeric(a), is.numeric(b),
-              length(a) == 1, length(b) == 1, a < b)
+              length(a) == 1, length(b) == 1)
+
+    if (a == b) return(list(Q = 0, rel.error = 0, j = 0))
 
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
@@ -39,11 +41,11 @@ romberg <- function(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
     if (k == kmax)
         warning("Maximum number of iterations has been reached.")
 
-    return(list(Q = Q[1, j], rel.error = rel.error,j = j))
+    return(list(Q = Q[1, j], rel.error = abs(rel.error) ,j = j))
 }
 
 
-quadQK15 <- function(f, a, b, ...) {
+quadgk <- function(f, a, b, ...) {
     stopifnot(is.numeric(a), is.numeric(b),
               length(a) == 1, length(b) == 1, a < b)
 
