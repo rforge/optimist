@@ -2,6 +2,26 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+
+PLANNED FOR NEXT VERSION
+
+  NEW FUNCTIONS
+
+    o quadl() recursive adaptive Gauss-Lobatto quadrature (more efficient
+      than quad() at higher accuracies with smooth integrands).
+
+    o quadv() Simpson integration for vector-valued functions.
+
+CHANGES IN VERSION 0.5-5 (2011-06-15)
+
+  NEW FUNCTIONS
+
+    o gaussHermite() and gaussLagrange() for infinite intervals.
+
+    o Fresnel integrals fresnelS() and frenelC().
+
+    o Renamed quad2d() to dblquad().
+
 CHANGES IN VERSION 0.5-4 (2011-06-12)
 
   NEW FUNCTIONS
@@ -9,12 +29,11 @@ CHANGES IN VERSION 0.5-4 (2011-06-12)
     o gaussLegendre() computes coefficients for Gauss Quadrature,
       and quad2d() uses these weights for 2-dimensional integration.
 
-    o quadinf() wrapper for quad() on infinite intervals, and
-      quadv() for vector-valued functions.
+    o quadinf() wrapper for quad() on infinite intervals.
 
     o Renamed quadQK15() to quadgk() to be compatible with Matlab.
 
-    o Added a version for rapid pi conmputation to the agm() examples.
+    o Added a version for rapid pi computation to the agm() examples.
 
 CHANGES IN VERSION 0.5-3 (2011-06-06)
 

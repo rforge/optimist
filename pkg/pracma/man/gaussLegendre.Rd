@@ -34,7 +34,7 @@ gaussLegendre(n, a, b)
   Gauss quadrature is not suitable for functions with singularities.
 }
 \seealso{
-\code{\link{quadgk}}, \code{\link{quad2d}}
+\code{\link{gaussHermite}}, \code{\link{gaussLaguerre}}
 }
 \examples{
 ##  Quadrature with Gauss-Legendre nodes and weights
