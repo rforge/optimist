@@ -10,17 +10,24 @@ PLANNED FOR NEXT VERSION
     o quadl() recursive adaptive Gauss-Lobatto quadrature (more efficient
       than quad() at higher accuracies with smooth integrands).
 
-    o quadv() Simpson integration for vector-valued functions.
+    o expm() for matrix exponentials.
+
+CHANGES IN VERSION 0.5-6 (2011-06-17)
+
+  NEW FUNCTIONS
+
+    o quadv() Gaussian quadrature for vector-valued functions, and
+      simpson2d() as non-adaptive 2-dimensional Simpson integration.
+
+    o dblquad() twofold application of internal function integrate().
 
 CHANGES IN VERSION 0.5-5 (2011-06-15)
 
   NEW FUNCTIONS
 
-    o gaussHermite() and gaussLagrange() for infinite intervals.
+    o gaussHermite() and gaussLaguerre() for infinite intervals.
 
     o Fresnel integrals fresnelS() and frenelC().
-
-    o Renamed quad2d() to dblquad().
 
 CHANGES IN VERSION 0.5-4 (2011-06-12)
 
