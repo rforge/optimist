@@ -10,7 +10,13 @@ PLANNED FOR NEXT VERSION
     o quadl() recursive adaptive Gauss-Lobatto quadrature (more efficient
       than quad() at higher accuracies with smooth integrands).
 
+CHANGES IN VERSION 0.5-7 (2011-06-18)
+
+  NEW FUNCTIONS
+
     o expm() for matrix exponentials.
+
+    o quadcc() Clenshaw-Curtis quadrature
 
 CHANGES IN VERSION 0.5-6 (2011-06-17)
 
