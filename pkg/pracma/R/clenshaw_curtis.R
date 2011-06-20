@@ -3,7 +3,7 @@
 ##
 
 
-quadcc <- function(f, a = -1, b = 1, n = 32, ...) {
+clenshaw_curtis <- function(f, a = -1, b = 1, n = 32, ...) {
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 

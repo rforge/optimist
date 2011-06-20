@@ -7,12 +7,11 @@
   Romberg Integration
 }
 \usage{
-romberg(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
+romberg(f, a, b, tol = .Machine$double.eps^(2/3), ...)
 }
 \arguments{
   \item{f}{function to be integrated.}
   \item{a, b}{end points of the interval.}
-  \item{kmax}{maximum number of iterations}
   \item{tol}{requested tolerance.}
   \item{...}{variables to be passed to the function.}
 }
@@ -21,7 +20,7 @@ romberg(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
   to a series of trapezoidal integrals.
 }
 \value{
-  List of value and absolute error.
+  List of value and relative error.
 }
 \references{
   Mathews, J. H., and K. D. Fink (1999). Numerical Methods Using Matlab.
@@ -36,7 +35,7 @@ romberg(f, a, b, kmax = 16, tol = .Machine$double.eps^(2/3), ...)
   to interchange the integration limits.
 }
 \seealso{
-  \code{\link{quadgk}}
+  \code{\link{gauss_kronrod}}
 }
 \examples{
 romberg(sin, 0, pi)  #  2.000000000000001 , rel.error: 6.6e-13

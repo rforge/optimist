@@ -15,7 +15,7 @@ gaussHermite(n)
 \details{
   Gauss-Hermite quadrature is used for integrating functions of the form
   \deqn{\int_{-\infty}^{\infty} f(x) e^{-x^2} dx}
-  over the infinite interval \eqn{]-\inf, \inf[}.
+  over the infinite interval \eqn{]-\infty, \infty[}.
 
   \code{x} and \code{w} are obtained from a tridiagonal eigenvalue problem.
   The value of such an integral is then \code{sum(w*f(x))}.

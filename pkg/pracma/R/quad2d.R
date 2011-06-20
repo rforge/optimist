@@ -3,7 +3,7 @@
 ##
 
 
-quad2d <- function(f, xa, xb, ya, yb, n = 25, ...) {
+quad2d <- function(f, xa, xb, ya, yb, n = 32, ...) {
     stopifnot(is.numeric(xa), length(xa) == 1, is.numeric(ya), length(ya) == 1,
               is.numeric(xb), length(xb) == 1, is.numeric(yb), length(yb) == 1)
 
@@ -27,7 +27,7 @@ quad2d <- function(f, xa, xb, ya, yb, n = 25, ...) {
 }
 
 
-quadv <- function(f, a, b, n = 25, ...) {
+quadv <- function(f, a, b, n = 32, ...) {
     stopifnot(is.numeric(a), length(a) == 1, is.numeric(b), length(b) == 1)
 
     fun <- match.fun(f)

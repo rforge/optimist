@@ -1,5 +1,5 @@
-\name{quadcc}
-\alias{quadcc}
+\name{clenshaw_curtis}
+\alias{clenshaw_curtis}
 \title{
   Clenshaw-Curtis Quadrature Formula
 }
@@ -7,7 +7,7 @@
   Clenshaw-Curtis Quadrature Formula
 }
 \usage{
-quadcc(f, a = -1, b = 1, n = 32, ...)
+clenshaw_curtis(f, a = -1, b = 1, n = 32, ...)
 }
 \arguments{
   \item{f}{function, the integrand, without singularities.}
@@ -28,12 +28,12 @@ quadcc(f, a = -1, b = 1, n = 32, ...)
   \url{http://www.comlab.ox.ac.uk/nick.trefethen/CC.pdf}.
 }
 \seealso{
-\code{\link{gaussLegendre}}, \code{\link{quadgk}}
+\code{\link{gaussLegendre}}, \code{\link{gauss_kronrod}}
 }
 \examples{
 ##  Quadrature with Chebyshev nodes and weights
 f <- function(x) sin(x+cos(10*exp(x))/3)
 \dontrun{ezplot(f, -1, 1, fill = TRUE)}
-cc <- quadcc(f, n = 64)  #=>  0.0325036517151 , true error > 1.3e-10
+cc <- clenshaw_curtis(f, n = 64)  #=>  0.0325036517151 , true error > 1.3e-10
 }
 \keyword{ math }

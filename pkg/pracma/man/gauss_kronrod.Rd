@@ -1,13 +1,13 @@
-\name{quadgk}
-\alias{quadgk}
+\name{gauss_kronrod}
+\alias{gauss_kronrod}
 \title{
   Gauss-Kronrod Quadrature
 }
 \description{
-  Gaussian-Kronrod quadrature formula.
+  Simple Gaussian-Kronrod quadrature formula.
 }
 \usage{
-quadgk(f, a, b, ...)
+gauss_kronrod(f, a, b, ...)
 }
 \arguments{
   \item{f}{function to be integrated.}
@@ -15,8 +15,8 @@ quadgk(f, a, b, ...)
   \item{...}{variables to be passed to the function.}
 }
 \details{
-  Gaussian quadrature of degree 15 with Gauss-Kronrod for error estimation,
-  the \code{quadQK15} procedure in the QUADPACK library.
+  Gaussian quadrature of degree 7 with Gauss-Kronrod of degree 15 for error
+  estimation, the \code{quadQK15} procedure in the QUADPACK library.
 }
 \value{
   List of value and absolute error.
@@ -36,8 +36,8 @@ quadgk(f, a, b, ...)
   \code{\link{romberg}}
 }
 \examples{
-quadgk(sin, 0, pi)  #  2.000000000001791 , rel.error: 1.14e-12
-quadgk(exp, 0, 1)   #  1.718281828459045 , rel.error: 0
-                      #  1.718281828459045 , i.e. exp(1) - 1
+gauss_kronrod(sin, 0, pi)  #  2.000000000001791 , rel.error: 1.14e-12
+gauss_kronrod(exp, 0, 1)   #  1.718281828459045 , rel.error: 0
+                           #  1.718281828459045 , i.e. exp(1) - 1
 }
 \keyword{ math }

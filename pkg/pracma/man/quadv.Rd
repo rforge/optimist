@@ -7,7 +7,7 @@
   Gaussian quadrature for vector-valued functions.
 }
 \usage{
-quadv(f, a, b, n = 25, ...)
+quadv(f, a, b, n = 32, ...)
 }
 \arguments{
   \item{f}{univariate function.}

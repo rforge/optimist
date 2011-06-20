@@ -7,7 +7,7 @@
   Two-dimensional Gaussian Quadrature.
 }
 \usage{
-quad2d(f, xa, xb, ya, yb, n = 25, ...)
+quad2d(f, xa, xb, ya, yb, n = 32, ...)
 }
 \arguments{
   \item{f}{function of two variables; needs to be vectorized.}
