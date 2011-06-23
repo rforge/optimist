@@ -12,7 +12,8 @@ quadinf <- function(f, xa, xb, tol = .Machine$double.eps^0.5, ...) {
     g <- function(x) (1/x^2) * f(1/x)
 
     # Quadrature function will be selectable in the future
-    integ <- function(f, xa, xb) quad(f, xa, xb, tol = tol)
+    integ <- function(f, xa, xb)
+        integrate(f, xa, xb, subdivisions = 512, rel.tol = tol)$value
 
     if (xa == xb) {
         Q <- 0

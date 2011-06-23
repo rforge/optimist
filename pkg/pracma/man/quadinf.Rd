@@ -43,9 +43,9 @@ quadinf(f, xa, xb, tol = .Machine$double.eps^0.5, ...)
 f <- function(x) exp(-x^2)
 quadinf(f, -Inf, 0)  #=> 0.886226925756445 with abs. error 3e-10 (sqrt(pi)/2)
 quadinf(f, 0, Inf)   # same
-quadinf(f, -Inf, -1, tol = 1e-15) - integrate(f, -Inf, -1)$value
-quadinf(f, -Inf,  1, tol = 1e-15) - integrate(f, -Inf,  1)$value
-quadinf(f, -1,  Inf, tol = 1e-15) - integrate(f, -1,  Inf)$value
-quadinf(f,  1,  Inf, tol = 1e-15) - integrate(f, -Inf, -1)$value
+quadinf(f, -Inf, -1, tol = 1e-12) - integrate(f, -Inf, -1)$value
+quadinf(f, -Inf,  1, tol = 1e-12) - integrate(f, -Inf,  1)$value
+quadinf(f, -1,  Inf, tol = 1e-12) - integrate(f, -1,  Inf)$value
+quadinf(f,  1,  Inf, tol = 1e-12) - integrate(f, -Inf, -1)$value
 }
 \keyword{ math }
