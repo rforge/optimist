@@ -38,5 +38,5 @@ gauss_kronrod <- function(f, a, b, ...) {
     G7  <- sum(c7 * y7)
     K15 <- sum(c15 * y15)
 
-    return(list(value = G7 * (b-a)/2, abs.error = abs(G7 - K15)))
+    return(list(value = K15 * (b-a)/2, rel.error = abs(G7 - K15)))
 }

@@ -56,5 +56,12 @@ A <- matrix(c(-49, -64, 24, 31), 2, 2)
 expm(A)
 # -0.7357588 0.5518191
 # -1.4715176 1.1036382
+
+##  System of linear differential equations: y' = M y  (y = c(y1, y2, y3))
+M <- matrix(c(2,-1,1, 0,3,-1, 2,1,3), 3, 3, byrow=TRUE)
+M
+C1 <- 0.5; C2 <- 1.0; C3 <- 1.5
+t  <- 2.0; Mt <- expm(t * M)
+yt <- Mt %*% c(C1, C2, C3)       # [y1,y2,y3](t) = [C1, C2, C3] %*% t(Mt)
 }
 \keyword{ math }

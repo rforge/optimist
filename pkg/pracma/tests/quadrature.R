@@ -69,11 +69,11 @@ all.equal(simpadpt(f4, 0, pi, tol=1e-12),      2.0,
 
 # Gauss-Kronrod
 all.equal(gauss_kronrod(f1, 0, pi)$value, 12.0703463163896,
-          tolerance = 1e-10)
+          tolerance = 1e-13)
 all.equal(gauss_kronrod(f2, -1, 1)$value,  0.549360306778006,       # BAD
-          tolerance = 1e-1)
-all.equal(gauss_kronrod(f3, 0, 2)$value,  -0.460501533846733,       # BAD
           tolerance = 1e-2)
+all.equal(gauss_kronrod(f3, 0, 2)$value,  -0.460501533846733,       # Bad
+          tolerance = 1e-5)
 all.equal(gauss_kronrod(f4, 0, pi)$value,  2.0,                     # BAD
           tolerance = 1e-0)
 

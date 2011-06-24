@@ -19,7 +19,7 @@ gauss_kronrod(f, a, b, ...)
   estimation, the \code{quadQK15} procedure in the QUADPACK library.
 }
 \value{
-  List of value and absolute error.
+  List of value and relative error.
 }
 \references{
   Fausett, L. V. (2007). Applied Numerical Analysis Using Matlab.
@@ -36,7 +36,7 @@ gauss_kronrod(f, a, b, ...)
   \code{\link{romberg}}
 }
 \examples{
-gauss_kronrod(sin, 0, pi)  #  2.000000000001791 , rel.error: 1.14e-12
+gauss_kronrod(sin, 0, pi)  #  2.000000000000000 , rel.error: 1.14e-12
 gauss_kronrod(exp, 0, 1)   #  1.718281828459045 , rel.error: 0
                            #  1.718281828459045 , i.e. exp(1) - 1
 }

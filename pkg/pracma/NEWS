@@ -3,11 +3,21 @@
 ------------------------------------------------------------------------------
 
 
-PLANNED FOR NEXT VERSION
+CHANGES IN VERSION 0.6-1 (2011-06-25)
+
+    o Changed gauss_kronrod() and clenshaw_curtis() to become adaptive
+      integration routines.
+
+CHANGES IN VERSION 0.6-0 (2011-06-24)
+
+    o muller() Muller's root finding method.
 
     o Added differential equation example to expm()'s help page.
 
-CHANGES IN VERSION 0.5-9 (2011-06-24)
+    o Changed NEWS file to become simpler (no subsections);
+      updated the NEWS.Rd, NEWS.pdf files.
+
+CHANGES IN VERSION 0.5-9 (2011-06-23)
 
   NEW FUNCTIONS
 
@@ -31,7 +41,7 @@ CHANGES IN VERSION 0.5-7 (2011-06-18)
 
     o expm() for matrix exponentials.
 
-    o clenshaw_curtis() the Clenshaw-Curtis quadrature
+    o clenshaw_curtis() the Clenshaw-Curtis quadrature formula.
 
 CHANGES IN VERSION 0.5-6 (2011-06-17)
 
