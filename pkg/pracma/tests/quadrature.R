@@ -5,6 +5,7 @@
 
 quad <- pracma::quad
 quadl <- pracma::quadl
+quadgk <- pracma::quadgk
 quadgr <- pracma::quadgr
 quadinf <- pracma::quadinf
 quad2d <- pracma::quad2d
@@ -47,7 +48,7 @@ all.equal(quadl(f3, 0, 2, tol=1e-9),    -0.460501533846733,
 all.equal(quadl(f4, 0, pi, tol=1e-12),   2.0,
           tolerance = 1e-12)
 
-# Gauss-Richardson (quadgr)
+# quadgr (Gauss-Richardson)
 all.equal(quadgr(f1, 0, pi, tol=1e-12)$value, 12.0703463163896,
           tolerance = 1e-13)
 all.equal(quadgr(f2, -1, 1, tol=1e-12)$value,  0.549360306778006,
@@ -56,6 +57,16 @@ all.equal(quadgr(f3, 0, 2, tol=1e-12)$value,  -0.460501533846733,
           tolerance = 1e-15)
 all.equal(quadgr(f4, 0, pi, tol=1e-12)$value,  2.0,
           tolerance = 1e-15)
+
+# quadgk (Adaptive Gauss-Kronrod)
+all.equal(quadgk(f1, 0, pi), 12.0703463163896,
+          tolerance = 1e-13)
+all.equal(quadgk(f2, -1, 1),  0.549360306778006,
+          tolerance = 1e-15)
+all.equal(quadgk(f3, 0, 2),  -0.460501533846733,
+          tolerance = 1e-13)
+all.equal(quadgk(f4, 0, pi, tol = 1e-12),  2.0,
+          tolerance = 1e-12)
 
 # Adaptive Simpson (simpadpt)
 all.equal(simpadpt(f1, 0, pi, tol=1e-12),     12.0703463163896,
@@ -159,7 +170,7 @@ all.equal(simpadpt(f11, 1, 0, tol = 1e-12),  1.64493406684823,
           tolerance = 1e-11)           
 all.equal(simpadpt(f12, 0, 1, tol = 1e-12), -0.577215664901533,
           tolerance = 5e-11)           
-all.equal(simpadpt(f13, 0, 1, tol = 1e-12),  2.0,
+all.equal(simpadpt(f13, 0, 1, tol = 1e-10),  2.0,
           tolerance = 1e-7)                                         # Bad
 
 ##  E o F

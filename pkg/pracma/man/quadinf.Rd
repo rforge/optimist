@@ -17,13 +17,13 @@ quadinf(f, xa, xb, tol = .Machine$double.eps^0.5, ...)
   \item{\dots}{additional arguments to be passed to \code{f}.}
 }
 \details{
-  \code{quadinfo} is simply a wrapper for \code{quad}. When one of
+  \code{quadinf} is simply a wrapper for \code{integrate}. When one of
   the integration limits become infinite, the transformed function
   \code{(1/x^2)*f(1/x)} is used. This works fine if the new function
   does not have a too bad behavior at the limit(s).
 
   The function needs to be vectorized as long as this is required by
-  \code{quad}.
+  \code{integrate}.
 }
 \value{
   A single numeric value, the computed integral.
@@ -36,7 +36,7 @@ quadinf(f, xa, xb, tol = .Machine$double.eps^0.5, ...)
   ``bivariate vector numerical integration with infinite range''
 }
 \seealso{
-\code{\link{quad}}
+\code{\link{integrate}}
 }
 \examples{
 ##  We will look at the error function exp(-x^2)

@@ -33,7 +33,7 @@ gauss_kronrod(f, a, b, ...)
   but the function does not need to be defined at the end points.
 }
 \seealso{
-  \code{\link{romberg}}
+  \code{\link{quadgk}}, \code{\link{romberg}}
 }
 \examples{
 gauss_kronrod(sin, 0, pi)  #  2.000000000000000 , rel.error: 1.14e-12
