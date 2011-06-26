@@ -5,9 +5,11 @@
 
 PLANNED FOR NEXT VERSION
 
-    o padefit() Pade approximation.
-
     o ratinterp() rational interpolation.
+
+CHANGES IN VERSION 0.6-2 (2011-06-26)
+
+    o pade() Pade approximation.
 
 CHANGES IN VERSION 0.6-1 (2011-06-25)
 
