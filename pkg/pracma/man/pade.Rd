@@ -38,18 +38,20 @@ pade(p1, p2 = c(1), d1 = 5, d2 = 5)
   HwB  email: <hwborchers@googlemail.com>
 }
 \references{
-  Fausett, L. V. (2008). Applied Numerical Analysis Using Matlab.
-  Second Edition, Pearson Education. 
+  Press, W. H., S. A. Teukolsky, W. T Vetterling, and B. P. Flannery (2007).
+  Numerical Recipes: The Art of Numerical Computing. Third Edition,
+  Cambridge University Press, New York.
 }
 \seealso{
-  \code{taylor}, \code{ratInterp}
+  \code{\link{taylor}}, \code{ratInterp}
 }
 \examples{
+##  Exponential function
 p1 <- c(1/24, 1/6, 1/2, 1.0, 1.0)  # Taylor series of exp(x) at x=0
 R  <- pade(p1); r1 <- R$r1; r2 <- R$r2
 f1 <- function(x) polyval(r1, x) / polyval(r2, x)
-xs <- seq(-1, 1, length.out=51); ys1 <- exp(xs); ys2 <- f1(xs)
 \dontrun{
+xs <- seq(-1, 1, length.out=51); ys1 <- exp(xs); ys2 <- f1(xs)
 plot(xs, ys1, type = "l", col="blue")
 lines(xs, ys2, col = "red")
 grid()}
