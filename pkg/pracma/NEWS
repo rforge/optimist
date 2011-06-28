@@ -3,9 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-PLANNED FOR NEXT VERSION
+CHANGES IN VERSION 0.6-3 (2011-06-28)
 
-    o ratinterp() rational interpolation.
+    o rationalfit() rational function approximation
+
+    o ratinterp() rational interpolation a la Burlisch-Stoer.
 
 CHANGES IN VERSION 0.6-2 (2011-06-26)
 

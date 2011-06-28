@@ -46,6 +46,7 @@ dilog <- function(x) simpadpt(flog, x, 0, tol = 1e-12)
 dilog(1)  # 1.64493406685615
           # 1.64493406684823 = pi^2/6
 
+\dontrun{
 N <- 51
 xs <- seq(-5, 1, length.out = N)
 ys <- numeric(N)
@@ -53,4 +54,5 @@ for (i in 1:N) ys[i] <- dilog(xs[i])
 plot(xs, ys, type = "l", col = "blue",
              main = "Dilogarithm function")
 grid()}
+}
 \keyword{ math }
