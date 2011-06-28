@@ -6,6 +6,9 @@ rationalfit <- function(x, y, d1 = 5, d2 = 5) {
     if (length(y) != n)
         stop("Arguments 'x' ans 'y' must be of the same length.")
 
+    if (is.unsorted(x))
+        stop("Argument 'x' must be a sorted vector")
+
     p <- find(!is.finite(y))
 
     dinf <- c()
