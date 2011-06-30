@@ -3,6 +3,18 @@
 ------------------------------------------------------------------------------
 
 
+PLANNED FOR NEXT VERSION
+
+    o Adams-Bashford and Adams-Moulton methods.
+
+    o rand() using Matlab's former random number generator.
+
+CHANGES IN VERSION 0.6-4 (2011-06-30)
+
+    o Changed the description to be more precise about the package.
+
+    o droplet_e() generation of digits for the Euler number.
+
 CHANGES IN VERSION 0.6-3 (2011-06-28)
 
     o rationalfit() rational function approximation
@@ -371,7 +383,7 @@ CHANGES IN VERSION 0.1-6
     o Generate special matrices hankel(), rosser(), and wilkinson().
       kron() is an alias for the R function kronecker().
 
-    o Renamed factors() to ifactor() to distiguish it more clearly from
+    o Renamed factors() to ifactor() to distinguish it more clearly from
       factors as used in R.
 
 CHANGES IN VERSION 0.1-5

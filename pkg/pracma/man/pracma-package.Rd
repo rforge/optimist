@@ -6,17 +6,60 @@
 Practical Numerical Math Routines
 }
 \description{
-  This package provides R implementations of more advanced
-  math functions from Matlab and Octave (and the Euler Math Toolbox)
-  with a special view on optimization and time series routines.
+  This package provides R implementations of advanced functions in
+  numerical analysis, with a special view on on optimization and time
+  series routines. Uses Matlab/Octave function names where appropriate
+  to simplify porting.
 
-  Some of these realizations are the result of courses on Scientific
+  Some of these implementations are the result of courses on Scientific
   Computing (``Wissenschaftliches Rechnen'') and are mostly intended to
   demonstrate how to implement certain algorithms in R/S.
 }
 \details{
-  Several implementations of root finding routines and numerical sorting
-  are provided as examples.
+  The package encompasses functions from all areas of numerical analysis,
+  for example:
+  \itemize{
+    \item Root finding and minimization of univariate functions,\cr
+    e.g. Newton-Raphson, Brent-Dekker, Fibonacci or `golden ratio' search.
+    \item Handling polynomials, including roots and polynomial fitting,\cr
+    e.g. Laguerre's and Muller's methods.
+    \item Interpolation and function approximation,\cr
+    barycentric Lagrange interpolation, Pade and rational interpolation,
+    Chebyshev or trigonometric approximation.
+    \item Some special functions,\cr
+    e.g. Fresnel integrals, Riemann's Zeta or the complex Gamma function,
+    and Lambert's W computed iteratively through Newton's method.
+    \item Special matrices, e.g. Hankel, Rosser, Wilkinson
+    \item Numerical differentiation and integration,\cr
+    Richardson approach and ``complex step'' derivatives, adaptive
+    Simpson and Lobatto integration and adaptive Gauss-Kronrod quadrature.
+    \item Solvers for ordinary differential equations and systems,\cr
+    classical Runge-Kutta, ODE23, or Adams-Bashford and Adams-Moulton
+    approaches.
+    \item Some functions from number theory,\cr
+    such as primes and prime factorization, continuous fractions, the
+    extended Euclidean algorithm, primitive roots, etc.
+    \item Sorting routines, e.g. recursive quickstep.
+    \item Several functions for string manipulation and regular search,
+    all wrapped and named as their Matlab correspondences.
+  }
+
+  It serves two main goals:
+  \itemize{
+    \item Collecting R scripts that can be demonstrated in courses on
+    `Numerical Analysis' or `Scientific Computing' using R/S as the chosen
+    programming language.
+    \item Wrapping functions with appropriate Matlab names to simplify
+    porting programs from Matlab or Octave to R.
+  }
+
+  Besides that, many of these functions could be called in R applications
+  as they do not have comparable counterparts in R packages (at least at
+  this moment).
+
+  All referenced books have been utilized in one way or another ---
+  I consider them to be the ``best of the best'' in their arena.
+  Web links have been indicated where reasonable.
 }
 \author{
 Hans W Borchers
@@ -92,5 +135,6 @@ Maintainer: HwB  <hwborchers@googlemail.com>
 }
 \examples{
 \dontrun{
-tail(primes(1e7))  # the last 5 prime numbers below 10,000,000 .}
+##  See examples in the help files for all functions.
+}
 }
