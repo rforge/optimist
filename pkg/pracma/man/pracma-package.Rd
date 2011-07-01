@@ -6,14 +6,15 @@
 Practical Numerical Math Routines
 }
 \description{
-  This package provides R implementations of advanced functions in
+  This package provides R implementations of more advanced functions in
   numerical analysis, with a special view on on optimization and time
   series routines. Uses Matlab/Octave function names where appropriate
   to simplify porting.
 
   Some of these implementations are the result of courses on Scientific
   Computing (``Wissenschaftliches Rechnen'') and are mostly intended to
-  demonstrate how to implement certain algorithms in R/S.
+  demonstrate how to implement certain algorithms in R/S. Others are
+  implementations of algorithms found in textbooks.
 }
 \details{
   The package encompasses functions from all areas of numerical analysis,
@@ -34,14 +35,13 @@ Practical Numerical Math Routines
     Richardson approach and ``complex step'' derivatives, adaptive
     Simpson and Lobatto integration and adaptive Gauss-Kronrod quadrature.
     \item Solvers for ordinary differential equations and systems,\cr
-    classical Runge-Kutta, ODE23, or Adams-Bashford and Adams-Moulton
-    approaches.
+    classical Runge-Kutta, ODE23, or Adams-Bashford-Moulton method.
     \item Some functions from number theory,\cr
     such as primes and prime factorization, continuous fractions, the
     extended Euclidean algorithm, primitive roots, etc.
     \item Sorting routines, e.g. recursive quickstep.
     \item Several functions for string manipulation and regular search,
-    all wrapped and named as their Matlab correspondences.
+    all wrapped and named similar to their Matlab analogues.
   }
 
   It serves two main goals:

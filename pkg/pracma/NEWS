@@ -5,9 +5,12 @@
 
 PLANNED FOR NEXT VERSION
 
-    o Adams-Bashford and Adams-Moulton methods.
-
     o rand() using Matlab's former random number generator.
+
+CHANGES IN VERSION 0.6-5 (2011-07-01)
+
+    o Adams-Bashford and Adams-Moulton (i.e., multi-step) methods
+      for ordinary differential equations.
 
 CHANGES IN VERSION 0.6-4 (2011-06-30)
 

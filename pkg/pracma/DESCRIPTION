@@ -1,15 +1,15 @@
 Package: pracma
 Type: Package
 Title: Practical Numerical Math Functions
-Version: 0.6-4
+Version: 0.6-5
 Depends: R (>= 2.10.1)
-Date: 2011-06-30
+Date: 2011-07-01
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
-Description: This package provides R implementations of advanced functions
-    in numerical analysis, with a special view on on optimization and time
-    series routines. Uses Matlab/Octave function names where appropriate to
-    simplify porting.
+Description: This package provides R implementations of functions in
+    numerical analysis, with a special view on on optimization and time
+    series routines. Uses Matlab/Octave function names where appropriate
+    to simplify porting.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
