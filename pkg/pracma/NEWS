@@ -5,18 +5,33 @@
 
 PLANNED FOR NEXT VERSION
 
-    o rand() using Matlab's former random number generator.
+    o ode45() just a Runge-Kutta of order (4,5), but given a Matlab name
+      to have a kind of `ersatz' in porting situations.
+
+    o Generalize newtonsys() to m functions in n variables (n != m).
+      Or find a good way of implementing fsolve().
+
+CHANGES IN VERSION 0.6-6 (2011-07-02)
+
+    o charpoly() computes the characteristic polynomial, the determinant,
+      and the inverse for matrices that are relativly small, applying the
+      Faddejew-Leverrier method.
+
+    o froots() to find *all* roots (also of second or higher order) of
+      a univariate function in a given interval. The same with fmins()
+      to find all minima.
 
 CHANGES IN VERSION 0.6-5 (2011-07-01)
 
     o Adams-Bashford and Adams-Moulton (i.e., multi-step) methods
-      for ordinary differential equations.
+      for ordinary differential equations in function abm3pc().
 
 CHANGES IN VERSION 0.6-4 (2011-06-30)
 
     o Changed the description to be more precise about the package.
 
     o droplet_e() generation of digits for the Euler number.
+      (Should be followed by a function droplet_pi().)
 
 CHANGES IN VERSION 0.6-3 (2011-06-28)
 
