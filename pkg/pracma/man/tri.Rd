@@ -2,7 +2,7 @@
 \alias{tril}
 \alias{triu}
 \title{
-  Triangular Matrices
+  Triangular Matrices (Matlab Style)
 }
 \description{
   Extract lower or upper triangular part of a matrix.
