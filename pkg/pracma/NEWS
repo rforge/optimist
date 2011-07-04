@@ -3,13 +3,12 @@
 ------------------------------------------------------------------------------
 
 
-PLANNED FOR NEXT VERSION
+CHANGES IN VERSION 0.6-7 (2011-07-04)
 
-    o ode45() just a Runge-Kutta of order (4,5), but given a Matlab name
-      to have a kind of `ersatz' in porting situations.
+    o newtonpoly(), neville() Newton's and Neville's method for
+      polynomial interpolation.
 
-    o Generalize newtonsys() to m functions in n variables (n != m).
-      Or find a good way of implementing fsolve().
+    o tril(), triu() extracting triangular matrices (Matlab style)
 
 CHANGES IN VERSION 0.6-6 (2011-07-02)
 
