@@ -107,9 +107,6 @@ Maintainer: HwB  <hwborchers@googlemail.com>
   \url{http://www.nrbook.com/a/bookcpdf.php} [chapters], or
   \url{http://apps.nrbook.com/c/index.html} [pages].
 
-  Quarteroni, A., and F. Saleri (2006). Scientific Computing with Matlab
-  and Octave. Second Edition, Springer-Verlag, Berlin Heidelberg.
-
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.
 

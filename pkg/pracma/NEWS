@@ -3,12 +3,24 @@
 ------------------------------------------------------------------------------
 
 
+PLANNED FOR NEXT VERSION
+
+    o Generalize newtonsys() to m functions in n variables (n != m).
+
+    o Runge-Kutta-Fehlberg method of order (5,4) to be named ode45().
+
+CHANGES IN VERSION 0.6-8 (2011-07-05)
+
+    o triquad() Gaussian quadrature over triangles.
+
+    o cotes() Newton-Cotes integration formulae for 2 to 8 nodes.
+
 CHANGES IN VERSION 0.6-7 (2011-07-04)
 
-    o newtonpoly(), neville() Newton's and Neville's method for
+    o newtonpoly(), neville() Newton's and Neville's methods for
       polynomial interpolation.
 
-    o tril(), triu() extracting triangular matrices (Matlab style)
+    o tril(), triu() extracting triangular matrices (Matlab style).
 
 CHANGES IN VERSION 0.6-6 (2011-07-02)
 
