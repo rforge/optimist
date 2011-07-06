@@ -5,9 +5,11 @@
 
 PLANNED FOR NEXT VERSION
 
-    o Generalize newtonsys() to m functions in n variables (n != m).
+    o Complement Newton-Raphson with the bisection approach.
 
-    o Runge-Kutta-Fehlberg method of order (5,4) to be named ode45().
+CHANGES IN VERSION 0.6-9 (2011-07-06)
+
+    o Runge-Kutta-Fehlberg method of order (5,4).
 
 CHANGES IN VERSION 0.6-8 (2011-07-05)
 
