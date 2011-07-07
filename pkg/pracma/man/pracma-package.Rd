@@ -55,11 +55,10 @@ Practical Numerical Math Routines
 
   Besides that, many of these functions could be called in R applications
   as they do not have comparable counterparts in R packages (at least at
-  this moment).
+  this moment). 
 
-  All referenced books have been utilized in one way or another ---
-  I consider them to be the ``best of the best'' in their arena.
-  Web links have been indicated where reasonable.
+  All referenced books have been utilized in one way or another.
+  Web links have been provided where reasonable.
 }
 \author{
 Hans W Borchers

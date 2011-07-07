@@ -26,7 +26,7 @@ neville(x, y, xs)
   Each textbook on numerical analysis.
 }
 \seealso{
-  \code{\link{newtonpoly}}, \code{\link{barylag}}
+  \code{\link{newtonInterp}}, \code{\link{barylag}}
 }
 \examples{
 p <- poly(c(1, 2, 3))

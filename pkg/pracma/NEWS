@@ -5,7 +5,14 @@
 
 PLANNED FOR NEXT VERSION
 
-    o Complement Newton-Raphson with the bisection approach.
+    o ode45() implementing the approach by Dormand and Prince.
+      [Matlab's ode23() is based on Bogacki and Shampine.]
+
+CHANGES IN VERSION 0.7-0 (2011-07-07)
+
+    o Sigmoid and Einstein functions.
+
+    o Updated NEWS.RD, NEWS.pdf
 
 CHANGES IN VERSION 0.6-9 (2011-07-06)
 
@@ -19,8 +26,8 @@ CHANGES IN VERSION 0.6-8 (2011-07-05)
 
 CHANGES IN VERSION 0.6-7 (2011-07-04)
 
-    o newtonpoly(), neville() Newton's and Neville's methods for
-      polynomial interpolation.
+    o lagrangeInterp(), newtonInterp() Lagrange and Newton polynomial
+      interpolation, neville() Neville's methods.
 
     o tril(), triu() extracting triangular matrices (Matlab style).
 
@@ -243,7 +250,7 @@ CHANGES IN VERSION 0.3-5 (2011-04-23)
 
     o Lambert W function lambertWp() for the real principal branch.
 
-    o ``Complex Step'' derivation with complexstep() and jacobiancsd().
+    o ``Complex Step'' derivation with complexstep() and complexstepJ().
 
 CHANGES IN VERSION 0.3-4 (2011-04-21)
 
