@@ -1,5 +1,5 @@
-\name{einstein}
-\alias{E}
+\name{einsteinF}
+\alias{einsteinF}
 \title{
   Einstein Functions
 }
@@ -7,7 +7,7 @@
   Einstein functions.
 }
 \usage{
-E(d, x)
+einsteinF(d, x)
 }
 \arguments{
   \item{x}{numeric or complex vector.}
@@ -18,10 +18,10 @@ E(d, x)
   oscillator in one degree of freedom.
 
   The functions are defined as:
-  \deqn{E_1(x) = \frac{x^2 e^x}{(e^x - 1)^2}}
-  \deqn{E_2(x) = \frac{x}{e^x - 1}}
-  \deqn{E_3(x) = ln(1 - e^{-x})}
-  \deqn{E_4(x) = \frac{x}{e^x - 1} - ln(1 - e^{-x})}
+  \deqn{E1(x) = \frac{x^2 e^x}{(e^x - 1)^2}}
+  \deqn{E2(x) = \frac{x}{e^x - 1}}
+  \deqn{E3(x) = ln(1 - e^{-x})}
+  \deqn{E4(x) = \frac{x}{e^x - 1} - ln(1 - e^{-x})}
 
   \code{E1} has an inflection point as \code{x=2.34694130...}.
 }
@@ -31,23 +31,23 @@ E(d, x)
 \examples{
 \dontrun{
 x1 <- seq(-4, 4, length.out = 101)
-y1 <- E(1, x1)
+y1 <- einsteinF(1, x1)
 plot(x1, y1, type = "l", col = "red",
              xlab = "", ylab = "", main = "Einstein Function E1(x)")
 grid()
 
-y2 <- E(2, x1)
+y2 <- einsteinF(2, x1)
 plot(x1, y2, type = "l", col = "red",
              xlab = "", ylab = "", main = "Einstein Function E2(x)")
 grid()
 
 x3 <- seq(0, 5, length.out = 101)
-y3 <- E(3, x3)
+y3 <- einsteinF(3, x3)
 plot(x3, y3, type = "l", col = "red",
              xlab = "", ylab = "", main = "Einstein Function E3(x)")
 grid()
 
-y4 <- E(4, x3)
+y4 <- einsteinF(4, x3)
 plot(x3, y4, type = "l", col = "red",
              xlab = "", ylab = "", main = "Einstein Function E4(x)")
 grid()}

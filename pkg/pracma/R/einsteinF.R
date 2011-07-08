@@ -1,9 +1,9 @@
 ##
-##  e i n s t e i n . R  Einstein Functions
+##  e i n s t e i n F . R  Einstein Functions
 ##
 
 
-E <- function(d, x) {
+einsteinF <- function(d, x) {
     stopifnot(is.numeric(x) || is.complex(x))
     fi <- which(x == 0)
 
