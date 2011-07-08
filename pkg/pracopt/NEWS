@@ -1,0 +1,17 @@
+------------------------------------------------------------------------------
+  pracopt                                                               NEWS
+------------------------------------------------------------------------------
+
+Changes in Version 0.1-2 (2011-05-31)
+
+    o Package renamed from 'optimtest' to 'pracopt'.
+
+Changes in Version 0.1-1 (2011-05-31)
+
+    o simpleEA(), simple evolutionary algorithm for minimum finding.
+
+    o Test functions trefethen() and wagon().
+
+Initial Version 0.1-0
+
+    o Setting up the package structure and required files.
