@@ -1,15 +1,13 @@
-Package: pracopt
+Package: optitest
 Type: Package
-Title: Practical Optimization
+Title: Optimization Test Routines
 Version: 0.1-2
 Date: 2011-06-30
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
-Description: 
-    'pracopt' provides functions for local and global optimization
-    both constrained and unconstrained, includes an evolutionary
-    algorithm, a bag of test functions, and other useful tools for
-    practical optimization.
+Description: optitest provides test functions for local and global
+    optimization, both constrained and unconstrained, and includes
+    a simple evolutionary algorithm for test purposes.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
