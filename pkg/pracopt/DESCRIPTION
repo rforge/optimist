@@ -1,0 +1,15 @@
+Package: pracopt
+Type: Package
+Title: Practical Optimization
+Version: 0.1-2
+Date: 2011-06-30
+Author: Hans W Borchers
+Maintainer: HwB <hwborchers@googlemail.com>
+Description: 
+    'pracopt' provides functions for local and global optimization
+    both constrained and unconstrained, includes an evolutionary
+    algorithm, a bag of test functions, and other useful tools for
+    practical optimization.
+License: GPL (>= 3)
+LazyLoad: yes
+LazyData: yes
