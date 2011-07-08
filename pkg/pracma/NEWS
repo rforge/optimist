@@ -8,6 +8,10 @@ PLANNED FOR NEXT VERSION
     o ode45() implementing the approach by Dormand and Prince.
       [Matlab's ode23() is based on Bogacki and Shampine.]
 
+CHANGES IN VERSION 0.7-1 (2011-07-07)
+
+    o 
+
 CHANGES IN VERSION 0.7-0 (2011-07-07)
 
     o Sigmoid and Einstein functions.

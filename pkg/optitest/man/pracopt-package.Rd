@@ -1,22 +1,22 @@
-\name{optitest-package}
-\alias{optitest-package}
-\alias{optitest}
+\name{pracopt-package}
+\alias{pracopt-package}
+\alias{pracopt}
 \docType{package}
 \title{
   Optimization Test Routines
 }
 \description{
-         Optitest provides test functions for local and global
+         pracopt provides test functions for local and global
 optimization, both constrained and unconstrained, and includes
 a simple evolutionary algorithm for test purposes.
 }
 \details{
 \tabular{ll}{
-Package: \tab optitest\cr
+Package: \tab pracopt\cr
 Type: \tab Package\cr
-Version: \tab 0.1-1\cr
-Date: \tab 2011-05-31\cr
-License: \tab What license is it under?\cr
+Version: \tab 0.1-2\cr
+Date: \tab 2011-06-30\cr
+License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 }
 }

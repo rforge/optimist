@@ -1,7 +1,10 @@
 ------------------------------------------------------------------------------
-  optitest                                                              NEWS
+  pracopt                                                               NEWS
 ------------------------------------------------------------------------------
 
+Changes in Version 0.1-2 (2011-05-31)
+
+    o Package renamed from 'optimtest' to 'pracopt'.
 
 Changes in Version 0.1-1 (2011-05-31)
 
