@@ -10,7 +10,7 @@ PLANNED FOR NEXT VERSION
 
 CHANGES IN VERSION 0.7-1 (2011-07-07)
 
-    o 
+    o cross() has been vectorized.
 
 CHANGES IN VERSION 0.7-0 (2011-07-07)
 
