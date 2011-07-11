@@ -8,9 +8,14 @@ PLANNED FOR NEXT VERSION
     o ode45() implementing the approach by Dormand and Prince.
       [Matlab's ode23() is based on Bogacki and Shampine.]
 
+CHANGES IN VERSION 0.7-2 (2011-07-11)
+
+    o broyden() quasi-Newton root finding method for systems of nonlinear
+      equations.
+
 CHANGES IN VERSION 0.7-1 (2011-07-07)
 
-    o cross() has been vectorized.
+    o cross() has been vectorized (remark on R-help).
 
 CHANGES IN VERSION 0.7-0 (2011-07-07)
 
