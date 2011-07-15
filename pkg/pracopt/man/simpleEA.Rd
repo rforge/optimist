@@ -1,4 +1,4 @@
-\name{Simple evolutionary algorithm}
+\name{Simple EA}
 \alias{simpleEA}
 \title{
   Simple Evolutionary Algorithm

@@ -52,7 +52,7 @@ fletcher_powell(x0, f, g = NULL,
   Using Matlab'' by L. V.Fausett.
 }
 \seealso{
-  \code{steep_descent}
+  \code{\link{steep_descent}}
 }
 \examples{
 ##  Rosenbrock function

@@ -1,4 +1,4 @@
-\name{Trefethen-Wagon test functions}
+\name{Trefethen-Wagon}
 \alias{trefethen}
 \alias{wagon}
 \title{

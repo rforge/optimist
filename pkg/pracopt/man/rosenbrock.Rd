@@ -1,0 +1,30 @@
+\name{Rosenbrock et al.}
+\alias{rosenbrock}
+\title{
+  Simple Higher-dimensional Test Functions
+}
+\description{
+  Simple and often used test function defined in higher dimensions.
+  The dimension is determined by the length of the input vector.
+}
+\usage{
+rosenbrock(x)
+}
+\arguments{
+  \item{x}{numeric vector of some length \code{n >= 2}.}
+}
+\details{
+  The Rosenbrock test function is defined as
+    \deqn{\sum_{i=1}^{n-1} (1-x_i)^2 + 100 (x_{i+1}-x_i^2)^2}
+  and has a global minimum at \code{f(1,\ldots,1)=0} and local minima at
+  \code{f(-1,1,\ldots,1)}.
+}
+\value{
+  Returns the value of the function at the specified point.
+}
+\references{
+  See the Wikipedia.
+}
+\examples{
+rosenbrock(c(1, 1, 1, 1))
+}

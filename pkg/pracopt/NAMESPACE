@@ -4,8 +4,10 @@
 
 # Public routines
 export(fletcher_powell)
+export(rosenbrock)
 export(simpleEA)
 export(trefethen)
 export(wagon)
+export(wood)
 
 # S4 Methods
