@@ -7,21 +7,21 @@ fletcher_powell <- function(x0, f, g = NULL,
                       kmax = 100, tol = .Machine$double.eps^(1/2)) {
     eps <- .Machine$double.eps
     if (tol < eps) tol <- eps
-    if (!is.numeric(kmax) || length(kmax) > 1 || k < 1)
+    if (!is.numeric(kmax) || length(kmax) > 1 || kmax < 1)
         stop("Argument 'kmax' must be a positive integer.")
     kmax <- floor(kmax)
     if (! is.numeric(x0))
         stop("Argument 'x0' must be a numeric vector.")
     n <- length(x0)
     if (n == 1)
-        stop("")
+        stop("Function 'f' is univariate; use some other optimization method.")
     
     # User provided or numerical gradient
     f <- match.fun(f)
     if (! is.null(g)) {
         g <- match.fun(g)
     } else {
-        g <- function(x) grad(f, x)   
+        g <- function(x) fpgrad(f, x)   
     }     
 
     x <- x0  # column vector?
@@ -71,6 +71,29 @@ fletcher_powell <- function(x0, f, g = NULL,
     }
     return(list(xmin = x, fmin = f(x), niter = k))
 }
+
+
+fpgrad <- function(f, x0, h = 1e-4, ...) {
+    if (!is.numeric(x0))
+        stop("Argument 'x0' must be a numeric value.")
+
+    fun <- match.fun(f)
+    f <- function(x) fun(x, ...)
+
+    if (length(f(x0)) != 1)
+        stop("Function 'f' must be a univariate function of 2 variables.")
+    n <- length(x0)
+
+    hh <- rep(0, n)
+    gr <- numeric(n)
+    for (i in 1:n) {
+        hh[i] <- h
+        gr[i] <- (-f(x0+2*hh) + 8*f(x0+hh) - 8*f(x0-hh) + f(x0-2*hh)) / (12*h)
+        hh[i] <- 0
+    }
+    return(gr)
+}
+
 
 
 

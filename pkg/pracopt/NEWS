@@ -2,6 +2,13 @@
   pracopt                                                               NEWS
 ------------------------------------------------------------------------------
 
+
+Changes in Version 0.1-3 (2011-07-15)
+
+    o fletcher_powell() Davidon-Fletcher-Powell method.
+
+    o steep_descent() steepest descent minimization method.
+
 Changes in Version 0.1-2 (2011-05-31)
 
     o Package renamed from 'optimtest' to 'pracopt'.

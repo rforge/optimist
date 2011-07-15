@@ -3,6 +3,7 @@
 ##
 
 # Public routines
+export(fletcher_powell)
 export(simpleEA)
 export(trefethen)
 export(wagon)

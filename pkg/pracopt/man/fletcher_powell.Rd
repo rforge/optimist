@@ -8,7 +8,8 @@
 
   The Davidon-Fletcher-Powell (DFP) and the Broyden-Fletcher-Goldfarb-Shanno
   (BFGS) methods are the first quasi-Newton minimization methods developed.
-  These methods differ only in some details.
+  These methods differ only in some details; in general, the BFGS approach
+  is more robust.
 }
 \usage{
 fletcher_powell(x0, f, g = NULL,
@@ -47,12 +48,26 @@ fletcher_powell(x0, f, g = NULL,
   HwB  <hwborchers@googlemail.com>
 }
 \note{
-  
+  Used some Matlab code as described in the book ``Applied Numerical Analysis
+  Using Matlab'' by L. V.Fausett.
 }
 \seealso{
-  \code{\link{steep_descent}}
+  \code{steep_descent}
 }
 \examples{
 ##  Rosenbrock function
+rosenbrock <- function(x) {
+    n <- length(x)
+    x1 <- x[2:n]
+    x2 <- x[1:(n-1)]
+    sum(100*(x1-x2^2)^2 + (1-x2)^2)
+}
+fletcher_powell(c(0, 0), rosenbrock)
+# $xmin
+# [1] 1 1
+# $fmin
+# [1] 3.951249e-19
+# $niter
+# [1] 13
 }
 \keyword{ optimize }
