@@ -123,6 +123,9 @@ Maintainer: HwB  <hwborchers@googlemail.com>
   Weisstein, E. W. (2003). CRC Concise Encyclopedia of Mathematics.
   Second Edition, Chapman & Hall/CRC Press.
   Wolfram MathWorld: \url{http://mathworld.wolfram.com/}.  
+
+  Zhang, S., and J. Jin (1996). Computation of Special Functions.
+  John Wiley & Sons. \url{http://jin.ece.illinois.edu/specfunc.html}
 }
 \keyword{ package }
 \seealso{
