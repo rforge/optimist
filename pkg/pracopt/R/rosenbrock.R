@@ -1,5 +1,5 @@
 ##
-##  r o s e n b r o c k . R  Simple Higher-dimensional Test Functions
+##  r o s e n b r o c k . R  Rosenbrock Test Function
 ##
 
 

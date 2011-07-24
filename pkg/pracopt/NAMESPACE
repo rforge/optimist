@@ -3,9 +3,12 @@
 ##
 
 # Public routines
+export(DSC_search)
 export(fletcher_powell)
+export(hooke_jeeves)
 export(rosenbrock)
 export(simpleEA)
+export(steep_descent)
 export(trefethen)
 export(wagon)
 export(wood)

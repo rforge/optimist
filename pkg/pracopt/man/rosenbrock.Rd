@@ -1,7 +1,7 @@
-\name{Rosenbrock et al.}
+\name{Rosenbrock Function}
 \alias{rosenbrock}
 \title{
-  Simple Higher-dimensional Test Functions
+  Rosenbrock Test Function
 }
 \description{
   Simple and often used test function defined in higher dimensions.
@@ -17,7 +17,7 @@ rosenbrock(x)
   The Rosenbrock test function is defined as
     \deqn{\sum_{i=1}^{n-1} (1-x_i)^2 + 100 (x_{i+1}-x_i^2)^2}
   and has a global minimum at \code{f(1,\ldots,1)=0} and local minima at
-  \code{f(-1,1,\ldots,1)}.
+  \code{f(-1,1,\ldots,1)} for \code{n>=4}.
 }
 \value{
   Returns the value of the function at the specified point.

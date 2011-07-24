@@ -19,7 +19,7 @@ steep_descent <- function (x0, f, g = NULL, info = FALSE,
 
     x <- x0
     k <- 1
-    while (k < kmax) {
+    while (k <= kmax) {
         f1 <- f(x)
         g1 <- g(x)
         z1 <- sqrt(sum(g1^2))
@@ -59,7 +59,7 @@ steep_descent <- function (x0, f, g = NULL, info = FALSE,
         if (info) cat(k, "\t", x, "\n")
         k <- k + 1
     }
-    if(k == kmax)
+    if(k > kmax)
         warning("Maximum number of iterations reached -- not converged.\n")
     return(list(xmin = NA, fmin = NA, niter = k))
 }

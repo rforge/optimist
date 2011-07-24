@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.1-4 (2011-07-24)
+
+    o DSC_search() one-dimensional Davies-Swann-Campey minimization
+
+    o hooke_jeeves() Hooke-Jeeves optimization algorithm
+
 Changes in Version 0.1-3 (2011-07-15)
 
     o Test functions rosenbrock() and wood().
