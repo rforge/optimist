@@ -10,6 +10,11 @@ PLANNED FOR NEXT VERSION
 
     o Hash functions (Python style), see "?hash".
 
+CHANGES IN VERSION 0.7.5 (2011-07-26)
+
+    o Put NEWS.RD in the /inst subdirectory (and NEWS.pdf in /doc),
+      thanks to Kurt Hornik; slightly changed the version numbering.
+
 CHANGES IN VERSION 0.7-4 (2011-07-22)
 
     o rortho() generate random orthogonal matrix of size n.
