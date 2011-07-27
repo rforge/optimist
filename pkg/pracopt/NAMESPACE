@@ -6,6 +6,7 @@
 export(DSC_search)
 export(fletcher_powell)
 export(hooke_jeeves)
+export(nelder_mead)
 export(rastrigin, rosenbrock)
 export(steep_descent)
 export(wood)
