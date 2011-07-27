@@ -12,7 +12,7 @@ PLANNED FOR NEXT VERSION
 
 CHANGES IN VERSION 0.7.5 (2011-07-26)
 
-    o Put NEWS.RD in the /inst subdirectory (and NEWS.pdf in /doc),
+    o Put NEWS.Rd in the /inst subdirectory (and NEWS.pdf in /doc),
       thanks to Kurt Hornik; slightly changed the version numbering.
 
 CHANGES IN VERSION 0.7-4 (2011-07-22)
@@ -41,7 +41,7 @@ CHANGES IN VERSION 0.7-0 (2011-07-07)
 
     o Sigmoid and Einstein functions.
 
-    o Updated NEWS.RD, NEWS.pdf
+    o Updated NEWS.Rd, NEWS.pdf
 
 CHANGES IN VERSION 0.6-9 (2011-07-06)
 
@@ -320,7 +320,7 @@ CHANGES IN VERSION 0.3-1 (2011-04-16)
 
 CHANGES IN VERSION 0.3-0 (2011-04-09)
 
-    o New version of news.Rd, news.pdf.
+    o New version of NEWS.Rd, NEWS.pdf.
 
     o More test functions for root finding and quadrature.
 

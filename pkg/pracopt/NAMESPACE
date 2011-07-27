@@ -6,11 +6,8 @@
 export(DSC_search)
 export(fletcher_powell)
 export(hooke_jeeves)
-export(rosenbrock)
-export(simpleEA)
+export(rastrigin, rosenbrock)
 export(steep_descent)
-export(trefethen)
-export(wagon)
 export(wood)
 
 # S4 Methods

@@ -3,30 +3,13 @@
 ------------------------------------------------------------------------------
 
 
-Changes in Version 0.1-4 (2011-07-24)
+Changes in Version 0.1.5 (2011-07-27)
 
-    o DSC_search() one-dimensional Davies-Swann-Campey minimization
+    o Simple derivative-free minimization procedures steep_descent(),
+      fletcher_powell() and hooke_heeves().
 
-    o hooke_jeeves() Hooke-Jeeves optimization algorithm
+    o Davies-Swann-Campey DSC_search() for univariate functions.
 
-Changes in Version 0.1-3 (2011-07-15)
-
-    o Test functions rosenbrock() and wood().
-
-    o fletcher_powell() Davidon-Fletcher-Powell method.
-
-    o steep_descent() steepest descent minimization method.
-
-Changes in Version 0.1-2 (2011-05-31)
-
-    o Package renamed from 'optimtest' to 'pracopt'.
-
-Changes in Version 0.1-1 (2011-05-31)
-
-    o simpleEA(), simple evolutionary algorithm for minimum finding.
-
-    o Test functions trefethen() and wagon().
-
-Initial Version 0.1-0
+    o Test functions rastrigin(), rosenbrock(), and wood().
 
     o Setting up the package structure and required files.

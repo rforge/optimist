@@ -1,4 +1,4 @@
-\name{wood}
+\name{Wood Function}
 \alias{wood}
 \title{
   Wood Test Function
