@@ -19,8 +19,8 @@ cotes(f, a, b, n, nodes, ...)
 \details{
   2 to 8 point closed and summed Newton-Cotes numerical integration formulas.
 
-  These formulas are called `closed' as the include the endpoints.
-  They are called `composite' insofar as thay are combined with a
+  These formulas are called `closed' as they include the endpoints.
+  They are called `composite' insofar as thyy are combined with a
   Lagrange interpolation over subintervals.
 }
 \value{

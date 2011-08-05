@@ -10,6 +10,15 @@ PLANNED FOR NEXT VERSION
 
     o Hash functions (Python style), see "?hash".
 
+CHANGES IN VERSION 0.7.6 (2011-08-05)
+
+    o gaussNewton() for function minimization and solving systems of
+      nonlinear equations. fsolve() as a wrapper for it.
+
+    o fzsolve() for root finding of complex functions.
+
+    o softline() Fletcher's inexact linesearch algorithm.
+
 CHANGES IN VERSION 0.7.5 (2011-07-26)
 
     o Put NEWS.Rd in the /inst subdirectory (and NEWS.pdf in /doc),
