@@ -19,7 +19,7 @@ wood(x)
                                   10 (x_1+x_3-2)^2 + (x1-x3)^2 / 10}
   and has a global minimum at \code{f(1,1,1,1)=0}.
 
-  \code{wood} is know to be difficult to handle by some optimization
+  \code{wood} is known to be difficult to handle by some optimization
   routines, especially with a starting point \code{x0=[-3,-1,-3,-1]}.
   Try, for example, `Nelder-Mead' in \code{optim}.
 }
@@ -34,4 +34,5 @@ wood(x)
 }
 \examples{
 wood(c(0, 0, 0, 0))
+wood(c(-3, -1, -3, -1))
 }

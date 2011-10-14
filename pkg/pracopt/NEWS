@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.1.6 (2011-08-15)
+
+    o powell_zangwill() Powell's method with Zangwill extension.
+
 Changes in Version 0.1.5 (2011-07-27)
 
     o Simple derivative-free minimization procedures steep_descent(),

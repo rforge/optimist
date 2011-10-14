@@ -1,8 +1,8 @@
 Package: pracopt
 Type: Package
 Title: Practical Optimization
-Version: 0.1.5
-Date: 2011-07-27
+Version: 0.1.6
+Date: 2011-08-15
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Description: 

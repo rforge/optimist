@@ -10,6 +10,10 @@ PLANNED FOR NEXT VERSION
 
     o Hash functions (Python style), see "?hash".
 
+CHANGES IN VERSION 0.7.7 (2011-10-14)
+
+    o Another change to the NEWS.Rd file.
+
 CHANGES IN VERSION 0.7.6 (2011-08-05)
 
     o gaussNewton() for function minimization and solving systems of
