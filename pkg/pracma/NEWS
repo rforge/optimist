@@ -12,6 +12,8 @@ PLANNED FOR NEXT VERSION
 
 CHANGES IN VERSION 0.7.7 (2011-10-14)
 
+    o primes2(n1, n2) will return all primes numbers betweeen n1 and n2.
+
     o Another change to the NEWS.Rd file.
 
 CHANGES IN VERSION 0.7.6 (2011-08-05)
