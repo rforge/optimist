@@ -49,7 +49,7 @@ spinterp(x, y, xp)
   is not considered.
 }
 \seealso{
-  code{stinepack::stinterp}, \code{demography::cm.interp}
+  \code{stinepack::stinterp}, \code{demography::cm.interp}
 }
 \examples{
 data1 <- list(x = c(1,2,3,5,6,8,9,11,12,14,15),

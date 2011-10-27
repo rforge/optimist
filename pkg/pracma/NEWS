@@ -18,7 +18,7 @@ CHANGES IN VERSION 0.8.1 (2011-10-31)
     o cranknic() Crank-Nicolson 'ivp' solver, combining the forward and
       backward Euler methods for ordinary differential equations.
 
-CHANGES IN VERSION 0.8.0 (2011-10-30)
+CHANGES IN VERSION 0.8.0 (2011-10-27)
 
     o Corrections and improvements to the 'pracma.pdf' manual.
 

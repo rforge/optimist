@@ -26,7 +26,7 @@ gaussNewton(x0, Ffun, Jfun = NULL,
   especially designed for minimizing a sum-of-squares of functions and can
   be used to find a common zero of several function.
   
-  This algorithm is described in detail in the textbook b< Antoniou and Lu,
+  This algorithm is described in detail in the textbook by Antoniou and Lu,
   incl. different ways to modify and remedy the Hessian if not being positive
   definite. Here, the approach by Goldfeld, Quandt and Trotter is used, and 
   the hessian modified by the Matthews and Davies algorithm if still not
@@ -49,7 +49,7 @@ gaussNewton(x0, Ffun, Jfun = NULL,
   HwB <hwborchers@googlemail.com>
 }
 \note{
-  If \code{n=m} then to directly apply the \code{newtonsys} function might
+  If \code{n=m} then directly applying the \code{newtonsys} function might
   be a better alternative.
 }
 \seealso{

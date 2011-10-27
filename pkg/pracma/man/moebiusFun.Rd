@@ -7,7 +7,6 @@
 }
 \usage{
 moebiusFun(n)
-
 mertensFun(n)
 }
 \arguments{

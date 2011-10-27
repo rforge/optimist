@@ -2,7 +2,7 @@
 \alias{ifactor}
 \title{Prime Factors}
 \description{
-  Returns a vector containing the prime ifactor of \code{n}.
+  Returns a vector containing the prime factors of \code{n}.
 }
 \usage{
   ifactor(n)
@@ -16,12 +16,12 @@
   \code{n == prod(ifactor(n))}.
 
   The corresponding Matlab function is called `factor', but because
-  factors have a special meaning in R and the factor() funtion in R
+  factors have a special meaning in R and the factor() function in R
   could not (or should not) be shadowed, the number theoretic function
   has been renamed here.
 }
 \value{
-  vector containing the prime factors of \code{n}.
+  Vector containing the prime factors of \code{n}.
 }
 \author{
   hwb \email{hwborchers@googlemail.com}
