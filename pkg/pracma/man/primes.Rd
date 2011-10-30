@@ -33,7 +33,7 @@
   hwb \email{hwborchers@googlemail.com}
 }
 \seealso{
-  \code{\link{isprime}, \link{ifactor}}
+  \code{\link{isprime}, \link{factorize}}
 }
 \examples{
   primes(1000)
