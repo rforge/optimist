@@ -11,6 +11,8 @@ PLANNED FOR NEXT VERSION
     o newmark() Newmark's method for solving second order differential
       equations of the form  y''(t) = f(t, y(t), y'(t)) on [t1, t2].
 
+CHANGES IN VERSION 0.8.2 (2011-11-02)
+
     o cranknic() Crank-Nicolson 'ivp' solver, combining the forward and
       backward Euler methods for ordinary differential equations.
 
