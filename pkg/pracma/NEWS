@@ -8,7 +8,17 @@ PLANNED FOR NEXT VERSION
     o ode45() implementing the approach by Dormand and Prince.
       [Matlab's ode23() is based on Bogacki and Shampine.]
 
-CHANGES IN VERSION 0.8.2 (2011-11-02)
+    o Extend the NEWS.Rd file up to this version.
+
+CHANGES IN VERSION 0.8.3 (2011-11-11)
+
+    o accumarray() grouping elements and applying a function to each group.
+
+    o uniq() Matlab-style 'unique' function, allsums() in the examples.
+
+    o small correction to fsolve(), mentioned on the 'check summary' page.
+
+CHANGES IN VERSION 0.8.2 (2011-11-04)
 
     o newmark() Newmark's method for solving second order differential
       equations of the form  y''(t) = f(t, y(t), y'(t)) on [t1, t2].
