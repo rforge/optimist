@@ -5,10 +5,12 @@
 
 PLANNED FOR NEXT VERSION
 
-    o ode45() implementing the approach by Dormand and Prince.
-      [Matlab's ode23() is based on Bogacki and Shampine.]
-
     o Extend the NEWS.Rd file up to this version.
+
+CHANGES IN VERSION 0.8.4 (2011-11-12)
+
+    o Transformations between cartesian, spherical, polar and cylindrical
+      coordinate systems: cart2sph(), sph2cart(), cart2pol(), pol2cart().
 
 CHANGES IN VERSION 0.8.3 (2011-11-11)
 
