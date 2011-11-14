@@ -7,10 +7,12 @@ PLANNED FOR NEXT VERSION
 
     o Extend the NEWS.Rd file up to this version.
 
-CHANGES IN VERSION 0.8.4 (2011-11-12)
+CHANGES IN VERSION 0.8.4 (2011-11-14)
 
     o Transformations between cartesian, spherical, polar and cylindrical
       coordinate systems: cart2sph(), sph2cart(), cart2pol(), pol2cart().
+
+    o polar() uniformly random points in the unit circle (till Matlab 5).
 
 CHANGES IN VERSION 0.8.3 (2011-11-11)
 
