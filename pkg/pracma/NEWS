@@ -7,6 +7,20 @@ PLANNED FOR NEXT VERSION
 
     o Extend the NEWS.Rd file up to this version.
 
+    o logm() the matrix logarithm function, using a Pade approximation.
+
+CHANGES IN VERSION 0.8.5 (2011-11-20)
+
+    o sqrtm() matrix square root, based on Denman-Beavers iteration,
+      rootm() matrix p-th root, computing a complex contour integral,
+      signm() matrix sign function.
+
+	o fzero() now uses the new zeroin() function,
+	  i.e., a Brent-Dekker approach instead of refering to uniroot().
+
+    o twinPrimes() twin primes in a given interval, and \code{nextPrime}
+      will find the next higher prime.
+
 CHANGES IN VERSION 0.8.4 (2011-11-14)
 
     o Transformations between cartesian, spherical, polar and cylindrical
