@@ -9,7 +9,7 @@ PLANNED FOR NEXT VERSION
 
     o logm() the matrix logarithm function, using a Pade approximation.
 
-CHANGES IN VERSION 0.8.5 (2011-11-20)
+CHANGES IN VERSION 0.8.5 (2011-11-19)
 
     o sqrtm() matrix square root, based on Denman-Beavers iteration,
       rootm() matrix p-th root, computing a complex contour integral,
