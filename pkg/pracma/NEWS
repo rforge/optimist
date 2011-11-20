@@ -5,9 +5,17 @@
 
 PLANNED FOR NEXT VERSION
 
-    o Extend the NEWS.Rd file up to this version.
+    o direct1d() one-dimensional version of the DIRECT algorithm for
+      global function minimization
 
     o logm() the matrix logarithm function, using a Pade approximation.
+
+CHANGES IN VERSION 0.8.6 (2011-11-20)
+
+    o Extend the regula_falsi() function with the Anderson-Bjoerk and
+      Anderson-Bjoerk-King approaches.
+
+    o Complete the NEWS.Rd file up to this version.
 
 CHANGES IN VERSION 0.8.5 (2011-11-19)
 
