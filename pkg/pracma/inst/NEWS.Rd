@@ -3,10 +3,9 @@
 \encoding{UTF-8}
 
 
-\section{Changes in Version 0.8.6 (2011-11-20)}{
+\section{Changes in Version 0.8.6 (2011-11-21)}{
     \itemize{
-      \item Extend the regula_falsi() function with the Anderson-Bjoerk
-        and Anderson-Bjoerk-King approaches.
+      \item ridder() Ridder's method for zero finding of univariate functions.
       \item Complete the NEWS.Rd file up to this version.
     }
 }

@@ -10,10 +10,9 @@ PLANNED FOR NEXT VERSION
 
     o logm() the matrix logarithm function, using a Pade approximation.
 
-CHANGES IN VERSION 0.8.6 (2011-11-20)
+CHANGES IN VERSION 0.8.6 (2011-11-21)
 
-    o Extend the regula_falsi() function with the Anderson-Bjoerk and
-      Anderson-Bjoerk-King approaches.
+    o ridder() Ridder's method for zero finding of univariate functions.
 
     o Complete the NEWS.Rd file up to this version.
 
