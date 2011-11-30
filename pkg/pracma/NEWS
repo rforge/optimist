@@ -10,6 +10,12 @@ PLANNED FOR NEXT VERSION
 
     o logm() the matrix logarithm function, using a Pade approximation.
 
+CHANGES IN VERSION 0.8.7 (2011-11-30)
+
+    o deg2rad(), rad2deg()
+
+    o figure() Matlab style, and pltcross() plotting crosses.
+
 CHANGES IN VERSION 0.8.6 (2011-11-21)
 
     o ridder() Ridder's method for zero finding of univariate functions.
