@@ -34,7 +34,7 @@ figure <- function(figno, title = "") {
         win()
     } else {
         devl <- dev.list()
-        if (figno %in% devl) {
+        if (abs(figno) %in% devl) {
             if (figno > 0) dev.set(figno)
             else           dev.off(-figno)
         } else {

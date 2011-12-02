@@ -10,6 +10,10 @@ PLANNED FOR NEXT VERSION
 
     o logm() the matrix logarithm function, using a Pade approximation.
 
+CHANGES IN VERSION 0.8.8 (2011-12-01)
+
+    o [tbd.]
+
 CHANGES IN VERSION 0.8.7 (2011-11-30)
 
     o deg2rad(), rad2deg()
