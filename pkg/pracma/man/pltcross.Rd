@@ -56,4 +56,4 @@ plot(xc, yc, col=clr)
 pltcross(c(0,1), c(0,1), xc, yc, clen = clen, color = clr)
 }
 }
-\keyword{ plot }
+\keyword{ graphs }

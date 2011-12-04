@@ -39,4 +39,4 @@ figure()
 figure(-2)
 }
 }
-\keyword{ plot }
+\keyword{ graphs }
