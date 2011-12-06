@@ -13,12 +13,9 @@ polar <- function(t, r, type="l",
     z <- cbind(t, r)
 
     # transform coordinates
-    xy <- matrix(NA, nrow = n, ncol = 2)
-    hy <- numeric(n) 
-    for (i in 1:n) {
-        xy[i, ] <- pol2cart(z[i, ])
-        hy[i] <- hypot(xy[i, 1], xy[i, 2])
-    }
+    xy <- pol2cart(z)
+    hy <- hypot(xy[, 1], xy[, 2])
+
     if (!add) {
         # grid circle coordinates
         drs <- pretty(c(0, hy), min.n = 3)

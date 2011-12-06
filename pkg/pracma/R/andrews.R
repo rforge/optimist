@@ -6,6 +6,8 @@
 andrewsplot <- function(A, f, style = "pol", scaled = FALSE, npts = 101) {
     stopifnot(is.numeric(A), is.matrix(A))
     if (is.factor(f)) f <- as.integer(f)
+    if (!is.integer(f))
+        stop("Argument 'f' must be a factor or an integer vector.")
 
     n <- nrow(A); m <- ncol(A)
     if (m < 2 || n < 2)

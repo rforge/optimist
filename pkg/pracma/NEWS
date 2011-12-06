@@ -10,7 +10,7 @@ PLANNED FOR NEXT VERSION
 
     o logm() the matrix logarithm function, using a Pade approximation.
 
-CHANGES IN VERSION 0.8.8 (2011-12-05)
+CHANGES IN VERSION 0.8.8 (2011-12-06)
 
     o polar() for polar plots (Matlab style), see the example plots.
 
@@ -495,7 +495,7 @@ RESTARTED AS VERSION 0.2-0
 
     o Added 'pracma-package' section to the manual.
 
-CHANGES IN VERSION 0.1-9
+CHANGES IN VERSION 0.1-9 (2011-03-13)
 
     o reshape(), repmat(), and blkdiag() matrix functions.
 
@@ -509,7 +509,7 @@ CHANGES IN VERSION 0.1-9
     o Some string functions: strcmp(), strcmpi(), strcat().
 
 
-CHANGES IN VERSION 0.1-8
+CHANGES IN VERSION 0.1-8 (2011-03-10)
 
     o std() as refinement of the standard deviation function.
 
@@ -523,7 +523,7 @@ CHANGES IN VERSION 0.1-8
 
     o distmat() and crossn(), the vector product in n-dimensional space.
 
-CHANGES IN VERSION 0.1-7
+CHANGES IN VERSION 0.1-7 (2011-03-08)
 
     o size(), numel(), ndims(), isempty(), and find().
 
@@ -534,7 +534,7 @@ CHANGES IN VERSION 0.1-7
     o linspace(), logspace(), and logseq() for linearly, logarithmically,
       and exponentially spaced sequences.
 
-CHANGES IN VERSION 0.1-6
+CHANGES IN VERSION 0.1-6 (2011-03-06)
 
     o Matrix functions mdiag() and mtrace() added. inv() is introduced
       as an alias for solve() in R.
@@ -564,7 +564,7 @@ CHANGES IN VERSION 0.1-4
       angle() returns the angle of a complex number in radians. The R
       function Mod() is here only available as abs().
 
-CHANGES IN VERSION 0.1-3
+CHANGES IN VERSION 0.1-3 (2011-02-20)
 
     o Added compan() function for the `companion' matrix; the eig() function
       is an alias for the R eigen()values function.
