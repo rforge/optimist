@@ -10,6 +10,14 @@ PLANNED FOR NEXT VERSION
 
     o logm() the matrix logarithm function, using a Pade approximation.
 
+CHANGES IN VERSION 0.8.9 (2011-12-08)
+
+    o cutpoints() automatically finds cutting points based on gaps.
+
+    o hausdorff_dist calculates the Hausdorff distance / Hausdorff dimension.
+
+    o nnz() number of non-zeros elements.
+
 CHANGES IN VERSION 0.8.8 (2011-12-06)
 
     o polar() for polar plots (Matlab style), see the example plots.
