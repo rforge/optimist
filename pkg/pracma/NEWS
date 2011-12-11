@@ -9,13 +9,13 @@ PLANNED FOR NEXT VERSION
       global function minimization
     o logm() the matrix logarithm function, using a Pade approximation.
     o fplot(), plotyy().
-
-CHANGES IN VERSION 0.9.0 (2011-12-12)
-
     o appEntropy() approximate entropy of a time series.
+
+CHANGES IN VERSION 0.9.0 (2011-12-11)
+
     o errorbar() routine for plotting error bars in both directions.
     o whittaker() Whittaker-Henderson smoothing  ** Not yet running** .
-    o rref()
+    o rref() reduced row Enchelon form.
 
 CHANGES IN VERSION 0.8.9 (2011-12-08)
 
