@@ -7,13 +7,15 @@
   Line plot with y-axes on both left and right side.
 }
 \usage{
-plotyy(x, y1, y2, grid = TRUE, type = "l", lwd = 1, lty = 1,
+plotyy(x, y1, y2, grid = TRUE, box.col = "grey",
+                  type = "l", lwd = 1, lty = 1,
                   col.y1 = "navy", col.y2 = "maroon", ...)
 }
 \arguments{
     \item{x}{the common x-coordinates for both curves}
     \item{y1, y2}{the y-values, with ordinates y1 left, y2 right.}
     \item{grid}{logical; shall a grid be plotted.}
+    \item{box.col}{color of surrounding box.}
     \item{type}{type of the curves, line or points (for both data).}
     \item{lwd}{line width (for both data).}
     \item{lty}{line type (for both data).}
@@ -39,12 +41,11 @@ plotyy(x, y1, y2, grid = TRUE, type = "l", lwd = 1, lty = 1,
 }
 \examples{
 \dontrun{
-x1 <- seq(0, 20, by = 0.01)
-x2 <- x1
-y1 <- 200*exp(-0.05*x1)*sin(x1)
-y2 <- 0.8*exp(-0.5*x2)*sin(10*x2)
+x  <- seq(0, 20, by = 0.01)
+y1 <- 200*exp(-0.05*x)*sin(x)
+y2 <- 0.8*exp(-0.5*x)*sin(10*x)
 
-plotyy(x1, y1, y2, main = "Double y-Axis", lty = 2, lwd = 2)
+plotyy(x, y1, y2, main = "Double y-Axis")
 }
 }
 \keyword{ graphs }
