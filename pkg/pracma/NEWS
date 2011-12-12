@@ -3,19 +3,16 @@
 ------------------------------------------------------------------------------
 
 
-PLANNED FOR NEXT VERSION
+CHANGES IN VERSION 0.9.1 (2011-12-12)
 
-    o direct1d() one-dimensional version of the DIRECT algorithm for
-      global function minimization
-    o logm() the matrix logarithm function, using a Pade approximation.
-    o fplot(), plotyy().
-    o appEntropy() approximate entropy of a time series.
+    o plotyy() plots curves with y-axes on both left and right side.
+    o fplot() plots components of a multivariate function.
 
 CHANGES IN VERSION 0.9.0 (2011-12-11)
 
     o errorbar() routine for plotting error bars in both directions.
     o whittaker() Whittaker-Henderson smoothing  ** Not yet running** .
-    o rref() reduced row Enchelon form.
+    o rref() reduced row echelon form.
 
 CHANGES IN VERSION 0.8.9 (2011-12-08)
 
@@ -37,7 +34,6 @@ CHANGES IN VERSION 0.8.7 (2011-11-30)
 CHANGES IN VERSION 0.8.6 (2011-11-21)
 
     o ridder() Ridder's method for zero finding of univariate functions.
-    o Complete the NEWS.Rd file up to this version.
 
 CHANGES IN VERSION 0.8.5 (2011-11-19)
 
@@ -92,7 +88,6 @@ CHANGES IN VERSION 0.7.7 (2011-10-14)
 
     o primes2(n1, n2) will return all prime numbers betweeen n1 and n2
       (without storing the numbers from sqrt(n2) up to n1).
-    o Another change to the NEWS.Rd file.
 
 CHANGES IN VERSION 0.7.6 (2011-08-05)
 
@@ -129,7 +124,6 @@ CHANGES IN VERSION 0.7-1 (2011-07-09)
 CHANGES IN VERSION 0.7-0 (2011-07-07)
 
     o Sigmoid and Einstein functions.
-    o Updated NEWS.Rd, NEWS.pdf
 
 CHANGES IN VERSION 0.6-9 (2011-07-06)
 
@@ -183,8 +177,7 @@ CHANGES IN VERSION 0.6-0 (2011-06-24)
 
     o muller() Muller's root finding method.
     o Added differential equation example to expm()'s help page.
-    o Changed NEWS file to become simpler (no subsections);
-      updated the NEWS.Rd, NEWS.pdf files.
+    o Changed NEWS file to become simpler (no subsections).
 
 CHANGES IN VERSION 0.5-9 (2011-06-23)
 
