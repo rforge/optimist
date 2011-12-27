@@ -5,10 +5,12 @@
 
 PLANNED FOR NEXT VERSIONS
 
+    o [tbd.]
+
+CHANGES IN VERSION 0.9.3 (2011-12-27)
+
     o direct1d() one-dimensional version of the DIRECT algorithm for
       global function minimization
-    o logm() the matrix logarithm function, using a Pade approximation.
-    o chirp() signal
 
 CHANGES IN VERSION 0.9.2 (2011-12-26)
 
