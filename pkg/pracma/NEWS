@@ -7,10 +7,10 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 0.9.4 (2012-01-03)
+CHANGES IN VERSION 0.9.4 (2012-01-09)
 
-    o [tbd.]
-    o Improved modpower() through modular exponentiation.\cr
+    o DSCsearch() Davies-Swann-Campey search in one dimension
+    o Improved modpower() through modular exponentiation.
       added lehmann_test() Lehmann's primality test as example.
     o Corrected polar() and andrewsplot()
 

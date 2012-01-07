@@ -12,8 +12,6 @@ Changes in Version 0.1.5 (2011-07-27)
     o Simple derivative-free minimization procedures steep_descent(),
       fletcher_powell() and hooke_heeves().
 
-    o Davies-Swann-Campey DSC_search() for univariate functions.
-
     o Test functions rastrigin(), rosenbrock(), and wood().
 
     o Setting up the package structure and required files.
