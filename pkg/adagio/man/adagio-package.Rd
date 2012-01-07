@@ -1,22 +1,20 @@
-\name{gloptim-package}
-\alias{gloptim-package}
-\alias{gloptim}
+\name{adagio-package}
+\alias{adagio-package}
+\alias{adagio}
 \docType{package}
 \title{
   Global Optimization
 }
 \description{
-  The R package `gloptim' will provide methods and algorithms for 
-  global optimization and function minimization of nonlinear functions. 
-  Derivative-free, stochastic, and noise-tolerant approaches will be 
-  included.
+  The R package `adagio' will provide methods and algorithms for
+  discrete as well as (derivative-free) global optimization.
 }
 \details{
 \tabular{ll}{
-Package: \tab gloptim\cr
+Package: \tab adagio\cr
 Type: \tab Package\cr
-Version: \tab 0.1.0\cr
-Date: \tab 2011-07-27\cr
+Version: \tab 0.1.6\cr
+Date: \tab 2012-01-07\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 }

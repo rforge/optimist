@@ -1,15 +1,13 @@
-Package: gloptim
+Package: adagio
 Type: Package
-Title: Global Optimization
-Version: 0.1.5
-Date: 2011-07-27
+Title: Discrete and global optimization routines
+Version: 0.1.6
+Date: 2012-01-07
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Description:
-    The R package 'gloptim' will provide methods and algorithms for 
-    global optimization and function minimization of nonlinear functions. 
-    Derivative-free, stochastic, and noise-tolerant approaches will be 
-    included.
+    The R package 'adagio' will provide methods and algorithms for
+    discrete as well as (derivative-free) global optimization.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
