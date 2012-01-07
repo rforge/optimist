@@ -1,15 +1,12 @@
-Package: pracopt
+Package: convoi
 Type: Package
-Title: Practical Optimization
-Version: 0.1.6
-Date: 2011-08-15
+Title: Convex Optimization
+Version: 0.1.0
+Date: 2012-01-07
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Description: 
-    'pracopt' provides simple functions for local optimization
-    both constrained and unconstrained, a bag of test functions,
-    and other useful tools for practical optimization, such as
-    different versions of line searches.
+    Convex optimization in R
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes

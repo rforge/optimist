@@ -3,12 +3,5 @@
 ##
 
 # Public routines
-export(fletcher_powell)
-export(hooke_jeeves)
-export(nelder_mead)
-export(powell_zangwill)
-export(rastrigin, rosenbrock)
-export(steep_descent)
-export(wood)
 
 # S4 Methods
