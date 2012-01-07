@@ -1,0 +1,48 @@
+\name{Steepest Descent}
+\alias{steep_descent}
+\title{
+  Steepest Descent
+}
+\description{
+  Function minimization by steepest descent.
+}
+\usage{
+steep_descent(x0, f, g = NULL, info = FALSE,
+              kmax = 100, tol = .Machine$double.eps^(1/2))
+}
+\arguments{
+  \item{x0}{start value.}
+  \item{f}{function to be minimized.}
+  \item{g}{gradient function of \code{f};
+           if \code{NULL}, a numerical gradient will be calculated.}
+  \item{info}{logical; shall information be printed on every iteration?}
+  \item{kmax}{max. number of iterations.}
+  \item{tol}{relative tolerance, to be used as stopping rule.}
+}
+\details{
+  Steepest descent is a line search method that moves along the downhill
+  direction.
+}
+\value{
+  List with following components:
+    \item{xmin}{minimum solution found.}
+    \item{fmin}{value of \code{f} at minimum.}
+    \item{niter}{number of iterations performed.}
+}
+\references{
+  Nocedal, J., and S. J. Wright (2006). Numerical Optimization.
+  Second Edition, Springer-Verlag, New York, pp. 22 ff.
+}
+\note{
+  Used some Matlab code as described in the book ``Applied Numerical Analysis
+  Using Matlab'' by L. V.Fausett.
+}
+\seealso{
+  \code{\link{fletcher_powell}}
+}
+\examples{
+##  Rosenbrock function: The flat valley of the Rosenbruck function makes
+##  it infeasible for a steepest descent approach.
+# steep_descent(c(0, 0), rosenbrock, kmax = 256, info = TRUE)
+}
+\keyword{ optimize }

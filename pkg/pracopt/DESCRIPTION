@@ -8,8 +8,7 @@ Maintainer: HwB <hwborchers@googlemail.com>
 Description: 
     'pracopt' provides simple functions for local optimization
     both constrained and unconstrained, a bag of test functions,
-    and other useful tools for practical optimization, such as
-    different versions of line searches.
+    and other useful tools for practical optimization.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
