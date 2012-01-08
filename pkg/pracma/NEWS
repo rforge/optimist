@@ -7,7 +7,11 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 0.9.4 (2012-01-09)
+CHANGES IN VERSION 0.9.5 (2012-01-09)
+
+    o kmpp() kmeans++ algorithm (and own kmeans implementation).
+
+CHANGES IN VERSION 0.9.4 (2012-01-08)
 
     o DSCsearch() Davies-Swann-Campey search in one dimension
     o Improved modpower() through modular exponentiation.

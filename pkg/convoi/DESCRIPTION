@@ -6,7 +6,7 @@ Date: 2012-01-07
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Description: 
-    Convex optimization in R
+    Convex Optimization in R
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
