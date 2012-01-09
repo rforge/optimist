@@ -9,7 +9,7 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 0.9.5 (2012-01-09)
 
-    o kmpp() kmeans++ algorithm (and own kmeans implementation).
+    o kmpp() kmeans++ clustering algorithm.
 
 CHANGES IN VERSION 0.9.4 (2012-01-08)
 
