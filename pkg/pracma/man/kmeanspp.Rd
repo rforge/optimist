@@ -25,8 +25,8 @@ kmeanspp(X, k)
   called in the end.
 }
 \note{
-  Please note that AFAIK it is not clear whether the approach of kmeans++ is 
-  really better than, e.g., kmeans with several restarts.
+  Please note that it is not clear whether the approach of kmeans++ is 
+  really preferable to, e.g., kmeans with several restarts.
 }
 \author{
   HwB  email: <hwborchers@googlemail.com>
