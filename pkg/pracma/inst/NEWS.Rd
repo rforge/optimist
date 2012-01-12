@@ -3,6 +3,37 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 0.9.5 (2012-01-09)}{
+    \itemize{
+      \item kmeanspp() kmeans++ clustering algorithm.
+    }
+}
+
+\section{Changes in Version 0.9.4 (2012-01-08)}{
+    \itemize{
+      \item DSCsearch() Davies-Swann-Campey search in one dimension.
+      \item Improved modpower() through modular exponentiation.
+        Added lehmann_test() Lehmann's primality test as example.
+      \item Corrected polar() and andrewsplot().
+    }
+}
+
+\section{Changes in Version 0.9.3 (2011-12-27)}{
+    \itemize{
+      \item direct1d() one-dimensional version of the DIRECT algorithm for
+        global function minimization.
+    }
+}
+
+\section{Changes in Version 0.9.2 (2011-12-26)}{
+    \itemize{
+      \item ApEn() approximate entropy of a time series.
+      \item circshift() circularly shifting arrays (Matlab Style).
+      \item interv_union(), interv_intersect() union and intersection
+        of a set of (closed) intervals.
+    }
+}
+
 \section{Changes in Version 0.9.1 (2011-12-12)}{
     \itemize{
       \item plotyy() plots curves with y-axes on both left and right side.
@@ -21,7 +52,8 @@
 \section{Changes in Version 0.8.9 (2011-12-08)}{
     \itemize{
       \item cutpoints() automatically finds cutting points based on gaps.
-      \item hausdorff_dist calculates the Hausdorff distance / Hausdorff dimension.
+      \item hausdorff_dist calculates the Hausdorff distance / Hausdorff 
+        dimension.
       \item nnz() number of non-zeros elements (Matlab style).
     }
 }

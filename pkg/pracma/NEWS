@@ -9,19 +9,19 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 0.9.5 (2012-01-09)
 
-    o kmpp() kmeans++ clustering algorithm.
+    o kmeanspp() kmeans++ clustering algorithm.
 
 CHANGES IN VERSION 0.9.4 (2012-01-08)
 
-    o DSCsearch() Davies-Swann-Campey search in one dimension
+    o DSCsearch() Davies-Swann-Campey search in one dimension.
     o Improved modpower() through modular exponentiation.
       added lehmann_test() Lehmann's primality test as example.
-    o Corrected polar() and andrewsplot()
+    o Corrected polar() and andrewsplot().
 
 CHANGES IN VERSION 0.9.3 (2011-12-27)
 
     o direct1d() one-dimensional version of the DIRECT algorithm for
-      global function minimization
+      global function minimization.
 
 CHANGES IN VERSION 0.9.2 (2011-12-26)
 
