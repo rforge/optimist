@@ -3,5 +3,14 @@
 ##
 
 # Public routines
+export(maxsub, maxsub_r)
+
 
 # S4 Methods
+
+
+# Dynamic libraries
+useDynLib('convoi')
+
+
+## End NAMESPACE

@@ -2,6 +2,11 @@
   adagio                                                                NEWS
 ------------------------------------------------------------------------------
 
+
+Changes in Version 0.2.0 (2012-01-14)
+
+    o maxsub() maximal sum subarray (with Ratfor and Fortran code).
+
 Changes in Version 0.1.6 (2012-01-07)
 
     o Set up as package on R-Forge, part of the Optimist project.

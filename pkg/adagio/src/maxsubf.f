@@ -8,7 +8,7 @@ C Maximal contiguous subset problem
       j1 = 1
       j2 = 1
 
-      do 23000 i = 1,n 
+      do 3000 i = 1,n 
       if (ss .gt. -x(i)) then
         ss = ss + x(i)
         j2 = i
@@ -22,7 +22,7 @@ C Maximal contiguous subset problem
         j1 = i+1
         j2 = i+1
       endif
-23000 continue
+ 3000 continue
 
       return
       end
