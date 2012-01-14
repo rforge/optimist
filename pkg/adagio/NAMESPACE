@@ -2,8 +2,12 @@
 ##  NAMESPACE
 ##
 
+useDynLib(adagio)
+
 # Public routines
 export(simpleEA)
 export(trefethen, wagon)
+
+export(maxsub)
 
 # S4 Methods

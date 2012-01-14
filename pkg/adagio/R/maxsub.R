@@ -46,7 +46,7 @@ maxsub <- function(x, inds = TRUE) {
     S <- .Fortran("maxsubf", x = as.numeric(x), n = as.integer(n),
                              s = as.numeric(s),
                              i1 = as.integer(i1), i2 = as.integer(i2),
-                             PACKAGE = "convoi")
+                             PACKAGE = "adagio")
     if (inds)
         return(list(sum = S$s, inds = c(S$i1, S$i2)))
     else
