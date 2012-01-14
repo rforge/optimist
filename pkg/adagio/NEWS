@@ -6,6 +6,7 @@
 Changes in Version 0.2.0 (2012-01-14)
 
     o maxsub() maximal sum subarray (with Ratfor and Fortran code).
+    o subsetsum() Subset sum routine written in R.
 
 Changes in Version 0.1.6 (2012-01-07)
 
@@ -14,7 +15,5 @@ Changes in Version 0.1.6 (2012-01-07)
 Changes in Version 0.1.5 (2011-07-27)
 
     o simpleEA(), simple evolutionary algorithm for minimum finding.
-
     o Test functions trefethen() and wagon().
-
     o Setting up the package structure and required files.

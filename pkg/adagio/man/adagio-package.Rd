@@ -3,7 +3,7 @@
 \alias{adagio}
 \docType{package}
 \title{
-  Global Optimization
+  Discrete and Global Optimization
 }
 \description{
   The R package `adagio' will provide methods and algorithms for
@@ -13,8 +13,8 @@
 \tabular{ll}{
 Package: \tab adagio\cr
 Type: \tab Package\cr
-Version: \tab 0.1.6\cr
-Date: \tab 2012-01-07\cr
+Version: \tab 0.2.0\cr
+Date: \tab 2012-01-14\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 }
