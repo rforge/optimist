@@ -12,25 +12,31 @@ interv_union <- function(M) {
     if (!is.numeric(M) || !is.matrix(M) || ncol(M) != 2)
         stop("Argument 'M' must be a matrix with two columns.")
     if (nrow(M) == 1) return(c(M))
+    if (any(M[, 1] > M[, 2]))
+       stop("Left endpoint cannot be larger than right endpoint.")
     
-    # sorted according to first and second col
-    o <- order(M[, 1], M[, 2])
-    L <- M[o, 1]; R <- M[o, 2]
-    if (any(L > R))
-        stop("Left endpoint cannot be larger than right endpoint.")
-
-    k <- 1
-    Mnew <- matrix(c(L[k], R[k]), 1, 2)
-    for (i in 2:nrow(M)) {
-        if (L[i] <= Mnew[k, 2]) {
-            Mnew[k, 2] <- max(R[i], Mnew[k, 2])
-        } else {
-            k <- k+1
-            Mnew <- rbind(Mnew, c(L[i], R[i]))
-        }
-    }
-    return(Mnew)
+    o <- order(c(M[, 1], M[, 2]))
+    n <- cumsum( rep(c(1, -1), each=nrow(M))[o])
+    startPos <- c(TRUE,  n[-1] == 1 & n[-length(n)] == 0)
+    endPos   <- c(FALSE, n[-1] == 0 & n[-length(n)] == 1)
+    M <- M[o]
+    cbind(M[startPos], M[endPos])
 }
+
+#   o <- order(M[, 1], M[, 2])
+#   L <- M[o, 1]; R <- M[o, 2]
+#   k <- 1
+#   Mnew <- matrix(c(L[k], R[k]), 1, 2)
+#   for (i in 2:nrow(M)) {
+#       if (L[i] <= Mnew[k, 2]) {
+#           Mnew[k, 2] <- max(R[i], Mnew[k, 2])
+#       } else {
+#           k <- k+1
+#           Mnew <- rbind(Mnew, c(L[i], R[i]))
+#       }
+#   }
+#   return(Mnew)
+
 
 interv_intersect <- function(M) {
     if (is.null(M)) return(c())

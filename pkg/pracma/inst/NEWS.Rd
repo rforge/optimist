@@ -6,6 +6,9 @@
 \section{Changes in Version 0.9.5 (2012-01-09)}{
     \itemize{
       \item kmeanspp() kmeans++ clustering algorithm.
+      \item interv_union() vectorized according to an idea of William Dunlap.
+      \item savgol() and hampel() with new options, fuelled by a blog entry
+        of Ron Pearson in his ExploringDataBlog.
     }
 }
 
@@ -704,6 +707,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.9.1"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 0.9.5"}.
     }
 }

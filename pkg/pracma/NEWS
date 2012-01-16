@@ -10,6 +10,9 @@ PLANNED FOR NEXT VERSIONS
 CHANGES IN VERSION 0.9.5 (2012-01-09)
 
     o kmeanspp() kmeans++ clustering algorithm.
+    o interv_union() vectorized according to an idea of William Dunlap.
+    o savgol() and hampel() with new options, fuelled by a blog entry
+      of Ron Pearson in his ExploringDataBlog.
 
 CHANGES IN VERSION 0.9.4 (2012-01-08)
 

@@ -20,11 +20,12 @@ interv_intersect(M)
   points to the minimum of the right end points (or NULL if the maximum is
   greater than the minimum).
 
-  For the union, the intervals are first ordered by left endpoints, then a
-  simple loop checking intersection of two adjacent intervals.
+  NEW: Vectorized according to an idea of William Dunlap on R-help 01-2012.\cr
+  OLD: For the union, the intervals are first ordered by left endpoints,
+  then a simple loop checking intersection of two adjacent intervals.
 }
 \value{
-  Another matrix representing e set of intervals.
+  Another matrix representing a set of intervals.
 }
 \author{
   HwB  email: <hwborchers@googlemail.com>
