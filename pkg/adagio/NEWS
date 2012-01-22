@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.2.1 (2012-01-22)
+
+    o maxsub2d() maximal sum subrectangle problem.
+
 Changes in Version 0.2.0 (2012-01-14)
 
     o maxsub() maximal sum subarray (with Ratfor and Fortran code).

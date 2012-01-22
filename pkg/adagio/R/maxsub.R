@@ -50,3 +50,38 @@ maxsub <- function(x, inds = TRUE, compiled = TRUE) {
         }
     }
 }
+
+
+maxsub2d <- function(A) {
+    stopifnot(is.numeric(A), is.matrix(A))
+    n <- nrow(A); m <- ncol(A)
+
+    if (all(A <= 0))
+        stop("At least on element of matrix 'A' must be positive.")
+    if (all(A >= 0))
+        return(list(sum = sum(A), inds = c(1, n, 1, m), submat = A))
+
+    S <- matrix(0, nrow = n+1, ncol = m)
+    S[1, ] <- 0
+    for (i in 2:(n+1))
+        S[i, ] <- S[i-1, ] + cumsum(A[i-1, ])
+
+    mm <- 0
+    mi <- c(0, 0, 0, 0)
+
+    for (i in 2:(n+1)) {
+        for (j in i:(n+1)) {
+            a <- numeric(n)
+            a[1] <- S[j, 1] - S[i-1, 1]
+            for (k in 2:n)
+                a[k] <- S[j, k] - S[(i-1), k] - sum(a[1:(k-1)])
+            ms <- maxsub(a)
+            if (ms$sum > mm) {
+                mm <- ms$sum
+                mi <- c(i-1, j-1, ms$inds[1], ms$inds[2])
+            }
+        }
+    }
+    return(list(sum = mm, inds = mi,
+            submat = A[mi[1]:mi[2], mi[3]:mi[4]], drop = FALSE))
+}

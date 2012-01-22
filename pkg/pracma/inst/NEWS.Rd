@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 
 
-\section{Changes in Version 0.9.5 (2012-01-09)}{
+\section{Changes in Version 0.9.5 (2012-01-16)}{
     \itemize{
       \item kmeanspp() kmeans++ clustering algorithm.
       \item interv_union() vectorized according to an idea of William Dunlap.
