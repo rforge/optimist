@@ -84,7 +84,7 @@ xi <- findInterval(x, X); yi <- findInterval(y, Y)
 for (i in 1:N) A[yi[i], xi[i]] <- w[i]
 
 msr <- maxsub2d(A)
-rect(X[msr$inds[3]], Y[msr$inds[1]], X[msr$inds[4]+1], Y[msr$inds[2]+1],
-     col = "gray")}
+rect(X[msr$inds[3]], Y[msr$inds[1]], X[msr$inds[4]+1], Y[msr$inds[2]+1])
+}
 }
 \keyword{ optimization }
