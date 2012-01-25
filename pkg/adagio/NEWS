@@ -3,9 +3,10 @@
 ------------------------------------------------------------------------------
 
 
-Changes in Version 0.2.1 (2012-01-22)
+Changes in Version 0.2.5 (2012-01-25)
 
-    o maxsub2d() maximal sum subrectangle problem.
+    o maxsub2d() maximal sum subrectangle problem;
+      uses Fortran code to be able to handle 1000-by-1000 matrices.
 
 Changes in Version 0.2.0 (2012-01-14)
 

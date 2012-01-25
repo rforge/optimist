@@ -28,7 +28,9 @@ of \code{O(n)} where \code{n} is the length of the input vector \code{x}.
 maximally positive. The approach taken here is to apply the one-dimensional
 routine to summed arrays between all rows of \code{A}. This has a run-time
 of \code{O(n^3)}, though a run-time of \code{O(n^2 log n)} seems possible
-see the reference below.
+see the reference below.\cr
+\code{maxsub2d} uses a Fortran workhorse and can solve a 1000-by-1000 matrix
+in a few seconds---but beware of biggere ones
 }
 \value{
 Either just a maximal sum, or a list this sum as component \code{sum} plus
@@ -54,7 +56,7 @@ Distance Matrix Multiplication. The Australasian Theory Symposion, CATS 2002.
 ##  Find a maximal sum subvector
 set.seed(8237)
 x <- rnorm(1e6)
-system.time(res <- maxsub(x, inds = TRUE, compiled = TRUE))
+system.time(res <- maxsub(x, inds = TRUE, compiled = FALSE))
 res
 
 ##  Standard example: Find a maximal sum submatrix

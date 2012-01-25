@@ -7,9 +7,10 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 0.9.6 (2012-01-17)
+CHANGES IN VERSION 0.9.6 (2012-01-25)
 
-    o [tbd.]
+    o Deleted third example for dblquad() [new Windows toolchain problem].
+    o Deactivated the test for gammaz() because of problems on Solaris.
 
 CHANGES IN VERSION 0.9.5 (2012-01-16)
 
