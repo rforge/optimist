@@ -1,12 +1,12 @@
 Package: convoi
 Type: Package
-Title: Convex Optimization
+Title: Convex Optimization in R
 Version: 0.1.2
 Date: 2012-01-14
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Description: 
-    Convex Optimization in R
+    Convex Optimization (in planning, does not yet provide functions).
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
