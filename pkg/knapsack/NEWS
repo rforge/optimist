@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------
+  knapsack                                                              NEWS
+------------------------------------------------------------------------------
+
+
+Changes in Version 0.2.0 (2012-02-02)
+
+    o knapsack() is now one interface for all three types of knapsack
+      problems: 0-1 (binary), bounded, and unbounded.
+    o Added to license: right of free distribution (with ``copyleft'').
+    o `knapsack' package added to project Optimist on R-Forge.
+
+Changes in Version 0.1.7 (2012-01-31)
+
+    o knapsack01() solves the 0-1 single knapsack problem (for integers).
+    o knapsackbd() solves the bounded single knapsack problem.
+    o knapsackub() solves the unbounded single knapsack problem.
+
+Changes in Version 0.1.3 (2012-01-13)
+
+    o License: free for research purposes and academic use.
+    o Added some Fortran codes of Silvano Martello and Paolo Toth, 
+      University of Bologna, Italy.
+    o Set up as a new package with package.skeleton.

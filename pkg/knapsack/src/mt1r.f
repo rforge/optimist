@@ -1,0 +1,299 @@
+      SUBROUTINE MT1R(N,P,W,C,EPS,Z,X,JDIM,JCK,XX,MIN,PSIGN,WSIGN,
+     1                ZSIGN,CRC,CRP)
+C
+C THIS SUBROUTINE SOLVES THE 0-1 SINGLE KNAPSACK PROBLEM WITH REAL
+C PARAMETERS
+C
+C MAXIMIZE  Z = P(1)*X(1) + ... + P(N)*X(N)
+C
+C SUBJECT TO:   W(1)*X(1) + ... + W(N)*X(N) .LE. C ,
+C               X(J) = 0 OR 1  FOR J=1,...,N.
+C
+C THE PROGRAM IS INCLUDED IN THE VOLUME
+C   S. MARTELLO, P. TOTH, "KNAPSACK PROBLEMS: ALGORITHMS
+C   AND COMPUTER IMPLEMENTATIONS", JOHN WILEY, 1990
+C AND IMPLEMENTS THE BRANCH-AND-BOUND ALGORITHM DESCRIBED IN
+C SECTION  2.5.2 .
+C THE PROGRAM IS A MODIFIED VERSION OF SUBROUTINE MT1.
+C
+C THE INPUT PROBLEM MUST SATISFY THE CONDITIONS
+C
+C   1) 2 .LE. N .LE. JDIM - 1 ;
+C   2) P(J), W(J), C  POSITIVE REALS;
+C   3) MAX (W(J)) .LE. C ;
+C   4) W(1) + ... + W(N) .GT. C ;
+C   5) P(J)/W(J) .GE. P(J+1)/W(J+1) FOR J=1,...,N-1.
+C
+C MT1R CALLS  1  PROCEDURE: CHMT1R.
+C
+C THE PROGRAM IS COMPLETELY SELF-CONTAINED AND COMMUNICATION TO IT IS
+C ACHIEVED SOLELY THROUGH THE PARAMETER LIST OF MT1R.
+C NO MACHINE-DEPENDENT CONSTANT IS USED.
+C THE PROGRAM IS WRITTEN IN 1967 AMERICAN NATIONAL STANDARD FORTRAN
+C AND IS ACCEPTED BY THE PFORT VERIFIER (PFORT IS THE PORTABLE
+C SUBSET OF ANSI DEFINED BY THE ASSOCIATION FOR COMPUTING MACHINERY).
+C THE PROGRAM HAS BEEN TESTED ON A DIGITAL VAX 11/780 AND AN H.P.
+C 9000/840.
+C
+C MT1R NEEDS  10  ARRAYS ( P ,  W ,  X ,  XX ,  MIN ,  PSIGN ,  WSIGN ,
+C                          ZSIGN ,  CRC  AND  CRP ) OF LENGTH AT LEAST
+C                          N + 1 .
+C
+C MEANING OF THE INPUT PARAMETERS:
+C N    = NUMBER OF ITEMS;
+C P(J) = PROFIT OF ITEM  J  (J=1,...,N);
+C W(J) = WEIGHT OF ITEM  J  (J=1,...,N);
+C C    = CAPACITY OF THE KNAPSACK;
+C EPS  = TOLERANCE (TWO POSITIVE VALUES Q AND R  ARE CONSIDERED EQUAL
+C        IF  ABS(Q-R)/MAX(Q,R) .LE. EPS );
+C JDIM = DIMENSION OF THE 10 ARRAYS;
+C JCK  = 1 IF CHECK ON THE INPUT DATA IS DESIRED,
+C      = 0 OTHERWISE.
+C
+C MEANING OF THE OUTPUT PARAMETERS:
+C Z    = VALUE OF THE OPTIMAL SOLUTION IF  Z .GT. 0 ,
+C      = ERROR IN THE INPUT DATA (WHEN JCK=1) IF Z .LT. 0 : CONDI-
+C        TION  - Z  IS VIOLATED;
+C X(J) = 1 IF ITEM  J  IS IN THE OPTIMAL SOLUTION,
+C      = 0 OTHERWISE;
+C
+C ARRAYS XX, MIN, PSIGN, WSIGN, ZSIGN, CRC AND CRP ARE DUMMY.
+C
+C PARAMETERS N, X, JDIM, JCK, XX AND ZSIGN ARE INTEGER. PARAMETERS P,
+C W, C, Z, MIN, PSIGN, WSIGN, CRC, CRP AND EPS ARE REAL. ON RETURN OF
+C MT1R ALL THE INPUT PARAMETERS ARE UNCHANGED.
+C
+      REAL    P(JDIM),W(JDIM)
+      INTEGER X(JDIM)
+      INTEGER XX(JDIM),ZSIGN(JDIM)
+      REAL    MIN(JDIM),PSIGN(JDIM),WSIGN(JDIM),CRC(JDIM),CRP(JDIM)
+      REAL    LIM,LIM1,IP,MINK,IU
+      Z = 0.
+      IF ( JCK .EQ. 1 ) CALL CHMT1R(N,P,W,C,Z,JDIM)
+      IF ( Z .LT. 0. ) RETURN
+C INITIALIZE.
+      IP = 0.
+      CHS = C + EPS*C
+      DO 10 LL=1,N
+        IF ( W(LL) .GT. CHS ) GO TO 20
+        IP = IP + P(LL)
+        CHS = CHS - W(LL)
+   10 CONTINUE
+   20 LL = LL - 1
+      IF ( CHS .LE. 0. ) GO TO 50
+      P(N+1) = - 4.*IP*C
+      W(N+1) = 2.*C
+      LIM = IP + CHS*P(LL+2)/W(LL+2)
+      A = W(LL+1) - CHS
+      B = IP + P(LL+1)
+      LIM1 = B - A*P(LL)/W(LL)
+      IF ( LIM1 .GT. LIM ) LIM = LIM1
+      EPSP = EPS*IP
+      LIM = LIM - EPSP
+      MINK = 2.*C
+      MIN(N) = MINK
+      DO 30 J=2,N
+        KK = N + 2 - J
+        IF ( W(KK) .LT. MINK ) MINK = W(KK)
+        MIN(KK-1) = MINK
+   30 CONTINUE
+      DO 40 J=1,N
+        XX(J) = 0
+   40 CONTINUE
+      CH = C + EPS*C
+      PROFIT = 0.
+      LOLD = N
+      JJ = 1
+      NM2 = N - 2
+      GO TO 180
+   50 Z = IP
+      DO 60 J=1,LL
+        X(J) = 1
+   60 CONTINUE
+      NN = LL + 1
+      DO 70 J=NN,N
+        X(J) = 0
+   70 CONTINUE
+      RETURN
+C TRY TO INSERT THE II-TH ITEM INTO THE CURRENT SOLUTION.
+   80 JJ = II
+      CH = CRC(II)
+      PROFIT = CRP(II)
+   90 IF ( W(JJ) .LE. CH ) GO TO 100
+      JJ1 = JJ + 1
+      IF ( Z + EPSP .GE. CH*P(JJ1)/W(JJ1) + PROFIT ) GO TO 290
+      JJ = JJ1
+      GO TO 90
+C BUILD A NEW CURRENT SOLUTION.
+  100 IP = PSIGN(JJ)
+      CHS = CH - WSIGN(JJ)
+      IN = ZSIGN(JJ)
+      DO 110 LL=IN,N
+        IF ( W(LL) .GT. CHS ) GO TO 170
+        IP = IP + P(LL)
+        CHS = CHS - W(LL)
+  110 CONTINUE
+      LL = N
+  120 IF ( Z .GE. PROFIT + IP ) GO TO 290
+      Z = PROFIT + IP
+      NN = JJ - 1
+      DO 130 J=1,NN
+        X(J) = XX(J)
+  130 CONTINUE
+      DO 140 J=JJ,LL
+        X(J) = 1
+  140 CONTINUE
+      IF ( LL .EQ. N ) GO TO 160
+      NN = LL + 1
+      DO 150 J=NN,N
+        X(J) = 0
+  150 CONTINUE
+  160 IF ( Z .LE. LIM ) GO TO 290
+      GO TO 400
+  170 IU = CHS*P(LL)/W(LL)
+      LL = LL - 1
+      IF ( IU .LE. EPSP ) GO TO 120
+      IF ( Z + EPSP .GE. PROFIT + IP + IU ) GO TO 290
+C SAVE THE CURRENT SOLUTION.
+  180 II = JJ
+      CRC(II) = CH
+      CRP(II) = PROFIT
+      CRC(II+1) = CRC(II) - W(II)
+      CRP(II+1) = CRP(II) + P(II)
+      NN = LL - 1
+      J1 = LL + 1
+      IF ( NN .LT. II) GO TO 200
+      DO 190 J=II,NN
+        JP1 = J + 1
+        CRC(J+2) = CRC(JP1) - W(JP1)
+        CRP(J+2) = CRP(JP1) + P(JP1)
+  190 CONTINUE
+  200 PROFIT = CRP(LL+1)
+      DO 210 J=J1,LOLD
+        WSIGN(J) = 0.
+        PSIGN(J) = 0.
+        ZSIGN(J) = J
+  210 CONTINUE
+      LOLD = LL
+      NEL = LL - II + 1
+      DO 220 JJ=1,NEL
+        J = J1 - JJ
+        WSIGN(J) = WSIGN(J+1) + W(J)
+        PSIGN(J) = PSIGN(J+1) + P(J)
+        ZSIGN(J) = J1
+        XX(J) = 1
+  220 CONTINUE
+      IF ( LL .LE. NM2 ) GO TO 230
+      II = N
+      GO TO 260
+  230 CRC(LL+2) = CRC(LL+1)
+      CRP(LL+2) = CRP(LL+1)
+      IF ( LL .LT. NM2 ) GO TO 250
+      IF ( CRC(N) .LT. W(N) ) GO TO 240
+      PROFIT = PROFIT + P(N)
+      XX(N) = 1
+  240 II = N - 1
+      GO TO 260
+  250 II = LL + 2
+      IF ( CRC(LL+2) .GE. MIN(II-1) ) GO TO 80
+C SAVE THE CURRENT OPTIMAL SOLUTION.
+  260 IF ( Z .GE. PROFIT ) GO TO 280
+      Z = PROFIT
+      DO 270 J=1,N
+        X(J) = XX(J)
+  270 CONTINUE
+      IF ( Z .GE. LIM ) GO TO 400
+  280 XX(N) = 0
+C BACKTRACK.
+  290 NN = II - 1
+      IF ( NN .EQ. 0 ) GO TO 400
+      DO 300 J=1,NN
+        KK = II - J
+        IF ( XX(KK) .EQ. 1 ) GO TO 310
+  300 CONTINUE
+      GO TO 400
+  310 R = CRC(KK+1)
+      CRC(KK+1) = CRC(KK)
+      CRP(KK+1) = CRP(KK)
+      CH = CRC(KK)
+      PROFIT = CRP(KK)
+      XX(KK) = 0
+      IF ( R .LT. MIN(KK) ) GO TO 320
+      II = KK + 1
+      GO TO 80
+  320 NN = KK + 1
+      II = KK
+C TRY TO SUBSTITUTE THE NN-TH ITEM FOR THE KK-TH.
+  330 IF ( Z + EPSP .GE. PROFIT + CH*P(NN)/W(NN) ) GO TO 290
+      DIFF = W(NN) - W(KK)
+      IF ( DIFF ) 380, 340, 350
+  340 NN = NN + 1
+      GO TO 330
+  350 IF ( DIFF .GT. R ) GO TO 340
+      IF ( Z + EPSP .GE. PROFIT + P(NN) ) GO TO 340
+      Z = PROFIT + P(NN)
+      DO 360 J=1,KK
+        X(J) = XX(J)
+  360 CONTINUE
+      JJ = KK + 1
+      DO 370 J=JJ,N
+        X(J) = 0
+  370 CONTINUE
+      X(NN) = 1
+      IF ( Z .GE. LIM ) GO TO 400
+      R = CH - W(NN)
+      KK = NN
+      NN = NN + 1
+      GO TO 330
+  380 T = CH - W(NN)
+      IF ( T .LT. MIN(NN) ) GO TO 340
+      IF ( Z + EPSP .GE. PROFIT + P(NN) + T*P(NN+1)/W(NN+1) ) GO TO 290
+      CRC(NN) = CH
+      CRP(NN) = PROFIT
+      CRC(NN+1) = CH - W(NN)
+      CRP(NN+1) = PROFIT + P(NN)
+      XX(NN) = 1
+      II = NN + 1
+      WSIGN(NN) = W(NN)
+      PSIGN(NN) = P(NN)
+      ZSIGN(NN) = II
+      N1 = NN + 1
+      DO 390 J=N1,LOLD
+        WSIGN(J) = 0.
+        PSIGN(J) = 0.
+        ZSIGN(J) = J
+  390 CONTINUE
+      LOLD = NN
+      GO TO 80
+  400 RETURN
+      END
+      SUBROUTINE CHMT1R(N,P,W,C,Z,JDIM)
+C
+C CHECK THE INPUT DATA.
+C
+      REAL P(JDIM),W(JDIM),JSW
+      IF ( N .GE. 2 .AND. N .LE. JDIM - 1 ) GO TO 10
+      Z = - 1.
+      RETURN
+   10 IF ( C .GT. 0. ) GO TO 30
+   20 Z = - 2.
+      RETURN
+   30 JSW = 0.
+      RR = P(1)/W(1)
+      DO 50 J=1,N
+        R = RR
+        IF ( P(J) .LE. 0. ) GO TO 20
+        IF ( W(J) .LE. 0. ) GO TO 20
+        JSW = JSW + W(J)
+        IF ( W(J) .LE. C ) GO TO 40
+        Z = - 3.
+        RETURN
+   40   RR = P(J)/W(J)
+        IF ( RR .LE. R ) GO TO 50
+        Z = - 5.
+        RETURN
+   50 CONTINUE
+      IF ( JSW .GT. C ) RETURN
+      Z = - 4.
+      RETURN
+      END

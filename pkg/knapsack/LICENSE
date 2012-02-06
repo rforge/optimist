@@ -1,0 +1,26 @@
+1.  The Fortran codes are under the exclusive copyright of  Silvano Martello
+    and Paolo Toth from the Department of Electronics, Computer Sciences and
+    Systems (DEIS) at the University of Bologna.                            
+2.  The codes come with no warranty, whether expressed or implied, that they
+    are free of errors or suitable for any specific purpose.They must not be
+    used to solve any problem,  whose  incorrect  solution  could  result in
+    injury to a person, institution or property. It is at the users own risk
+    to use thecodes or parts of them and the authors disclaims all liability
+    for such use.
+3.  This software is distributed "as is".  In  particular,  no  maintenance,
+    support or trouble-shooting or subsequent upgrade is implied.
+4.  The use of  the  Fortran codes must be acknowledged,  in any publication
+    which contains results obtained with them or parts of them.  Citation of
+    the authors' names  and/or  referring to their book  "Knapsack Problems:
+    Algorithms and Computer Implementations" is suitable.
+    URL: http://www.or.deis.unibo.it/knapsack.html
+5.  The Fortran codes may freely be distributed. The free use of the Fortran
+    codes  or parts of them is restricted for research purposes and academic
+    use.  Any company application or commercial use requires permission  and 
+    licensing from the authors of the code.
+    Contact: 
+        Silvano Martello and Paolo Toth
+        DEIS, University of Bologna
+        2 Viale Risorgimento
+        I-40136 Bologna, Italy
+        Email: silvano.martello@unibo.it, paolo.toth@unibo.it

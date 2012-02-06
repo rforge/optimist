@@ -1,0 +1,7 @@
+##
+##  NAMESPACE
+##
+
+useDynLib('knapsack')
+
+export(knapsack)
