@@ -5,3 +5,4 @@
 useDynLib('knapsack')
 
 export(knapsack)
+export(subsetsum)

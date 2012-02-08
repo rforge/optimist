@@ -1,0 +1,774 @@
+      SUBROUTINE MTSL(N,W,C,Z,X,JDN,JDD,ITMM,JCK,
+     1                WO,IND,XX,WS,ZS,SUM,TD1,TD2,TD3)
+C
+C THIS SUBROUTINE SOLVES THE SUBSET-SUM PROBLEM
+C
+C MAXIMIZE  Z = W(1)*X(1) + ... + W(N)*X(N)
+C
+C SUBJECT TO:   W(1)*X(1) + ... + W(N)*X(N) .LE. C ,
+C               X(J) = 0 OR 1  FOR J=1,...,N.
+C
+C THE PROGRAM IS INCLUDED IN THE VOLUME
+C   S. MARTELLO, P. TOTH, "KNAPSACK PROBLEMS: ALGORITHMS
+C   AND COMPUTER IMPLEMENTATIONS", JOHN WILEY, 1990
+C AND IMPLEMENTS THE MIXED ALGORITHM DESCRIBED IN
+C SECTION  4.2.3 .
+C
+C THE INPUT PROBLEM MUST SATISFY THE CONDITIONS
+C
+C   1) 2 .LE. N .LE. JDN - 1 ;
+C   2) W(J), C  POSITIVE INTEGERS;
+C   3) MAX (W(J)) .LT. C ;
+C   4) W(1) + ... + W(N) .GT. C .
+C
+C MTSL CALLS  8  PROCEDURES: CHMTSL, DINSM, MTS, PRESP, SORTI, TAB,
+C                            UPSTAR AND USEDIN.
+C
+C COMMUNICATION TO THE PROGRAM IS ACHIEVED SOLELY THROUGH THE
+C PARAMETER LIST OF MTSL.
+C NO MACHINE-DEPENDENT CONSTANT IS USED.
+C THE PROGRAM IS WRITTEN IN 1967 AMERICAN NATIONAL STANDARD FORTRAN
+C AND IS ACCEPTED BY THE PFORT VERIFIER (PFORT IS THE PORTABLE
+C SUBSET OF ANSI DEFINED BY THE ASSOCIATION FOR COMPUTING MACHINERY).
+C THE PROGRAM HAS BEEN TESTED ON A DIGITAL VAX 11/780 AND AN H.P.
+C 9000/840.
+C
+C MTSL NEEDS
+C   2  ARRAYS ( W AND X ) OF LENGTH  AT LEAST  JDN ;
+C   6  ARRAYS ( WO ,  IND ,  XX ,  WS ,  ZS  AND  SUM ) OF LENGTH
+C               AT LEAST  ITMM ;
+C   3  ARRAYS ( TD1 ,  TD2  AND  TD3 ) OF LENGTH AT LEAST  JDD X 2 .
+C
+C MEANING OF THE INPUT PARAMETERS:
+C N    = NUMBER OF ITEMS;
+C W(J) = WEIGHT OF ITEM  J  (J=1,...,N);
+C C    = CAPACITY;
+C JDN  = DIMENSION OF ARRAYS  W  AND  X ;
+C JDD  = MAXIMUM LENGTH OF THE DYNAMIC PROGRAMMING LISTS (SUGGESTED
+C        VALUE JDD = 5000);
+C ITMM = (MAXIMUM NUMBER OF ITEMS IN THE CORE PROBLEM) + 1 ;
+C        ITMM = JDN IN ORDER TO BE SURE THAT THE OPTIMAL SOLUTION IS
+C        FOUND.  ITMM .LT. JDN (SUGGESTED VALUE ITMM = 91) PRODUCES
+C        AN APPROXIMATE SOLUTION WHICH IS ALMOST ALWAYS OPTIMAL (TO
+C        CHECK OPTIMALITY, SEE WHETHER Z = C );
+C JCK  = 1 IF CHECK ON THE INPUT DATA IS DESIRED,
+C      = 0 OTHERWISE.
+C
+C MEANING OF THE OUTPUT PARAMETERS:
+C Z    = VALUE OF THE SOLUTION FOUND IF  Z .GT. 0 ,
+C      = ERROR IN THE INPUT DATA (WHEN JCK=1) IF Z .LT. 0 : CONDI-
+C        TION  - Z  IS VIOLATED;
+C X(J) = 1 IF ITEM  J  IS IN THE SOLUTION FOUND,
+C      = 0 OTHERWISE.
+C
+C MEANING OF THE INTERNAL VARIABLES WHICH COULD BE ALTERATED BY THE
+C USER:
+C IT   = LENGTH OF THE INITIAL CORE PROBLEM (SUGGESTED VALUE IT = 30);
+C ID   = INCREMENT OF THE LENGTH OF THE CORE PROBLEM (SUGGESTED VALUE
+C        ID = 30);
+C M2   = NUMBER OF ITEMS TO BE USED FOR THE SECOND DYNAMIC PROGRAMMING
+C        LIST; IT MUST BE 2 .LE. M2 .LE. MIN(31,N-4) (SUGGESTED VALUE
+C        M2 = MIN ( 2.5*ALOG10(MAX(W(J))) , 0.8*N ) ). M1 , THE NUMBER
+C        OF ITEMS TO BE USED FOR THE FIRST DYNAMIC PROGRAMMING LIST, IS
+C        AUTOMATICALLY DETERMINED BY THE PROGRAM;
+C PERS = VALUE USED TO DETERMINE  C BAR  ACCORDING TO THE FORMULA GIVEN
+C        IN SECTION 4.2.2 (SUGGESTED VALUE PERS = 1.3).
+C
+C ARRAYS WO, IND, XX, WS, ZS, SUM, TD1, TD2 AND TD3 ARE DUMMY.
+C
+C ALL THE PARAMETERS ARE INTEGER. ON RETURN OF MTSL ALL THE INPUT
+C PARAMETERS ARE UNCHANGED.
+C
+      INTEGER W(JDN),X(JDN),C,Z
+      INTEGER WO(ITMM),IND(ITMM),XX(ITMM),WS(ITMM),ZS(ITMM),SUM(ITMM)
+      INTEGER TD1(JDD,2),TD2(JDD,2),TD3(JDD,2)
+      Z = 0
+      IF ( JCK .EQ. 1 ) CALL CHMTSL(N,W,C,Z,JDN)
+      IF ( Z .LT. 0 ) RETURN
+      IF ( N .GT. 2 ) GO TO 20
+C CASE N = 2 .
+      IF ( W(1) .LT. W(2) ) GO TO 10
+      Z = W(1)
+      X(1) = 1
+      X(2) = 0
+      RETURN
+   10 Z = W(2)
+      X(1) = 0
+      X(2) = 1
+      RETURN
+C DEFINITION OF PARAMETERS IT AND ID (FOR THE CORE PROBLEM).
+   20 IT = 30
+      ID = 30
+      ITM = ITMM
+      IF ( ITM .GT. N ) ITM = N + 1
+      IF ( IT .GT. ITM - 1 ) IT = ITM - 1
+      ITC = IT
+   30 ITCO = ITC
+C DEFINITION AND SORTING OF THE CORE PROBLEM.
+      CALL PRESP(N,W,C,ITC,ITCO,IND,NC,NI,JSUM)
+      CALL SORTI(ITC,W,IND,JDN)
+      DO 40 I=1,ITC
+        INDI = IND(I)
+        WO(I) = W(INDI)
+   40 CONTINUE
+      RMAXW = WO(1)
+C DEFINITION OF PARAMETERS M2 AND PERS (FOR DYNAMIC PROGRAMMING).
+      M2 = 2.5*ALOG10(RMAXW)
+      IF ( FLOAT(M2) .GT. 0.8*FLOAT(ITC) ) M2 = 0.8*FLOAT(ITC)
+      IF ( M2 .GT. ITC - 4 ) M2 = ITC - 4
+      IF ( M2 .LT. 2 ) M2 = 2
+      PERS = 1.3
+      IF ( JSUM .EQ. 0 ) GO TO 60
+C ALL THE  WO  ARE IN THE SOLUTION OF THE CORE PROBLEM.
+      DO 50 I=1,ITC
+        X(I) = 1
+   50 CONTINUE
+      NZ = JSUM
+      GO TO 90
+   60 IF ( ITC .GT. M2 ) GO TO 80
+      NZ = 0
+      DO 70 I=1,ITC
+        X(I) = 0
+   70 CONTINUE
+      GO TO 90
+   80 CALL MTS(ITC,WO,NC,NZ,X,M2,PERS,JDD,ITM,XX,WS,ZS,SUM,
+     1         TD1,TD2,TD3)
+   90 IF ( NZ .EQ. NC ) GO TO 100
+      IF ( ITCO .EQ. ITM - 1 ) GO TO 100
+C REPEAT.
+      ITC = ITCO + ID
+      IF ( ITC .GT. ITM - 1 ) ITC = ITM - 1
+      GO TO 30
+C FINAL SOLUTION (OPTIMAL IF  Z = C  OR  ITM - 1 .EQ. N ).
+  100 Z = NZ + C - NC
+      DO 110 I=1,ITC
+        WO(I) = X(I)
+  110 CONTINUE
+      IF ( NI .LE. 0 ) GO TO 130
+      DO 120 I=1,NI
+        X(I) = 1
+  120 CONTINUE
+  130 NL = NI + 1
+      DO 140 I=NL,N
+        X(I) = 0
+  140 CONTINUE
+      DO 150 I=1,ITC
+        JJ = IND(I)
+        X(JJ) = WO(I)
+  150 CONTINUE
+      RETURN
+      END
+      SUBROUTINE CHMTSL(N,W,C,Z,JDN)
+C
+C CHECK THE INPUT DATA.
+C
+      INTEGER W(JDN),C,Z
+      IF ( N .GE. 2 .AND. N .LE. JDN - 1 ) GO TO 10
+      Z = - 1
+      RETURN
+   10 IF ( C .GT. 0 ) GO TO 30
+   20 Z = - 2
+      RETURN
+   30 JSW = 0
+      DO 40 J=1,N
+        IF ( W(J) .LE. 0 ) GO TO 20
+        JSW = JSW + W(J)
+        IF ( W(J) .LT. C ) GO TO 40
+        Z = - 3
+        RETURN
+   40 CONTINUE
+      IF ( JSW .GT. C ) RETURN
+      Z = - 4
+      RETURN
+      END
+      SUBROUTINE DINSM(N,W,CD,M2,JDD,TD1,TD2,TD3,NSDS,NSDM,M,
+     1                 JFLM,JFLS,PERS)
+C
+C DETERMINE THE DYNAMIC PROGRAMMING LISTS.
+C
+C FOR EACH STATE  J ,  TD*(J,1)  GIVES THE WEIGHT,  TD*(J,2) GIVES
+C THE CORRESPONDING BIT STRING.
+C
+      INTEGER W(N),CD
+      INTEGER TD1(JDD,2),TD2(JDD,2),TD3(JDD,2)
+      JDDS = JDD
+      JDDM = JDD
+      K = N
+      TD1(1,1) = 0
+      TD1(1,2) = 0
+      TD1(2,1) = W(N)
+      TD1(2,2) = 1
+      JCALL = 1
+      NSDS = 2
+      NSDM = 0
+      JBIT = 1
+      JSUMW = W(N)
+   10 K = K - 1
+      JSUMW = JSUMW + W(K)
+      IF ( K .LT. N - M2 + 1 ) GO TO 120
+      IF ( W(K) .GT. CD ) GO TO 120
+      JBIT = JBIT*2
+      NSDSO = NSDS
+      IF ( JCALL .EQ. 2 ) GO TO 20
+      IF ( JCALL .EQ. 3 ) GO TO 30
+      IF ( JCALL .EQ. 4 ) GO TO 40
+      IF ( JCALL .EQ. 5 ) GO TO 50
+      IF ( JCALL .EQ. 6 ) GO TO 60
+      CALL TAB(TD1,TD2,NSDS,W(K),CD,JDDS,JDD,JBIT,JFLAG)
+      JCALL = 2
+      GO TO 70
+   20 CALL TAB(TD2,TD1,NSDS,W(K),CD,JDDS,JDD,JBIT,JFLAG)
+      JCALL = 1
+      GO TO 70
+   30 CALL TAB(TD1,TD3,NSDS,W(K),CD,JDDM,JDD,JBIT,JFLAG)
+      JCALL = 4
+      GO TO 70
+   40 CALL TAB(TD3,TD1,NSDS,W(K),CD,JDDM,JDD,JBIT,JFLAG)
+      JCALL = 3
+      GO TO 70
+   50 CALL TAB(TD2,TD3,NSDS,W(K),CD,JDDM,JDD,JBIT,JFLAG)
+      JCALL = 6
+      GO TO 70
+   60 CALL TAB(TD3,TD2,NSDS,W(K),CD,JDDM,JDD,JBIT,JFLAG)
+      JCALL = 5
+   70 IF ( JFLAG .GE. 0 ) GO TO 80
+      NSDS = JDDS
+      GO TO 90
+   80 IF ( NSDS .LE. JDDM ) GO TO 10
+   90 IF ( NSDM .GT. 0 ) GO TO 10
+      NSDM = NSDSO
+C DEFINE THE NEW VALUE OF  CD  AND UPDATE  NSDS .
+      NM21 = N - M2 + 1
+      CD = FLOAT(W(NM21))*PERS
+      IF ( JCALL .EQ. 2 ) GO TO 100
+      CALL USEDIN(CD,TD1,JDD,NSDS,LOC)
+      JFLM = 2
+      JCALL = 3
+      GO TO 110
+  100 CALL USEDIN(CD,TD2,JDD,NSDS,LOC)
+      JFLM = 1
+      JCALL = 5
+  110 NSDS = LOC
+      M = N - K
+      GO TO 10
+  120 IF ( JCALL .EQ. 2 ) GO TO 130
+      IF ( JCALL .EQ. 3 ) GO TO 140
+      IF ( JCALL .EQ. 4 ) GO TO 150
+      IF ( JCALL .EQ. 5 ) GO TO 160
+      IF ( JCALL .EQ. 6 ) GO TO 170
+      JFLM = 1
+      JFLS = 1
+      NSDM = NSDS
+      M = N - K
+      CD = TD1(NSDS,1)
+      GO TO 180
+  130 JFLM = 2
+      JFLS = 2
+      NSDM = NSDS
+      M = N - K
+      CD = TD2(NSDS,1)
+      GO TO 180
+  140 JFLS = 1
+      CD = TD1(NSDS,1)
+      GO TO 180
+  150 JFLS = 3
+      CD = TD3(NSDS,1)
+      GO TO 180
+  160 JFLS = 2
+      CD = TD2(NSDS,1)
+      GO TO 180
+  170 JFLS = 3
+      CD = TD3(NSDS,1)
+  180 RETURN
+      END
+      SUBROUTINE MTS(N,W,C,Z,X,M2,PERS,JDD,ITM,XX,WS,ZS,SUM,
+     1               TD1,TD2,TD3)
+C
+C SUBROUTINE TO SOLVE A SMALL SUBSET SUM PROBLEM.
+C JVBIT  MUST BE DIMENSIONED AT  31 .
+C ARRAYS  TD1 ,  TD2  AND  TD3  ARE USED FOR THE DYNAMIC PROGRAMMING
+C LISTS. THEIR DIMENSION  JDD  CAN BE CHANGED ACCORDING TO THE NUMBER
+C OF STATES WANTED FOR THE LISTS (IN THIS CASE THE VALUE OF  JDD ,
+C USED FOR ADJUSTABLE DIMENSIONS, MUST BE CHANGED).
+C
+      INTEGER W(ITM),X(ITM),C,Z
+      INTEGER XX(ITM),WS(ITM),ZS(ITM),SUM(ITM)
+      INTEGER TD1(JDD,2),TD2(JDD,2),TD3(JDD,2)
+      INTEGER JVBIT(31)
+      INTEGER V,CF,CS,CD
+C INITIALIZE.
+      CF = C
+      CS = C
+C DYNAMIC PROGRAMMING.
+      CD = C
+      CALL DINSM(N,W,CD,M2,JDD,TD1,TD2,TD3,NSDS,NSDM,M,JFLM,JFLS,PERS)
+      JXPACK = 0
+      IF ( JFLS .EQ. 2 ) GO TO 10
+      IF ( JFLS .EQ. 3 ) GO TO 20
+      CALL USEDIN(C,TD1,JDD,NSDS,LOC1)
+      JTS = TD1(LOC1,1)
+      GO TO 30
+   10 CALL USEDIN(C,TD2,JDD,NSDS,LOC1)
+      JTS = TD2(LOC1,1)
+      GO TO 30
+   20 CALL USEDIN(C,TD3,JDD,NSDS,LOC1)
+      JTS = TD3(LOC1,1)
+   30 IF ( JFLM .EQ. 2 ) GO TO 40
+      CALL USEDIN(C,TD1,JDD,NSDM,LOC2)
+      JTM = TD1(LOC2,1)
+      JTML = TD1(NSDM,1)
+      GO TO 50
+   40 CALL USEDIN(C,TD2,JDD,NSDM,LOC2)
+      JTM = TD2(LOC2,1)
+      JTML = TD2(NSDM,1)
+   50 NOLD = N
+      NOLD1 = NOLD + 1
+      N = N - M
+      JWNOLD = W(N+1)
+C OPTIMAL INITIAL SOLUTION.
+      LOC = LOC1
+      JSOL = JTS
+      IF ( JSOL .GE. JTM ) GO TO 60
+      LOC = - LOC2
+      JSOL = JTM
+   60 CALL UPSTAR(0,0,N,XX,JSOL,LOC,X,Z,LSTAR)
+      IF ( Z .EQ. C ) GO TO 470
+      IF ( N .EQ. 0 ) GO TO 470
+      W(N+1) = C + 1
+      LIM = CF
+      MINW = W(N)
+      CS = C
+      DO 70 L=1,N
+        LL = L
+        IF ( W(L) .GT. CS ) GO TO 80
+        CS = CS - W(L)
+   70 CONTINUE
+      LL = N + 1
+   80 LL = LL - 1
+      IF ( CS .GT. 0 ) GO TO 90
+      CALL UPSTAR(0,LL,N,XX,C,-1,X,Z,LSTAR)
+      GO TO 470
+   90 CONTINUE
+      JVBIT(1) = 1
+      IF ( M2 .LE. 1 ) GO TO 110
+      JBIT = 1
+      DO 100 J=2,M2
+        JBIT = JBIT*2
+        JVBIT(J) = JBIT
+  100 CONTINUE
+  110 JSUM = JTML
+      DO 120 J=1,N
+        JJ = N - J + 1
+        JSUM = JSUM + W(JJ)
+        SUM(JJ) = JSUM
+  120 CONTINUE
+      DO 130 J=1,N
+        XX(J) = 0
+  130 CONTINUE
+      LOLD = N
+      NS = NOLD - M2
+      II = 1
+      GO TO 180
+C TRY TO INSERT THE II-TH ITEM INTO THE CURRENT SOLUTION.
+  140 IF ( W(II) .LE. C ) GO TO 150
+      II = II + 1
+      GO TO 140
+C BUILD A NEW CURRENT SOLUTION.
+  150 IF ( (CF - C) + SUM(II) .LE. Z ) GO TO 440
+      CS = C - WS(II)
+      IN = ZS(II)
+      LL = N
+      IF ( IN .GT. N ) GO TO 180
+      DO 160 L=IN,N
+        LL = L
+        IF ( W(L) .GT. CS ) GO TO 170
+        CS = CS - W(L)
+  160 CONTINUE
+      GO TO 180
+C UPDATE THE OPTIMAL SOLUTION.
+  170 LL = LL - 1
+      IF ( CS .NE. 0 ) GO TO 180
+      CALL UPSTAR(II-1,LL,N,XX,CF,-1,X,Z,LSTAR)
+      IF ( Z .NE. LIM ) GO TO 440
+      GO TO 470
+C SAVE THE CURRENT SOLUTION.
+  180 WS(II) = C - CS
+      ZS(II) = LL + 1
+      XX(II) = 1
+      NOLDII = NOLD1 - II
+      IF ( II .GT. NS ) JXPACK = JXPACK + JVBIT(NOLDII)
+      NN = LL - 1
+      IF ( NN .LT. II) GO TO 200
+      DO 190 J=II,NN
+        J1 = J + 1
+        WS(J1) = WS(J) - W(J)
+        ZS(J1) = LL + 1
+        XX(J1) = 1
+        NOLDJ1 = NOLD1 - J1
+        IF ( J1 .GT. NS ) JXPACK = JXPACK + JVBIT(NOLDJ1)
+  190 CONTINUE
+  200 J1 = LL + 1
+      IF ( J1 .GT. LOLD ) GO TO 220
+      DO 210 J=J1,LOLD
+        WS(J) = 0
+        ZS(J) = J
+  210 CONTINUE
+  220 LOLD = LL
+      C = CS
+      IF ( JFLS .EQ. 2 ) GO TO 230
+      IF ( JFLS .EQ. 3 ) GO TO 240
+      CALL USEDIN(C,TD1,JDD,NSDS,LOC)
+      JTS1 = TD1(LOC,1)
+      GO TO 250
+  230 CALL USEDIN(C,TD2,JDD,NSDS,LOC)
+      JTS1 = TD2(LOC,1)
+      GO TO 250
+  240 CALL USEDIN(C,TD3,JDD,NSDS,LOC)
+      JTS1 = TD3(LOC,1)
+  250 IF ( C .LE. CD ) GO TO 280
+      IF ( JFLM .EQ. 2 ) GO TO 260
+      CALL USEDIN(C,TD1,JDD,NSDM,LOC1)
+      JTM = TD1(LOC1,1)
+      GO TO 270
+  260 CALL USEDIN(C,TD2,JDD,NSDM,LOC1)
+      JTM = TD2(LOC1,1)
+  270 IF ( JTS1 .GE. JTM ) GO TO 280
+      NEWSOL = (CF - C) + JTM
+      LOC = - LOC1
+      GO TO 350
+  280 NEWSOL = (CF - C) + JTS1
+      IF ( LL .LT. NS ) GO TO 350
+C THE NEXT ITEM ( LL + 1 ) IS ONE OF THE LAST  M2 .
+  290 IF ( JFLS .EQ. 2 ) GO TO 300
+      IF ( JFLS .EQ. 3 ) GO TO 310
+      JTS1 = TD1(LOC,1)
+      JTS2 = TD1(LOC,2)
+      GO TO 320
+  300 JTS1 = TD2(LOC,1)
+      JTS2 = TD2(LOC,2)
+      GO TO 320
+  310 JTS1 = TD3(LOC,1)
+      JTS2 = TD3(LOC,2)
+  320 IF ( IAND(JXPACK,JTS2) .EQ. 0 ) GO TO 330
+      LOC = LOC - 1
+      GO TO 290
+  330 NEWSOL = (CF - C) + JTS1
+      IF ( C .GT. CD ) GO TO 350
+C NO MORE FORWARD STEPS ARE REQUIRED.
+      II = LL + 1
+      IF ( NEWSOL .LE. Z ) GO TO 340
+      CALL UPSTAR(LL,LL,N,XX,NEWSOL,LOC,X,Z,LSTAR)
+      IF ( Z .EQ. LIM ) GO TO 470
+  340 IF ( LL .LT. N ) GO TO 440
+      GO TO 410
+C THE NEXT ITEM IS ONE OF THE FIRST  NS  OR  C .GT. CD .
+  350 IF ( NEWSOL .LE. Z ) GO TO 360
+      CALL UPSTAR(LL,LL,N,XX,NEWSOL,LOC,X,Z,LSTAR)
+      IF ( Z .EQ. LIM ) GO TO 470
+  360 IF ( LL .GE. N - 2 ) GO TO 370
+      II = LL + 2
+      IF ( C .GE. MINW ) GO TO 140
+      GO TO 440
+C LL .GE. N - 2 .
+  370 II = N
+      IF ( LL .EQ. N - 1 ) GO TO 440
+      IF ( LL .EQ. N ) GO TO 410
+C LL = N - 2 .
+      IF ( C .LT. W(N) ) GO TO 440
+      C = C - W(N)
+      XX(N) = 1
+      IF ( JFLM .EQ. 2 ) GO TO 380
+      CALL USEDIN(C,TD1,JDD,NSDM,LOC)
+      JTM = TD1(LOC,1)
+      GO TO 390
+  380 CALL USEDIN(C,TD2,JDD,NSDM,LOC)
+      JTM = TD2(LOC,1)
+  390 V = CF - C + JTM
+      IF ( Z .GE. V ) GO TO 400
+      CALL UPSTAR(N,N,N,XX,V,-LOC,X,Z,LSTAR)
+      IF ( Z .EQ. LIM ) GO TO 470
+  400 C = C + W(N)
+      XX(N) = 0
+      GO TO 440
+C PARTICULAR BACKTRACKING FOR  XX(N) = 1 .
+  410 XX(N) = 0
+      NOLDN = NOLD1 - N
+      IF ( N .GT. NS ) JXPACK = JXPACK - JVBIT(NOLDN)
+      C = C + W(N)
+      V = CF - C
+      IF ( JFLM .EQ. 2 ) GO TO 420
+      CALL USEDIN(C,TD1,JDD,NSDM,LOC)
+      JTM = TD1(LOC,1)
+      GO TO 430
+  420 CALL USEDIN(C,TD2,JDD,NSDM,LOC)
+      JTM = TD2(LOC,1)
+  430 V = V + JTM
+      IF ( Z .GE. V ) GO TO 440
+      CALL UPSTAR(N,N,N,XX,V,-LOC,X,Z,LSTAR)
+      IF ( Z .EQ. LIM ) GO TO 470
+C BACKTRACK.
+  440 NN = II - 1
+      IF ( NN .EQ. 0 ) GO TO 470
+      DO 450 JJ=1,NN
+        KK = II - JJ
+        IF ( XX(KK) .EQ. 1 ) GO TO 460
+  450 CONTINUE
+      GO TO 470
+  460 C = C + W(KK)
+      XX(KK) = 0
+      NOLDKK = NOLD1 - KK
+      IF ( KK .GT. NS ) JXPACK = JXPACK - JVBIT(NOLDKK)
+      II = KK + 1
+      GO TO 140
+C RETURN.
+  470 W(N+1) = JWNOLD
+      N = NOLD
+      C = CF
+      I = N
+      IF ( LSTAR .LT. 0 ) GO TO 530
+      IF ( JFLS .EQ. 2 ) GO TO 480
+      IF ( JFLS .EQ. 3 ) GO TO 490
+      JTS = TD1(LSTAR,2)
+      GO TO 500
+  480 JTS = TD2(LSTAR,2)
+      GO TO 500
+  490 JTS = TD3(LSTAR,2)
+  500 LL = JTS
+      II = N - M
+  510 IF ( II .EQ. 0 ) GO TO 520
+      IF ( X(II) .EQ. 1 ) GO TO 520
+      II = II - 1
+      GO TO 510
+  520 JJ = N - II
+      IF ( JJ .GT. M2 ) JJ = M2
+      GO TO 560
+  530 MLSTAR = - LSTAR
+      IF ( JFLM .EQ. 2 ) GO TO 540
+      JTM = TD1(MLSTAR,2)
+      GO TO 550
+  540 JTM = TD2(MLSTAR,2)
+  550 LL = JTM
+      JJ = M
+  560 DO 570 J=1,JJ
+        L = LL/2
+        X(I) = LL - L*2
+        LL = L
+        I = I - 1
+  570 CONTINUE
+      RETURN
+      END
+      SUBROUTINE PRESP(N,W,C,ITC,ITCO,IND,NC,NI,JSUM)
+C
+C DEFINE THE CORE PROBLEM.
+C
+      INTEGER W(N),IND(ITCO)
+      INTEGER C
+      NC = C
+      DO 10 I=1,N
+        IF ( W(I) .GT. NC ) GO TO 20
+        NC = NC - W(I)
+   10 CONTINUE
+   20 LL = I - 1
+      INCH = ITC/2
+      IF ( ITC - INCH .GT. N - LL ) INCH = ITC - (N - LL)
+      IF ( INCH .GT. LL ) INCH = LL
+      L = LL
+      JSUM = 0
+      LLI = LL
+      DO 30 I=1,INCH
+        NC = NC + W(LLI)
+        IND(I) = LLI
+        JSUM = JSUM + W(LLI)
+        L = L - 1
+        IF ( I .LT. INCH ) LLI = LLI - (LLI - 1)/(INCH - I)
+   30 CONTINUE
+      NI = LL
+      IAV = ITC - INCH
+      IF ( LL + IAV .GT. N ) IAV = N - LL
+      L = INCH + 1
+      LLI = LL + 1
+      DO 40 I=1,IAV
+        IF ( W(LLI) .GT. NC ) GO TO 40
+        IND(L) = LLI
+        JSUM = JSUM + W(LLI)
+        L = L + 1
+        IF ( I .LT. IAV ) LLI = LLI + (N - LLI)/(IAV - I)
+   40 CONTINUE
+      ITC = L - 1
+      IF ( JSUM .GT. NC ) JSUM = 0
+      RETURN
+      END
+      SUBROUTINE SORTI(N,A,V,JDA)
+C
+C SORT THE INTEGER ARRAY A BY DECREASING VALUES (DERIVED FROM
+C SUBROUTINE SORTZV OF THE C.E.R.N. LIBRARY).
+C
+C JDA           = LENGTH OF ARRAY A;
+C N             = NUMBER OF ELEMENTS OF A TO BE SORTED;
+C V(I) (INPUT)  = POINTER TO THE I-TH ELEMENT TO BE SORTED;
+C V(I) (OUTPUT) = POINTER TO THE I-TH ELEMENT OF THE SORTED ARRAY.
+C
+C ON RETURN, ARRAY A IS UNCHANGED.
+C
+      INTEGER V(N),IU(20),IL(20)
+      INTEGER A(JDA),T
+      II = 1
+      JJ = N
+      IF ( N .LE. 1 ) RETURN
+      M = 1
+      I = II
+      J = JJ
+   10 IF ( I .GE. J ) GO TO 80
+   20 K = I
+      IJ = (J + I)/2
+      IV = V(IJ)
+      T = A(IV)
+      KI = V(I)
+      IF ( A(KI) .GE. T ) GO TO 30
+      V(IJ) = KI
+      V(I) = IV
+      IV = V(IJ)
+      T = A(IV)
+   30 L = J
+      KI = V(J)
+      IF ( A(KI) .LE. T ) GO TO 50
+      V(IJ) = KI
+      V(J) = IV
+      IV = V(IJ)
+      T = A(IV)
+      KI = V(I)
+      IF ( A(KI) .GE. T ) GO TO 50
+      V(IJ) = KI
+      V(I) = IV
+      IV = V(IJ)
+      T = A(IV)
+      GO TO 50
+   40 V(L) = V(K)
+      V(K) = IVT
+   50 L = L - 1
+      KI = V(L)
+      IF ( A(KI) .LT. T ) GO TO 50
+      IVT = KI
+   60 K = K + 1
+      KI = V(K)
+      IF ( A(KI) .GT. T ) GO TO 60
+      IF ( K .LE. L ) GO TO 40
+      IF ( L - I .LE. J - K ) GO TO 70
+      IL(M) = I
+      IU(M) = L
+      I = K
+      M = M + 1
+      GO TO 90
+   70 IL(M) = K
+      IU(M) = J
+      J = L
+      M = M + 1
+      GO TO 90
+   80 M = M - 1
+      IF ( M .EQ. 0 ) RETURN
+      I = IL(M)
+      J = IU(M)
+   90 IF ( J - I .GE. II ) GO TO 20
+      IF ( I .EQ. II ) GO TO 10
+      I = I - 1
+  100 I = I + 1
+      IF ( I .EQ. J ) GO TO 80
+      IV = V(I+1)
+      T = A(IV)
+      KI = V(I)
+      IF ( A(KI) .GE. T ) GO TO 100
+      K = I
+  110 V(K+1) = V(K)
+      K = K - 1
+      KI = V(K)
+      IF ( T .GT. A(KI) ) GO TO 110
+      V(K+1) = IV
+      GO TO 100
+      END
+      SUBROUTINE TAB(TDA,TDB,NSD,WK,C,JDDX,JDD,JBIT,JFLAG)
+C
+C BUILD THE NEW DYNAMIC PROGRAMMING LIST  TDB  FROM THE CURRENT
+C LIST  TDA  BY ADDING THE STATES WHICH CAN BE OBTAINED FROM  WK .
+C
+      INTEGER WK,C,TDA(JDD,2),TDB(JDD,2)
+      JFLAG = 0
+      TDA(NSD+1,1) = 2*C + 1
+      KA = 1
+      KAS = 1
+      KB = 0
+      NEWST = WK
+      NEWSOL = JBIT
+   10 IF ( NEWST - TDA(KA,1) ) 20 , 30 , 40
+   20 KB = KB + 1
+      IF ( KB .GT. JDDX ) GO TO 60
+      TDB(KB,1) = NEWST
+      TDB(KB,2) = NEWSOL
+   30 IF ( KAS .EQ. NSD ) GO TO 50
+      KAS = KAS + 1
+      NEWST = WK + TDA(KAS,1)
+      NEWSOL = JBIT + TDA(KAS,2)
+      IF ( NEWST .LE. C ) GO TO 10
+      IF ( KA .GT. NSD ) GO TO 50
+      GO TO 10
+   40 KB = KB + 1
+      IF ( KB .GT. JDDX ) GO TO 60
+      TDB(KB,1) = TDA(KA,1)
+      TDB(KB,2) = TDA(KA,2)
+      KA = KA + 1
+      GO TO 10
+   50 NSD = KB
+      IF ( TDB(NSD,1) .GT. C ) NSD = NSD - 1
+      GO TO 70
+   60 JFLAG = - 1
+   70 CONTINUE
+      RETURN
+      END
+      SUBROUTINE UPSTAR(NX,N1,N0,XX,V,LOC,X,Z,LSTAR)
+C
+C UPDATE THE CURRENT OPTIMAL SOLUTION.
+C
+      INTEGER XX(N0),X(N0),V,Z
+      Z = V
+      IF ( NX .EQ. 0 ) GO TO 20
+      DO 10 J=1,NX
+        X(J) = XX(J)
+   10 CONTINUE
+   20 IF ( N1 .EQ. NX ) GO TO 40
+      NX1 = NX + 1
+      DO 30 J=NX1,N1
+        X(J) = 1
+   30 CONTINUE
+   40 IF ( N0 .EQ. N1 ) GO TO 60
+      N11 = N1 + 1
+      DO 50 J=N11,N0
+        X(J) = 0
+   50 CONTINUE
+   60 LSTAR = LOC
+      RETURN
+      END
+      SUBROUTINE USEDIN(C,TD,JDD,NSD,LOC)
+C
+C DETERMINE, THROUGH BINARY SEARCH, THE LOCATION   LOC  OF  TD
+C CONTAINING THE MAXIMUM VALUE  TD(LOC,1) .LE. C .
+C
+      INTEGER C,TD(JDD,2)
+      IF ( TD(NSD,1) .GT. C ) GO TO 10
+      LOC = NSD
+      RETURN
+   10 MINL = 1
+      MAXL = NSD
+   20 LOC = (MAXL + MINL)/2
+      IF ( TD(LOC,1) - C ) 30, 40, 50
+   30 MINL = LOC + 1
+      IF ( MAXL .GT. MINL ) GO TO 20
+      LOC = MINL
+      IF ( TD(LOC,1) .LE. C ) RETURN
+      LOC = MINL - 1
+   40 RETURN
+   50 MAXL = LOC - 1
+      IF ( MAXL .GT. MINL ) GO TO 20
+      LOC = MAXL
+      IF ( TD(LOC,1) .LE. C ) RETURN
+      LOC = MAXL - 1
+      RETURN
+      END

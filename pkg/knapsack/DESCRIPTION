@@ -1,15 +1,15 @@
 Package: knapsack
 Type: Package
 Title: Knapsack Routines
-Version: 0.2.0
-Date: 2012-02-02
+Version: 0.2.3
+Date: 2012-02-08
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1)
 Description: Provides knapsack routines from the book `Knapsack Problems: 
     Algorithms and Computer Implementations' by S. Martello and P. Toth
-    <http://www.or.deis.unibo.it/knapsack.html>. knapsack is a wrapper
-    package for R. Use of the Fortran codes is restricted to research and
-    academic use.
+    <http://www.or.deis.unibo.it/knapsack.html>.  knapsack is a wrapper
+    package for R. The use of the Fortran codes is restricted to personal
+    research and academic use.
 License: file LICENSE
 LazyLoad: yes

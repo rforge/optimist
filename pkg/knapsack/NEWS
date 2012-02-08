@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.2.3 (2012-02-08)
+
+    o subsetsum() solves the subsetsum problem (for integers).
+
 Changes in Version 0.2.0 (2012-02-02)
 
     o knapsack() is now one interface for all three types of knapsack
