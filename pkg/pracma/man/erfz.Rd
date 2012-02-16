@@ -1,9 +1,11 @@
 \name{erf, erfc}
 \alias{erf}
+\alias{erfinv}
 \alias{erfc}
+\alias{erfcinv}
 \alias{erfz}
 \title{
-  Error Functions (Matlab Style)
+  Error Functions and Inverses (Matlab Style)
 }
 \description{
   The error or Phi function is a variant of the cumulative normal (or
@@ -11,12 +13,14 @@
 }
 \usage{
 erf(x)
+erfinv(y)
 erfc(x)
+erfcinv(y)
 
 erfz(z)
 }
 \arguments{
-  \item{x}{vector of real numbers.}
+  \item{x, y}{vector of real numbers.}
   \item{z}{real or complex number; must be a scalar.}
 }
 \details{

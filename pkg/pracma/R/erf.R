@@ -3,14 +3,15 @@
 ##
 
 
-erf <- function(x) {
-    2 * pnorm(sqrt(2) * x) - 1
-}
+erf     <- function(x) pchisq(2*x^2,1)*sign(x)  # 2*pnorm(sqrt(2)*x)-1
 
+erfinv  <- function(y) sqrt(qchisq(abs(y),1)/2)*sign(y)
 
-erfc <- function(x) {
-    2 * pnorm(-sqrt(2) * x)
-}
+erfc    <- function(x) 2 * pnorm(-sqrt(2) * x)
+
+erfcinv <- function(y) -qnorm(y/2)/sqrt(2)
+
+# erfcx   <- function(y) exp(y^2) * erf(y)  # w r o n g !
 
 
 erfz <- function(z) {

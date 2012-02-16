@@ -7,12 +7,13 @@
   Solves the subset sum problem for integers.
 }
 \usage{
-subsetsum(weights, target, check = TRUE)
+subsetsum(weights, target, check = TRUE, core = 5000)
 }
 \arguments{
   \item{weights}{integer vector of weights.}
   \item{target}{target sum to be reached, integer.}
   \item{check}{logical; Fortran check routine enabled; cannot be turned off.}
+  \item{core}{length of dynamic programming list; internal parameter.}
 }
 \details{
   Solves the subset sum problem for integer weights. It implements the mixed

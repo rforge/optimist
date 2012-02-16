@@ -3,7 +3,7 @@
 ##
 
 
-subsetsum <- function(weights, target, check = TRUE) {
+subsetsum <- function(weights, target, check = TRUE, core = 5000) {
     stopifnot(is.numeric(weights), is.numeric(target))
     if (length(target) != 1)
         stop("Argument 'target' must be a scalar (i.e., of length 1).")
@@ -16,24 +16,36 @@ subsetsum <- function(weights, target, check = TRUE) {
         stop("All 'weights' must be positive integers < 2^31 !")
 
     n <- length(weights)
-    if (n <= 1)
-        stop("Length of 'weights' must be greater than 1.")
+    if (n <= 1) {
+        if (weights <= target)
+            return(list(ssum = weights, inds = c(1)))
+        else
+            return(list(ssum = 0, inds = c()))
+    }
 
     if (sum(weights) <= target) {
         return(list(ssum = sum(weights), inds = 1:n))
     }
 
-    if (target %in% weights) {
-        return(list(ssum = target, inds = min(which(weights == target))))
-    } else if (any(weights > target)) {
-        stop("Argument 'target' must be larger than all 'weights'.")
+    if (target <= max(weights)) {
+        if (target %in% weights)
+            return(list(ssum = target, inds = min(which(weights == target))))
+        else if (target < min(weights))
+            return(list(ssum = 0, inds = c()))
+        else {
+            imax <- which(weights > target)
+            new_weights <- weights[weights < target]
+            R0 <- subsetsum(new_weights, target, check = check)
+            inds <- setdiff(1:n, imax)[R0$inds]
+            return(list(ssum = R0$ssum, inds = inds))
+        }
     }
 
     z <- 0L
     jdn <- n + 1L
     w <- c(weights, 0)
     x <- vector("integer", jdn)
-    jdd <- 5000    # max. length of programmming list; suggested 5000
+    jdd <- core    # max. length of programmming list; suggested 5000
     itmm <- jdd    # max no. in the core problem + 1; suggested jdd (or 91)
     jck <- 1       # whether to check input data
 

@@ -10,5 +10,6 @@ export(trefethen, wagon)
 
 export(maxsub, maxsub2d)
 export(subsetsum)
+export(knapsack)
 
-# S4 Methods
+# S3/S4 Methods

@@ -9,8 +9,7 @@ Depends: R (>= 2.10.2)
 Description:
     Implementations of functions in numerical analysis as R scripts,
     with a special view on on optimization and time series routines.
-    Uses Matlab/Octave function names where appropriate
-to simplify porting.
+    Uses Matlab/Octave function names where appropriate to simplify porting.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes

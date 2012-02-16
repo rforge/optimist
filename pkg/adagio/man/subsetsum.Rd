@@ -1,28 +1,37 @@
 \name{subsetsum}
 \alias{subsetsum}
 \title{
-  Subset Sum
+  Subset Sum Problem
 }
 \description{
   Subset sum routine for positive integers.
 }
 \usage{
-subsetsum(S, t)
+subsetsum(S, t, method = "greedy")
 }
 \arguments{
   \item{S}{vector of positive integers.}
   \item{t}{target value.}
+  \item{method}{can be ``greedy'' or ``dynamic'', where ``dynamic'' stands
+                for the dynamic programming approach.}
 }
 \details{
   Searching for a set of elements in \code{S} that sum up to \code{t} by
   continuously adding more elements of \code{S}.
 
-  \code{S} need not be sorted. The first components will be preferred, i.e.,
-  if \code{S} is decreasing, the sum with larger elements will be found, if
-  increasing, a sum with smaller elements.
+  The first components will be preferred, i.e., if \code{S} is decreasing,
+  the sum with larger elements will be found, if increasing, the sum with
+  smaller elements.
+
+  The dynamic method may be faster for large sets, but will also require
+  much more memory if the target value is large.
 }
 \value{
-  Vector of indices of elements in \code{S} that sum up to \code{t}.
+  List with the target value, if reached, and vector of indices of elements
+  in \code{S} that sum up to \code{t}.
+
+  If no solution is found, the dynamic method will return indices for the
+  largest value below the target, the greedy method witll return NULL.
 }
 \note{
   Will be replaced by a compiled version.
