@@ -1,19 +1,37 @@
 ##
-##  e r r o r f . R  Error functions
+##  e r r o r f . R  Error functions (Matlab Style)
 ##
 
 
-erf     <- function(x) pchisq(2*x^2,1)*sign(x)  # 2*pnorm(sqrt(2)*x)-1
+# Error function
+erf     <- function(x) {  # 2*pnorm(sqrt(2)*x)-1
+    pchisq(2*x^2,1)*sign(x)
+}
 
-erfinv  <- function(y) sqrt(qchisq(abs(y),1)/2)*sign(y)
+# Inverse error function
+erfinv  <- function(y) {
+        y[abs(y) > 1] <- NA
+        sqrt(qchisq(abs(y),1)/2) * sign(y)
+}
 
-erfc    <- function(x) 2 * pnorm(-sqrt(2) * x)
+# Complementary error function
+erfc    <- function(x) {  # 1 - erf(x)
+    2 * pnorm(-sqrt(2) * x)
+}
 
-erfcinv <- function(y) -qnorm(y/2)/sqrt(2)
+# Inverse complementary error function
+erfcinv <- function(y) {
+    y[y < 0 | y > 2] <- NA
+    -qnorm(y/2)/sqrt(2)
+}
 
-# erfcx   <- function(y) exp(y^2) * erf(y)  # w r o n g !
+# Scaled complementary error function
+erfcx   <- function(x) {
+    exp(x^2) * erfc(x)
+}
 
 
+# Complex error function
 erfz <- function(z) {
     a0 <- abs(z);
     c0 <- exp(-z*z)

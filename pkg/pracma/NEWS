@@ -7,9 +7,10 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 0.9.7 (2012-02-11)
+CHANGES IN VERSION 0.9.7 (2012-02-18)
 
-    o erf() corrected, erfinv() and erfcinv() as new functions.
+    o erf() corrected, erfc() and erfcx() as new functions,
+      including their inverses erfinv() and erfcinv().
     o hypot() now numerically more stable (thanks to Jerry Lewis).
 
 CHANGES IN VERSION 0.9.6 (2012-01-25)
