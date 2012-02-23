@@ -77,7 +77,7 @@ ridder <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5) {
             x1 <- xm;  f1 <- fm
             x2 <- x3;  f2 <- f3
         } else if (f1 * f3 < 0) {
-            x2 <- xm;  f2 <- fm
+            x2 <- x3;  f2 <- f3
         } else if (f2 * f3 < 0) {
             x1 <- x3;  f1 <- f3
         } else {

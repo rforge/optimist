@@ -5,9 +5,16 @@
 
 PLANNED FOR NEXT VERSIONS
 
-    o [tbd.]
+    o logm() matrix logarithm based on Pade approximation.
 
-CHANGES IN VERSION 0.9.7 (2012-02-18)
+CHANGES IN VERSION 0.9.8 (2012-02-23)
+
+    o qrGramSchmidt() modified Gram-Schmidt process.
+    o qrHouseholder() Householder reflections and QR decomposition.
+    o givens(), qrGivens() Givens rotation and QR decomposition.
+    o corrected a small error in ridder() (thanks to Roger Harbord).
+
+CHANGES IN VERSION 0.9.7 (2012-02-17)
 
     o erf() corrected, erfc() and erfcx() as new functions,
       including their inverses erfinv() and erfcinv().
