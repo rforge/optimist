@@ -4,7 +4,7 @@
 
 
 # Modified Gram-Schmidt process
-qrGramSchmidt <- function(A, tol = .Machine$double.eps^0.5) {
+gramSchmidt <- function(A, tol = .Machine$double.eps^0.5) {
     stopifnot(is.numeric(A), is.matrix(A))
     m <- nrow(A); n <- ncol(A)
     if (m < n)
@@ -28,9 +28,27 @@ qrGramSchmidt <- function(A, tol = .Machine$double.eps^0.5) {
     return(list(Q = Q, R = R))
 }
 
+qrSolve <- function(A, b) {
+    stopifnot(is.numeric(A), is.matrix(A), is.numeric(b))
+    m <- nrow(A); n <- ncol(A)
+    b <- c(b)
+    if (m < n || length(b) != m)
+        stop("Matrix 'A' and vektor 'b' have non-fitting dimensions.")
+
+    gs <- householder(A)
+    Q <- gs$Q; R <- gs$R
+
+    b <- t(Q[, 1:n]) %*% b
+    x <- numeric(n)
+    x[n] <- b[n] / R[n, n]
+    for (k in (n-1):1)
+        x[k] <- (b[k] - R[k, (k+1):n] %*% x[(k+1):n]) / R[k, k]
+    return(x)
+}
+
 
 # Givens transformation
-givens <- function(xk, xl) {
+.givens <- function(xk, xl) {
     if (xl != 0) {
         r <- vnorm(c(xk, xl))
         G <- matrix(c(xk, -xl, xl, xk), 2, 2) / r
@@ -42,9 +60,8 @@ givens <- function(xk, xl) {
     return(list(G = G, x = x))
 }
 
-
 # Givens QR decomposition
-qrGivens <- function(A) {  # n >= m
+givens <- function(A) {  # n >= m
     stopifnot(is.numeric(A), is.matrix(A))
     n <- nrow(A); m <- ncol(A)
     if (n != m)
@@ -58,7 +75,7 @@ qrGivens <- function(A) {  # n >= m
         j <- which(A[(k+1):n, k] != 0) + k
         j <- unique(c(l, j[j != 1]))
         for (h in j) {
-            gv <- givens(A[k, k], A[h, k])
+            gv <- .givens(A[k, k], A[h, k])
             G <- gv$G; x <- gv$x
             Q[c(k, h), ] <- G %*% Q[c(k, h), ]
             A[k, k] <- x[1]
@@ -71,7 +88,7 @@ qrGivens <- function(A) {  # n >= m
 
 
 # Householder transformation
-qrHouseholder <- function(A) {
+householder <- function(A) {
     m <- nrow(A); n <- ncol(A)
     Q <- eye(m)
     for (k in 1:min(m-1, n)) {

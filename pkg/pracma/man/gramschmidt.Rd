@@ -1,11 +1,11 @@
-\name{qrGramSchmidt}
-\alias{qrGramSchmidt}
+\name{gramSchmidt}
+\alias{gramSchmidt}
 \title{Gram-Schmidt}
 \description{
   Modified Gram-Schmidt Process
 }
 \usage{
-  qrGramSchmidt(A, tol = .Machine$double.eps^0.5)
+  gramSchmidt(A, tol = .Machine$double.eps^0.5)
 }
 \arguments{
   \item{A}{numeric matrix with \code{nrow(A)>=ncol(A)}.}
@@ -29,23 +29,13 @@
   Society for Industrial and Applied Mathematics, Philadelphia.
 }
 \seealso{
-  \code{\link{qrGivens}}
+  \code{\link{householder}, \link{givens}}
 }
 \examples{
 ##  QR decomposition
 A <- matrix(c(0,-4,2, 6,-3,-2, 8,1,-1), 3, 3, byrow=TRUE)
-gs <- qrGramSchmidt(A)
+gs <- gramSchmidt(A)
 (Q <- gs$Q); (R <- gs$R)
 Q \%*\% R  # = A
-
-##  Solve a linear system of equations
-b <- c(-2, -6, 7)
-m <- nrow(A); n <- ncol(A)
-b <- t(Q[, 1:n]) \%*\% b
-x <- numeric(n)
-x[n] <- b[n] / R[n, n]
-for (k in (n-1):1)
-    x[k] <- (b[k] - R[k, (k+1):n] \%*\% x[(k+1):n]) / R[k, k]
-x
 }
 \keyword{ array }

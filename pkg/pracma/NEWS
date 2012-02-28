@@ -5,13 +5,19 @@
 
 PLANNED FOR NEXT VERSIONS
 
-    o logm() matrix logarithm based on Pade approximation.
+    o [tbd.]
+
+CHANGES IN VERSION 0.9.9 (2012-02-29)
+
+    o qrSolve solves overdetermined system of linear equations.
+    o DSCsearch() removed, now in package 'pracopt'.
+    o randp() found a better, non-selective approach.
 
 CHANGES IN VERSION 0.9.8 (2012-02-23)
 
-    o qrGramSchmidt() modified Gram-Schmidt process.
-    o qrHouseholder() Householder reflections and QR decomposition.
-    o givens(), qrGivens() Givens rotation and QR decomposition.
+    o gramSchmidt() modified Gram-Schmidt process.
+    o householder() Householder reflections and QR decomposition.
+    o givens() Givens rotation and QR decomposition.
     o corrected a small error in ridder() (thanks to Roger Harbord).
 
 CHANGES IN VERSION 0.9.7 (2012-02-17)
