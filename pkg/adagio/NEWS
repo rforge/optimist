@@ -2,6 +2,10 @@
   adagio                                                                NEWS
 ------------------------------------------------------------------------------
 
+Changes in Version 0.3.1 (2012-03-12)
+
+    o mknapsack() solves the multiple knapsack problem, utilizing
+      free Fortran code from the NSCW library of Mathematics Subroutines.
 
 Changes in Version 0.2.8 (2012-02-16)
 
