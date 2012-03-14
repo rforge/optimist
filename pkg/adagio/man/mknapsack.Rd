@@ -59,6 +59,9 @@ mknapsack(p, w, k, bck = -1)
 \references{
   Kellerer, H., U. Pferschy, and D. Pisinger (2004). Knapsack Problems.
   Springer-Verlag, Berlin Heidelberg.
+
+  Burkard, R., M. Dell'Amico, and S. Martello (2009). Assignment Problems.
+  Society for Industrial and Applied Mathematics (SIAM).
 }
 \seealso{
   Other packages implementing knapsack routines.
