@@ -10,7 +10,7 @@ export(trefethen, wagon)
 
 export(maxsub, maxsub2d)
 export(subsetsum, knapsack)
-export(mknapsack)
 export(maxempty)
+export(mknapsack, assignment)
 
 # S3/S4 Methods

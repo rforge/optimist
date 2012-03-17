@@ -60,8 +60,8 @@ mknapsack(p, w, k, bck = -1)
   Kellerer, H., U. Pferschy, and D. Pisinger (2004). Knapsack Problems.
   Springer-Verlag, Berlin Heidelberg.
 
-  Burkard, R., M. Dell'Amico, and S. Martello (2009). Assignment Problems.
-  Society for Industrial and Applied Mathematics (SIAM).
+  Martello, S., and P. Toth (1990). Knapsack Problems: Algorithms and
+  Computer Implementations. John Wiley & Sons, Ltd.
 }
 \seealso{
   Other packages implementing knapsack routines.

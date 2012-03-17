@@ -2,6 +2,12 @@
   adagio                                                                NEWS
 ------------------------------------------------------------------------------
 
+
+Changes in Version 0.3.5 (2012-03-17)
+
+    o assignment() solves the linear (sum) assignment problem (LSAP)
+      for integer square cost matrices.
+
 Changes in Version 0.3.3 (2012-03-14)
 
     o maxempty() solves the maximal empty rectangle problem.
