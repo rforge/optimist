@@ -10,8 +10,8 @@ PLANNED FOR NEXT VERSIONS
 CHANGES IN VERSION 1.0.2 (2012-03-17)
 
     o accumarray() resembles the related Matlab function more closely.
-    o invperm() returnes the inverse of a permutation, comperm() the
-      composite of two permutations.
+    o invperm() returns the inverse of a permutation.
+    o randperm() changed to make it more Matlab-like.
 
 CHANGES IN VERSION 1.0.1 (2012-03-09)
 
