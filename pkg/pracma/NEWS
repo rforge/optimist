@@ -5,7 +5,14 @@
 
 PLANNED FOR NEXT VERSIONS
 
+    o invlap() computes the inverse Lapacian numerically.
+    o ppfit() approximation and interpolation at the same time.
     o [tbd.]
+
+CHANGES IN VERSION 1.0.3 (2012-03-21)
+
+    o cubicspline() interpolating cubic spline (w/ endpoint conditions)
+    o mkpp() and ppval() for piecewise polynomial structures.
 
 CHANGES IN VERSION 1.0.2 (2012-03-17)
 
