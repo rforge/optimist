@@ -1,11 +1,11 @@
 ##
-##  Simple Evolutionary Algorithm
+##  s i m p l e E A . R  Simple Evolutionary Algorithm
 ##
 
 
 simpleEA <-
-function(fun, lower, upper, N=100, 
-                     eps=1e-6, scl=1/2, log=TRUE)
+function(fun, lower, upper, N = 100, 
+                     eps = 1e-6, scl = 1/2, log = TRUE)
 {
     # if ( length(lower) != length(upper) ) error()
     # if ( !scale < 1 ) error

@@ -5,7 +5,7 @@
 useDynLib(adagio)
 
 # Public routines
-export(simpleEA)
+export(simpleEA, simpleDE)
 export(trefethen, wagon)
 
 export(maxsub, maxsub2d)

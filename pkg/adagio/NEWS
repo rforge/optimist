@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.3.7 (2012-03-24)
+
+    o simpleDE() simple differential evolution algorithm for
+      function minimization.
+
 Changes in Version 0.3.5 (2012-03-17)
 
     o assignment() solves the linear (sum) assignment problem (LSAP)
