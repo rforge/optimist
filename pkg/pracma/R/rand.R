@@ -60,3 +60,22 @@ randp <- function(n = 1, r = 1) {
     r <- r * sqrt(runif(n)/(x^2 + y^2))
     return(cbind(r*x, r*y))
 }
+
+
+randsample <- function(n, k, w = NULL, replacement = FALSE) {
+	stopifnot(is.numeric(n), is.numeric(k))
+	if (length(n) == 1) n <- 1:floor(n)
+	else                n <- c(n)
+	if (k > length(n) && !replacement) {
+		warning("k > n or length(n): replacement will be set to TRUE.")
+		replacement = TRUE
+	}
+	if (is.numeric(w)) {
+		if (!replacement) replacement = TRUE
+		if (length(n) != length(w))
+			stop("Weights vector 'w' must have the same length as 'n'.")
+	}
+
+	sample(n, k, replace = replacement, prob = w)
+}
+

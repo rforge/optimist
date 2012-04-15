@@ -2,6 +2,7 @@
 \alias{rand}
 \alias{randn}
 \alias{randi}
+\alias{randsample}
 \alias{rands}
 \alias{randp}
 \title{Create Random Matrices}
@@ -12,6 +13,7 @@
 rand(n = 1, m = n)
 randn(n = 1, m = n)
 randi(imax, n = 1, m = n)
+randsample(n, k, w = NULL, replacement = FALSE)
 
 rands(n = 1, N = 1, r = 1)
 randp(n = 1, r = 1)
@@ -19,6 +21,9 @@ randp(n = 1, r = 1)
 \arguments{
   \item{n, m}{integers specifying the size of the matrix}
   \item{imax}{integer or pair of integers}
+  \item{k}{number of elements to return.}
+  \item{w}{weight vector, used for discrete probabilities.}
+  \item{replacement}{logical; sampling with or without replacement.}
   \item{N}{dimension of a shere, N=1 for the unit circle}
   \item{r}{radius of circle, default 1.}
 }
@@ -33,6 +38,10 @@ randp(n = 1, r = 1)
 
   \code{randi()} generates integers between \code{imax[1]} and \code{imax[2]}
   resp. 1 and \code{imax}, if \code{imax} is a scalar.
+
+  \code{randsample()} samples \code{k} elements from \code{1:n}, with or 
+  without replacement, or returns a weighted sample (with replacement),
+  using the weight vector \code{w} for probabilities.
 
   \code{rands()} generates uniformly random points on an \code{N}-sphere in 
   the \code{N+1}-dimensional space. To generate uniformly random points in the 
@@ -67,6 +76,7 @@ randp(n = 1, r = 1)
 rand(3)
 randn(1, 5)
 randi(c(1,6), 1, 10)
+randsample(10, 5, replacement = TRUE, w = c(0,0,0, 1, 1, 1, 1, 0,0,0))
 
 P <- rands(1000, N = 1, r = 2)
 U <- randp(1000, 2)

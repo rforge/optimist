@@ -9,10 +9,9 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 1.0.5 (2012-04-15)
 
-    o fornberg() numerically stable polynomial interpolation that can
-      retrieves all k-th derivatives in one (non-vectorized) computation.
-    o Added tic(), toc() measuring elapsed time (Matlab style)
+    o randsample() randomly sampling, alias for sample (Matlab style).
     o rands() generates uniform random points on an N-sphere.
+    o Added tic(), toc() measuring elapsed time (Matlab style)
     o previousPrime() finds the next prime below a number.
 
 CHANGES IN VERSION 1.0.4 (2012-04-01)
