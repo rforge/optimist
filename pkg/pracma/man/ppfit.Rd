@@ -4,7 +4,7 @@
   Piecewise Polynomial Fit
 }
 \description{
-  piecewise linear or cubic fitting.
+  Piecewise linear or cubic fitting.
 }
 \usage{
 ppfit(x, y, xi, method = c("linear", "cubic"))

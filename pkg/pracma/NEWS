@@ -7,6 +7,11 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
+CHANGES IN VERSION 1.0.6 (2012-04-21)
+
+    o fornberg() finite difference (i.e., polynomial) approximation of 
+      derivatives for unevenly spaced grid points -- Fornberg's method.
+
 CHANGES IN VERSION 1.0.5 (2012-04-15)
 
     o randsample() randomly sampling, alias for sample (Matlab style).
@@ -172,7 +177,7 @@ CHANGES IN VERSION 0.7.8 (2011-10-17)
 CHANGES IN VERSION 0.7.7 (2011-10-14)
 
     o primes2(n1, n2) will return all prime numbers betweeen n1 and n2
-      (without storing the numbers from sqrt(n2) up to n1).
+      (without storing the numbers from sqrt(n2) up to n2).
 
 CHANGES IN VERSION 0.7.6 (2011-08-05)
 
