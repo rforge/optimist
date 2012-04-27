@@ -56,4 +56,4 @@ lines(xs, yscub, col="red",lwd = 2)
 lines(xs, yslin, col="blue")
 grid()}
 }
-\keyword{ math }
+\keyword{ fitting }

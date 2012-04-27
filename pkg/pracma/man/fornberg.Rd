@@ -51,4 +51,4 @@ fornb <- fornberg(x, y, xs, 10)
 matplot(xs, fornb, type="l")
 grid()}
 }
-\keyword{ math }
+\keyword{ fitting }
