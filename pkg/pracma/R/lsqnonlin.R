@@ -58,9 +58,9 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
         } else                        {df <- sum((r - rn) * (r + rn))/2}
 
         if (dL > 0 && df > 0) {
-            x <- xnew;   f <- fn;  J <- Jn;            r <- rn; 
-            A <- t(J) %*% J;   g <- t(J) %*% r;       ng <- vnorm(g,Inf)
-            mu <- mu * max(1/3, 1 - (2*df/dL - 1)^3); nu <- 2
+            x <- xnew;         f <- fn;  J <- Jn;       r <- rn; 
+            A <- t(J) %*% J;   g <- t(J) %*% r;         ng <- vnorm(g,Inf)
+            mu <- mu * max(1/3, 1 - (2*df/dL - 1)^3);   nu <- 2
         } else {
             mu <- mu*nu;  nu <- 2*nu
         }
@@ -74,5 +74,5 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
                      "No. of function evaluations exceeded.")
 
     return(list(x = c(xnew), ssq = sum(fun(xnew)^2), ng = ng, nh = nh,
-                mu = mu, nevel = k, errno = errno, errmess = errmess))
+                mu = mu, neval = k, errno = errno, errmess = errmess))
 }

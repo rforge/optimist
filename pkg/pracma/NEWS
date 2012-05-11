@@ -7,10 +7,15 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 1.0.7 (2012-04-27)
+CHANGES IN VERSION 1.0.8 (2012-05-15)
+
+    o [tbd.]
+
+CHANGES IN VERSION 1.0.7 (2012-05-11)
 
     o lsqnonlin() solves nonlinear least-squares problems using the
       Levenberg-Marquardt approach.
+    o renamed froots() to findzeros() and fmins() to findmins().
 
 CHANGES IN VERSION 1.0.6 (2012-04-21)
 

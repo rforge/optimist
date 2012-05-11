@@ -67,7 +67,7 @@ lsqnonlin(fun, x0, options = list(), ...)
   Squares. Report AERE-R 6799, Harwell.
 }
 \seealso{
-  \code{\link{nls}}
+  \code{\link{nlm}}, \code{\link{nls}}
 }
 \examples{
 ##  Rosenberg function as least-squares problem
@@ -75,15 +75,30 @@ x0  <- c(0, 0)
 fun <- function(x) c(10*(x[2]-x[1]^2), 1-x[1])
 lsqnonlin(fun, x0)
 
-\dontrun{
-#   Lanczos1 data (artificial data)
+##  Example from R-help
+y <- c(5.5199668,  1.5234525,  3.3557000,  6.7211704,  7.4237955,  1.9703127,
+       4.3939336, -1.4380091,  3.2650180,  3.5760906,  0.2947972,  1.0569417)
+x <- c(1,   0,   0,   4,   3,   5,  12,  10,  12, 100, 100, 100)
+# Define target function as difference
+f <- function(b)
+     b[1] * (exp((b[2] - x)/b[3]) * (1/b[3]))/(1 + exp((b[2] - x)/b[3]))^2 - y
+x0 <- c(21.16322, 8.83669, 2.957765)
+lsqnonlin(f, x0)        # ssq 50.50144 at c(36.133144, 2.572373, 1.079811)
+
+# nls() will break down
+# nls(Y ~ a*(exp((b-X)/c)*(1/c))/(1 + exp((b-X)/c))^2,
+#     start=list(a=21.16322, b=8.83669, c=2.957765), algorithm = "plinear")
+# Error: step factor 0.000488281 reduced below 'minFactor' of 0.000976563
+
+##  Lanczos1 data (artificial data)
 #   f(x) = 0.0951*exp(-x) + 0.8607*exp(-3*x) + 1.5576*exp(-5*x)
+\dontrun{
 x <- linspace(0, 1.15, 24)
 y <- c(2.51340000, 2.04433337, 1.66840444, 1.36641802, 1.12323249, 0.92688972,
        0.76793386, 0.63887755, 0.53378353, 0.44793636, 0.37758479, 0.31973932,
        0.27201308, 0.23249655, 0.19965895, 0.17227041, 0.14934057, 0.13007002,
        0.11381193, 0.10004156, 0.08833209, 0.07833544, 0.06976694, 0.06239313)
-f2 <- function(b) y - b[1]*exp(-b[2]*x) + b[3]*exp(-b[4]*x) + b[5]*exp(-b[6]*x)
+f2 <- function(b) b[1]*exp(-b[2]*x) + b[3]*exp(-b[4]*x) + b[5]*exp(-b[6]*x) - y
 lsqnonlin(f2, c(1.2, 0.3, 5.6, 5.5, 6.5, 7.6))
 }
 }
