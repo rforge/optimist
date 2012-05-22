@@ -5,17 +5,20 @@
 
 PLANNED FOR NEXT VERSIONS
 
-    o [tbd.]
+    o lsqlin() solves linear least-squares problems with linear equality
+      constraints and bound constraints.
 
-CHANGES IN VERSION 1.0.8 (2012-05-20)
+CHANGES IN VERSION 1.0.8 (2012-05-22)
 
-    o modlin() solves the modular linear equation.
+    o movavg() moving average of types "simple", "weighted", "modified",
+      "exponential" (EMA), or "triangular".
+    o modlin() solves modular linear equations.
 
 CHANGES IN VERSION 1.0.7 (2012-05-11)
 
     o lsqnonlin() solves nonlinear least-squares problems using the
       Levenberg-Marquardt approach.
-    o renamed froots() to findzeros() and fmins() to findmins().
+    o renamed froots() to findzeros(), and fmins() to findmins().
 
 CHANGES IN VERSION 1.0.6 (2012-04-21)
 
