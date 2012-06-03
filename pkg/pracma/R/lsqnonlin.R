@@ -76,3 +76,23 @@ lsqnonlin <- function(fun, x0, options = list(), ...) {
     return(list(x = c(xnew), ssq = sum(fun(xnew)^2), ng = ng, nh = nh,
                 mu = mu, neval = k, errno = errno, errmess = errmess))
 }
+
+
+lsqnonneg <- function(C, d) {
+    stopifnot(is.numeric(C), is.numeric(d))
+    if (!is.matrix(C) || !is.vector(d))
+        stop("Argument 'C' must be a matrix, 'd' a vector.")
+    n <- nrow(C); m <- ncol(C); ld <- length(d)
+    if (n != ld)
+        stop("Arguments 'C' and 'd' have nonconformable dimensions.")
+
+    fn <- function(x) C %*% as.matrix(exp(x)) - d
+    x0 <- rep(0, m)
+    sol <- lsqnonlin(fn, x0)
+
+    xs <- exp(sol$x)
+    resi <- d - C %*% as.matrix(xs)
+    resn <- vnorm(resi)
+    return(list(x = xs, resnorm = resn, residual = resi, 
+                exitflag = sol$errmess))
+}

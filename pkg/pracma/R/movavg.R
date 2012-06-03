@@ -38,7 +38,9 @@ movavg <- function(x, n, type=c("s", "t", "w", "m", "e", "r")) {
         a <- 1/n
         y[1] <- x[1]
         for (k in 2:nx)     y[k] <- a*x[k] + (1-a)*y[k-1]
-    }
+
+    } else
+        stop("The type must be one of 's', 't', 'w', 'm', 'e', or 'r'.")
 
     return(y)
 }

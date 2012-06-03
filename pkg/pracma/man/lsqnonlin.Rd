@@ -1,20 +1,27 @@
 \name{lsqnonlin}
 \alias{lsqnonlin}
+\alias{lsqnonneg}
 \title{
   Nonlinear Least-Squares Fitting
 }
 \description{
   \code{lsqnonlin} solves nonlinear least-squares problems, including
   nonlinear data-fitting problems, through the Levenberg-Marquardt approach.
+
+  \code{lsqnonneg} solve nonnegative least-squares constraints problem.
 }
 \usage{
 lsqnonlin(fun, x0, options = list(), ...)
+
+lsqnonneg(C, d)
 }
 \arguments{
   \item{fun}{User-defined, vector-valued function.}
   \item{x0}{starting point.}
   \item{...}{additional parameters passed to the function.}
   \item{options}{list of options, for details see below.}
+  \item{C, d}{matrix and vector such that \code{C x - d} will be
+              minimized with \code{x >= 0}.}
 }
 \details{
   \code{lsqnonlin} computes the sum-of-squares of the vector-valued function
@@ -37,6 +44,10 @@ lsqnonlin(fun, x0, options = list(), ...)
   Typical values for \code{tau} are from \code{1e-6...1e-3...1} with small
   values for good starting points and larger values for not so good or known
   bad starting points.
+
+  \code{lsqnonneg} solves the linear least-squares problem \code{C x - d},
+  \code{x} nonnegative, transforming it with the `trick' \code{x --> exp(x)}
+  into a nonlinear one and solving it applying \code{lsqnonlin}.
 }
 \value{
   Returns a list with the following elements:
@@ -90,16 +101,35 @@ lsqnonlin(f, x0)        # ssq 50.50144 at c(36.133144, 2.572373, 1.079811)
 #     start=list(a=21.16322, b=8.83669, c=2.957765), algorithm = "plinear")
 # Error: step factor 0.000488281 reduced below 'minFactor' of 0.000976563
 
+## Least-squares data fitting
+# Define fun(p, x)
+lsqcurvefit <- function(fun, p0, xdata, ydata) {
+    fn <- function(p, x) fun(p, xdata) - ydata
+    lsqnonlin(fn, p0)    
+}
+
 ##  Lanczos1 data (artificial data)
 #   f(x) = 0.0951*exp(-x) + 0.8607*exp(-3*x) + 1.5576*exp(-5*x)
-\dontrun{
 x <- linspace(0, 1.15, 24)
 y <- c(2.51340000, 2.04433337, 1.66840444, 1.36641802, 1.12323249, 0.92688972,
        0.76793386, 0.63887755, 0.53378353, 0.44793636, 0.37758479, 0.31973932,
        0.27201308, 0.23249655, 0.19965895, 0.17227041, 0.14934057, 0.13007002,
        0.11381193, 0.10004156, 0.08833209, 0.07833544, 0.06976694, 0.06239313)
-f2 <- function(b) b[1]*exp(-b[2]*x) + b[3]*exp(-b[4]*x) + b[5]*exp(-b[6]*x) - y
-lsqnonlin(f2, c(1.2, 0.3, 5.6, 5.5, 6.5, 7.6))
-}
+
+p0 <- c(1.2, 0.3, 5.6, 5.5, 6.5, 7.6)
+fp <- function(p, x) p[1]*exp(-p[2]*x) + p[3]*exp(-p[4]*x) + p[5]*exp(-p[6]*x)
+lsqcurvefit(fp, p0, x, y)
+
+##  Example for lsqnonneg()
+C <- matrix(c(0.0372, 0.2868,
+              0.6861, 0.7071,
+              0.6233, 0.6245,
+              0.6344, 0.6170), nrow = 4, ncol = 2, byrow = TRUE)
+d <- c(0.8587, 0.1781, 0.0747, 0.8405)
+
+sol <- lsqnonneg(C, d)
+cbind(qr.solve(C, d), sol$x)
+# -2.563884  5.515869e-08
+#  3.111911  6.929003e-01
 }
 \keyword{ fitting }
