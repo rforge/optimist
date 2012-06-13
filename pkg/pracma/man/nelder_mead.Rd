@@ -1,7 +1,7 @@
-\name{Nelder-Mead}
+\name{nelder_mead}
 \alias{nelder_mead}
 \title{
-  Hooke-Jeeves Minimization Method
+  Nelder-Mead Minimization Method
 }
 \description{
   An implementation of the Nelder-Mead algorithm for derivative-free
@@ -46,16 +46,16 @@ nelder_mead(x0, f, maxiter = 1000, scale = 1,
   `dfoptim'.
 }
 \seealso{
-  \code{hooke_jeeves}
+  \code{\link{hooke_jeeves}}
 }
 \examples{
 ##  Rosenbrock function
-# nelder_mead(c(0, 0), rosenbrock)
+nelder_mead(c(0, 0), rosenbrock)
 # $xmin
-# [1] 1 1
+# [1] 0.9999969 0.9999936
 # $fmin
-# [1] 3.951249e-19
+# [1] 1.131857e-11
 # $niter
-# [1] 13
+# [1] 49
 }
 \keyword{ optimize }
