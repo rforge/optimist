@@ -7,6 +7,22 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
+CHANGES IN VERSION 1.1.2 (2012-06-17)
+
+    o fminsearch() now implements Nelder-Mead (similar to optim).
+    o nelder_mead() implements Nelder-Mead for nonlinear optimization.
+    o hooke-jeeves() Hooke-Jeeves algorithm for direct search.
+    o fletcher_powell() Davidon-Fletcher-Powell method for function 
+      minimization (alternative to BFGS approach).
+
+CHANGES IN VERSION 1.1.1 (2012-06-10)
+
+    o fminbnd() now implements Brent's function minimization algorithm with
+      golden section search and parabolic interpolation (same as optimize).
+    o transfinite() transformation function between bounded and unbounded
+      (box constraint) regions.
+    o renamed brentDekker() to brent_dekker
+
 CHANGES IN VERSION 1.1.0 (2012-06-06)
 
     o hurst(), hurstexp() calculate the Hurst exponent of a time series.

@@ -7,16 +7,18 @@
   Simple Differential Evolution for Minimization.
 }
 \usage{
-simpleDE(fun, lower, upper, N = 60, nmax = 300, r = 0.4, log = FALSE)
+simpleDE(fun, lower, upper, N = 60, nmax = 300, r = 0.4, 
+            confined = TRUE, log = FALSE)
 }
 \arguments{
   \item{fun}{the objective function to be minimized.}
   \item{lower}{vector of lower bounds for all coordinates.}
   \item{upper}{vector of upper bounds for all coordinates.}
   \item{N}{population size.}
-  \item{nmax}{bound on the number of generations}
+  \item{nmax}{bound on the number of generations.}
   \item{r}{amplification factor.}
-  \item{log}{logical; shall a trace be printed}
+  \item{confined}{logical; stay confined within bounds.}
+  \item{log}{logical; shall a trace be printed.}
 }
 \details{
   Evolutionary search to minimize a function: For points in the current

@@ -4,7 +4,8 @@
 
 
 simpleDE <-
-function(fun, lower, upper, N = 60, nmax = 300, r = 0.4, log = FALSE)
+function(fun, lower, upper, N = 60, nmax = 300, r = 0.4, 
+            confined = TRUE, log = FALSE)
 {
     n <- length(lower)
     if (length(upper) != n)
@@ -17,6 +18,12 @@ function(fun, lower, upper, N = 60, nmax = 300, r = 0.4, log = FALSE)
         for (i in 1:N) {
             ii <- sample(1:N, 3)
             ci <- G[ii[1], ] + r * (G[ii[2], ] - G[ii[3], ])
+
+            if (confined) {
+                ci <- ifelse(ci > upper, upper, ci)
+                ci <- ifelse(ci < lower, lower, ci)
+            }
+
             fi <- fun(ci)
             if (fi < F[i]) {
                 H[i, ] <- ci
