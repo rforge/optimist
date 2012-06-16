@@ -9,9 +9,9 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 1.1.3 (2012-06-17)
 
-    o fminsearch() now implements Nelder-Mead (similar to optim).
+    o fminsearch() now implements Nelder-Mead (similar to optim) and
+      Fletcher-Powell when ``dfree=FALSE'' is chosen.
     o Test functions rosenbrock(), rastrigin(), and many more.
-    o Dixon-Price and De Jong's test functions.
 
 CHANGES IN VERSION 1.1.2 (2012-06-13)
 

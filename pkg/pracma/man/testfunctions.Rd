@@ -1,7 +1,6 @@
 \name{Test functions}
 \alias{rastrigin}
 \alias{rosenbrock}
-\alias{wood}
 \title{
   Optimization Test Function
 }
@@ -12,16 +11,29 @@
 \usage{
 rastrigin(x)
 rosenbrock(x)
-wood(x)
 }
 \arguments{
   \item{x}{numeric vector of some length \code{n >= 2}.}
 }
 \details{
-  The Rosenbrock test function is defined as
+\strong{Rastrigin}:
+  \deqn{10 n + \sum_1^n (x_i^2 - 10 \cos(2 \pi x_i))}
+\tabular{ll}{
+  No. of Vars.: \tab n >= 1 \cr
+  Bounds: \tab -5.12 <= xi <= 5.12 \cr
+  Local minima: \tab many \cr
+  Minimum: \tab 0.0 \cr
+  Solution: \tab xi = 0, i = 1:n \cr
+}
+  \strong{Rosenbrock}:
     \deqn{\sum_{i=1}^{n-1} (1-x_i)^2 + 100 (x_{i+1}-x_i^2)^2}
-  and has a global minimum at \code{f(1,\ldots,1)=0} and local minima at
-  \code{f(-1,1,\ldots,1)} for \code{n>=4}.
+  \tabular{ll}{
+    No. of Vars.: \tab n >= 2 \cr
+    Bounds: \tab -5.12 <= xi <= 5.12 \cr
+    Local minima: \tab at f(-1, 1, \ldots, 1) for n >= 4 \cr
+    Minimum: \tab 0.0 \cr
+    Solution: \tab xi = 1, i = 1:n \cr
+  }
 }
 \value{
   Returns the value of the function at the specified point.
@@ -30,5 +42,6 @@ wood(x)
   See the Wikipedia.
 }
 \examples{
+rastrigin(c(1, 1, 1, 1))
 rosenbrock(c(1, 1, 1, 1))
 }

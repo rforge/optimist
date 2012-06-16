@@ -107,9 +107,9 @@ nelder_mead <- function(x0, f, maxiter = 1000, scale = 1,
     dy <- abs(Y[hi] - Y[lo])
 
     if (show) {
-        return(list(xmin = V0, fmin = y0/scale, iter = cnt,
+        return(list(xmin = V0, fmin = y0/scale, niter = cnt,
                     dV = dV, dy = dy, P = P, Q = Q))
     } else {
-        return(list(xmin = V0, fmin = y0/scale, iter = cnt))
+        return(list(xmin = V0, fmin = y0/scale, niter = cnt))
     }
 }
