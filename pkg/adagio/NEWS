@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.3.9 (2012-06-19)
+
+    o simpleEA() and simpleDE() improved, with boundary conditions.
+    o simpleEA() speed improved, with new parameters and options.
+
 Changes in Version 0.3.7 (2012-03-24)
 
     o simpleDE() simple differential evolution algorithm for

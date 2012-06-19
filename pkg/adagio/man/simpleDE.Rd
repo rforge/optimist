@@ -7,7 +7,7 @@
   Simple Differential Evolution for Minimization.
 }
 \usage{
-simpleDE(fun, lower, upper, N = 60, nmax = 300, r = 0.4, 
+simpleDE(fun, lower, upper, N = 64, nmax = 256, r = 0.4, 
             confined = TRUE, log = FALSE)
 }
 \arguments{
