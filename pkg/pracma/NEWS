@@ -5,7 +5,14 @@
 
 PLANNED FOR NEXT VERSIONS
 
+    o ezplot() now with an ``adaptive function plotting'' option.
     o [tbd.]
+
+CHANGES IN VERSION 1.1.4 (2012-06-24)
+
+    o gammainc() (lower and upper) incomplete gamma function, also the
+      regularized gamma function, all allowing negative x values.
+    o polylog() the polylogarithm functions for |z| < 1 and n >= -4 .
 
 CHANGES IN VERSION 1.1.3 (2012-06-17)
 
