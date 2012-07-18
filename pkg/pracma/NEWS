@@ -9,11 +9,16 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
+    o disp() display test or array (Matlab Style), i.e. cat() with newline.
+
 CHANGES IN VERSION 1.1.5 (2012-07-18)
 
     o Renamed functions with capital first letter to avoid name clashes:
-      And/Or, mtrace -> Trace, mdiag -> Diag
-    o disp() display test or array (Matlab Style), i.e. cat() with newline.
+      And/Or, mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim,
+      reshape -> Reshape, find -> Find, fix -> Fix,
+      mode -> Mode, real -> Real, imag -> Imag,
+      hadamard -> Hadamard, toeplitz -> Toeplitz,
+      poly -> Poly.
 
 CHANGES IN VERSION 1.1.4 (2012-06-26)
 

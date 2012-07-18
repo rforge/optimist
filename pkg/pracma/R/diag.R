@@ -1,5 +1,5 @@
 ##
-##  m d i a g . R  Matrix diagonal
+##  d i a g . R  Matrix diagonal
 ##
 
 
