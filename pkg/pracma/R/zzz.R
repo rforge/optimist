@@ -18,5 +18,5 @@ assign("elapsedTime", 0, envir = .pracmaEnv)
 
     environment(.pracmaEnv) <- asNamespace("pracma")
 
-    # packageStartupMessage("Package 'pracma 1.0.5' loaded.")
+    packageStartupMessage("PRACMA: Masking R functions with Matlab names is intended.")
 }

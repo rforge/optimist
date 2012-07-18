@@ -28,7 +28,7 @@ In Matlab/Octave this function is called \code{diag()} and has a different
 signature than the corresponding function in \R.
 }
 \seealso{
-\code{\link{diag}}, \code{\link{mtrace}}
+\code{\link{diag}}, \code{\link{Trace}}
 }
 \examples{
 mdiag(matrix(1:12,3,4),  1)

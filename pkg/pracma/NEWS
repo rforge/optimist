@@ -5,10 +5,17 @@
 
 PLANNED FOR NEXT VERSIONS
 
-    o ezplot() now with an ``adaptive function plotting'' option.
     o [tbd.]
+    o mexpfit() exponentiell fitting.
+    o lsqlin() least-squares solver with linear constraints.
 
-CHANGES IN VERSION 1.1.4 (2012-06-24)
+CHANGES IN VERSION 1.1.5 (2012-07-18)
+
+    o Renamed functions with capital first letter to avoid name clashes:
+      And/Or, mtrace -> Trace, mdiag -> Diag
+    o disp() display test or array (Matlab Style), i.e. cat() with newline.
+
+CHANGES IN VERSION 1.1.4 (2012-06-26)
 
     o gammainc() (lower and upper) incomplete gamma function, also the
       regularized gamma function, all allowing negative x values.
