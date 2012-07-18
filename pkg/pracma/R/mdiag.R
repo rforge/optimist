@@ -3,7 +3,7 @@
 ##
 
 
-mdiag <- function(x, k=0) {
+Diag <- function(x, k=0) {
     if (!is.numeric(x) && !is.complex(x))
         stop("Argument 'x' must be a real or complex vector or matrix.")
     if (!is.numeric(k) || k != round(k))

@@ -6,4 +6,4 @@ Trace <- pracma::Trace
 
 identical(Trace(1), 1)
 identical(Trace(matrix(c(1,2,3,4,5,6,7,8,9), 3, 3)), 15)
-# Error: mtrace(matrix(1:12, 3, 4))
+# Error: Trace(matrix(1:12, 3, 4))

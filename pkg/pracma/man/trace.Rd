@@ -21,7 +21,7 @@ The corresponding function in Matlab/Octave is called trace(), but this in \R
 has a different meaning.
 }
 \seealso{
-\code{\link{mdiag}}, \code{\link{diag}}
+\code{\link{Diag}}, \code{\link{diag}}
 }
 \examples{
 Trace(matrix(1:16, nrow=4, ncol=4))
