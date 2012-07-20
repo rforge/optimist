@@ -9,7 +9,12 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
-    o disp() display test or array (Matlab Style), i.e. cat() with newline.
+
+CHANGES IN VERSION 1.1.6 (2012-07-20)
+
+    o Removed '.Rapphistory' from the tests directory (again)
+      [and use "--as-cran" for the checks].
+    o disp() display text or array (Matlab Style), i.e. cat() with newline.
 
 CHANGES IN VERSION 1.1.5 (2012-07-18)
 
@@ -28,7 +33,7 @@ CHANGES IN VERSION 1.1.4 (2012-06-26)
 
 CHANGES IN VERSION 1.1.3 (2012-06-17)
 
-    o fminsearch() now implements Nelder-Mead (similar to optim) and
+    o fminsearch() now implements Nelder-Mead (similar to optim), and
       Fletcher-Powell when ``dfree=FALSE'' is chosen.
     o Test functions rosenbrock(), rastrigin(), and many more.
 
