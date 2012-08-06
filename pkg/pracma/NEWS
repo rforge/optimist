@@ -10,6 +10,12 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
 
 
+CHANGES IN VERSION 1.1.7 (2012-08-06)
+
+    o Moler() Moler matrix
+      (named so by John C. Nash, vectorized by Ravi Varadhan).
+    o Renamed hankel to Hankel, rosser to Rosser, wilkinson to Wilkinson.
+
 CHANGES IN VERSION 1.1.6 (2012-07-20)
 
     o Removed '.Rapphistory' from the tests directory (again)

@@ -24,7 +24,7 @@ Hadamard(n)
   and numerical analysis.
 }
 \seealso{
-  \code{\link{hankel}}, \code{\link{Toeplitz}}
+  \code{\link{Hankel}}, \code{\link{Toeplitz}}
 }
 \examples{
 Hadamard(4)

@@ -3,7 +3,7 @@
 ##
 
 
-wilkinson <- function(n){
+Wilkinson <- function(n){
 	if (length(n) != 1 || n != round(n))
 		stop("Argument 'n' must be an integer.")
 	if (n <= 0) return(c())
