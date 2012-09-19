@@ -18,5 +18,5 @@ assign("elapsedTime", 0, envir = .pracmaEnv)
 
     environment(.pracmaEnv) <- asNamespace("pracma")
 
-    packageStartupMessage("PRACMA 1.1.6:\nRenamed some functions to avoid shadowing R base functions.")
+    packageStartupMessage("PRACMA package: Numerical math routines for R.")
 }

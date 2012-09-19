@@ -9,7 +9,7 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
-CHANGES IN VERSION 1.1.8 (2012-08-30)
+CHANGES IN VERSION 1.1.8 (2012-09-19)
 
     o ezcontour(), ezmesh() wrappers for contour(), image(), persp().
     o erfi() imaginary error function.
