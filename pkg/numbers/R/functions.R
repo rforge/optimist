@@ -14,7 +14,7 @@ eulersPhi <- function(n) {
 }
 
 
-moebiusFun <- function(n) {
+moebius <- function(n) {
     if (!isNatural(n))
         stop("Argument 'n' must be a single positive integers.")
 
@@ -30,7 +30,7 @@ moebiusFun <- function(n) {
 }
 
 
-mertensFun <- function(n) {
+mertens <- function(n) {
     if (!isNatural(n))
         stop("Argument 'n' must be a single positive integers.")
 
