@@ -34,7 +34,7 @@ mertens <- function(n) {
     if (!isNatural(n))
         stop("Argument 'n' must be a single positive integers.")
 
-    sum(sapply(1:n, moebiusFun))
+    sum(sapply(1:n, moebius))
 }
 
 
