@@ -27,10 +27,10 @@ ratFarey(x, n, upper = TRUE)
     Numbers. Fifth Edition, Oxford University Press, New York.
 }
 \author{
-    Hans W Borchers <hwborchers@googlemail.com>
+    HwB <hwborchers@googlemail.com>
 }
 \seealso{
-    \code{contfrac}
+    \code{contFrac}
 }
 \examples{
     ratFarey(pi, 100)                          # 22/7    0.0013

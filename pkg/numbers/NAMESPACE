@@ -1,4 +1,5 @@
 # exportPattern("^[[:alpha:]]+") #
 
+export(contFrac)
 export(ratFarey)
 

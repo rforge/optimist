@@ -30,5 +30,4 @@ table(strsplit(substring(E, 3, 1002), ""))
 #    0   1   2   3   4   5   6   7   8   9 
 #  100  96  97 109 100  85  99  99 103 112 
 }
-\keyword{ math }
 

@@ -32,6 +32,12 @@ ezplot <- function(f, a, b, n = 101, col = "blue",
 
 ezcontour <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi), 
                          n = 60, filled = FALSE, col = NULL) {
+    fun <- match.fun(f)
+    f <- function(x) fun(x)
+    stopifnot(is.numeric(xlim), is.numeric(ylim),
+              length(xlim) == 2, length(ylim) == 2,
+              xlim[1] < xlim[2], ylim[1] < ylim[2])
+
     xx <- linspace(xlim[1], xlim[2], n)
     yy <- linspace(ylim[1], ylim[2], n)
     F <- matrix(NA, n, n)
@@ -47,6 +53,7 @@ ezcontour <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
     } else {
         if (is.null(col)) col <- "black"
         contour(xx, yy, F)
+        grid()
     }
     invisible(NULL) 
 }
@@ -54,6 +61,12 @@ ezcontour <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi),
 
 ezmesh <- function(f, xlim = c(-pi,pi), ylim = c(-pi,pi), 
                          n = 60, col = "lightgray", ...) {
+    fun <- match.fun(f)
+    f <- function(x) fun(x)
+    stopifnot(is.numeric(xlim), is.numeric(ylim),
+              length(xlim) == 2, length(ylim) == 2,
+              xlim[1] < xlim[2], ylim[1] < ylim[2])
+
     xx <- linspace(xlim[1], xlim[2], n)
     yy <- linspace(ylim[1], ylim[2], n)
     F <- matrix(NA, n, n)

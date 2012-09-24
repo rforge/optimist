@@ -9,6 +9,10 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
+CHANGES IN VERSION 1.1.9 (2012-09-29)
+
+    o [tbd.]
+
 CHANGES IN VERSION 1.1.8 (2012-09-19)
 
     o ezcontour(), ezmesh() wrappers for contour(), image(), persp().
@@ -328,8 +332,6 @@ CHANGES IN VERSION 0.6-5 (2011-07-01)
 CHANGES IN VERSION 0.6-4 (2011-06-30)
 
     o Changed the description to be more precise about the package.
-    o droplet_e() generation of digits for the Euler number.
-      (Should be followed by a function droplet_pi().)
 
 CHANGES IN VERSION 0.6-3 (2011-06-28)
 

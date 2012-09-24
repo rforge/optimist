@@ -58,7 +58,7 @@ f <- function(xy) {
 ezcontour(f, col = "navy")
 ezcontour(f, filled = TRUE)
 ezmesh(f)
-ezmesh(f2, col="lightblue", theta = -15, phi = 30)
+ezmesh(f, col="lightblue", theta = -15, phi = 30)
   }
 }
 \keyword{ graphs }

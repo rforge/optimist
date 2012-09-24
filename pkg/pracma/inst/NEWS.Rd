@@ -417,8 +417,6 @@
 \section{Changes in Version 0.6.4 (2011-06-30)}{
     \itemize{
       \item Changed the description to be more precise about the package.
-      \item droplet_e() generation of digits for the Euler number.
-        (Should be followed by a function droplet_pi().)
     }
 }
 
