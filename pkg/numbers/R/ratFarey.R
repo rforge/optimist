@@ -1,5 +1,9 @@
-ratFarey <-
-function(x, n, upper = TRUE) {
+##
+##  r a t F a r e y . R  Farey Approximation
+##
+
+
+ratFarey <- function(x, n, upper = TRUE) {
     sgn <- sign(x); x <- abs(x)
     xn <- trunc(x); x <- x - xn
 

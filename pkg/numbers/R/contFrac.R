@@ -14,7 +14,6 @@ contFrac <- function(x, tol = 1e-6) {
         for (i in seq(along=x)) {
             B <- B %*% matrix(c(x[i], 1, 1, 0), 2, 2)
         }
-        # cat(paste(B[1,1], B[2,1], sep="/"), "\n", sep = "")
         return(B[1,1]/B[2,1])
 
     } else {

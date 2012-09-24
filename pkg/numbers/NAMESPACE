@@ -1,5 +1,11 @@
 # exportPattern("^[[:alpha:]]+") #
 
-export(contFrac)
-export(ratFarey)
-
+export(contFrac, ratFarey)
+export(droplet_e)
+export(eulersPhi)
+export(Primes, twinPrimes, nextPrime, previousPrime)
+export(factorize)
+export(isNatural, isPrime, isIntpower)
+export(moebiusFun, mertensFun)
+export(omega, Omega)
+export(sigma, tau)
