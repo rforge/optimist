@@ -11,10 +11,13 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 1.1.9 (2012-09-29)
 
+    o gcd(), lcm() greatest common divisor, least common multiple
+      now working on a vector of integers (not extended any more).
     o Removed number-theoretic functions: eulersPhi(),
       moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
       primes2(), twinPrimes(), nextPrime(), previousPrime(),
-      modpower(), modorder(), primroot()
+      modpower(), modorder(), primroot(), contfrac(),
+      -- modinv(), modlin(), coprime(), GCD(), LCM(), extGCD(),
       (these functions are now available in the 'numbers' package).
 
 CHANGES IN VERSION 1.1.8 (2012-09-19)
