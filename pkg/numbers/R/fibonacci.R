@@ -3,7 +3,7 @@
 ##
 
 
-fibonacci <- function(n, sequence = FALSE) {
+fibonacci <- function(n, sequence = TRUE) {
     if (!is.numeric(n) || length(n) != 1 || floor(n) != ceiling(n) || n < 0)
         stop("Argument 'n' must be a single integer >= 0.")
     if (n <= 1) return(c(1))
@@ -26,16 +26,3 @@ fibonacci <- function(n, sequence = FALSE) {
 }
 
 ##  Examples
-fibonacci(0)                         # 1
-fibonacci(2)                         # 2
-fibonacci(2, sequence = TRUE)        # 1 2
-
-# Golden ratio
-F <- fibonacci(25, sequence = TRUE)  # ... 75025 121393
-f25 <- F[25]/F[24]                   #     1.618033989
-phi <- (sqrt(5) + 1)/2
-abs(f25 - phi)                       # 7.945178e-11
-
-# Compare recursive with iterative approach
-# system.time(F30 <- fibonacci(30))                       # user: 17.075 s
-# system.time(F30 <- fibonacci(30, sequence = TRUE)[30])  # user:  0.006 s

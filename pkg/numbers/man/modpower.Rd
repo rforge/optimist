@@ -41,7 +41,7 @@ modorder(7, 17)      #=> 16, i.e. 7 is a primitive root mod 17
 ##  Gauss' table of primitive roots modulo prime numbers < 100
 proots <- c(2,  2,  3,  2,  2,  6,  5, 10, 10, 10, 2,  2, 10, 17,  5,  5,
             6, 28, 10, 10, 26, 10, 10,  5, 12, 62, 5, 29, 11, 50, 30, 10)
-P <- primes(100)
+P <- Primes(100)
 for (i in seq(along=P)) {
     cat(P[i], "\t", modorder(proots[i], P[i]), proots[i], "\t", "\n")
 }
@@ -79,4 +79,3 @@ system.time(lehmann_test(27644437, 50))    # TRUE
 #   0.086   0.151   0.235
 }
 }
-\keyword{ math }
