@@ -1,13 +1,13 @@
 \name{gcd, lcm}
 \alias{gcd}
-\alias{lcm}
+\alias{ml.lcm}
 \title{GCD and LCM Integer Functions}
 \description{
   Greatest common divisor and least common multiple
 }
 \usage{
 gcd(a, b, extended = FALSE)
-lcm(a, b)
+ml.lcm(a, b)
 }
 \arguments{
   \item{a, b}{vectors of integers.}
@@ -39,7 +39,7 @@ lcm(a, b)
 \examples{
 gcd(12, 1:24)
 gcd(46368, 75025)  # Fibonacci numbers are relatively prime to each other
-lcm(12, 1:24)
-lcm(46368, 75025)  # = 46368 * 75025
+ml.lcm(12, 1:24)
+ml.lcm(46368, 75025)  # = 46368 * 75025
 }
 \keyword{ arith }

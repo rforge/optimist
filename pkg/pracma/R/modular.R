@@ -5,7 +5,7 @@
 ceil <- function(n) ceiling(n)
 
 
-fix <- function(n) trunc(n)
+ml.fix <- function(n) trunc(n)
 
 
 mod <- function(n, m) {
@@ -62,7 +62,7 @@ gcd <- function(a, b, extended = FALSE) {
 }
 
 
-lcm <- function(a, b) {
+ml.lcm <- function(a, b) {
     stopifnot(is.numeric(a), is.numeric(b))
     if (length(a) == 1) {
         a <- rep(a, times=length(b))
