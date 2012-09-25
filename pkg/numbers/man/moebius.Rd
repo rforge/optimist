@@ -26,9 +26,6 @@ mertens(n)
 
   For \code{mertens} the values will very slowly grow.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Works well up to \code{10^9}, but will become very slow for the Mertens
   function.

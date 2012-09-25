@@ -26,9 +26,6 @@ ratFarey(x, n, upper = TRUE)
     Hardy, G. H., and E. M. Wright (1979). An Introduction to the Theory of
     Numbers. Fifth Edition, Oxford University Press, New York.
 }
-\author{
-    HwB <hwborchers@googlemail.com>
-}
 \seealso{
     \code{contFrac}
 }

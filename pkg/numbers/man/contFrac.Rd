@@ -33,9 +33,6 @@ contFrac(x, tol = 1e-06)
   Hardy, G. H., and E. M. Wright (1979). An Introduction to the Theory of
   Numbers. Fifth Edition, Oxford University Press, New York.
 }
-\author{
-  HwB  <hwborchers@googlemail.com>
-}
 \note{
   This function is \emph{not} vectorized.
 }

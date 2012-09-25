@@ -32,9 +32,6 @@ tau(n)
 \value{
   Natural number, the number or sum of all divisors.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \references{
 \code{http://en.wikipedia.org/wiki/Divisor_function}
 

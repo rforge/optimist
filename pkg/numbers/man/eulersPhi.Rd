@@ -18,9 +18,6 @@ eulersPhi(n)
 \value{
   Natural number, the number of coprime integers \code{<= n}.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Works well up to \code{10^9}.
 }

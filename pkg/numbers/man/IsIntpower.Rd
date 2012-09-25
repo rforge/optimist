@@ -20,9 +20,6 @@
 \value{
   A 2-vector of integers.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \examples{
 isIntpower(1)    #  1  1
 isIntpower(15)   # 15  1

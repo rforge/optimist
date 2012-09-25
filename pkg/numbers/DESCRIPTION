@@ -1,7 +1,7 @@
 Package: numbers
 Type: Package
 Title: Number-theoretic Functions
-Version: 0.1-1
+Version: 0.2-1
 Date: 2012-09-24
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>

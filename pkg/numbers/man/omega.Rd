@@ -21,9 +21,6 @@ Omega(n)
 \value{
   Natural number.
 }
-\author{
-  HwB <hwborchers@googlemail.com>
-}
 \note{
   Works well up to \code{10^9}.
 }

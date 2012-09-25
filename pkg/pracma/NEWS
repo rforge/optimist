@@ -12,7 +12,8 @@ PLANNED FOR NEXT VERSIONS
 CHANGES IN VERSION 1.1.9 (2012-09-29)
 
     o Removed number-theoretic functions: eulersPhi(),
-      moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega()
+      moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
+      modpower(), modorder(), primroot().
 
 CHANGES IN VERSION 1.1.8 (2012-09-19)
 

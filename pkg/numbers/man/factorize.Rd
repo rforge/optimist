@@ -18,9 +18,6 @@
 \value{
   Vector containing the prime factors of \code{n}.
 }
-\author{
-  HwB \email{hwborchers@googlemail.com}
-}
 \seealso{
   \code{\link{isPrime}, \link{Primes}}
 }
