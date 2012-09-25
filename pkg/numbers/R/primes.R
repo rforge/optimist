@@ -1,5 +1,5 @@
 ###
-### PRIMES.R  Prime numbers
+###  p r i m e s . R  Prime numbers
 ###
 
 
@@ -35,10 +35,10 @@ Primes <- function(n1 = 1, n2 = NULL) {
     if (n2 > 2^53 - 1)  stop("Upper bound 'n2' must be smaller than 2^53-1.")
     if (n1 > n2)        stop("Upper bound must be greater than lower bound.")
    
-	if (n2 <= 1000) {
-		P <- primeSieve(n2)
-		return(P[P >= n1])
-	}
+    if (n2 <= 1000) {
+        P <- primeSieve(n2)
+        return(P[P >= n1])
+    }
 
     myPrimes <- primeSieve(floor(sqrt(n2)))
 
@@ -60,25 +60,25 @@ Primes <- function(n1 = 1, n2 = NULL) {
 
 
 twinPrimes <- function(n1, n2) {
-	P <- Primes(n1, n2)
-	twins <- which(diff(P) == 2)
-	cbind(P[twins], P[twins+1])
+    P <- Primes(n1, n2)
+    twins <- which(diff(P) == 2)
+    cbind(P[twins], P[twins+1])
 }
 
 
 nextPrime <-function(n) {
-	if (n <= 1)  n <- 1  else  n <- floor(n)
-	n <- n + 1
+    if (n <= 1)  n <- 1  else  n <- floor(n)
+    n <- n + 1
 
-	# m <- 2*n  # Bertrands law
-	d1 <- max(3, round(log(n)))
-	P  <- Primes(n, n + d1)
+    # m <- 2*n  # Bertrands law
+    d1 <- max(3, round(log(n)))
+    P  <- Primes(n, n + d1)
 
-	while(length(P) == 0) {
-		n <- n + d1 + 1
-		P  <- Primes(n, n + d1)
-	}
-	return( min(P) )
+    while(length(P) == 0) {
+        n <- n + d1 + 1
+        P  <- Primes(n, n + d1)
+    }
+    return( min(P) )
 }
 
 
@@ -92,13 +92,13 @@ previousPrime <-function(n) {
         return(max(P[P <= n]))
     }
 
-	# m <- 2*n  # Bertrands law
-	d1 <- max(3, round(log(n)))
-	P  <- Primes(n - d1, n)
+    # m <- 2*n  # Bertrands law
+    d1 <- max(3, round(log(n)))
+    P  <- Primes(n - d1, n)
 
-	while(length(P) == 0 || n - d1 < 3) {
-		n <- n - d1 - 1
-		P  <- Primes(n - d1, n)
-	}
-	return( max(P) )
+    while(length(P) == 0 || n - d1 < 3) {
+        n <- n - d1 - 1
+        P  <- Primes(n - d1, n)
+    }
+    return( max(P) )
 }

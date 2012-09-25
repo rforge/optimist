@@ -24,5 +24,3 @@ fibonacci <- function(n, sequence = TRUE) {
     }
     return(fib)
 }
-
-##  Examples

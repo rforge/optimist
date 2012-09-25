@@ -1,5 +1,6 @@
 # exportPattern("^[[:alpha:]]+") #
 
+export(agm)
 export(contFrac)
 export(coprime)
 export(droplet_e)
