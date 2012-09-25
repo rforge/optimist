@@ -29,7 +29,7 @@ extGCD(a, b)
   more appropriate.
 }
 \seealso{
-\code{\link{modinv}}
+\code{\link{GCD}}
 }
 \references{
   Blankinship, W. A. ``A New Version of the Euclidean Algorithm."
