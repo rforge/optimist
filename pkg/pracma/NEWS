@@ -16,8 +16,9 @@ CHANGES IN VERSION 1.1.9 (2012-09-29)
     o Removed number-theoretic functions: eulersPhi(),
       moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
       primes2(), twinPrimes(), nextPrime(), previousPrime(),
-      modpower(), modorder(), primroot(), contfrac(),
-      -- modinv(), modlin(), coprime(), GCD(), LCM(), extGCD(),
+      modpower(), modorder(), modinv(), modlin(),
+      primroot(), contfrac(),
+      --  coprime(), GCD(), LCM(), extGCD(),
       (these functions are now available in the 'numbers' package).
 
 CHANGES IN VERSION 1.1.8 (2012-09-19)
@@ -41,7 +42,7 @@ CHANGES IN VERSION 1.1.5 (2012-07-18)
 
     o Renamed functions with capital first letter to avoid name clashes:
       And/Or, mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim,
-      reshape -> Reshape, find -> Find, fix -> Fix,
+      reshape -> Reshape, find -> Find,
       mode -> Mode, real -> Real, imag -> Imag,
       hadamard -> Hadamard, toeplitz -> Toeplitz,
       poly -> Poly.

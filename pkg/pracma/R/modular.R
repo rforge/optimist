@@ -4,9 +4,9 @@
 
 ceil <- function(n) ceiling(n)
 
-Fix <- function(n) trunc(n)
 
-idiv <- function(n, m) return(n %/% m)
+fix <- function(n) trunc(n)
+
 
 mod <- function(n, m) {
     stopifnot(is.numeric(n), is.numeric(m))
@@ -15,6 +15,7 @@ mod <- function(n, m) {
     if (m == 0) return(n)
     else        return(n %% m)
 }
+
 
 rem <- function(n, m) {
     stopifnot(is.numeric(n), is.numeric(m))
@@ -28,35 +29,47 @@ rem <- function(n, m) {
     return(k)
 }
 
-extGCD <- function(a, b) {
-    # The Blankinship method, MAA Mathematical Monthly, Jul-Aug 1963
-    stopifnot(is.numeric(a), length(a) == 1, floor(a) == ceiling(a), 
-              is.numeric(b), length(b) == 1, floor(b) == ceiling(b))
 
-    sign_ab <- sign(c(a, b))
-    A <- matrix(c(abs(c(a, b)), 1, 0, 0, 1), nrow=2, ncol=3)
+gcd <- function(a, b, extended = FALSE) {
+    stopifnot(is.numeric(a), is.numeric(b))
+    if (length(a) == 1) {
+        a <- rep(a, times=length(b))
+    } else if (length(b) == 1) {
+        b <- rep(b, times=length(a))
+    }
+    n <- length(a)
 
-    while (A[1, 1]*A[2, 1] != 0) {
-        if (A[1, 1] > A[2, 1]) {
-            m <- A[1, 1] %/% A[2, 1]
-            A[1, ] <- A[1, ] - m * A[2, ]
-        } else {
-            m <- A[2, 1] %/% A[1, 1]
-            A[2, ] <- A[2, ] - m * A[1, ]
+    e <- d <- g <- numeric(n)
+    for (k in 1:n) {
+        u <- c(1, 0, abs(a[k]))
+        v <- c(0, 1, abs(b[k]))
+        while (v[3] != 0) {
+            q <- floor(u[3]/v[3])
+            t <- u - v*q
+            u <- v
+            v <- t
         }
+        e[k] <- u[1] * sign(a[k])
+        d[k] <- u[2] * sign(a[k])
+        g[k] <- u[3]
     }
 
-    if (A[1, 1] == 0)  g <- A[2, ]
-    else               g <- A[1, ]
-
-    g[2:3] <- sign_ab * g[2:3]
-    return(g)
+    if (extended) {
+        return(list(g = g, c = e, d = d))
+    } else {
+        return(g)
+    }
 }
 
-GCD <- function(n, m) return(extGCD(n, m)[1])
 
-LCM <- function(n, m) return(n / GCD(n, m) * m)
+lcm <- function(a, b) {
+    stopifnot(is.numeric(a), is.numeric(b))
+    if (length(a) == 1) {
+        a <- rep(a, times=length(b))
+    } else if (length(b) == 1) {
+        b <- rep(b, times=length(a))
+    }
 
-coprime <- function(n, m) {
-    if (GCD(n, m) > 1) FALSE else TRUE
+    g <- gcd(a, b, extended = FALSE)
+    return( a / g * b )
 }

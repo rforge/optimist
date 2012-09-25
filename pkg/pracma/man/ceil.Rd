@@ -1,6 +1,6 @@
 \name{ceil}
 \alias{ceil}
-\alias{Fix}
+\alias{fix}
 \title{Integer Functions (Matlab Style)}
 \description{
   Functions for rounding and truncating numeric values towards near
@@ -8,7 +8,7 @@
 }
 \usage{
 ceil(n)
-Fix(n)
+fix(n)
 }
 \arguments{
   \item{n}{a numeric vector or matrix}
@@ -30,6 +30,6 @@ Fix(n)
 \examples{
 x <- c(-1.2, -0.8, 0, 0.5, 1.1, 2.9)
 ceil(x)
-Fix(x)
+fix(x)
 }
 \keyword{ arith }
