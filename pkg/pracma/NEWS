@@ -5,9 +5,12 @@
 
 PLANNED FOR NEXT VERSIONS
 
-    o [tbd.]
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
+
+CHANGES IN VERSION 1.2.0 (2012-10-01)
+
+    o matlab() can reinstall Matlab function names.
 
 CHANGES IN VERSION 1.1.9 (2012-09-25)
 
@@ -16,7 +19,7 @@ CHANGES IN VERSION 1.1.9 (2012-09-25)
     o Removed number-theoretic functions: eulersPhi(),
       moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
       primes2(), twinPrimes(), nextPrime(), previousPrime(),
-      modpower(), modorder(), modinv(), modlin(),
+      modpower(), modorder(), modinv(), modlin(), agm(),
       primroot(), contfrac(), coprime(), GCD(), LCM(), extGCD(),
       (these functions are now available in the 'numbers' package).
 
@@ -27,9 +30,8 @@ CHANGES IN VERSION 1.1.8 (2012-09-19)
 
 CHANGES IN VERSION 1.1.7 (2012-08-06)
 
-    o Moler() Moler matrix
+    o moler() Moler matrix
       (named so by John C. Nash, vectorized by Ravi Varadhan).
-    o Renamed hankel to Hankel, rosser to Rosser, wilkinson to Wilkinson.
 
 CHANGES IN VERSION 1.1.6 (2012-07-20)
 
@@ -40,11 +42,9 @@ CHANGES IN VERSION 1.1.6 (2012-07-20)
 CHANGES IN VERSION 1.1.5 (2012-07-18)
 
     o Renamed functions with capital first letter to avoid name clashes:
-      And/Or, mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim,
-      reshape -> Reshape, find -> Find, fix -> ml.fix,
-      mode -> Mode, real -> Real, imag -> Imag,
-      hadamard -> Hadamard, toeplitz -> Toeplitz,
-      poly -> Poly.
+      mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim,
+      reshape -> Reshape, find -> finds, fix -> ml.fix, poly ->Poly,
+      mode -> Mode, real -> Real, imag -> Imag, toeplitz -> Toeplitz.
 
 CHANGES IN VERSION 1.1.4 (2012-06-26)
 
@@ -182,7 +182,7 @@ CHANGES IN VERSION 0.9.3 (2011-12-27)
 
 CHANGES IN VERSION 0.9.2 (2011-12-26)
 
-    o ApEn() approximate entropy of a time series.
+    o approx_entropy() approximate entropy of a time series.
     o circshift() circularly shifting arrays (Matlab Style).
 
 CHANGES IN VERSION 0.9.1 (2011-12-12)

@@ -3,7 +3,7 @@
 ##
 
 
-Hadamard <- function(n) {
+hadamard <- function(n) {
     if (!is.numeric(n) || length(n) != 1 ||
         floor(n) != ceiling(n) || n <= 1)
         stop("Argument 'n' must be a positiv integer.")
@@ -24,7 +24,7 @@ Hadamard <- function(n) {
     } else if (k == 3) {
         H <- ones(20, 20)
         H[2:20, 2:20] <-
-  Hankel(c(-1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, -1, -1, 1),
+  hankel(c(-1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, -1, -1, 1),
          c(1, -1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, -1, -1))
     }
     if (e >= 1) {

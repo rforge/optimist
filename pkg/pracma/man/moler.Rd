@@ -1,12 +1,12 @@
-\name{Moler}
-\alias{Moler}
+\name{moler}
+\alias{moler}
 \title{Moler Matrix}
 \description{
 Generate the Moler matrix of size \code{n x n}. The Moler matrix is for
 testing eigenvalue computations.
 }
 \usage{
-Moler(n)
+moler(n)
 }
 \arguments{
   \item{n}{integer}
@@ -19,10 +19,10 @@ matrix with exactly one small eigenvalue.
 matrix of size \code{n x n}
 }
 \seealso{
-\code{\link{Wilkinson}}
+\code{\link{wilkinson}}
 }
 \examples{
-(a <- Moler(10))
+(a <- moler(10))
 min(eig(a))
 }
 \keyword{ array }

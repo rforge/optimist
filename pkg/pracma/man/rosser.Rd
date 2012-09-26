@@ -1,11 +1,11 @@
-\name{Rosser}
-\alias{Rosser}
+\name{rosser}
+\alias{rosser}
 \title{Rosser Matrix}
 \description{
 Generate the Rosser matrix.
 }
 \usage{
-Rosser()
+rosser()
 }
 \details{
 This is a classic symmetric eigenvalue test problem.
@@ -17,9 +17,9 @@ eigenvalue.
 matrix of size 8 x 8
 }
 \seealso{
-  \code{\link{Wilkinson}}
+  \code{\link{wilkinson}}
 }
 \examples{
-Rosser()
+rosser()
 }
 \keyword{ array }

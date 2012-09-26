@@ -27,7 +27,7 @@ Toeplitz(a, b)
   returns only the \emph{symmetric} Toeplitz matrix.
 }
 \seealso{
-  \code{\link{Hankel}}
+  \code{\link{hankel}}
 }
 \examples{
 Toeplitz(c(1, 2, 3, 4, 5))

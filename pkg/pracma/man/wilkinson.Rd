@@ -1,12 +1,12 @@
-\name{Wilkinson}
-\alias{Wilkinson}
-\title{Wilkinson Matrix}
+\name{wilkinson}
+\alias{wilkinson}
+\title{wilkinson Matrix}
 \description{
 Generate the Wilkinson matrix of size \code{n x n}.The Wilkinson matrix for
 testing eigenvalue computations
 }
 \usage{
-Wilkinson(n)
+wilkinson(n)
 }
 \arguments{
   \item{n}{integer}
@@ -20,14 +20,14 @@ eigenvalues.
 matrix of size \code{n x n}
 }
 \note{
-The two largest eigenvalues of \code{Wilkinson(21)} agree to 14, but not 15
+The two largest eigenvalues of \code{wilkinson(21)} agree to 14, but not 15
 decimal places.
 }
 \seealso{
 \code{\link{Toeplitz}}
 }
 \examples{
-(a <- Wilkinson(7))
+(a <- wilkinson(7))
 eig(a)
 }
 \keyword{ array }

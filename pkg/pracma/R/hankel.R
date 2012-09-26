@@ -3,7 +3,7 @@
 ##
 
 
-Hankel <- function(a, b) {
+hankel <- function(a, b) {
     if (!is.vector(a))
         stop("Argument 'a' must be a numeric or complex vector.")
     n <- length(a)
