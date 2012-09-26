@@ -10,6 +10,7 @@ matlab <- function() {
     assign("imag", pracma::Imag, envir = .GlobalEnv)
     assign("lcm", pracma::ml.lcm, envir = .GlobalEnv)
     assign("mode", pracma::Mode, envir = .GlobalEnv)
+    assign("norm", pracma::Norm, envir = .GlobalEnv)
     assign("poly", pracma::Poly, envir = .GlobalEnv)
     assign("real", pracma::Real, envir = .GlobalEnv)
     assign("reshape", pracma::Reshape, envir = .GlobalEnv)

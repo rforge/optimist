@@ -42,7 +42,7 @@ CHANGES IN VERSION 1.1.6 (2012-07-20)
 CHANGES IN VERSION 1.1.5 (2012-07-18)
 
     o Renamed functions with capital first letter to avoid name clashes:
-      mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim,
+      mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim, vnorm -> Norm,
       reshape -> Reshape, find -> finds, fix -> ml.fix, poly ->Poly,
       mode -> Mode, real -> Real, imag -> Imag, toeplitz -> Toeplitz.
 
