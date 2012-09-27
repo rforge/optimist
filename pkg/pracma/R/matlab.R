@@ -17,5 +17,7 @@ matlab <- function() {
     assign("strtrim", pracma::strTrim, envir = .GlobalEnv)
     assign("toeplitz", pracma::Toeplitz, envir = .GlobalEnv)
     # assign("", pracma::, envir = .GlobalEnv)
+    makeActiveBinding("ans", function() .Last.value, .GlobalEnv)
+    makeActiveBinding("who", ls, .GlobalEnv)
     invisible(NULL)
 }

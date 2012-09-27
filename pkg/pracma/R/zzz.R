@@ -19,8 +19,6 @@ assign("elapsedTime", 0, envir = .pracmaEnv)
     environment(.pracmaEnv) <- asNamespace("pracma")
 
     packageStartupMessage(
-    paste("PRACMA 1.2.0 (Sept-2012 HwB): Practical Numerical Math Functions.",    
-          "'pracma::matlab()' will redefine function names to Matlab idioms.",
-          sep = "\n")
+        "pracma 1.2.0 (HwB 2012) Practical Numerical Math Functions"
     )
 }
