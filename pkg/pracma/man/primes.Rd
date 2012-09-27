@@ -26,7 +26,7 @@
   HwB \email{hwborchers@googlemail.com}
 }
 \seealso{
-  \code{\link{isprime}, \link{factorize}}
+  \code{\link{isprime}, \link{factors}}
 }
 \examples{
 primes(1000)

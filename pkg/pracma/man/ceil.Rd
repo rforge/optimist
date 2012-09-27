@@ -1,6 +1,6 @@
 \name{ceil}
 \alias{ceil}
-\alias{ml.fix}
+\alias{Fix}
 \title{Integer Functions (Matlab Style)}
 \description{
   Functions for rounding and truncating numeric values towards near
@@ -8,7 +8,7 @@
 }
 \usage{
 ceil(n)
-ml.fix(n)
+Fix(n)
 }
 \arguments{
   \item{n}{a numeric vector or matrix}
@@ -17,7 +17,7 @@ ml.fix(n)
   \code{ceil()} is an alias for \code{ceiling()} and rounds to the smallest
   integer equal to or above \code{n}.
 
-  \code{ml.fix()} truncates values towards 0 and is an alias for 
+  \code{Fix()} truncates values towards 0 and is an alias for 
   \code{trunc()}. Uses \code{ml} prefix to indicate Matlab style.
 
   The corresponding functions \code{floor()} (rounding to the largest interger
@@ -31,6 +31,6 @@ ml.fix(n)
 \examples{
 x <- c(-1.2, -0.8, 0, 0.5, 1.1, 2.9)
 ceil(x)
-ml.fix(x)
+Fix(x)
 }
 \keyword{ arith }

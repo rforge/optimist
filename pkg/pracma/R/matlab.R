@@ -6,9 +6,9 @@
 matlab <- function() {
     assign("diag", pracma::Diag, envir = .GlobalEnv)
     assign("find", pracma::finds, envir = .GlobalEnv)
-    assign("fix", pracma::ml.fix, envir = .GlobalEnv)
+    assign("fix", pracma::Fix, envir = .GlobalEnv)
     assign("imag", pracma::Imag, envir = .GlobalEnv)
-    assign("lcm", pracma::ml.lcm, envir = .GlobalEnv)
+    assign("lcm", pracma::Lcm, envir = .GlobalEnv)
     assign("mode", pracma::Mode, envir = .GlobalEnv)
     assign("norm", pracma::Norm, envir = .GlobalEnv)
     assign("poly", pracma::Poly, envir = .GlobalEnv)

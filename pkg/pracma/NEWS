@@ -43,7 +43,7 @@ CHANGES IN VERSION 1.1.5 (2012-07-18)
 
     o Renamed functions with capital first letter to avoid name clashes:
       mtrace -> Trace, mdiag -> Diag, strtrim -> strTrim, vnorm -> Norm,
-      reshape -> Reshape, find -> finds, fix -> ml.fix, poly ->Poly,
+      reshape -> Reshape, find -> finds, fix -> Fix, poly ->Poly,
       mode -> Mode, real -> Real, imag -> Imag, toeplitz -> Toeplitz.
 
 CHANGES IN VERSION 1.1.4 (2012-06-26)
@@ -249,7 +249,7 @@ CHANGES IN VERSION 0.8.2 (2011-11-04)
 CHANGES IN VERSION 0.8.1 (2011-10-30)
 
     o Corrected pinv() for (nearly) singular matrices.
-    o Renamed ifactor() to factorize().
+    o Renamed ifactor() to factors().
 
 CHANGES IN VERSION 0.8.0 (2011-10-27)
 
