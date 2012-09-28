@@ -10,6 +10,7 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 1.2.1 (2012-10-02)
 
+    o rosenbrock() added, moved testfunctions to 'adagio' package.
     o logit() function added to sigmoid().
 
 CHANGES IN VERSION 1.2.0 (2012-09-27)
