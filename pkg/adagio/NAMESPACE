@@ -12,5 +12,6 @@ export(maxsub, maxsub2d)
 export(subsetsum, knapsack)
 export(maxempty)
 export(mknapsack, assignment)
+export(rastrigin, rosenbrock)
 
 # S3/S4 Methods
