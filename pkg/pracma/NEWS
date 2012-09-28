@@ -8,6 +8,10 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
+CHANGES IN VERSION 1.2.1 (2012-10-02)
+
+    o logit() function added to sigmoid().
+
 CHANGES IN VERSION 1.2.0 (2012-09-27)
 
     o matlab() can reinstall Matlab function names.
