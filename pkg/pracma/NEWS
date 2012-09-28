@@ -8,10 +8,12 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
-CHANGES IN VERSION 1.2.1 (2012-10-02)
+CHANGES IN VERSION 1.2.1 (2012-09-28)
 
+    o eulerHeun() improved Euler method for solving ODEs.
     o rosenbrock() added, moved testfunctions to 'adagio' package.
     o logit() function added to sigmoid().
+    o Keyword 'ode' introduced.
 
 CHANGES IN VERSION 1.2.0 (2012-09-27)
 

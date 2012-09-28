@@ -47,4 +47,4 @@ cbind(c(0.5,1,1.5,2), -deval(sol$x, sol$y, c(0.5, 1, 1.5, 2)))
 #  2.0  5.112068
 # plot(sol$x, -sol$y, type="l", col="blue"); grid()
 }
-\keyword{ math }
+\keyword{ ode }

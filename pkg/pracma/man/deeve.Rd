@@ -49,4 +49,4 @@ deeve(sol$x, sol$y[,1])                   # y1 = 0 : elongation in [sec]
 # [1] 2.073507 5.414753 8.650250
 # matplot(sol$x, sol$y); grid()
 }
-\keyword{ math }
+\keyword{ ode }

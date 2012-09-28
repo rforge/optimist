@@ -38,7 +38,7 @@ bvp(f, a, b, ya, yb, N, cc, ...)
   \eqn{h \ge 2 c_1 / c_2}.
 }
 \seealso{
-  \code{feuler}
+  \code{eulerHeun}
 }
 \examples{
 ##  Solve -y'' + 0.1*y = 1 + sin(4*pi*x) on [0, 1] with y(0) = y(1) = 0.
@@ -48,4 +48,4 @@ sol <- bvp(fun, 0, 1, 0, 0, 40, c(1, 0, 0.1))
 plot(sol$xh, sol$yh, type="l", col="blue")
 grid()}
 }
-\keyword{ math }
+\keyword{ ode }
