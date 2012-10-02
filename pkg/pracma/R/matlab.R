@@ -19,5 +19,7 @@ matlab <- function() {
     # assign("", pracma::, envir = .GlobalEnv)
     makeActiveBinding("ans", function() .Last.value, .GlobalEnv)
     makeActiveBinding("who", ls, .GlobalEnv)
+    makeActiveBinding("tic", tic, .GlobalEnv)
+    makeActiveBinding("toc", toc, .GlobalEnv)
     invisible(NULL)
 }

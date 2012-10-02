@@ -8,6 +8,10 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o lsqlin() least-squares solver with linear constraints.
 
+CHANGES IN VERSION 1.2.2 (2012-10-02)
+
+    o [tbd.]
+
 CHANGES IN VERSION 1.2.1 (2012-09-28)
 
     o eulerHeun() improved Euler method for solving ODEs.
