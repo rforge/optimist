@@ -1,5 +1,5 @@
-\name{eulerHeun}
-\alias{eulerHeun}
+\name{euler_heun}
+\alias{euler_heun}
 \title{
   Euler-Heun ODE Solver
 }
@@ -7,7 +7,7 @@
   Euler and Euler-Heun ODE solver.
 }
 \usage{
-eulerHeun(f, a, b, y0, n = 100, improved = TRUE, ...)
+euler_heun(f, a, b, y0, n = 100, improved = TRUE, ...)
 }
 \arguments{
   \item{f}{function in the differential equation \eqn{y' = f(x, y)}.}
@@ -18,7 +18,7 @@ eulerHeun(f, a, b, y0, n = 100, improved = TRUE, ...)
   \item{...}{additional parameters to be passed to the function.}
 }
 \details{
-  \code{eulerHeun} is an integration method for ordinary differential
+  \code{euler_heun} is an integration method for ordinary differential
   equations using the simple Euler resp. the improved Euler-Heun Method.
 }
 \value{
@@ -30,9 +30,16 @@ eulerHeun(f, a, b, y0, n = 100, improved = TRUE, ...)
   and Octave. Second Edition, Springer-Verlag, Berlin Heidelberg, 2006.
 }
 \seealso{
-  \code{\link{ode23}}
+  \code{\link{cranknic}}
 }
 \examples{
-## See Crank-Nicolson
+##  Flame-up process
+f <- function(x, y) y^2 - y^3
+s1 <- cranknic(f, 0, 200, 0.01)
+s2 <- euler_heun(f, 0, 200, 0.01)
+\dontrun{
+plot(s1$t, s1$y, type="l", col="blue")
+lines(s2$t, s2$y, col="red")
+grid()}
 }
 \keyword{ ode }

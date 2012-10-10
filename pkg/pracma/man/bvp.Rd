@@ -38,7 +38,7 @@ bvp(f, a, b, ya, yb, N, cc, ...)
   \eqn{h \ge 2 c_1 / c_2}.
 }
 \seealso{
-  \code{eulerHeun}
+  \code{\link{newmark}}
 }
 \examples{
 ##  Solve -y'' + 0.1*y = 1 + sin(4*pi*x) on [0, 1] with y(0) = y(1) = 0.

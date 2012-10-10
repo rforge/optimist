@@ -3,7 +3,7 @@
 ##
 
 
-eulerHeun <- function(f, a, b, y0, n = 100, improved = TRUE, ...) {
+euler_heun <- function(f, a, b, y0, n = 100, improved = TRUE, ...) {
     stopifnot(is.numeric(a), is.numeric(b), length(a) == 1, length(b) == 1,
               is.numeric(y0), length(y0) == 1)
 

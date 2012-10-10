@@ -35,8 +35,8 @@ Practical Numerical Math Routines
     Richardson approach and ``complex step'' derivatives, adaptive
     Simpson and Lobatto integration and adaptive Gauss-Kronrod quadrature.
     \item Solvers for ordinary differential equations and systems,\cr
-    Euler-Heun, classical Runge-Kutta, ode23, or predictor-corrector such
-    as the Adams-Bashford-Moulton method.
+    Euler-Heun, classical Runge-Kutta, ode23, or predictor-corrector method 
+    such as the Adams-Bashford-Moulton.
     \item Some functions from number theory,\cr
     such as primes and prime factorization, extended Euclidean algorithm.
     \item Sorting routines, e.g. recursive quickstep.
