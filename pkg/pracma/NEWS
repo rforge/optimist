@@ -9,12 +9,15 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
     o bvp4c() general linear differential equations of second order.
 
-CHANGES IN VERSION 1.2.2 (2012-10-12)
+CHANGES IN VERSION 1.2.3 (2012-10-12)
+
+    o corrected an error in gaussNewton() and fsolve()
+      [thanks to Etienne Chamayou].
+
+CHANGES IN VERSION 1.2.2 (2012-10-10)
 
     o bsxfun() apply binary function elementwise (Matlab style)
     o added the analytic solution for the example in bvp().
-    o corrected an error in gaussNewton() and fsolve()
-      [thanks to Etienne Chamayou].
 
 CHANGES IN VERSION 1.2.1 (2012-09-28)
 
