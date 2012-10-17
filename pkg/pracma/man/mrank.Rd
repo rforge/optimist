@@ -1,5 +1,5 @@
-\name{mrank}
-\alias{mrank}
+\name{Rank}
+\alias{Rank}
 \title{
   Matrix Rank
 }
@@ -7,7 +7,7 @@
   Provides an estimate of the rank of a matrix \code{M}.
 }
 \usage{
-mrank(M)
+Rank(M)
 }
 \arguments{
   \item{M}{Numeric matrix; vectors will be considered as column vectors.}
@@ -35,10 +35,10 @@ mrank(M)
   \code{\link{nullspace}}
 }
 \examples{
-mrank(magic(10))   #=> 7
-mrank(magic(100))  #=> 3 (!)
-mrank(hilb(8))     #=> 8 , but qr(hilb(8))$rank says, rank is 7.
+Rank(magic(10))   #=> 7
+Rank(magic(100))  #=> 3 (!)
+Rank(hilb(8))     #=> 8 , but qr(hilb(8))$rank says, rank is 7.
 # Warning message:
-# In mrank(hilb(8)) : Rank calculation may be problematic.
+# In Rank(hilb(8)) : Rank calculation may be problematic.
 }
 \keyword{ array }

@@ -9,10 +9,16 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
     o bvp4c() general linear differential equations of second order.
 
-CHANGES IN VERSION 1.2.3 (2012-10-12)
+CHANGES IN VERSION 1.2.4 (2012-10-18)
 
-    o corrected an error in gaussNewton() and fsolve()
-      [thanks to Etienne Chamayou].
+    o [tbd.]
+
+CHANGES IN VERSION 1.2.3 (2012-10-17)
+
+    o Renamed mrank() to Rank().
+    o Corrected nullspace() [thanks to Stephane Laurent], which now agrees
+      with Octave's null() function (MASS:Null appears to have a bug, too).
+    o Corrected gaussNewton() and fsolve() [thanks to Etienne Chamayou].
 
 CHANGES IN VERSION 1.2.2 (2012-10-10)
 
