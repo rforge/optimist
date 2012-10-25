@@ -24,9 +24,6 @@ Rank(M)
   Trefethen, L. N., and D. Bau III. (1997). Numerical Linear Algebra. SIAM,
   Philadelphia. 
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The corresponding function in Matlab is called \code{rank}, but that term
   has a different meaning in R.

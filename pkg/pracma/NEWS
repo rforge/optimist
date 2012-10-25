@@ -9,9 +9,11 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
     o bvp4c() general linear differential equations of second order.
 
-CHANGES IN VERSION 1.2.4 (2012-10-18)
+CHANGES IN VERSION 1.2.4 (2012-10-25)
 
-    o [tbd.]
+    o Added option 'pinv' to mldivide() [pinv(t(A)%*%A)%*%t(A)%*%B].
+    o str2num(), num2str() conversion functions (Matlab style).
+    o Removed some 'author' entries on help pages.
 
 CHANGES IN VERSION 1.2.3 (2012-10-17)
 
@@ -22,7 +24,7 @@ CHANGES IN VERSION 1.2.3 (2012-10-17)
 
 CHANGES IN VERSION 1.2.2 (2012-10-10)
 
-    o bsxfun() apply binary function elementwise (Matlab style)
+    o bsxfun() apply binary function elementwise (Matlab style).
     o added the analytic solution for the example in bvp().
 
 CHANGES IN VERSION 1.2.1 (2012-09-28)

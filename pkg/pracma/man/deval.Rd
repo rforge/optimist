@@ -26,9 +26,6 @@ deval(x, y, xp, idx = NULL)
   An \code{length(xp)}-by-\code{length(idx)} matrix of values at points
   \code{xp}.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The interpolation is linear only for the moment.
 }

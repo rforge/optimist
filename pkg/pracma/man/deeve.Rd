@@ -27,9 +27,6 @@ deeve(x, y, yv = 0, idx = NULL)
 \value{
   A (time) point \code{x0} at which the event happens.
 }
-\author{
-  HwB  email: <hwborchers@googlemail.com>
-}
 \note{
   The interpolation is linear only for the moment.
 }
