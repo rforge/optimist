@@ -24,23 +24,23 @@ transfinite <- function(lower, upper, n = length(lower)) {
     c3 <- !(c1 | c2) & low.finite    # finite lower bound, infinite upper bound
     c4 <- !(c1 | c2) & upp.finite    # finite upper bound, infinite lower bound
 
-    g <- function(x) {
+    h <- function(x) {               # h: B --> R^n
         if (any(x < lower) || any (x > upper)) 
             return(rep(NA, n))
         
-        gx <- x
-        gx[c1] <- atanh(2 * (x[c1] - lower[c1]) / (upper[c1] - lower[c1]) - 1)
-        gx[c3] <- log(x[c3] - lower[c3])
-        gx[c4] <- log(upper[c4] - x[c4])
-        return(gx)
+        hx <- x
+        hx[c1] <- atanh(2 * (x[c1] - lower[c1]) / (upper[c1] - lower[c1]) - 1)
+        hx[c3] <- log(x[c3] - lower[c3])
+        hx[c4] <- log(upper[c4] - x[c4])
+        return(hx)
     }
 
-    ginv <- function(x) {
-        gix <- x
-        gix[c1] <- lower[c1] + (upper[c1] - lower[c1])/2 * (1 + tanh(x[c1]))
-        gix[c3] <- lower[c3] + exp(x[c3])
-        gix[c4] <- upper[c4] - exp(x[c4])
-        return(gix)
+    hinv <- function(x) {            # hinv: R^n --> B
+        hix <- x
+        hix[c1] <- lower[c1] + (upper[c1] - lower[c1])/2 * (1 + tanh(x[c1]))
+        hix[c3] <- lower[c3] + exp(x[c3])
+        hix[c4] <- upper[c4] - exp(x[c4])
+        return(hix)
     }
-    return(list(g = g, ginv = ginv))
+    return(list(h = h, hinv = hinv))
 }

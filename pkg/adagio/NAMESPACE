@@ -14,5 +14,6 @@ export(maxempty)
 export(mknapsack, assignment)
 export(rastrigin, rosenbrock)
 export(transfinite)
+export(nelmin, nelminb)
 
 # S3/S4 Methods
