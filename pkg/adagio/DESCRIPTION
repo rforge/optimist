@@ -1,7 +1,7 @@
 Package: adagio
 Type: Package
 Title: Discrete and Global Optimization Routines
-Version: 0.4.1
+Version: 0.4.3
 Date: 2012-11-11
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
