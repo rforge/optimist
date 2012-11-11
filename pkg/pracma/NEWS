@@ -9,11 +9,10 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
     o bvp4c() general linear differential equations of second order.
 
-CHANGES IN VERSION 1.2.6 (2012-11-02)
+CHANGES IN VERSION 1.2.6 (2012-11-11)
 
-    o [tbd.]
     o akimaInterp() univariate Akima interpolation.
-    o Floater-Hormann rational interpolation.
+    o Moved transfinite() to package 'adagio'.
 
 CHANGES IN VERSION 1.2.5 (2012-10-28)
 

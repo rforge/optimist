@@ -13,5 +13,6 @@ export(subsetsum, knapsack)
 export(maxempty)
 export(mknapsack, assignment)
 export(rastrigin, rosenbrock)
+export(transfinite)
 
 # S3/S4 Methods

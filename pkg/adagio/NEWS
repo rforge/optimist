@@ -3,8 +3,9 @@
 ------------------------------------------------------------------------------
 
 
-Changes in Version 0.4.1 (2012-10-02)
-    o [tbd.]
+Changes in Version 0.4.1 (2012-11-11)
+    o transfinite() transformation function between bounded and unbounded
+      (box constraint) regions.
 
 Changes in Version 0.4.0 (2012-10-01)
     o rastrigin(), rosenbrock() as test functions.

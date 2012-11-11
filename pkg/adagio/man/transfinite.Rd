@@ -40,6 +40,7 @@ upper <- c( Inf, 0.5, 1)
 Tf <- transfinite(lower, upper)
 g <- Tf$g; h <- Tf$ginv
 
+\dontrun{
 ##  Solve Rosenbrock with one variable restricted
 rosen <- function(x) {
     n <- length(x)
@@ -52,6 +53,6 @@ nm <- nelder_mead(g(x0), f)     # unconstraint Nelder-Mead
 h(nm$xmin); nm$fmin             # box/bound constraint solution
 # [1] 0.7085596 0.5000000 0.2500004
 # [1] 0.3353605
-
+}
 }
 \keyword{ manip }
