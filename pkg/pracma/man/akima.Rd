@@ -42,7 +42,7 @@
   Has the Accuracy of a Cubic Polynomial. ACM TOMS, Vol. 22(3), pp. 362-371.
 }
 \seealso{
-  \code{akima::aspline}, \code{akima::interp}
+  \code{\link{kriging}}, \code{akima::aspline}, \code{akima::interp}
 }
 \examples{
 x <- c( 0,  2,  3,  5,  6,  8,  9,   11, 12, 14, 15)

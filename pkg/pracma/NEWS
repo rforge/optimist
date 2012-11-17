@@ -9,6 +9,10 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
     o bvp4c() general linear differential equations of second order.
 
+CHANGES IN VERSION 1.2.7 (2012-11-18)
+
+    o kriging() ordinary and simple Kriging interpolation.
+
 CHANGES IN VERSION 1.2.6 (2012-11-11)
 
     o akimaInterp() univariate Akima interpolation.

@@ -92,7 +92,7 @@ nelminb(rosenbrock, c(0, 0.1, 0.1), lower, upper)
 # $fmin = 0.3353605
 
 \dontrun{
-# Can run Rosenbrocks function in 30 dimensions in one and half a minutes:
+# Can run Rosenbrock's function in 30 dimensions in one and a half minutes:
 nelmin(rosenbrock, rep(0, 30), tol=1e-20, maxfeval=10^7)
 # $xmin
 #  [1]  0.9999998 1.0000004 1.0000000 1.0000001 1.0000000 1.0000001
