@@ -6,6 +6,7 @@
 Version 0.3.3 (2012-11-20)
 
   o hermite_NF() Hermite normal form.
+  o lucas() Lucas numbers as sequence 1,...,n.
   o Added corrections to mGCD() and mLCM().
 
 Version 0.3.1 (2012-10-04)
