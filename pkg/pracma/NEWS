@@ -9,9 +9,16 @@ PLANNED FOR NEXT VERSIONS
     o lsqlin() least-squares solver with linear constraints.
     o bvp4c() general linear differential equations of second order.
 
-CHANGES IN VERSION 1.2.7 (2012-11-18)
+CHANGES IN VERSION 1.2.8 (2012-12-01)
 
+    o [tbd.]
+
+CHANGES IN VERSION 1.2.7 (2012-11-22)
+
+    o procrustes() solving the Procrustes problem, and
+      kabsch() the Kabsch algorithm.
     o kriging() ordinary and simple Kriging interpolation.
+    o Corrected some stupid errors in str2num().
 
 CHANGES IN VERSION 1.2.6 (2012-11-11)
 

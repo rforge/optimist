@@ -37,9 +37,9 @@ str1 <- " [1 2 3; 4, 5, 6; 7,8,9]  "
 str2num(str1)
 # matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
 
-# str <- " [1 2 3; 45, 6; 7,8,9]  "
-# str2num(str)
-# Error in str2num(str) : 
+# str2 <- " [1 2 3; 45, 6; 7,8,9]  "
+# str2num(str2)
+# Error in str2num(str2) : 
 #   All rows in Argument 's' must have the same length.
 
 A <- matrix(c(pi, 0, exp(1), 1), 2, 2)
