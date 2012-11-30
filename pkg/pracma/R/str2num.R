@@ -5,9 +5,18 @@
 
 str2num <- function(S) {
     s1 <- strTrim(S)
+    ls <- nchar(s1)
+    if (substr(s1, ls, ls) == ';') {
+        s1 <- sub(';$', '', s1)
+        prit <- FALSE
+    } else {
+        prit <- TRUE
+    }
+
     s1 <- sub('^\\[', '', s1)
     s1 <- sub('\\]$', '', s1)
     s1 <- gsub(',', ' ', s1)
+
     s2 <- strsplit(s1, ';')[[1]]
 
     m  <- length(s2)
@@ -24,7 +33,9 @@ str2num <- function(S) {
     }
     L2 <- unname(L1)
     if (any(is.na(L2)) || isempty(L2)) L2 <- c()
-    return(L2)
+
+    if (prit) print(L2)
+    invisible(L2)
 }
 
 

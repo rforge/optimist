@@ -27,7 +27,8 @@ lsqlin <- function(A, b, C, d, tol = 1e-13) {
     
     if (missing(C) && missing(d)) {
         # x <- pinv(A) %*% b
-        x <- qr.solve(t(A) %*% A, t(A) %*% as.matrix(b))
+        # x <- qr.solve(t(A) %*% A, t(A) %*% as.matrix(b))
+        x <- qr.solve(A, as.matrix(b))
         return(x)
     } else if ( (missing(C) && !missing(d)) || (!missing(C) && missing(d)))
         stop("Condition 'C * x = d' not fully specified, 'C' or 'd' missing.")

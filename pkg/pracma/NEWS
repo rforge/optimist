@@ -6,19 +6,24 @@
 PLANNED FOR NEXT VERSIONS
 
     o mexpfit() exponentiell fitting.
+
+CHANGES IN VERSION 1.2.9 (2012-12-02)
+
     o bvp4c() general linear differential equations of second order.
+    o triSolve() solves tridiagonal linear equation systems.
+    o curvefit() fits points in the plane with a polynomial curve.
 
-CHANGES IN VERSION 1.2.8 (2012-12-01)
+CHANGES IN VERSION 1.2.8 (2012-11-30)
 
-    o polyCurveFit() fits points in n-space with a polynomial curve
-    o lse() least-squares solver with linear equality constraints.
-    o pinv() now works like MASS:ginv() for singular matrices.
+    o lsqlin() least-squares solver with linear equality constraints.
+    o pinv() now works like MASS::ginv() for singular matrices.
+    o Added the end-';' feature to str2num().
     o toc() added invisible return value.
 
 CHANGES IN VERSION 1.2.7 (2012-11-22)
 
-    o procrustes() solving the Procrustes problem, and
-      kabsch() the Kabsch algorithm.
+    o procrustes() solving the Procrustes problem,
+      and kabsch() implements the Kabsch algorithm.
     o kriging() ordinary and simple Kriging interpolation.
     o Corrected some stupid errors in str2num().
 

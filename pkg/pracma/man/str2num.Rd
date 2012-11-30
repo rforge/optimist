@@ -19,7 +19,9 @@ num2str(A, fmt = 3)
 \details{
   \code{str2num} converts a string containing numbers into a numerical object.
   The string can begin and end with '[' and ']', numbers can be separated with
-  blanks or commas. A semicolon indicates a new row for matrix input.
+  blanks or commas; a semicolon within the brackets indicates a new row for
+  matrix input. When a semicolon appears behind the braces, no output is shown
+  on the command line.
 
   \code{num2str} converts a numerical object, vector or matrix, into a 
   character object of the same size. \code{fmt} will be a format string for
