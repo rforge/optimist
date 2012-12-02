@@ -9,7 +9,7 @@ PLANNED FOR NEXT VERSIONS
 
 CHANGES IN VERSION 1.2.9 (2012-12-02)
 
-    o bvp4c() general linear differential equations of second order.
+    o bvp() changed to solve second order boundary value problems.
     o triSolve() solves tridiagonal linear equation systems.
     o curvefit() fits points in the plane with a polynomial curve.
 
