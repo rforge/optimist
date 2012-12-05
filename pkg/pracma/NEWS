@@ -6,6 +6,22 @@
 PLANNED FOR NEXT VERSIONS
 
     o mexpfit() exponentiell fitting.
+    o special partial differential equations.
+    o eigpower() power and inverse power method.
+
+CHANGES IN VERSION 1.3.1 (2012-12-12)
+
+    o ellipke(), ellipj() elliptic and Jacobi elliptic integrals.
+    o eigjacobi() Jacobi's method for finding the eigenvalues and
+      eigenvectors of symmetric matrices.
+
+CHANGES IN VERSION 1.3.0 (2012-12-05)
+
+    o cot(), csc(), sec() cotangens, cosecans, and secans functions.
+    o acot(), acsc(), asec() inverse cotangens, cosecans, secans functions.
+    o coth(), csch(), sech() hyperbolic cotangens, cosecans, secans functions.
+    o acoth(), acsch(), asech() inverse hyperbolic cotangens, cosecans, and
+      secans functions.
 
 CHANGES IN VERSION 1.2.9 (2012-12-02)
 
