@@ -19,7 +19,7 @@ assign("elapsedTime", 0, envir = .pracmaEnv)
     environment(.pracmaEnv) <- asNamespace("pracma")
 
     packageStartupMessage(
-        paste("pracma Package Version 1.3.0\n",
+        paste("pracma Package Version 1.3.1\n",
               "Practical Numerical Math Functions\n",
               "Copyright (c) 2010-2012 Hans W Borchers\n",
         sep='', collapse=''))

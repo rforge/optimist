@@ -1,5 +1,5 @@
-\name{triSolve}
-\alias{triSolve}
+\name{trisolve}
+\alias{trisolve}
 \title{
   Tridiagonal Linear System Solver
 }
@@ -7,7 +7,7 @@
   Solves tridiagonal linear systems \code{A*x=rhs} efficiently.
 }
 \usage{
-triSolve(a, b, d, rhs)
+trisolve(a, b, d, rhs)
 }
 \arguments{
   \item{a}{diagonal of the tridiagonal matrix \code{A}.}
@@ -18,7 +18,7 @@ triSolve(a, b, d, rhs)
   Solves tridiagonal linear systems \code{A*x=rhs} by applying Givens
   transformations.
 
-  By only storing the three diagonals, \code{triSolve} has memory requirements 
+  By only storing the three diagonals, \code{trisolve} has memory requirements 
   of \code{3*n} instead of \code{n^2} and
   is faster than the standard \code{solve} function for larger matrices.
 }
@@ -42,7 +42,7 @@ e <- runif(99); f <- rnorm(99)
 x <- rep(seq(0.1, 0.9, by = 0.2), times = 20)
 A <- diag(100) + Diag(e, 1) + Diag(f, -1)
 rhs <- A \%*\% x
-s <- triSolve(a, e, f, rhs)
+s <- trisolve(a, e, f, rhs)
 s[1:10]                         #=> 0.1 0.3 0.5 0.7 0.9 0.1 0.3 0.5 0.7 0.9
 s[91:100]                       #=> 0.1 0.3 0.5 0.7 0.9 0.1 0.3 0.5 0.7 0.9
 }

@@ -3,7 +3,7 @@
 ##
 
 
-triSolve <- function(a, b, d, rhs) {
+trisolve <- function(a, b, d, rhs) {
     stopifnot(is.numeric(a), is.numeric(b), is.numeric(d), is.numeric(rhs))
 
     n <- length(a)

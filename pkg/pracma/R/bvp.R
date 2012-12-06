@@ -30,7 +30,7 @@ bvp <- function(f, g, h, x, y, n = 50) {
     rhs[1] <- rhs[1] - ya * (1 + (dt/2) * ffun(xs[1]))
     rhs[n] <- rhs[n] - yb * (1 - (dt/2) * ffun(xs[n]))
 
-    ys <- triSolve(a, b, d, rhs)
+    ys <- trisolve(a, b, d, rhs)
     return(list(xs = c(xa, xs, xb), ys = c(ya, ys, yb)))
 }
 
