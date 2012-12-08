@@ -3,9 +3,13 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.4.5 (2012-12-01)
+
+    o [tbd.]
+
 Changes in Version 0.4.3 (2012-11-11)
     o nelmin(), nelminb() Nelder-Mead function minimization according to 
-    O'Neill (Fortran code) and J. Burghardt (Matlab code, under LGPL licence).
+      O'Neill (Fortran code) and J. Burghardt (Matlab code, LGPL licence).
     o transfinite() transformation function between bounded and unbounded
       (box constraint) regions.
 

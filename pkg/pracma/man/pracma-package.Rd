@@ -70,14 +70,14 @@ Practical Numerical Math Routines
   \code{    csc, csch,}\cr
   \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
-  \code{    errorbar, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
+  \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
   \code{fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,}\cr
   \code{    fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, gradient,}\cr
   \code{hadamard, hankel, hilb, histc, humps, hypot,}\cr
   \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
-  \code{linspace, logm, logseq, logspace,}\cr
+  \code{Li, linspace, logm, logseq, logspace,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
@@ -90,8 +90,8 @@ Practical Numerical Math Routines
   \code{    strcmpi, strfind, strfindi, strjust, strrep, subspace,}\cr
   \code{tic, toc, trapz, tril, triu,}\cr
   \code{vander, vectorfield,}\cr
-  \code{whittaker, who, wilkinson,}\cr
-  \code{zeros, zeta.}
+  \code{who, wilkinson,}\cr
+  \code{zeros, zeta}
 
   The following Matlab function names have been capitalized in `pracma' to
   avoid shadowing functions from R base or one of its recommended packages

@@ -3,6 +3,57 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.3.1 (2012-12-06)}{
+    \itemize{
+      \item Explicitely listing about 185 Matlab-emulating function names.
+      \item Dismissed matlab(), using it now for infos only, not assigning
+        Matlab function names to the environment (because of CRAN policies).
+    }
+}
+
+\section{Changes in Version 1.3.0 (2012-12-05)}{
+    \itemize{
+      \item cot(), csc(), sec() cotangens, cosecans, and secans functions.
+      \item acot(), acsc(), asec() inverse cotangens, cosecans, secans.
+      \item coth(), csch(), sech() hyperbolic cotangens, cosecans, secans.
+      \item acoth(), acsch(), asech() inverse hyperbolic cotangens, cosecans,
+        and secans functions.
+    }
+}
+
+\section{Changes in Version 1.2.9 (2012-12-02)}{
+    \itemize{
+      \item bvp() changed to solve second order boundary value problems.
+      \item trisolve() solves tridiagonal linear equation systems.
+      \item curvefit() fits points in the plane with a polynomial curve.
+    }
+}
+
+\section{Changes in Version 1.2.8 (2012-11-30)}{
+    \itemize{
+      \item lsqlin() least-squares solver with linear equality constraints.
+      \item pinv() now works like MASS::ginv() for singular matrices.
+      \item Added the end-';' feature to str2num().
+      \item toc() added invisible return value.
+    }
+}
+
+\section{Changes in Version 1.2.7 (2012-11-22)}{
+    \itemize{
+      \item procrustes() solving the Procrustes problem,
+        and kabsch() implements the Kabsch algorithm.
+      \item kriging() ordinary and simple Kriging interpolation.
+      \item Corrected some stupid errors in str2num().
+    }
+}
+
+\section{Changes in Version 1.2.6 (2012-11-11)}{
+    \itemize{
+      \item akimaInterp() univariate Akima interpolation.
+      \item Moved transfinite() to package 'adagio'.
+    }
+}
+
 \section{Changes in Version 1.2.5 (2012-09-28)}{
     \itemize{
       \item histc() Histogram-like counting (Matlab style).
@@ -949,6 +1000,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.2.5"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.3.1"}.
     }
 }
