@@ -3,6 +3,22 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.3.3 (2012-12-09)}{
+    \itemize{
+      \item ezpolar() easy access to the polar() function.
+      \item who(), null() alias for nullspace function (Matlab style).
+    }
+}
+
+\section{Changes in Version 1.3.2 (2012-12-08)}{
+    \itemize{
+      \item ellipke(), ellipj() elliptic and Jacobi elliptic integrals.
+      \item expint() implements E1 and Ei, the exponential integrals, with
+        aliases expint_E1() and expint_Ei().
+      \item li() the logarithmic integral (w/o offset).
+    }
+}
+
 \section{Changes in Version 1.3.1 (2012-12-06)}{
     \itemize{
       \item Explicitely listing about 185 Matlab-emulating function names.
@@ -1000,6 +1016,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.3.1"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.3.3"}.
     }
 }

@@ -98,7 +98,7 @@ expint_Ei <- function(x) {    # Ei()
     return(y)
 }
 
-Li <- function(x) {
+li <- function(x) {
     stopifnot(is.numeric(x) || is.complex(x))
     y <- expint_Ei(log(x + 0i))
     if (all(Im(y) == 0)) y <- Re(y)

@@ -2,7 +2,7 @@
 \alias{expint}
 \alias{expint_E1}
 \alias{expint_Ei}
-\alias{Li}
+\alias{li}
 \title{
   Exponential and Logarithmic Integral
 }
@@ -22,18 +22,16 @@
   The logarithmic integral \eqn{li(x)} for real \eqn{x, x > 0}, is defined as
   \deqn{li(x) = \int_0^x \frac{dt}{log(t)}}
   and the Eulerian logarithmic integral as \eqn{Li(x) = li(x) - li(2)}.
-  Here in `pracma', \code{Li(x)} denotes the logarithmic function \eqn{li(x)},
-  that is without offset.
 
-  This integral approximates the prime number function \eqn{\pi(n)},
-  the number of primes below or equal to n (see the examples).
+  The integral \eqn{Li} approximates the prime number function \eqn{\pi(n)},
+  i.e., the number of primes below or equal to n (see the examples).
 }
 \usage{
 expint(x)
 expint_E1(x)
 
 expint_Ei(x)
-Li(x)
+li(x)
 }
 \arguments{
   \item{x}{vector of real or complex numbers.}
@@ -47,7 +45,7 @@ Li(x)
   integral, resp. the logarithmic integral.
 }
 \note{
-  The logarithmic integral \code{Li(10^i)-Li(2)} is an approximation of the
+  The logarithmic integral \code{li(10^i)-li(2)} is an approximation of the
   number of primes below \code{10^i}, i.e., \code{Pi(10^i)}, see ``?primes''.
 }
 \references{
@@ -64,10 +62,9 @@ expint_E1(1:10)
 expint_Ei(1:10)
 
 \dontrun{
-estimPi <- function(n) round(Re(Li(n) - Li(2))) # estimated number of primes
+estimPi <- function(n) round(Re(li(n) - li(2))) # estimated number of primes
 primesPi <- function(n) length(primes(n))       # true number of primes <= n
 N <- 1e6
-(estimPi(N) - primesPi(N)) / estimPi(N)         # deviation is 0.16 percent!
-}
+(estimPi(N) - primesPi(N)) / estimPi(N)         # deviation is 0.16 percent!}
 }
 \keyword{ math }
