@@ -8,6 +8,10 @@ PLANNED FOR NEXT VERSIONS
     o mexpfit() exponentiell fitting.
     o ridder2() simultaneously vectorized root finding.
 
+CHANGES IN VERSION 1.3.4 (2012-12-21)
+
+	o what(), who(), whos() (Matlab style).
+
 CHANGES IN VERSION 1.3.3 (2012-12-12)
 
     o quadv() vectorized integration.

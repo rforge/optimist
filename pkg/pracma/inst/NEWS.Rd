@@ -5,8 +5,11 @@
 
 \section{Changes in Version 1.3.3 (2012-12-09)}{
     \itemize{
+      \item quadv() vectorized integration.
       \item ezpolar() easy access to the polar() function.
-      \item who(), null() alias for nullspace function (Matlab style).
+      \item sortrows() sorting rows of matrices (Matlab style).
+      \item null() alias for nullspace function (Matlab style).
+      \item eigjacobi() Jacobi's method for eigenvalues and eigenvectors.
     }
 }
 

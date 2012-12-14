@@ -90,7 +90,7 @@ Practical Numerical Math Routines
   \code{    strcmp, strcmpi, strfind, strfindi, strjust, strrep, subspace,}\cr
   \code{tic, toc, trapz, tril, triu,}\cr
   \code{vander, vectorfield,}\cr
-  \code{what, who, wilkinson,}\cr
+  \code{what, who, whos, wilkinson,}\cr
   \code{zeros, zeta}
 
   The following Matlab function names have been capitalized in `pracma' to

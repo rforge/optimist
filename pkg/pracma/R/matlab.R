@@ -34,7 +34,7 @@ matlab <- function() {
       strcmp, strcmpi, strfind, strfindi, strjust, strrep, subspace,
   tic, toc, trapz, tril, triu,
   vander, vectorfield,
-  what, who, wilkinson,
+  what, who, whos, wilkinson,
   zeros, zeta.",
   "", 
   "The following Matlab function names have been capitalized in 'pracma' to",

@@ -15,6 +15,35 @@ clear <- function(lst) {
 who <- function() ls(name = .GlobalEnv)
 
 
+whos <- function() {
+    envir <- parent.frame()
+    lslist <- ls(envir)
+    m <- max(nchar(lslist))
+    for (item in lslist) {
+        itemObj   <- eval(parse(text = item), parent.frame())
+        itemClass <- class(itemObj)
+        itemSize  <- object.size(itemObj)
+        itemDim   <- paste(dim(itemObj), collapse="x")
+        if (itemDim == '') itemDim <- length(itemObj)
+
+        itemSize <- as.numeric(itemSize)
+        if (itemSize < 1024) itemSize <- paste(itemSize, "Byte")
+        else if (itemSize >= 1024 & itemSize < 1024*1024)
+            itemSize <- paste(round(itemSize/1024, 1), "KB")
+        else
+            itemSize <- paste(round(itemSize/1024/1024, 1), "MB")
+
+        format(cat( item, blanks(m - nchar(item) + 2),
+                    itemClass, ", ",
+                    itemDim, ", ",
+                    itemSize, "\n", 
+                    sep=""), justify="centre")
+    }
+    cat("\n")
+    invisible(lslist)
+}
+
+
 what <- function(dname = getwd()) {  # , fexp = "*.R"
     if (is.na(file.info(dname)$isdir)) {
         cat("Argument '", dname, "' is not a known directory.\n", sep = '')
