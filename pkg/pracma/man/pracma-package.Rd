@@ -61,7 +61,7 @@ Practical Numerical Math Routines
   Web links have been provided where reasonable.
 }
 \note{
-  The following functions are emulations of correspondingly named Matlab 
+  The following 175 functions are emulations of correspondingly named Matlab 
   functions and bear the same signature as their Matlab cousins if possible:
   
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,}\cr
@@ -77,19 +77,20 @@ Practical Numerical Math Routines
   \code{hadamard, hankel, hilb, histc, humps, hypot,}\cr
   \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
-  \code{linspace, logm, logseq, logspace,}\cr
+  \code{linspace, loglog, logm, logseq, logspace,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
   \code{pascal, pchip, peaks, perms, piecewise, pinv, plotyy, pol2cart, polar,}\cr
   \code{    polyfit, polyint, polylog, polyval, pow2, ppval, primes,}\cr
   \code{quad, quad2d, quadgk, quadl, quadv, quiver,}\cr
-  \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi, regexpreg,}\cr
-  \code{    rem, repmat, roots, rosser, rot90, rref, runge,}\cr
-  \code{sec, sech, sinc, size, sortrows, sph2cart, sqrtm, std, str2num, strcat,}\cr
-  \code{    strcmp, strcmpi, strfind, strfindi, strjust, strrep, subspace,}\cr
+  \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
+  \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr
+  \code{sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,}\cr
+  \code{    std, str2num, strcat, strcmp, strcmpi, strfind, strfindi, strjust,}\cr
+  \code{    strrep, subspace,}\cr
   \code{tic, toc, trapz, tril, triu,}\cr
-  \code{vander, vectorfield,}\cr
+  \code{vander, vectorfield, ver,}\cr
   \code{what, who, whos, wilkinson,}\cr
   \code{zeros, zeta}
 
