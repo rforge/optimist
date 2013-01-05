@@ -5,12 +5,22 @@
 
 PLANNED FOR NEXT VERSIONS
 
-    o mexpfit() exponentiell fitting.
-    o ridder2() simultaneously vectorized root finding.
+    o expmv() matrix exponential times vector (or matrix).
+
+CHANGES IN VERSION 1.3.6 (2013-01-31)
+
+    o mexpfit() multi-exponentiell fitting.
+    o slsqfit() separable least-squares fitting.
+
+CHANGES IN VERSION 1.3.5 (2013-01-05)
+
+    o cd(), pwd() directory functions (Matlab style).
+    o rand(), randn() changed to accept size() as input.
+    o whos(), what() corrected for empty lists resp. directories.
 
 CHANGES IN VERSION 1.3.4 (2012-12-19)
 
-	o what(), who(), whos(), ver() (Matlab style).
+    o what(), who(), whos(), ver() (Matlab style).
     o semilogx(), semilogy(), loglog() logarithmic plots (Matlab style)
 
 CHANGES IN VERSION 1.3.3 (2012-12-12)
@@ -30,7 +40,7 @@ CHANGES IN VERSION 1.3.2 (2012-12-08)
 
 CHANGES IN VERSION 1.3.1 (2012-12-06)
 
-    o Explicitely listing about 190 Matlab-emulating function( name)s.
+    o Explicitely listing about 200 Matlab-emulating function( name)s.
     o Dismissed matlab(), using it now for infos only, not assigning any
       Matlab function names to the environment (because of CRAN policies).
 

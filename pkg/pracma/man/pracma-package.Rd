@@ -66,8 +66,8 @@ Practical Numerical Math Routines
   
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,}\cr
   \code{beep, blank, blkdiag, bsxfun,}\cr
-  \code{cart2pol, cart2sph, ceil, circshift, clear, compan, cond, conv, cot,}\cr
-  \code{    coth, cross, csc, csch,}\cr
+  \code{cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,}\cr
+  \code{    cot, coth, cross, csc, csch,}\cr
   \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
@@ -77,12 +77,12 @@ Practical Numerical Math Routines
   \code{hadamard, hankel, hilb, histc, humps, hypot,}\cr
   \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
-  \code{linspace, loglog, logm, logseq, logspace,}\cr
+  \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
   \code{pascal, pchip, peaks, perms, piecewise, pinv, plotyy, pol2cart, polar,}\cr
-  \code{    polyfit, polyint, polylog, polyval, pow2, ppval, primes,}\cr
+  \code{    polyfit, polyint, polylog, polyval, pow2, ppval, primes, pwd,}\cr
   \code{quad, quad2d, quadgk, quadl, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr

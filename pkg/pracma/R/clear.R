@@ -18,6 +18,9 @@ who <- function() ls(name = .GlobalEnv)
 whos <- function() {
     envir <- parent.frame()
     lslist <- ls(envir)
+    if (isempty(lslist))
+        return(invisible(NULL))
+
     m <- max(nchar(lslist))
     for (item in lslist) {
         itemObj   <- eval(parse(text = item), parent.frame())
@@ -49,15 +52,35 @@ what <- function(dname = getwd()) {  # , fexp = "*.R"
         cat("Argument '", dname, "' is not a known directory.\n", sep = '')
     } else if (file.info(dname)$isdir) {
         fnames <- list.files(dname)
-        cat("Files in Directory ", dname, ":\n\n", sep = '')
-        for (fname in fnames) {
-            gname <- paste(dname, fname, sep = "/")
-        	if (!file.info(gname)$isdir) {
-        	    cat(fname, "\n")
-        	}
+        if (isempty(fnames)) {
+            cat("No files in Directory ", dname, ".\n\n", sep = '')
+        } else {
+            cat("Files in Directory ", dname, ":\n\n", sep = '')
+            for (fname in fnames) {
+                gname <- paste(dname, fname, sep = "/")
+                if (!file.info(gname)$isdir) {
+                    cat(fname, "\n")
+                }
+            }
         }
     } else {
         cat("Argument '", dname, "' is not a directory.\n", sep = '')
     }
     invisible(NULL)
 }
+
+
+cd <- function(dname) {
+    if (missing(dname)) {
+        dname <- getwd()
+    } else {
+        setwd(dname)
+        dname <- getwd()
+    }
+    return(dname)
+}
+
+
+pwd <- function()
+    getwd()
+

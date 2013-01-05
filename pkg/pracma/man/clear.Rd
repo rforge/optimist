@@ -1,7 +1,6 @@
-\name{clear, what, who}
+\name{clear, who(s), ver}
 \alias{clear}
 \alias{ver}
-\alias{what}
 \alias{who}
 \alias{whos}
 \title{
@@ -14,19 +13,16 @@ Clear function (Matlab style)
 clear(lst)
 ver()
 
-what(dname = getwd())
 who()
 whos()
 }
 \arguments{
   \item{lst}{Character vector of names of variables in the global environment.}
-  \item{dname}{(relative or absolute) directory path.}
 }
 \details{
   Remove these or all items from the workspace, i.e. the global environment,
   and freeing up system memory.
 
-  \code{what()} lists all files in a directory.\cr
   \code{who()}  lists all items on the workspace.\cr
   \code{whos()} lists all items and their class and size.
 
@@ -41,7 +37,6 @@ whos()
 }
 \examples{
 # clear()  # DON'T
-# what()
 # who()
 # whos()
 # ver()
