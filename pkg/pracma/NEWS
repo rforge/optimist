@@ -7,10 +7,11 @@ PLANNED FOR NEXT VERSIONS
 
     o expmv() matrix exponential times vector (or matrix).
 
-CHANGES IN VERSION 1.3.6 (2013-01-31)
+CHANGES IN VERSION 1.3.6 (2013-01-06)
 
     o mexpfit() multi-exponentiell fitting.
-    o slsqfit() separable least-squares fitting.
+    o lsqsep() separable least-squares fitting.
+    o lsqcurvefit() nonlinear least-squares curve fitting.
 
 CHANGES IN VERSION 1.3.5 (2013-01-05)
 
