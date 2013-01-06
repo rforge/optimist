@@ -39,3 +39,24 @@ lsqsep <- function(flist, p0, xdata, ydata, const = TRUE) {
     }
     return(list(a0 = a0, a = a, b = b, ssq = NA))
 }
+
+
+.mexpfit <- function(x, y, p0, w = NULL, const = TRUE) {
+    stopifnot(is.numeric(x), is.numeric(y), is.numeric(p0))
+    n <- length(x)
+    if (length(y) != n)
+        stop("Arguments 'x', 'y' must be of the same length.")
+    p0 <- unique(p0)
+    m <- length(p0)
+    if (n <= 2*m+1)
+        stop("Not enough data points available for fitting exponential sums.")
+
+    flist <- list(function(b, x) exp(b*x))
+    if (m > 1) {
+        for (i in 2:m) {
+            flist[[i]] <- function(b, x) exp(b*x)
+        }
+    }
+
+    Lsq <- lsqsep(flist, p0, x, y, const = const)
+}
