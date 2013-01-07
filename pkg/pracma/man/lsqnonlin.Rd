@@ -45,7 +45,7 @@ lsqcurvefit(fun, p0, xdata, ydata)
 
   \code{options} is a list with the following components and defaults:
   \itemize{
-    \item \code{tau}: used in starting value for Marquardt parameter.
+    \item \code{tau}: used as starting value for Marquardt parameter.
     \item \code{tolx}: stopping parameter for step length.
     \item \code{tolg}: stopping parameter for gradient.
     \item \code{maxeval} the maximum number of function evaluations.
@@ -93,7 +93,7 @@ lsqcurvefit(fun, p0, xdata, ydata)
   algorithm, may be added at a later time; see the references.
 }
 \references{
-  Madsen, K., and H. B.Nielsen (2010).Introduction to Optimization and
+  Madsen, K., and H. B.Nielsen (2010). Introduction to Optimization and
   Data Fitting. Technical University of Denmark, Intitute of Computer
   Science and Mathematical Modelling.
 

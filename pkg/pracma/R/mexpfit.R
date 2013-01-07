@@ -1,3 +1,54 @@
+##
+##  m e x p f i t . R  Multi-exponential Fitting
+##
+
+
+mexpfit <- function(x, y, p0, w = NULL, const = TRUE, options = list()) {
+    stopifnot(is.numeric(x), is.numeric(y), is.numeric(p0))
+    n <- length(x)
+    if (length(y) != n)
+        stop("Arguments 'x', 'y' must be of the same length.")
+    p0 <- unique(p0)
+    m <- length(p0)
+    if (n <= 2*m+1)
+        stop("Not enough data points available for fitting exponential sums.")
+
+    opts <- list(tau     = 1e-4,
+                 tolx    = 1e-7,
+                 tolg    = 1e-9,
+                 maxeval = 1000)
+    namedOpts <- match.arg(names(options), choices = names(opts),
+                           several.ok = TRUE)
+    if (!is.null(names(options)))
+        opts[namedOpts] <- options
+                                    # x0 is   good...not so good start value
+
+    if (any(p0 == 0) || any(duplicated(p0)))
+        stop("All entries in 'p0' must be different and not equal to zero.")
+    # if (const)
+    #     p0 <- c(0, p0)  # add the constant term
+
+    .fexp <- function(b) {
+        M <- outer(x, b, function(x, b) exp(b*x))
+        if (const) M <- cbind(1, M)
+        a <- qr.solve(M, y) 
+        M %*% a - y
+    }
+
+    Lsq <- lsqnonlin(.fexp, p0, options = opts)
+    b <- Lsq$x
+
+    M <- outer(x, b, function(x, b) exp(b*x))
+    if (const) M <- cbind(1, M)
+    a <- qr.solve(M, y)
+
+    if (const) { a0 <- a[1]; a <- a[-1] }
+    else         a0 <- 0
+    return(list(a0 = a0, a = a, b = b,
+           ssq = Lsq$ssq, iter = Lsq$neval, errmess = Lsq$errmess))
+}
+
+
 lsqsep <- function(flist, p0, xdata, ydata, const = TRUE) {
     stopifnot(is.numeric(xdata), is.numeric(ydata), is.numeric(p0))
     n <- length(xdata)
@@ -38,25 +89,4 @@ lsqsep <- function(flist, p0, xdata, ydata, const = TRUE) {
         a0 <- 0
     }
     return(list(a0 = a0, a = a, b = b, ssq = NA))
-}
-
-
-.mexpfit <- function(x, y, p0, w = NULL, const = TRUE) {
-    stopifnot(is.numeric(x), is.numeric(y), is.numeric(p0))
-    n <- length(x)
-    if (length(y) != n)
-        stop("Arguments 'x', 'y' must be of the same length.")
-    p0 <- unique(p0)
-    m <- length(p0)
-    if (n <= 2*m+1)
-        stop("Not enough data points available for fitting exponential sums.")
-
-    flist <- list(function(b, x) exp(b*x))
-    if (m > 1) {
-        for (i in 2:m) {
-            flist[[i]] <- function(b, x) exp(b*x)
-        }
-    }
-
-    Lsq <- lsqsep(flist, p0, x, y, const = const)
 }
