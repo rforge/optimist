@@ -21,12 +21,9 @@ mexpfit <- function(x, y, p0, w = NULL, const = TRUE, options = list()) {
                            several.ok = TRUE)
     if (!is.null(names(options)))
         opts[namedOpts] <- options
-                                    # x0 is   good...not so good start value
 
     if (any(p0 == 0) || any(duplicated(p0)))
         stop("All entries in 'p0' must be different and not equal to zero.")
-    # if (const)
-    #     p0 <- c(0, p0)  # add the constant term
 
     .fexp <- function(b) {
         M <- outer(x, b, function(x, b) exp(b*x))
@@ -57,7 +54,7 @@ lsqsep <- function(flist, p0, xdata, ydata, const = TRUE) {
     m <- length(flist)
     # lapply is.function
 
-    fapply <- function(b) {
+    .fapply <- function(b) {
         M <- matrix(1, nrow = n, ncol = m + 1)
         for (i in 1:m) {
             fi <- flist[[i]]
@@ -70,7 +67,7 @@ lsqsep <- function(flist, p0, xdata, ydata, const = TRUE) {
     }
 
     # Find the function parameters b
-    Lsq <- lsqnonlin(fapply, p0)
+    Lsq <- lsqnonlin(.fapply, p0)
     b <- Lsq$x
 
     # Find the linear parameters a
@@ -88,5 +85,5 @@ lsqsep <- function(flist, p0, xdata, ydata, const = TRUE) {
     } else {
         a0 <- 0
     }
-    return(list(a0 = a0, a = a, b = b, ssq = NA))
+    return(list(a0 = a0, a = a, b = b, ssq = Lsq$ssq))
 }
