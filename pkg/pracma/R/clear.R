@@ -6,6 +6,8 @@
 clear <- function(lst) {
     if (missing(lst))
         lst <- ls(name = .GlobalEnv)
+    if (!is.character(lst))
+        stop("Argument must be empty or a character vector.")
     rm(list = lst, envir = globalenv())
     # capture.output(gc())
     null <- gc()

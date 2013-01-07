@@ -30,8 +30,8 @@ ver <- function() {
     # Loaded base and contributed packages
     session_info <- sessionInfo()
     base_pkgs <- session_info$basePkgs
-    cat("Base Packages:\n  ", base_pkgs, "\n", sep = "  ")
-    cat("Loaded Packages:\n")
+    cat("Loaded Base Packages:\n  ", base_pkgs, "\n", sep = "  ")
+    cat("Contributed Packages:\n")
     other_pkgs <- session_info$otherPkgs
     for (pack in other_pkgs) {
         pkg_name <- pack$Package; l <- max(12 - nchar(pkg_name), 2)
