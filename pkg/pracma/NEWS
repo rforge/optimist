@@ -7,6 +7,10 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
+CHANGES IN VERSION 1.3.8 (2013-01-08)
+
+    o Smaller corrections; no startup messages anymore.
+
 CHANGES IN VERSION 1.3.7 (2013-01-07)
 
     o mexpfit() multi-exponentiell fitting.
