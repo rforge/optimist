@@ -7,9 +7,13 @@ PLANNED FOR NEXT VERSIONS
 
     o [tbd.]
 
-CHANGES IN VERSION 1.3.8 (2013-01-08)
+CHANGES IN VERSION 1.3.8 (2013-01-10)
 
-    o Smaller corrections; no startup messages anymore.
+    o Smaller corrections, e.g., removed deprecated 'is.real';
+      no startup messages anymore.
+    o geomean(), harmmean(), trimmean() geometric, harmonic, and
+      trimmed arithmetic mean (Matlab style).
+    o agmean() algebraic-geometric mean.
 
 CHANGES IN VERSION 1.3.7 (2013-01-07)
 
@@ -126,7 +130,7 @@ CHANGES IN VERSION 1.1.9 (2012-09-25)
     o Removed number-theoretic functions: eulersPhi(),
       moebiusFun(), mertensFun(), sigma(), tau(), omega(), Omega(),
       primes2(), twinPrimes(), nextPrime(), previousPrime(),
-      modpower(), modorder(), modinv(), modlin(), agm(),
+      modpower(), modorder(), modinv(), modlin(),
       primroot(), contfrac(), coprime(), GCD(), LCM(), extGCD(),
       (these functions are now available in the 'numbers' package).
 
@@ -235,8 +239,6 @@ CHANGES IN VERSION 1.0.2 (2012-03-17)
 
 CHANGES IN VERSION 1.0.1 (2012-03-09)
 
-    o agm() example computes pi to an arbitrary number of decimal digits
-      using the Rmpfr package for variable precision arithmetic.
     o plotyy() corrected right ordinate, prettying the labels.
     o peaks() peaks function (Matlab style).
 
@@ -497,7 +499,6 @@ CHANGES IN VERSION 0.5-4 (2011-06-12)
     o gaussLegendre() computes coefficients for Gauss Quadrature,
       and quad2d() uses these weights for 2-dimensional integration.
     o quadinf() wrapper for integrate() on infinite intervals.
-    o Added a version for rapid pi computation to the agm() examples.
 
 CHANGES IN VERSION 0.5-3 (2011-06-06)
 
@@ -602,7 +603,6 @@ CHANGES IN VERSION 0.3-6 (2011-04-30)
 
 CHANGES IN VERSION 0.3-5 (2011-04-23)
 
-    o agm() for the arithmetic-geometric mean.
     o Lambert W function lambertWp() for the real principal branch.
     o ``Complex Step'' derivation with complexstep() and complexstepJ().
 

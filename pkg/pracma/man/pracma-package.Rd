@@ -73,8 +73,8 @@ Practical Numerical Math Routines
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
   \code{fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,}\cr
   \code{    fminsearch, fplot, fsolve, fzero,}\cr
-  \code{gammainc, gcd, gradient,}\cr
-  \code{hadamard, hankel, hilb, histc, humps, hypot,}\cr
+  \code{gammainc, gcd, geomean, gradient,}\cr
+  \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
   \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
   \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
@@ -90,7 +90,7 @@ Practical Numerical Math Routines
   \code{sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,}\cr
   \code{    std, str2num, strcat, strcmp, strcmpi, strfind, strfindi, strjust,}\cr
   \code{    strrep, subspace,}\cr
-  \code{tic, toc, trapz, tril, triu,}\cr
+  \code{tic, toc, trapz, tril, trimmean, triu,}\cr
   \code{vander, vectorfield, ver,}\cr
   \code{what, who, whos, wilkinson,}\cr
   \code{zeros, zeta}
