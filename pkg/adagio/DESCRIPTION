@@ -3,8 +3,8 @@ Type: Package
 Title: Discrete and Global Optimization Routines
 Version: 0.4.5
 Date: 2012-12-01
-Author: Hans W Borchers
-Maintainer: HwB <hwborchers@googlemail.com>
+Author: Hans Werner Borchers
+Maintainer: Hans W Borchers <hwborchers@googlemail.com>
 Description:
     The R package 'adagio' will provide methods and algorithms for
     discrete optimization and (evolutionary) global optimization.
