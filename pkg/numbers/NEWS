@@ -3,9 +3,10 @@
 ------------------------------------------------------------------------------
 
 
-Version 0.3.5 (2013-01-02)
+Version 0.3.5 (2013-01-12)
 
   o catalan() Catalan numbers.
+  o pythagorean_triple() generating Pythagorean triples.
 
 Version 0.3.3 (2012-11-20)
 

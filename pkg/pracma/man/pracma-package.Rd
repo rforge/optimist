@@ -71,11 +71,11 @@ Practical Numerical Math Routines
   \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
-  \code{fact, factors, figure, findstr, flipdim, fliplr, flipud, fminbnd,}\cr
-  \code{    fminsearch, fplot, fsolve, fzero,}\cr
+  \code{fact, factors, fftshift, figure, findstr, flipdim, fliplr, flipud,}\cr
+  \code{    fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, geomean, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
-  \code{ifft, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
+  \code{ifft, ifftshift, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
   \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
   \code{    lsqnonlin, lsqnonneg,}\cr
