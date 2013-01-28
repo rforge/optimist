@@ -3,9 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.3.9 (2013-01-31)
+CHANGES IN VERSION 1.3.9 (2013-01-26)
 
+    o pdist() as an alias for distmat() (Matlab style).
     o fftshift(), ifftshift() shifting Fourier frequencies.
+    o Improved grad(), jacobian(), hessian(), and laplacian().
 
 CHANGES IN VERSION 1.3.8 (2013-01-10)
 
