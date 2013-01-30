@@ -1,7 +1,12 @@
 ------------------------------------------------------------------------------
-  nloptwr                                                               NEWS
+  nloptwrap                                                             NEWS
 ------------------------------------------------------------------------------
 
+
+CHANGES IN VERSION 0.2-4 (2013-01-31)
+
+    o neldermead() Nelder-Mead optimization routine.
+    o sbplx() Rowan's `subplex' algorithm, a N-M variant.
 
 CHANGES IN VERSION 0.2-1 (2013-01-30)
 

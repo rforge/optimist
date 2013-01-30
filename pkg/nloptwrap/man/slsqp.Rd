@@ -69,7 +69,7 @@ hin.hs100 <- function(x) {
 
 S <- slsqp(x0.hs100, fn = fn.hs100,     # no gradients and jacobians provided
            hin = hin.hs100,
-           control = list(xtol_ref = 1e-8, check_derivatives = TRUE))
+           control = list(xtol_rel = 1e-8, check_derivatives = TRUE))
 ## Optimal value of objective function:  690.622270249131   *** WRONG ***
 
 # Even the numerical derivatives seem to be too tight.

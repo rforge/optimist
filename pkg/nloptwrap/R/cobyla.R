@@ -46,7 +46,7 @@ function(x0, fn, lower = NULL, upper = NULL,
     fun <- match.fun(fn)
     fn <- function(x) fun(x, ...)
 
-    S <- nloptr(x0, fn, lower = NULL, upper = NULL,
+    S <- nloptr(x0, fn, lb = lower, ub = upper,
                 opts = opts)
 
     print(S)

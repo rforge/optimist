@@ -8,5 +8,6 @@ export(nl.opts)
 export(slsqp)
 export(cobyla, bobyqa, newuoa)
 export(direct, directL)
+export(neldermead, sbplx)
 
 ## S3 and S4 Methods
