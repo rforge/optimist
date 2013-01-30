@@ -1,0 +1,12 @@
+###
+### NAMESPACE
+###
+
+## Public routines
+export(nl.grad, nl.jacobian)
+export(nl.opts)
+export(slsqp)
+export(cobyla, bobyqa, newuoa)
+export(direct, directL)
+
+## S3 and S4 Methods

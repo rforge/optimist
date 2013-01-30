@@ -1,0 +1,19 @@
+------------------------------------------------------------------------------
+  nloptwr                                                               NEWS
+------------------------------------------------------------------------------
+
+
+CHANGES IN VERSION 0.2-1 (2013-01-30)
+
+    o direct(), directL() DIviding RECTangles algorithm.
+    o option controls simplified.
+
+CHANGES IN VERSION 0.1-5 (2013-01-29)
+
+	o slsqp() sequential (least-squares) quadratic programming.
+	o cobyla(), bobyqa(), newuoa() Powell's approximation solvers.
+
+CHANGES IN VERSION 0.1-1 (2013-01-28)
+
+    o nl.grad() and nl.jacobian() numerical gradients and jacobians
+    o nl.options() for installing NLOPT options and allowing user changes.
