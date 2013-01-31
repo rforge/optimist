@@ -1,8 +1,8 @@
 Package: nloptwrap
 Type: Package
 Title: Wrapper for Package nloptr
-Version: 0.2-4
-Date: 2013-01-31
+Version: 0.2-6
+Date: 2013-02-02
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1), nloptr

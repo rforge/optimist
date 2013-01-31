@@ -1,3 +1,8 @@
+##
+##  s l s q p . R  Sequential Quadratic Programming
+##
+
+
 slsqp <- function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
                      hin = NULL, hinjac = NULL, heq = NULL, heqjac = NULL,
                      control = list(), ...) {

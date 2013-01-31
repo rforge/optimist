@@ -3,9 +3,18 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 0.3.0 (2012-02-02)
+
+    o Converted to optim-like return values.
+
+CHANGES IN VERSION 0.2-6 (2013-02-01)
+
+    o lbfgs() low-storage BFGS algorithm.
+    o tnewton() preconditioned truncated Newton and variants.
+
 CHANGES IN VERSION 0.2-4 (2013-01-31)
 
-    o neldermead() Nelder-Mead optimization routine.
+    o neldermead() Nelder-Mead simplex routine.
     o sbplx() Rowan's `subplex' algorithm, a N-M variant.
 
 CHANGES IN VERSION 0.2-1 (2013-01-30)
