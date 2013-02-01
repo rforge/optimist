@@ -5,7 +5,7 @@
 
 slsqp <- function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
                      hin = NULL, hinjac = NULL, heq = NULL, heqjac = NULL,
-                     control = list(), ...) {
+                     nl.info = FALSE, control = list(), ...) {
 
     opts <- nl.opts(control)
     opts["algorithm"] <- "NLOPT_LD_SLSQP"
@@ -39,7 +39,7 @@ slsqp <- function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
         }
     }
 
-    S <- nloptr(x0,
+    S0 <- nloptr(x0,
                 eval_f = fn,
                 eval_grad_f = gr,
                 lb = lower,
@@ -50,6 +50,8 @@ slsqp <- function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
                 eval_jac_g_eq = heqjac,
                 opts = opts)
 
-    print(S)
-    return(S)
+    if (nl.info) print(S0)
+    S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
+                convergence = S0$status, message = S0$message)
+    return(S1)
 }

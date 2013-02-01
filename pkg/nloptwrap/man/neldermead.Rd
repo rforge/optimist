@@ -8,12 +8,13 @@
 }
 \usage{
 neldermead(x0, fn, lower = NULL, upper = NULL,
-                     control = list(), ...)
+            nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{x0}{starting point for searching the optimum.}
   \item{fn}{objective function that is to be minimized.}
   \item{lower, upper}{lower and upper bound constraints.}
+  \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
 }
@@ -24,8 +25,14 @@ neldermead(x0, fn, lower = NULL, upper = NULL,
   moved back exactly onto the constraint.
 }
 \value{
-  Prints the same information as the called NLOPT function and returns
-  a long list of information about the optimum found.
+List with components:
+  \item{par}{the optimal solution found so far.}
+  \item{value}{the function value corresponding to \code{par}.}
+  \item{iter}{number of (outer) iterations, see \code{maxeval}.}
+  \item{convergence}{integer code indicating successful completion (> 0)
+                     or a possible error number (< 0).}
+  \item{message}{character string produced by NLopt and giving additional
+                 information.}
 }
 \references{
   J. A. Nelder and R. Mead, ``A simplex method for function minimization,''
@@ -59,7 +66,7 @@ neldermead(x0, psf)     #  0 0 0 0, needs maximum number of function calls
 lower <- c(-Inf, 0,   0)
 upper <- c( Inf, 0.5, 1)
 x0 <- c(0, 0.1, 0.1)
-neldermead(c(0, 0.1, 0.1), rosenbrock, lower, upper)
+S <- neldermead(c(0, 0.1, 0.1), rosenbrock, lower, upper, nl.info = TRUE)
 # $xmin = c(0.7085595, 0.5000000, 0.2500000)
 # $fmin = 0.3353605}
 }

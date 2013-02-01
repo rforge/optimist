@@ -10,7 +10,7 @@
 \usage{
 cobyla(x0, fn, lower = NULL, upper = NULL,
         hin = NULL, heq = NULL,
-        control = list(), ...)
+        nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{x0}{starting point for searching the optimum.}
@@ -20,6 +20,7 @@ cobyla(x0, fn, lower = NULL, upper = NULL,
                \code{hin>=0} for all components.}
   \item{heq}{function defining the equality constraints, that is
                \code{heq==0} for all components.}
+  \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
 }
@@ -29,8 +30,14 @@ cobyla(x0, fn, lower = NULL, upper = NULL,
   optimizes these approximations in a trust region at each step.
 }
 \value{
-  Prints the same information as the called NLOPT function and returns
-  a long list of information about the optimum found.
+List with components:
+  \item{par}{the optimal solution found so far.}
+  \item{value}{the function value corresponding to \code{par}.}
+  \item{iter}{number of (outer) iterations, see \code{maxeval}.}
+  \item{convergence}{integer code indicating successful completion (> 0)
+                     or a possible error number (< 0).}
+  \item{message}{character string produced by NLopt and giving additional
+                 information.}
 }
 \references{
   M. J. D. Powell, ``A direct search optimization method that models the
@@ -62,6 +69,6 @@ hin.hs100 <- function(x) {
 }
 
 S <- cobyla(x0.hs100, fn.hs100, hin = hin.hs100,
-            control = list(xtol_rel = 1e-8, maxeval = 2000))
+            nl.info = TRUE, control = list(xtol_rel = 1e-8, maxeval = 2000))
 ## Optimal value of objective function:  680.630057374431
 }

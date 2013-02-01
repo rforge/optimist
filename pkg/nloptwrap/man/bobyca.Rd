@@ -9,12 +9,13 @@
 }
 \usage{
 bobyqa(x0, fn, lower = NULL, upper = NULL,
-        control = list(), ...)
+        nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{x0}{starting point for searching the optimum.}
   \item{fn}{objective function that is to be minimized.}
   \item{lower, upper}{lower and upper bound constraints.}
+  \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
 }
@@ -23,8 +24,14 @@ bobyqa(x0, fn, lower = NULL, upper = NULL,
   converted to C and modified for the NLOPT stopping criteria.
 }
 \value{
-  Prints the same information as the called NLOPT function and returns
-  a long list of information about the optimum found.
+List with components:
+  \item{par}{the optimal solution found so far.}
+  \item{value}{the function value corresponding to \code{par}.}
+  \item{iter}{number of (outer) iterations, see \code{maxeval}.}
+  \item{convergence}{integer code indicating successful completion (> 0)
+                     or a possible error number (< 0).}
+  \item{message}{character string produced by NLopt and giving additional
+                 information.}
 }
 \references{
   M. J. D. Powell. ``The BOBYQA algorithm for bound constrained optimization

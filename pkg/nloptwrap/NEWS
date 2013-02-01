@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 0.3.0 (2012-02-02)
+CHANGES IN VERSION 0.3-0 (2012-02-02)
 
     o Converted to optim-like return values.
 

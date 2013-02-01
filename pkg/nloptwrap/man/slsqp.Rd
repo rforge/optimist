@@ -11,7 +11,7 @@
 \usage{
 slsqp(x0, fn, gr = NULL, lower = NULL, upper = NULL,
       hin = NULL, hinjac = NULL, heq = NULL, heqjac = NULL,
-      control = list(), ...)
+      nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{x0}{starting point for searching the optimum.}
@@ -27,6 +27,7 @@ slsqp(x0, fn, gr = NULL, lower = NULL, upper = NULL,
                \code{heq==0} for all components.}
   \item{heqjac}{Jacobian of function \code{heq};
                 will be calculated numerically if not specified.}
+  \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
 }
@@ -36,8 +37,14 @@ slsqp(x0, fn, gr = NULL, lower = NULL, upper = NULL,
   with first-order (affine) approximations of the constraints.
 }
 \value{
-  Prints the same information as the called NLOPT function and returns
-  a long list of information about the optimum found.
+List with components:
+  \item{par}{the optimal solution found so far.}
+  \item{value}{the function value corresponding to \code{par}.}
+  \item{iter}{number of (outer) iterations, see \code{maxeval}.}
+  \item{convergence}{integer code indicating successful completion (> 1)
+                     or a possible error number (< 0).}
+  \item{message}{character string produced by NLopt and giving additional
+                 information.}
 }
 \references{
   Dieter Kraft, ``A software package for sequential quadratic programming'',
@@ -70,6 +77,7 @@ hin.hs100 <- function(x) {
 S <- slsqp(x0.hs100, fn = fn.hs100,     # no gradients and jacobians provided
            hin = hin.hs100,
            control = list(xtol_rel = 1e-8, check_derivatives = TRUE))
+S
 ## Optimal value of objective function:  690.622270249131   *** WRONG ***
 
 # Even the numerical derivatives seem to be too tight.
@@ -79,5 +87,6 @@ hinjac.hs100 <- function(x) nl.jacobian(x, hin.hs100, heps = 1e-2)
 S <- slsqp(x0.hs100, fn = fn.hs100,
            hin = hin.hs100, hinjac = hinjac.hs100, 
            control = list(xtol_rel = 1e-8))
+S
 ## Optimal value of objective function:  680.630057392593   *** CORRECT ***
 }

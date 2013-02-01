@@ -10,7 +10,8 @@
 }
 \usage{
 tnewton(x0, fn, gr = NULL, lower = NULL, upper = NULL,
-        precond = TRUE, restart = TRUE, control = list(), ...)
+        precond = TRUE, restart = TRUE,
+        nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{x0}{starting point for searching the optimum.}
@@ -20,6 +21,7 @@ tnewton(x0, fn, gr = NULL, lower = NULL, upper = NULL,
   \item{lower, upper}{lower and upper bound constraints.}
   \item{precond}{logical; preset L-BFGS with steepest descent.}
   \item{restart}{logical; restarting L-BFGS with steepest descent.}
+  \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
 }
@@ -29,8 +31,14 @@ tnewton(x0, fn, gr = NULL, lower = NULL, upper = NULL,
   conjugate-gradient algorithm.
 }
 \value{
-  Prints the same information as the called NLOPT function and returns
-  a long list of information about the optimum found.
+List with components:
+  \item{par}{the optimal solution found so far.}
+  \item{value}{the function value corresponding to \code{par}.}
+  \item{iter}{number of (outer) iterations, see \code{maxeval}.}
+  \item{convergence}{integer code indicating successful completion (> 1)
+                     or a possible error number (< 0).}
+  \item{message}{character string produced by NLopt and giving additional
+                 information.}
 }
 \references{
   R. S. Dembo and T. Steihaug, ``Truncated Newton algorithms for large-scale
@@ -47,9 +55,9 @@ flb <- function(x) {
     p <- length(x)
     sum(c(1, rep(4, p-1)) * (x - c(1, x[-p])^2)^2)
 }
-# 25-dimensional box constrained
+# 25-dimensional box constrained: par[24] is *not* at boundary
 S <- tnewton(rep(3, 25), flb, lower=rep(2, 25), upper=rep(4, 25),
-           control=list(xtol_rel=1e-8))         # par[24] is *not* at boundary
+                nl.info = TRUE, control = list(xtol_rel=1e-8))
 ## Optimal value of objective function:  368.105912874334 
 ## Optimal value of controls: 2  ...  2  2.109093  4
 }

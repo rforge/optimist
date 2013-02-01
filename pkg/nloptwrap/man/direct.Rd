@@ -11,12 +11,13 @@
   functions without too many minima).
 }
 \usage{
-direct(fn, lower, upper, control = list(), ...)
-directL(fn, lower, upper, control = list(), ...)
+direct(fn, lower, upper, nl.info = FALSE, control = list(), ...)
+directL(fn, lower, upper, nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{fn}{objective function that is to be minimized.}
   \item{lower, upper}{lower and upper bound constraints.}
+  \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
 }
@@ -31,8 +32,14 @@ directL(fn, lower, upper, control = list(), ...)
   The algorithms only handle finite bound constraints
 }
 \value{
-  Prints the same information as the called NLOPT function and returns
-  a long list of information about the optimum found.
+List with components:
+  \item{par}{the optimal solution found so far.}
+  \item{value}{the function value corresponding to \code{par}.}
+  \item{iter}{number of (outer) iterations, see \code{maxeval}.}
+  \item{convergence}{integer code indicating successful completion (> 0)
+                     or a possible error number (< 0).}
+  \item{message}{character string produced by NLopt and giving additional
+                 information.}
 }
 \references{
   D. R. Jones, C. D. Perttunen, and B. E. Stuckmann, ``Lipschitzian
@@ -72,7 +79,7 @@ hartmann6 <- function(x) {
     return(fun)
 }
 S <- directL(hartmann6, rep(0,6), rep(1,6),
-             control=list(xtol_rel=1e-8, maxeval=1000))    # in 0.056 secs
+             nl.info = TRUE, control=list(xtol_rel=1e-8, maxeval=1000))
 ## Number of Iterations....: 500 
 ## Termination conditions:  stopval: -Inf
 ##     xtol_rel: 1e-08,  maxeval: 500,  ftol_rel: 0,  ftol_abs: 0 

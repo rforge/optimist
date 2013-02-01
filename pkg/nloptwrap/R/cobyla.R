@@ -6,7 +6,7 @@
 cobyla <-
 function(x0, fn, lower = NULL, upper = NULL,
             hin = NULL, heq = NULL,
-            control = list(), ...)
+            nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
     opts["algorithm"] <- "NLOPT_LN_COBYLA"
@@ -24,21 +24,23 @@ function(x0, fn, lower = NULL, upper = NULL,
         heq <- function(x) f3(x)
     }
 
-    S <- nloptr(x0,
+    S0 <- nloptr(x0,
                 eval_f = fn,
                 lb = lower, ub = upper,
                 eval_g_ineq = hin,
                 eval_g_eq = heq,
                 opts = opts)
 
-    print(S)
-    return(S)
+    if (nl.info) print(S0)
+    S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
+                convergence = S0$status, message = S0$message)
+    return(S1)
 }
 
 
 bobyqa <-
 function(x0, fn, lower = NULL, upper = NULL,
-                 control = list(), ...)
+                 nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
     opts["algorithms"] <- "NLOPT_LN_BOBYQA"
@@ -46,16 +48,18 @@ function(x0, fn, lower = NULL, upper = NULL,
     fun <- match.fun(fn)
     fn <- function(x) fun(x, ...)
 
-    S <- nloptr(x0, fn, lb = lower, ub = upper,
+    S0 <- nloptr(x0, fn, lb = lower, ub = upper,
                 opts = opts)
 
-    print(S)
-    return(S)
+    if (nl.info) print(S0)
+    S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
+                convergence = S0$status, message = S0$message)
+    return(S1)
 }
 
 
 newuoa <-
-function(x0, fn, control = list(), ...)
+function(x0, fn, nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
     opts["algorithms"] <- "NLOPT_LN_NEWUOA"
@@ -63,8 +67,10 @@ function(x0, fn, control = list(), ...)
     fun <- match.fun(fn)
     fn <- function(x) fun(x, ...)
 
-    S <- nloptr(x0, fn, opts = opts)
+    S0 <- nloptr(x0, fn, opts = opts)
 
-    print(S)
-    return(S)
+    if (nl.info) print(S0)
+    S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
+                convergence = S0$status, message = S0$message)
+    return(S1)
 }
