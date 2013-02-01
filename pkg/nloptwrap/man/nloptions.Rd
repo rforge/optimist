@@ -27,7 +27,8 @@ nl.opts(optlist = NULL)
 }
 \note{
   There are more options that can be set for solvers in NLOPT. These cannot
-  be set through their wrapper functions.
+  be set through their wrapper functions. To see the full list of options and
+  algorithms, type \code{nloptr.print.options()}.
 }
 \examples{
 nl.opts(list(xtol_rel = 1e-8, maxeval = 2000))

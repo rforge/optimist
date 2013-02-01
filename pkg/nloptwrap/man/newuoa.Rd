@@ -45,5 +45,8 @@ List with components:
   \code{\link{bobyqa}}, \code{\link{cobyla}}
 }
 \examples{
-## Will be provided later.
+fr <- function(x) {   ## Rosenbrock Banana function
+    100 * (x[2] - x[1]^2)^2 + (1 - x[1])^2
+}
+(S <- newuoa(c(1, 2), fr))
 }

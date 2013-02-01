@@ -43,7 +43,7 @@ function(x0, fn, lower = NULL, upper = NULL,
                  nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
-    opts["algorithms"] <- "NLOPT_LN_BOBYQA"
+    opts["algorithm"] <- "NLOPT_LN_BOBYQA"
 
     fun <- match.fun(fn)
     fn <- function(x) fun(x, ...)
@@ -62,7 +62,7 @@ newuoa <-
 function(x0, fn, nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
-    opts["algorithms"] <- "NLOPT_LN_NEWUOA"
+    opts["algorithm"] <- "NLOPT_LN_NEWUOA"
 
     fun <- match.fun(fn)
     fn <- function(x) fun(x, ...)

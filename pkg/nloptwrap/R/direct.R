@@ -1,8 +1,15 @@
 direct <-
-function(fn, lower, upper, nl.info = FALSE, control = list(), ...)
+function(fn, lower, upper, scaled = TRUE, original = FALSE,
+            nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
-    opts["algorithm"] <- "NLOPT_GN_DIRECT"
+    if (scaled) {
+        opts["algorithm"] <- "NLOPT_GN_DIRECT"
+    } else {
+        opts["algorithm"] <- "NLOPT_GN_DIRECT_NOSCAL"
+    }
+    if (original)
+        opts["algorithm"] <- "NLOPT_GN_ORIG_DIRECT"
 
     fun <- match.fun(fn)
     fn  <- function(x) fun(x, ...)
@@ -23,10 +30,18 @@ function(fn, lower, upper, nl.info = FALSE, control = list(), ...)
 
 
 directL <-
-function(fn, lower, upper, nl.info = FALSE, control = list(), ...)
+function(fn, lower, upper, randomized = FALSE, original = FALSE,
+            nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
-    opts["algorithm"] <- "NLOPT_GN_DIRECT_L"
+    if (randomized) {
+        opts["algorithm"] <- "NLOPT_GN_DIRECT_L_RAND"
+    } else {
+        opts["algorithm"] <- "NLOPT_GN_DIRECT_L"
+    }
+    if (original)
+        opts["algorithm"] <- "NLOPT_GN_ORIG_DIRECT_L"
+    
 
     fun <- match.fun(fn)
     fn  <- function(x) fun(x, ...)

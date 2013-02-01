@@ -11,12 +11,20 @@
   functions without too many minima).
 }
 \usage{
-direct(fn, lower, upper, nl.info = FALSE, control = list(), ...)
-directL(fn, lower, upper, nl.info = FALSE, control = list(), ...)
+direct(fn, lower, upper, scaled = TRUE, original = FALSE,
+        nl.info = FALSE, control = list(), ...)
+
+directL(fn, lower, upper, randomized = FALSE, original = FALSE,
+        nl.info = FALSE, control = list(), ...)
 }
 \arguments{
   \item{fn}{objective function that is to be minimized.}
   \item{lower, upper}{lower and upper bound constraints.}
+  \item{scaled}{logical; shall the hypercube be scaled before starting.}
+  \item{randomized}{logical; shall some randomization be used to decide which
+                    dimension to halve next in the case of near-ties.}
+  \item{original}{logical; whether to use the original implementation by
+                  Gablonsky -- the performance is mostly similar.}
   \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
@@ -26,10 +34,15 @@ directL(fn, lower, upper, nl.info = FALSE, control = list(), ...)
   to a hypercube, which gives all dimensions equal weight in the search
   procedure. If your dimensions do not have equal weight, e.g. if you have a
   ``long and skinny'' search space and your function varies at about the same
-  speed in all directions, it may be better to use unscaled variants of these
-  algorithms.
+  speed in all directions, it may be better to use unscaled variant of the
+  DIRECT algorithm.
 
-  The algorithms only handle finite bound constraints
+  The algorithms only handle finite bound constraints which must be provided.
+  The original versions may include some support for arbitrary nonlinear
+  inequality, but this has not been tested.
+
+  The original versions do not have randomized or unscaled variants, so these
+  options will be disregarded for these versions.
 }
 \value{
 List with components:

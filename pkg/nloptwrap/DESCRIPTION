@@ -1,7 +1,7 @@
 Package: nloptwrap
 Type: Package
 Title: Wrapper for Package nloptr
-Version: 0.3-0
+Version: 0.3-1
 Date: 2013-02-02
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
