@@ -10,5 +10,7 @@ export(cobyla, bobyqa, newuoa)
 export(direct, directL)
 export(neldermead, sbplx)
 export(lbfgs, tnewton)
+export(mma)
+export(varmetric)
 
 ## S3 and S4 Methods

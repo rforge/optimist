@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 0.3-3 (2012-02-03)
+
+    o mma() method of moving asymptotes.
+    o varmetric() shifted limited-memory variable-metric.
+
 CHANGES IN VERSION 0.3-1 (2012-02-02)
 
     o Converted to optim-like return values.
