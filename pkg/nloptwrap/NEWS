@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 0.4-1 (2012-02-04)
+
+    o mlsl() with gradient-based variant.
+    o Introduced local options to nl.opts().
+
 CHANGES IN VERSION 0.3-3 (2012-02-03)
 
     o mma() method of moving asymptotes.

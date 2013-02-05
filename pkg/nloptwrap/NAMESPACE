@@ -12,5 +12,6 @@ export(neldermead, sbplx)
 export(lbfgs, tnewton)
 export(mma)
 export(varmetric)
+export(mlsl)
 
 ## S3 and S4 Methods

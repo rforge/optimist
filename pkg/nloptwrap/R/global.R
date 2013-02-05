@@ -94,24 +94,24 @@ function(x0, fn, lower, upper,
 
 
 #-- Needs setting a local optimizer: how? --------------------------- MLSL ---
-mlsl <-
-function(x0, fn, lower, upper,
-            nl.info = FALSE, control = list(), ...)
-{
-    opts <- nl.opts(control)
-    opts["algorithm"] <- ""
-
-    fun <- match.fun(fn)
-    fn  <- function(x) fun(x, ...)
-
-    S0 <- nloptr(x0,
-                eval_f = fn,
-                lb = lower,
-                ub = upper,
-                opts = opts)
-
-    if (nl.info) print(S0)
-    S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
-                convergence = S0$status, message = S0$message)
-    return(S1)
-}
+# mlsl <-
+# function(x0, fn, lower, upper,
+#             nl.info = FALSE, control = list(), ...)
+# {
+#     opts <- nl.opts(control)
+#     opts["algorithm"] <- ""
+# 
+#     fun <- match.fun(fn)
+#     fn  <- function(x) fun(x, ...)
+# 
+#     S0 <- nloptr(x0,
+#                 eval_f = fn,
+#                 lb = lower,
+#                 ub = upper,
+#                 opts = opts)
+# 
+#     if (nl.info) print(S0)
+#     S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
+#                 convergence = S0$status, message = S0$message)
+#     return(S1)
+# }

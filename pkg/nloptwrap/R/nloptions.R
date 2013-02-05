@@ -8,11 +8,12 @@ function(optlist = NULL)
 {
     opts <- list(stopval = -Inf,        # stop minimization at this value
                  xtol_rel = 1e-6,       # stop on small optimization step
-                 maxeval = 1000,         # stop on this many function evaluations
+                 maxeval = 1000,        # stop on this many function evaluations
                  ftol_rel = 0.0,        # stop on change times function value
                  ftol_abs = 0.0,        # stop on small change of function value
                  check_derivatives = FALSE,
-                 algorithm = NULL
+                 algorithm = NULL,      # will be filled by each single function
+                 local_opts  = list()   # will be filled when needed 
                 )
 
     if (is.null(optlist))
