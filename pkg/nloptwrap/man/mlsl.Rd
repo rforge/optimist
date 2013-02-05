@@ -11,7 +11,7 @@
 }
 \usage{
     mlsl(x0, fn, gr = NULL, lower, upper,
-            local.method = "LBFGS", low.discrepancy = FALSE,
+            local.method = "LBFGS", low.discrepancy = TRUE,
             nl.info = FALSE, control = list(), ...)
 }
 \arguments{

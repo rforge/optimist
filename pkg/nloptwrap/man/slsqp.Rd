@@ -24,7 +24,7 @@ slsqp(x0, fn, gr = NULL, lower = NULL, upper = NULL,
   \item{hinjac}{Jacobian of function \code{hin};
                 will be calculated numerically if not specified.}
   \item{heq}{function defining the equality constraints, that is
-               \code{heq==0} for all components.}
+             \code{heq==0} for all components.}
   \item{heqjac}{Jacobian of function \code{heq};
                 will be calculated numerically if not specified.}
   \item{nl.info}{logical; shall the original NLopt info been shown.}

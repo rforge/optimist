@@ -5,7 +5,7 @@
 
 mlsl <-
 function(x0, fn, gr = NULL, lower, upper,
-            local.method = "LBFGS", low.discrepancy = FALSE,
+            local.method = "LBFGS", low.discrepancy = TRUE,
             nl.info = FALSE, control = list(), ...)
 {
     local_opts <- list(algorithm = "NLOPT_LD_LBFGS",

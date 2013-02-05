@@ -3,17 +3,27 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 0.4-1 (2012-02-04)
+CHANGES IN VERSION 0.4-4 (2013-02-06)
+
+    o auglag2() augmented Lagrangian with local solver.
+    o Improvements such as 'randseed' etc.
+
+CHANGES IN VERSION 0.4-3 (2013-02-05)
+
+    o crs2lm() controlled random search with local mutation.
+    o isres() improved stochastic ranking evolution strategy.
+
+CHANGES IN VERSION 0.4-1 (2013-02-04)
 
     o mlsl() with gradient-based variant.
     o Introduced local options to nl.opts().
 
-CHANGES IN VERSION 0.3-3 (2012-02-03)
+CHANGES IN VERSION 0.3-3 (2013-02-03)
 
     o mma() method of moving asymptotes.
     o varmetric() shifted limited-memory variable-metric.
 
-CHANGES IN VERSION 0.3-1 (2012-02-02)
+CHANGES IN VERSION 0.3-1 (2013-02-02)
 
     o Converted to optim-like return values.
     o Added `noscaling' and `randomized' variants to direct() and directL().
