@@ -12,8 +12,7 @@ function(optlist = NULL)
                  ftol_rel = 0.0,        # stop on change times function value
                  ftol_abs = 0.0,        # stop on small change of function value
                  check_derivatives = FALSE,
-                 algorithm = NULL,      # will be filled by each single function
-                 local_opts  = list()   # will be filled when needed 
+                 algorithm = NULL       # will be filled by each single function
                 )
 
     if (is.null(optlist))

@@ -4,8 +4,7 @@
 
 
 cobyla <-
-function(x0, fn, lower = NULL, upper = NULL,
-            hin = NULL, heq = NULL,
+function(x0, fn, lower = NULL, upper = NULL, hin = NULL,
             nl.info = FALSE, control = list(), ...)
 {
     opts <- nl.opts(control)
@@ -19,16 +18,11 @@ function(x0, fn, lower = NULL, upper = NULL,
         hin <- function(x) (-1)*f2(x)      # NLOPT expects hin <= 0
     }
 
-    if (!is.null(heq)) {
-        f3  <- match.fun(heq)
-        heq <- function(x) f3(x)
-    }
-
     S0 <- nloptr(x0,
                 eval_f = fn,
-                lb = lower, ub = upper,
+                lb = lower,
+                ub = upper,
                 eval_g_ineq = hin,
-                eval_g_eq = heq,
                 opts = opts)
 
     if (nl.info) print(S0)

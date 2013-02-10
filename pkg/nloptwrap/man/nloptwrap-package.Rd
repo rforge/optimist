@@ -13,9 +13,9 @@
   \tabular{ll}{
   Package: \tab nloptwrap\cr
   Type: \tab Package\cr
-  Version: \tab 1.0\cr
-  Date: \tab 2013-01-29\cr
-  License: \tab What license is it under?\cr
+  Version: \tab 0.4-4\cr
+  Date: \tab 2013-02-06\cr
+  License: \tab LGPL\cr
   }
 }
 \author{

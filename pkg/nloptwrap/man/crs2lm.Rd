@@ -9,7 +9,7 @@
 }
 \usage{
 crs2lm(x0, fn, lower, upper,
-        maxeval = 10000, pop.size = 10*(length(x0)+1),
+        maxeval = 10000, pop.size = 10*(length(x0)+1), ranseed = NULL,
         xtol_rel = 1e-6, nl.info = FALSE, ...)
 }
 \arguments{
@@ -18,6 +18,7 @@ crs2lm(x0, fn, lower, upper,
   \item{lower, upper}{lower and upper bound constraints.}
   \item{maxeval}{maximum number of function evaluations.}
   \item{pop.size}{population size.}
+  \item{ranseed}{prescribe seed for random number generator.}
   \item{xtol_rel}{stopping criterion for relative change reached.}
   \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{\ldots}{additional arguments passed to the function.}

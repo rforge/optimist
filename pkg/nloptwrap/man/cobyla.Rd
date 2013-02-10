@@ -5,11 +5,10 @@
 }
 \description{
   COBYLA is an algorithm for derivative-free optimization with nonlinear
-  inequality and equality constraints.
+  inequality and equality constraints (but see below).
 }
 \usage{
-cobyla(x0, fn, lower = NULL, upper = NULL,
-        hin = NULL, heq = NULL,
+cobyla(x0, fn, lower = NULL, upper = NULL, hin = NULL,
         nl.info = FALSE, control = list(), ...)
 }
 \arguments{
@@ -18,8 +17,6 @@ cobyla(x0, fn, lower = NULL, upper = NULL,
   \item{lower, upper}{lower and upper bound constraints.}
   \item{hin}{function defining the inequality constraints, that is
                \code{hin>=0} for all components.}
-  \item{heq}{function defining the equality constraints, that is
-               \code{heq==0} for all components.}
   \item{nl.info}{logical; shall the original NLopt info been shown.}
   \item{control}{list of options, see \code{nl.opts} for help.}
   \item{\ldots}{additional arguments passed to the function.}
@@ -28,6 +25,10 @@ cobyla(x0, fn, lower = NULL, upper = NULL,
   It constructs successive linear approximations of the objective function
   and constraints via a simplex of n+1 points (in n dimensions), and
   optimizes these approximations in a trust region at each step.
+
+  COBYLA supports equality constraints by transforming them into two
+  inequality constraints. As this does not give full satisfaction with the
+  implementation in NLOPT, it has not been made available here.
 }
 \value{
 List with components:

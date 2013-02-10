@@ -5,8 +5,8 @@
 
 CHANGES IN VERSION 0.4-4 (2013-02-06)
 
-    o auglag2() augmented Lagrangian with local solver.
-    o Improvements such as 'randseed' etc.
+    o [tbd.]
+    o Improvements such as 'population', 'randseed', etc.
 
 CHANGES IN VERSION 0.4-3 (2013-02-05)
 
@@ -45,8 +45,8 @@ CHANGES IN VERSION 0.2-1 (2013-01-30)
 
 CHANGES IN VERSION 0.1-5 (2013-01-29)
 
-	o slsqp() sequential (least-squares) quadratic programming.
-	o cobyla(), bobyqa(), newuoa() Powell's approximation solvers.
+    o slsqp() sequential (least-squares) quadratic programming.
+    o cobyla(), bobyqa(), newuoa() Powell's approximation solvers.
 
 CHANGES IN VERSION 0.1-1 (2013-01-28)
 

@@ -76,7 +76,7 @@ function(x0, fn, lower, upper, hin = NULL, heq = NULL,
 #-- ------------------------------------------------------------------ CRS ---
 crs2lm <-
 function(x0, fn, lower, upper,
-            maxeval = 10000, pop.size = 10*(length(x0)+1),
+            maxeval = 10000, pop.size = 10*(length(x0)+1), ranseed = NULL,
             xtol_rel = 1e-6, nl.info = FALSE, ...)
 {
     #opts <- nl.opts(control)
@@ -84,6 +84,8 @@ function(x0, fn, lower, upper,
     opts$maxeval    <- maxeval
     opts$xtol_rel   <- xtol_rel
     opts$population <- pop.size
+    if (!is.null(ranseed)) 
+       opts$ranseed <- as.integer(ranseed)
     opts$algorithm  <- "NLOPT_GN_CRS2_LM"
 
     fun <- match.fun(fn)
