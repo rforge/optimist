@@ -78,7 +78,7 @@ Practical Numerical Math Routines
   \code{ifft, ifftshift, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
   \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
-  \code{    lsqnonlin, lsqnonneg,}\cr
+  \code{    lsqnonlin, lsqnonneg, lu,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr

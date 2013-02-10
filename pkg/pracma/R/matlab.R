@@ -22,7 +22,7 @@ matlab <- function() {
   ifft, ifftshift, inpolygon, interp1, interp2, inv, isempty, isprime,
   kron,
   linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,
-      lsqnonlin, lsqnonneg,
+      lsqnonlin, lsqnonneg, lu,
   magic, meshgrid, mkpp, mldivide, mod, mrdivide,
   nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,
   ode23, ones, or, orth,
