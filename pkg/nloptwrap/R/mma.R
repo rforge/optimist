@@ -10,7 +10,11 @@ mma <- function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
 
     if (is.null(gr)) {
         gr <- function(x) nl.grad(x, fn)
+    } else {
+        .gr <- match.fun(gr)
+        gr <- function(x) .gr(x, ...)
     }
+
 
     if (!is.null(hin)) {
         .hin <- match.fun(hin)

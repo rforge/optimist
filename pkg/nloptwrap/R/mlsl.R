@@ -24,6 +24,9 @@ function(x0, fn, gr = NULL, lower, upper,
     if (local.method == "LBFGS") {
     	if (is.null(gr)) {
             gr <- function(x) nl.grad(x, fn)
+        } else {
+            .gr <- match.fun(gr)
+            gr <- function(x) .gr(x, ...)
         }
     } else {
     	cat("Warning:\nOnly gradient-based LBFGS available as local method.")

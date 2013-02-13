@@ -15,7 +15,7 @@ function(x0, fn, lower = NULL, upper = NULL, hin = NULL,
 
     if (!is.null(hin)) {
         f2  <- match.fun(hin)
-        hin <- function(x) (-1)*f2(x)      # NLOPT expects hin <= 0
+        hin <- function(x) (-1)*f2(x, ...)  # NLOPT expects hin <= 0
     }
 
     S0 <- nloptr(x0,

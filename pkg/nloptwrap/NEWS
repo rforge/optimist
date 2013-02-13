@@ -3,9 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 0.4-5 (2013-02-13)
+
+    o Pass additional function parameters to the gradient.
+
 CHANGES IN VERSION 0.4-4 (2013-02-06)
 
-    o [tbd.]
     o Improvements such as 'population', 'randseed', etc.
 
 CHANGES IN VERSION 0.4-3 (2013-02-05)
@@ -30,7 +33,7 @@ CHANGES IN VERSION 0.3-1 (2013-02-02)
 
 CHANGES IN VERSION 0.2-6 (2013-02-01)
 
-    o lbfgs() low-storage BFGS algorithm.
+    o lbfgs() low-storage BFGS algorithm (with box constraints).
     o tnewton() preconditioned truncated Newton and variants.
 
 CHANGES IN VERSION 0.2-4 (2013-01-31)
