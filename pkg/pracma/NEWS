@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.4.1 (2013-02-20)
+
+   o romberg() Romberg integration completely rewritten.
+
 CHANGES IN VERSION 1.4.0 (2013-02-10)
 
     o fderiv(), taylor() expanded to higher orders.
