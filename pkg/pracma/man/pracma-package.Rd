@@ -61,7 +61,7 @@ Practical Numerical Math Routines
   Web links have been provided where reasonable.
 }
 \note{
-  The following 175 functions are emulations of correspondingly named Matlab 
+  The following 200 functions are emulations of correspondingly named Matlab 
   functions and bear the same signature as their Matlab cousins if possible:
   
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, asec, asech,}\cr
@@ -71,13 +71,14 @@ Practical Numerical Math Routines
   \code{deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
-  \code{fact, factors, fftshift, figure, findstr, flipdim, fliplr, flipud,}\cr
-  \code{    fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
+  \code{fact, factors, fftshift, figure, findpeaks, findstr, flipdim, fliplr,}\cr
+  \code{    flipud, fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, geomean, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
-  \code{ifft, ifftshift, inpolygon, interp1, interp2, inv, isempty, isprime,}\cr
+  \code{idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,}\cr
+  \code{    interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
-  \code{linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
+  \code{linprog, linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
   \code{    lsqnonlin, lsqnonneg, lu,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
