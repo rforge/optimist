@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.4.3 (2013-03-10)
+
+    o integral() several adaptive numerical integration procedures.
+    o integral2() implements the two-dimensional numerical integration
+      approach `TwoD', i.e. Gauss-Kronrod (3, 7)-points on rectangles.
+
 CHANGES IN VERSION 1.4.2 (2013-03-03)
 
     o linprog() linear programming solver for linear equality and

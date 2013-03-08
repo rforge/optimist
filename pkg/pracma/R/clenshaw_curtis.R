@@ -3,9 +3,14 @@
 ##
 
 
-clenshaw_curtis <- function(f, a = -1, b = 1, n = 32, ...) {
+clenshaw_curtis <- function(f, a = -1, b = 1, n = 1024, ...) {
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
+
+    if (a == b) return(0)
+    eps <- .Machine$double.eps  # assume a < b
+    if (!is.finite(f(a))) a <- a + eps * sign(b-a)
+    if (!is.finite(f(b))) b <- b - eps * sign(b-a)
 
     # Evaluate f at Chebyshev points
     x  <- cos(pi*(0:n)/n)

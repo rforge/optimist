@@ -10,10 +10,10 @@ romberg <- function(f, a, b, maxit = 50, tol = 1e-6, ...)
     fun <- match.fun(f)
     f <- function(x) fun(x, ...)
 
-    if (!is.finite(f(a)) || !is.finite(f(b)))
-        stop("Function 'f' is not finite at interval boundaries.")
-    if (a == b)
-        return(list(value = 0, rel.error = 0))
+    if (a == b) return(list(value = 0, rel.error = 0))
+    eps <- .Machine$double.eps  # assume a < b
+    if (!is.finite(f(a))) a <- a + eps * sign(b-a)
+    if (!is.finite(f(b))) b <- b - eps * sign(b-a)
 
     n <- 1
     I <- matrix(0, nrow = maxit+1, ncol = maxit+1)
