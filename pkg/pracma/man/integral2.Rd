@@ -8,8 +8,8 @@
 }
 \usage{
 integral2(fun, xmin, xmax, ymin, ymax, sector = FALSE,
-            reltol = 1e-6, abstol = reltol, maxlist = 5000,
-            vectorized = TRUE, singular = FALSE, ...)
+            reltol = 1e-6, abstol = 0, maxlist = 5000,
+            singular = FALSE, vectorized = TRUE, ...)
 }
 \arguments{
   \item{fun}{function}
@@ -19,8 +19,8 @@ integral2(fun, xmin, xmax, ymin, ymax, sector = FALSE,
   \item{reltol}{relative tolerance.}
   \item{abstol}{absolute tolerance.}
   \item{maxlist}{maximum length of the list of rectangles.}
-  \item{vectorized}{logical.}
   \item{singular}{logical.}
+  \item{vectorized}{logical.}
   \item{...}{additional parameters to be passed to the function.}
 }
 \details{

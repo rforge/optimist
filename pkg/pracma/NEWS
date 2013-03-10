@@ -3,11 +3,16 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.4.3 (2013-03-10)
+CHANGES IN VERSION 1.4.4 (2013-03-13)
 
-    o integral() several adaptive numerical integration procedures.
     o integral2() implements the two-dimensional numerical integration
       approach `TwoD', i.e. Gauss-Kronrod (3, 7)-points on rectangles.
+    o integral3() three-dimensional integration based on integral2().
+
+CHANGES IN VERSION 1.4.3 (2013-03-10)
+
+    o integral() combines adaptive numerical integration procedures.
+    o cintegral() complex line integrals (rectangles and curves).
 
 CHANGES IN VERSION 1.4.2 (2013-03-03)
 

@@ -4,8 +4,8 @@
 
 
 integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
-                        reltol = 1e-6, abstol = reltol, maxlist = 5000,
-                        vectorized = TRUE, singular = FALSE, ...) {
+                        reltol = 1e-6, abstol = 0, maxlist = 5000,
+                        singular = FALSE, vectorized = TRUE, ...) {
     # check input parameters
     nlist <- floor(maxlist/10)
 
