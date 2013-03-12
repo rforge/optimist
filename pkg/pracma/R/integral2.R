@@ -1,28 +1,58 @@
 ##
-##  i n t e g r a l 2 . R
+##  i n t e g r a l 2 . R  Double and Triple Integrals
 ##
 
 
 integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
                         reltol = 1e-6, abstol = 0, maxlist = 5000,
                         singular = FALSE, vectorized = TRUE, ...) {
+    stopifnot(is.numeric(xmin), length(xmin) == 1,
+              is.numeric(xmax), length(xmax) == 1)
+    if ( is.infinite(xmin) || is.infinite(xmax) ||
+        (!is.function(ymin) && is.infinite(ymin)) ||
+        (!is.function(ymax) && is.infinite(ymax)) )
+        stop("Borders of the integration domain cannot be infinite.")
+
     # check input parameters
     nlist <- floor(maxlist/10)
 
     # check function and vectorization
     fun <- match.fun(fun)
-    FUN <- function(x, y) fun(x, y, ...)
+    if (sector) {
+        # FUN <- function(theta, r) fun(r*cos(theta), r*sin(theta), ...) * r
+        FUN <- function(x, y) fun(y*cos(x), y*sin(x), ...) * y
+    } else {
+        FUN <- function(x, y) fun(x, y, ...)
+    }
 
-    phiBvar <- function(x) ymin * ones(size(x)[1], size(x)[2])
-    phiTvar <- function(x) ymax * ones(size(x)[1], size(x)[2])
+    # check upper and lower bounds of y
+    if (is.function(ymin)) {
+        phiBvar <- ymin
+    } else if (is.numeric(ymin)) {
+        phiBvar <- function(x) ymin * ones(size(x)[1], size(x)[2])
+    } else
+        stop("Argument 'ymin' must be a constant or a (vectorized) function.")
+
+    if (is.function(ymax)) {
+        phiTvar <- ymax
+    } else if (is.numeric(ymax)) {
+        phiTvar <- function(x) ymax * ones(size(x)[1], size(x)[2])
+    } else
+        stop("Argument 'ymax' must be a constant or a (vectorized) function.")
 
     # check borders and redefine
-    thetaL <- xmin; thetaR <- xmax
-    phiB <- 0; phiT <- 1
+    if (singular) {
+        thetaL <- 0; thetaR <- pi
+        phiB <- 0; phiT <- pi
+    } else {
+        thetaL <- xmin; thetaR <- xmax
+        phiB <- 0; phiT <- 1
+    }
     area <- (thetaR - thetaL) * (phiT - phiB)
 
     # initial quadrature
-    Qs   <- .tensor(thetaL, thetaR, phiB, phiT, FUN, phiBvar, phiTvar)
+    Qs   <- .tensor(xmin, xmax, thetaL, thetaR, phiB, phiT, FUN, phiBvar, phiTvar,
+                      vectorized = vectorized, singular = singular)
     Qsub <- Qs$qsub; esub <- Qs$esub
     Q    <- sum(Qsub)
 
@@ -55,7 +85,8 @@ integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
         phiB <- temp[5]; phiT <- temp[6]
 
         # Approximate integral over four subrectangles
-        Qs <- .tensor(thetaL, thetaR, phiB, phiT, FUN, phiBvar, phiTvar)
+        Qs <- .tensor(xmin, xmax, thetaL, thetaR, phiB, phiT, FUN, phiBvar, phiTvar,
+                        vectorized = vectorized, singular = singular)
         Qsub <- Qs$qsub; esub <- Qs$esub
 
         newq <- sum(Qsub)
@@ -86,7 +117,8 @@ integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
 }
 
 
-.tensor <- function(thetaL, thetaR, phiB, phiT, FUN, phiBvar, phiTvar)
+.tensor <- function(a, b, thetaL, thetaR, phiB, phiT, FUN, phiBvar, phiTvar,
+                        vectorized = vectorized, singular = singular)
 {
     # Gauss-Kronrod (3,7) pair with degrees of precision 5 and 11
     nodes <- c( -0.9604912687080202, -0.7745966692414834, -0.4342437493468026,
@@ -105,7 +137,11 @@ integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
     dtheta <- thetaR - thetaL
     etheta <- thetaL + dtheta * c(0.25,0.75)
     theta  <- c(dtheta*narray + rep(etheta, each = nnodes))
-    x <- theta
+    if (singular) {
+        x <- 0.5*(b + a) + 0.5*(b - a)*cos(theta)
+    } else {
+        x <- theta
+    }
     X <- onevec %*% x
 
     dphi <- phiT - phiB;
@@ -116,11 +152,24 @@ integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
     top    <- phiTvar(x)
     bottom <- phiBvar(x)
     dydt <- top - bottom
-    t <- phi  
+    if (singular) {
+        t <- 0.5 + 0.5*cos(phi)
+    } else {
+        t <- phi
+    }
     Y <- onevec %*% bottom + t %*% dydt
 
-    Z <- FUN(X, Y)
-    temp <- onevec %*% dydt
+    if (vectorized) {
+        Z <- FUN(X, Y)
+    } else {
+        Z <- arrayfun(FUN, X, Y)
+    }
+
+    if (singular) {
+        temp <- 0.25*(b - a) * sin(phi) %*% (dydt * sin(theta))
+    } else {
+        temp <- onevec %*% dydt
+    }
     Z <- Z * temp
 
     # Tensor product: Gauss 3 and 7 points formulae
@@ -203,10 +252,19 @@ integral2 <- function(fun, xmin, xmax, ymin, ymax, sector = FALSE,
 
 #-- --------------------------------------------------------------------------
 
-.integral3 <- function(fun, xmin, xmax, ymin, ymax, zmin, zmax) {
-    fz <- function(z) {
-        fxy <- function(x, y) fun(x, y, z)
-        integral2(fxy, xmin, xmax, ymin, ymax)$Q    # singular = TRUE
+integral3 <- function(fun, xmin, xmax, ymin, ymax, zmin, zmax,
+                        reltol = 1e-6, ...) {
+    stopifnot(is.numeric(xmin), length(xmin) == 1, is.numeric(xmax), length(xmax) == 1,
+              is.numeric(ymin), length(ymin) == 1, is.numeric(ymax), length(ymax) == 1,
+              is.numeric(zmin), length(zmin) == 1, is.numeric(zmax), length(zmax) == 1)
+
+    fct <- match.fun(fun)
+    fun <- function(x, y, z) fct(x, y, z, ...)
+
+    fx <- function(x) {
+        fyz <- function(y, z) fun(x, y, z)
+        integral2(fyz, ymin, ymax, zmin, zmax, reltol = reltol)$Q
     }
-    romberg(fz, zmin, zmax)$value
+    f <- Vectorize(fx)
+    integral(f, xmin, xmax, reltol = reltol)
 }
