@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.4.5 (2013-03-19)
+CHANGES IN VERSION 1.4.5 (2013-03-21)
 
     o quadcc() iterative Clenshaw-Curtis quadrature.
     o squareform() formats distance matrix (Matlab style).

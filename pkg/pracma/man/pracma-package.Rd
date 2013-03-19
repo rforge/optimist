@@ -85,12 +85,12 @@ Practical Numerical Math Routines
   \code{ode23, ones, or, orth,}\cr
   \code{pascal, pchip, pdist, peaks, perms, piecewise, pinv, plotyy, pol2cart,}\cr
   \code{    polar, polyfit, polyint, polylog, polyval, pow2, ppval, primes, pwd,}\cr
-  \code{quad, quad2d, quadgk, quadl, quadv, quiver,}\cr
+  \code{quad, quad2d, quadgk, quadl, quadprog, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr
   \code{sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,}\cr
-  \code{    std, str2num, strcat, strcmp, strcmpi, strfind, strfindi, strjust,}\cr
-  \code{    strrep, subspace,}\cr
+  \code{    squareform, std, str2num, strcat, strcmp, strcmpi, strfind, strfindi,}\cr
+  \code{    strjust, strrep, subspace,}\cr
   \code{tic, toc, trapz, tril, trimmean, triplequad, triu,}\cr
   \code{vander, vectorfield, ver,}\cr
   \code{what, who, whos, wilkinson,}\cr
