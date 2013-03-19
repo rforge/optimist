@@ -34,7 +34,7 @@ integral <- function(fun, xmin, xmax,
     } else {
         Q <- switch(method,
                 "Kronrod"    = quadgk(f, xmin, xmax, tol = tol),
-                "Clenshaw"   = clenshaw_curtis(f, xmin, xmax),
+                "Clenshaw"   = quadcc(f, xmin, xmax, tol = tol),
                 "Richardson" = quadgr(f, xmin, xmax, tol = tol)$value,
                 "Romberg"    = romberg(f, xmin, xmax, tol = tol)$value,
                 "Simpson"    = simpadpt(f, xmin, xmax, tol = tol)

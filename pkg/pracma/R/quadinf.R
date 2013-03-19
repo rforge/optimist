@@ -22,7 +22,7 @@ quadinf <- function(f, xa, xb, tol = .Machine$double.eps^0.5,
         integ <- switch(method,
             "Kronrod"    = function(fct, xmin, xmax) quadgk(fct, xmin, xmax, tol = tol),
             "Richardson" = function(fct, xmin, xmax) quadgr(fct, xmin, xmax, tol = tol)$value,
-            "Clenshaw"   = function(fct, xmin, xmax) clenshaw_curtis(fct, xmin, xmax),
+            "Clenshaw"   = function(fct, xmin, xmax) quadcc(fct, xmin, xmax, tol = tol),
             "Romberg"    = function(fct, xmin, xmax) romberg(fct, xmin, xmax, tol = tol)$value,
             "Simpson"    = function(fct, xmin, xmax) simpadpt(fct, xmin, xmax, tol = tol)
             )

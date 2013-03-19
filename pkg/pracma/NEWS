@@ -3,7 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.4.4 (2013-03-13)
+CHANGES IN VERSION 1.4.5 (2013-03-19)
+
+    o quadcc() iterative Clenshaw-Curtis quadrature.
+
+CHANGES IN VERSION 1.4.4 (2013-03-12)
 
     o integral2() implements the two-dimensional numerical integration
       approach `TwoD', i.e. Gauss-Kronrod (3, 7)-points on rectangles.
