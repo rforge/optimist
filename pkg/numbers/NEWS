@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.4.1 (2013-03-30)
+
+  o Package now depends on 'gmp'.
+  o mersenne() computes Mersenne prime numbers.
+  o Renamed factorize() to primeFactors() (avoid masking ...)
+
 Version 0.3.5 (2013-01-12)
 
   o catalan() Catalan numbers.
