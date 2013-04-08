@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.4.6 (2013-03-31)
+
+    o psi() Psi polygamma function (Matlab style).
+    o rosenbrock() and rastrigin() functions removed.
+
 CHANGES IN VERSION 1.4.5 (2013-03-21)
 
     o quadcc() iterative Clenshaw-Curtis quadrature.

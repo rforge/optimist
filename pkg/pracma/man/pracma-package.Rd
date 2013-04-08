@@ -71,8 +71,8 @@ Practical Numerical Math Routines
   \code{dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
-  \code{fact, factors, fftshift, figure, findpeaks, findstr, flipdim, fliplr,}\cr
-  \code{    flipud, fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
+  \code{fact, fftshift, figure, findpeaks, findstr, flipdim, fliplr, flipud,}\cr
+  \code{    fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
   \code{gammainc, gcd, geomean, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
   \code{idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,}\cr
@@ -84,7 +84,7 @@ Practical Numerical Math Routines
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
   \code{pascal, pchip, pdist, peaks, perms, piecewise, pinv, plotyy, pol2cart,}\cr
-  \code{    polar, polyfit, polyint, polylog, polyval, pow2, ppval, primes, pwd,}\cr
+  \code{    polar, polyfit, polyint, polylog, polyval, pow2, ppval, primes, psi, pwd,}\cr
   \code{quad, quad2d, quadgk, quadl, quadprog, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr
@@ -100,8 +100,8 @@ Practical Numerical Math Routines
   avoid shadowing functions from R base or one of its recommended packages
   (on request of Bill Venables and because of Brian Ripley's CRAN policies):
 
-  \code{Diag, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null)},\cr
-  \code{Poly, Rank, Real, Reshape, strTrim, Toeplitz, uniq (<- unique).}
+  \code{Diag, factos, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null)},\cr
+  \code{Poly, Rank, Real, Reshape, strTrim, Toeplitz, Trace, uniq (<- unique).}
 
   To use ``ans'' instead of ``ans()'' -- as is common practice in Matlab --
   type (and similar for other Matlab commands):
