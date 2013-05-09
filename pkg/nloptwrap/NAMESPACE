@@ -14,5 +14,6 @@ export(mma)
 export(varmetric)
 export(mlsl)
 export(crs2lm, isres)
+export(stogo)
 
 ## S3 and S4 Methods

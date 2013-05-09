@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 0.5-1 (2013-05-09)
+
+    o Updated to NLOPT 2.3 and nloptr 0.9.1
+    o Added stochastic global optimization routine stogo().
+
 CHANGES IN VERSION 0.4-5 (2013-02-13)
 
     o Pass additional function parameters to the gradient.

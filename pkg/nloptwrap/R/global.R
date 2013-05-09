@@ -4,32 +4,37 @@
 
 
 #-- Does not work: maybe C++ support missing? ---------------------- StoGo ---
-# stogo <-
-# function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
-#             nl.info = FALSE, control = list(), ...)
-# {
-#     opts <- nl.opts(control)
-#     opts["algorithm"] <- "NLOPT_GD_STOGO"  # NLOPT_GD_STOGO_RAND
-# 
-#     fun <- match.fun(fn)
-#     fn  <- function(x) fun(x, ...)
-# 
-#     if (is.null(gr)) {
-#         gr <- function(x) nl.grad(x, fn)
-#     }
-# 
-#     S0 <- nloptr(x0,
-#                 eval_f = fn,
-#                 eval_grad_f = gr,
-#                 lb = lower,
-#                 ub = upper,
-#                 opts = opts)
-# 
-#     if (nl.info) print(S0)
-#     S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
-#                 convergence = S0$status, message = S0$message)
-#     return(S1)
-# }
+stogo <-
+function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
+            maxeval = 10000, xtol_rel = 1e-6, randomized = FALSE,
+            nl.info = FALSE, ...)  # control = list()
+{
+    # opts <- nl.opts(control)
+    opts <- list()
+    opts$maxeval    <- maxeval
+    opts$xtol_rel   <- xtol_rel
+    if (randomized) opts["algorithm"] <- "NLOPT_GD_STOGO_RAND"
+    else            opts["algorithm"] <- "NLOPT_GD_STOGO"
+
+    fun <- match.fun(fn)
+    fn  <- function(x) fun(x, ...)
+
+    if (is.null(gr)) {
+        gr <- function(x) nl.grad(x, fn)
+    }
+
+    S0 <- nloptr(x0,
+                eval_f = fn,
+                eval_grad_f = gr,
+                lb = lower,
+                ub = upper,
+                opts = opts)
+
+    if (nl.info) print(S0)
+    S1 <- list(par = S0$solution, value = S0$objective, iter = S0$iterations,
+                convergence = S0$status, message = S0$message)
+    return(S1)
+}
 
 
 #-- Supports nonlinear constraints: quite inaccurate! -------------- ISRES ---
