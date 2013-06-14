@@ -83,8 +83,9 @@ Practical Numerical Math Routines
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr
-  \code{pascal, pchip, pdist, peaks, perms, piecewise, pinv, plotyy, pol2cart,}\cr
-  \code{    polar, polyfit, polyint, polylog, polyval, pow2, ppval, primes, psi, pwd,}\cr
+  \code{pascal, pchip, pdist, pdist2, peaks, perms, piecewise, pinv, plotyy,}\cr
+  \code{    pol2cart, polar, polyfit, polyint, polylog, polyval, pow2, ppval,}\cr
+  \code{    primes, psi, pwd,}\cr
   \code{quad, quad2d, quadgk, quadl, quadprog, quadv, quiver,}\cr
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr

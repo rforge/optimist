@@ -6,6 +6,8 @@
 CHANGES IN VERSION 1.4.8 (2013-06-09)
 
     o findzeros() now finds 'quadratic' roots, too.
+    o pdist2() added as an alias for distmat(),
+      while pdist(X) now is distmat(X, X) (Matlab style).
 
 CHANGES IN VERSION 1.4.7 (2013-05-20)
 
