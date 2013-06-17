@@ -3,9 +3,10 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.4.8 (2013-06-09)
+CHANGES IN VERSION 1.4.8 (2013-06-17)
 
     o findzeros() now finds 'quadratic' roots, too.
+    o fsolve() now uses newtonsys() if m = n.
     o pdist2() added as an alias for distmat(),
       while pdist(X) now is distmat(X, X) (Matlab style).
 
