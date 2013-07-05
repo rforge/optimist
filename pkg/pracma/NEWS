@@ -3,15 +3,16 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.4.9 (2013-06-24)
+CHANGES IN VERSION 1.4.9 (2013-07-04)
 
     o lapacian() now works in n dimensions, not only for n=2.
     o mldivide(), mrdivide() corrected a severe typo.
+    o numderiv(), numdiff() start with h = 1/2 instead of h = 1.
 
 CHANGES IN VERSION 1.4.8 (2013-06-17)
 
     o findzeros() now finds 'quadratic' roots, too.
-    o fsolve() now uses newtonsys() if m = n.
+    o fsolve() will use newtonsys() if m = n.
     o pdist2() added as an alias for distmat(),
       while pdist(X) now is distmat(X, X) (Matlab style).
 
