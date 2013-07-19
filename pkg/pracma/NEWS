@@ -3,11 +3,12 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.4.9 (2013-07-04)
+CHANGES IN VERSION 1.4.9 (2013-07-16)
 
     o lapacian() now works in n dimensions, not only for n=2.
     o mldivide(), mrdivide() corrected a severe typo.
     o numderiv(), numdiff() start with h = 1/2 instead of h = 1.
+    o figure() platform-independent by using dev.new().
 
 CHANGES IN VERSION 1.4.8 (2013-06-17)
 
