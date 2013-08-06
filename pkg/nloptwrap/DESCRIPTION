@@ -1,13 +1,13 @@
 Package: nloptwrap
 Type: Package
-Title: Wrapper for Package nloptr
-Version: 0.5-1
-Date: 2013-05-09
+Title: Wraps solvers in Package nloptr
+Version: 0.5-5
+Date: 2013-08-06
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1), nloptr
 Description:
-    Wraps functions in 'nloptr' for easier access and use.
+    Wraps solver functions in 'nloptr' for easier access and use.
 License: LGPL
 LazyLoad: yes
 LazyData: yes

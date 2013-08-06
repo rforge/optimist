@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 0.5.5 (2013-08-06)
+
+    o Added agmented Lagrangian approach for the following local solvers:
+      COBYLA, LBFGS, MMA, and SLSQP
+
 CHANGES IN VERSION 0.5-1 (2013-05-09)
 
     o Updated to NLOPT 2.3 and nloptr 0.9.1

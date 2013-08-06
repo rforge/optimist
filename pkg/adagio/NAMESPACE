@@ -12,8 +12,18 @@ export(maxsub, maxsub2d)
 export(subsetsum, knapsack)
 export(maxempty)
 export(mknapsack, assignment)
-export(rastrigin, rosenbrock)
 export(transfinite)
 export(nelmin, nelminb)
+
+export(qpspecial)
+export(linesearch_ww, linesearch_sw)
+# export(bfgsmin)
+# export(cgmin)
+# export(ralg)
+
+export(fnRosenbrock, grRosenbrock)
+export(fnRastrigin, grRastrigin)
+export(fnNesterov, grNesterov)
+export(fnHald, grHald)
 
 # S3/S4 Methods

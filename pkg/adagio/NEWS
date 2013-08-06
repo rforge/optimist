@@ -3,9 +3,17 @@
 ------------------------------------------------------------------------------
 
 
-Changes in Version 0.4.5 (2012-12-01)
+Changes in Version 0.5.3 (2013-08-05)
+    o fnNesterov(), grNesterov() Nesterov's Chebyshev-Rosenbrock function.
+    o fnHald(), grHald() the Hald and Madsen test function.
 
-    o [tbd.]
+Changes in Version 0.5.2 (2013-07-21)
+    o fminviz(), flineviz() visualize multivariate functions at (assumed) 
+      minima or along lines in multidimensional space.
+
+Changes in Version 0.5.1 (2013-06-30)
+    o linesearch_ww(), linesearch_sw() Wolfe's weak and strong line search.
+    o qpspecial() special quadratic programming solver.
 
 Changes in Version 0.4.3 (2012-11-11)
     o nelmin(), nelminb() Nelder-Mead function minimization according to 
@@ -14,7 +22,8 @@ Changes in Version 0.4.3 (2012-11-11)
       (box constrained) regions.
 
 Changes in Version 0.4.0 (2012-10-01)
-    o rastrigin(), rosenbrock() as test functions.
+    o fnRastrigin(), fnRosenbrock() as test functions, and
+    o grRastrigin(), grRosenbrock() their (analytical) gradients.
 
 Changes in Version 0.3.9 (2012-06-19)
     o simpleEA() and simpleDE() improved, with boundary conditions.
