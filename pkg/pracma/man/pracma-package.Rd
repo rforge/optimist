@@ -61,7 +61,7 @@ Practical Numerical Math Routines
   Web links have been provided where reasonable.
 }
 \note{
-  The following 200 functions are emulations of correspondingly named Matlab 
+  The following 220 functions are emulations of correspondingly named Matlab 
   functions and bear the same signature as their Matlab cousins if possible:
   
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,}\cr
@@ -69,11 +69,11 @@ Practical Numerical Math Routines
   \code{cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,}\cr
   \code{    cot, coth, cross, csc, csch,}\cr
   \code{dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
-  \code{eig, eigint, ellipj, ellipke, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
+  \code{eig, eigint, ellipj, ellipke, eps, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr
   \code{fact, fftshift, figure, findpeaks, findstr, flipdim, fliplr, flipud,}\cr
   \code{    fminbnd, fminsearch, fplot, fsolve, fzero,}\cr
-  \code{gammainc, gcd, geomean, gradient,}\cr
+  \code{gammainc, gcd, geomean, gmres, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
   \code{idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,}\cr
   \code{    interp1, interp2, inv, isempty, isprime,}\cr

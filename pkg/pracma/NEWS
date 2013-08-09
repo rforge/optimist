@@ -3,9 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.5.0 (2013-07-21)
+CHANGES IN VERSION 1.5.0 (2013-08-08)
 
-    o [tbd.]
+    o gmres() generalized minimum residual method.
+    o nearest_spd() find nearest symmetric positive-definite matrix.
+    o eps() floating point relative accuracy.
 
 CHANGES IN VERSION 1.4.9 (2013-07-16)
 
