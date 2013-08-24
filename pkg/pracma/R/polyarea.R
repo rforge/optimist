@@ -45,3 +45,12 @@ polycenter <- function(x, y) {
     cy <- sum((y1+y2) * xy)
     return(1/parea/6 * c(cx, cy))
 }
+
+
+polylength <- function(x, y) {
+    stopifnot(is.numeric(x), is.numeric(y))
+
+    X  <- cbind(x, y)
+    dX <- diff(X)
+    return(sum(sqrt(rowSums(dX^2))))
+}

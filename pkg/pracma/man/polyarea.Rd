@@ -1,14 +1,16 @@
 \name{polyarea}
 \alias{polyarea}
 \alias{polycenter}
+\alias{polylength}
 \title{Area of a Polygon}
 \description{
-  Calculates the area of the polygon given by the vertices in the vectors
-  \code{x} and \code{y}.
+  Calculates the area and length of a polygon given by the vertices in the 
+  vectors \code{x} and \code{y}.
 }
 \usage{
   polyarea(x, y)
 
+  polylength(x, y)
   polycenter(x, y)
 }
 \arguments{
@@ -36,12 +38,15 @@
   the polygon. Self-intersections should be avoided in this case.
   The mathematical orientation of the polygon does not have influence on the
   center coordinates.
+
+  \code{polylength} calculates the length of the polygon
 }
 \value{
-  Arae of the polygon resp. sum of the enclosed areas.
+  Area or length of the polygon resp. sum of the enclosed areas; or the
+  coordinates of the center of gravity.
 }
 \seealso{
-  \code{\link{trapz}}
+  \code{\link{trapz}}, \code{\link{arclength}}
 }
 \examples{
   # Zu Chongzhi's calculation of pi (China, about 480 A.D.),
@@ -51,6 +56,8 @@
   y <- sin(phi)
   pi_approx <- polyarea(x, y)
   print(pi_approx, digits=8)    #=> 3.1415925 or 355/113
+
+  polylength(x, y)              #=> 6.2831852 where 2*pi is 6.2831853
 
   x1 <- x + 0.5; y1 <- y + 0.5
   x2 <- rev(x1); y2 <- rev(y1)
