@@ -56,7 +56,7 @@ arclength(f, 0, pi)     # true length  3.82019...
 ##  Example: oscillating 1-dimensional function (from 0 to 5)
 f <- function(x) x * cos(0.1*exp(x)) * sin(0.1*pi*exp(x))
 F <- function(t) c(t, f(t))
-arclength(F, 0, 5, tol = 1e-10)
-# $length:  82.8102     # true length 82.816...
+arclength(F, 0, 5, tol = 1e-07)
+# $length:  82.8102     # true length 82.8102037288729...
 }
 \keyword{ math }

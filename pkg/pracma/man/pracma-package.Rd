@@ -78,8 +78,8 @@ Practical Numerical Math Routines
   \code{idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,}\cr
   \code{    interp1, interp2, inv, isempty, isprime,}\cr
   \code{kron,}\cr
-  \code{linprog, linspace, loglog, logm, logseq, logspace, lsqcurvefit, lsqlin,}\cr
-  \code{    lsqnonlin, lsqnonneg, lu,}\cr
+  \code{legendre, linprog, linspace, loglog, logm, logseq, logspace, lsqcurvefit,}\cr
+  \code{    lsqlin, lsqnonlin, lsqnonneg, lu,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
   \code{ode23, ones, or, orth,}\cr

@@ -3,6 +3,31 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.5.3 (2013-08-25)}{
+    \itemize{
+      \item arclength() length of a parametrized curve in n-dimensional space,
+        w/ improved convergence by applying Richardson's extrapolation method.
+      \item legendre() associated Legendre functions.
+    }
+}
+
+\section{Changes in Version 1.5.2 (2013-08-23)}{
+    \itemize{
+      \item polycenter() calculates the center coordinates of a polygon.
+      \item polylength() calculates the (euclidean) length of a polygon.
+      \item polyarea() corrected, returns the true, not the absolute value.
+    }
+}
+
+\section{Changes in Version 1.5.1 (2013-08-19)}{
+    \itemize{
+      \item fsolve() will use broyden() if m = n; fzsolve() the same;
+        additionally, improved broyden() and gaussNewton().
+      \item ezplot() can draw markers on the line, with equal distances
+          measured along the curve length.
+    }
+}
+
 \section{Changes in Version 1.5.0 (2013-08-08)}{
     \itemize{
       \item gmres() generalized minimum residual method.
@@ -1146,6 +1171,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.5.0"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.5.3"}.
     }
 }
