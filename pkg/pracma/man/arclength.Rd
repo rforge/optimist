@@ -26,7 +26,7 @@ arclength(f, a, b, nmax = 20, tol = 1e-05, ...)
 
   Can be directly applied to determine the arc length of a one-dimensional 
   function \code{f:R-->R} by defining \code{F} (if \code{f} is vectorized)
-  as \code{F:t-->c(f(t),rep(0,length(t)))}.
+  as \code{F:t-->c(t,f(t)}.
 }
 \value{
   Returns a list with components \code{length} the calculated arc length,
