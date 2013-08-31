@@ -67,7 +67,7 @@ Practical Numerical Math Routines
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,}\cr
   \code{beep, blank, blkdiag, bsxfun,}\cr
   \code{cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,}\cr
-  \code{    cot, coth, cross, csc, csch,}\cr
+  \code{    cot, coth, cross, csc, csch, cumtrapz,}\cr
   \code{dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
   \code{eig, eigint, ellipj, ellipke, eps, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,}\cr

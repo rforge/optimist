@@ -27,7 +27,7 @@ polyarea <- function(x, y) {
 }
 
 
-polycenter <- function(x, y) {
+poly_center <- function(x, y) {
     stopifnot(is.numeric(x), is.numeric(y))
     n <- length(x)
     if (length(y) != n || n <= 2)
@@ -47,7 +47,7 @@ polycenter <- function(x, y) {
 }
 
 
-polylength <- function(x, y) {
+poly_length <- function(x, y) {
     stopifnot(is.numeric(x), is.numeric(y))
 
     X  <- cbind(x, y)

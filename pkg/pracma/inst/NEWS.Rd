@@ -3,18 +3,26 @@
 \encoding{UTF-8}
 
 
+\section{Changes in Version 1.5.4 (2013-08-29)}{
+    \itemize{
+      \item rectint() rectangular intersection areas (Matlab style).
+      \item cumtrapz() cumulative trapezoidal integration (Matlab style).
+      \item Some corrections to help pages and function names.
+    }
+}
+
 \section{Changes in Version 1.5.3 (2013-08-25)}{
     \itemize{
       \item arclength() length of a parametrized curve in n-dimensional space,
         w/ improved convergence by applying Richardson's extrapolation method.
-      \item legendre() associated Legendre functions.
+      \item legendre() associated Legendre functions (Matlab style).
     }
 }
 
 \section{Changes in Version 1.5.2 (2013-08-23)}{
     \itemize{
-      \item polycenter() calculates the center coordinates of a polygon.
-      \item polylength() calculates the (euclidean) length of a polygon.
+      \item poly_center() calculates the center coordinates of a polygon.
+      \item poly_length() calculates the (euclidean) length of a polygon.
       \item polyarea() corrected, returns the true, not the absolute value.
     }
 }
@@ -1171,6 +1179,6 @@
 
       \item Remark: Typeset this document as:
 
-      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.5.3"}.
+      \code{R CMD Rd2pdf NEWS.Rd --title="NEWS for pracma version 1.5.4"}.
     }
 }

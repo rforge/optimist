@@ -1,7 +1,7 @@
 \name{polyarea}
 \alias{polyarea}
-\alias{polycenter}
-\alias{polylength}
+\alias{poly_center}
+\alias{poly_length}
 \title{Area of a Polygon}
 \description{
   Calculates the area and length of a polygon given by the vertices in the 
@@ -10,8 +10,8 @@
 \usage{
   polyarea(x, y)
 
-  polylength(x, y)
-  polycenter(x, y)
+  poly_length(x, y)
+  poly_center(x, y)
 }
 \arguments{
   \item{x}{x-coordinates of the vertices defining the polygon}
@@ -34,12 +34,12 @@
   If \code{x}, \code{y} are matrices of the same size, the areas of all
   polygons defined by corresponding columns are computed.
 
-  \code{polycenter} calculates the center (of mass) of the figure defined by
+  \code{poly_center} calculates the center (of mass) of the figure defined by
   the polygon. Self-intersections should be avoided in this case.
   The mathematical orientation of the polygon does not have influence on the
   center coordinates.
 
-  \code{polylength} calculates the length of the polygon
+  \code{poly_length} calculates the length of the polygon
 }
 \value{
   Area or length of the polygon resp. sum of the enclosed areas; or the
@@ -57,11 +57,11 @@
   pi_approx <- polyarea(x, y)
   print(pi_approx, digits=8)    #=> 3.1415925 or 355/113
 
-  polylength(x, y)              #=> 6.2831852 where 2*pi is 6.2831853
+  poly_length(x, y)              #=> 6.2831852 where 2*pi is 6.2831853
 
   x1 <- x + 0.5; y1 <- y + 0.5
   x2 <- rev(x1); y2 <- rev(y1)
-  polycenter(x1, y1)            #=> 0.5 0.5
-  polycenter(x2, y2)            #=> 0.5 0.5
+  poly_center(x1, y1)            #=> 0.5 0.5
+  poly_center(x2, y2)            #=> 0.5 0.5
 }
 \keyword{ math }

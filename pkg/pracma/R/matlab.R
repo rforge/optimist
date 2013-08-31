@@ -11,7 +11,7 @@ matlab <- function() {
   accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,
   beep, blank, blkdiag, bsxfun,
   cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,
-      cot, coth, cross, csc, csch,
+      cot, coth, cross, csc, csch, cumtrapz,
   dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,
   eig, eigint, ellipj, ellipke, eps, erf, erfc, erfcinv, erfcx, erfi, erfinv,
       errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar,
