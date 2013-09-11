@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.5.5 (2013-09-11)
+
+    o L1linreg() L1 (a.k.a. LAD or median) linear regression.
+    o geo_median() geometric median (minimizes sum of distances).
+
 CHANGES IN VERSION 1.5.4 (2013-08-31)
 
     o rectint() rectangular intersection areas (Matlab style).
@@ -36,7 +41,7 @@ CHANGES IN VERSION 1.5.0 (2013-08-08)
 
 CHANGES IN VERSION 1.4.9 (2013-07-16)
 
-    o lapacian() now works in n dimensions, not only for n=2.
+    o lapacian() now works in n dimensions, not only for n = 2.
     o mldivide(), mrdivide() corrected a severe typo.
     o numderiv(), numdiff() start with h = 1/2 instead of h = 1.
     o figure() platform-independent by using dev.new().
