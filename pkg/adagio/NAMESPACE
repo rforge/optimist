@@ -15,15 +15,15 @@ export(mknapsack, assignment)
 export(transfinite)
 export(nelmin, nelminb)
 
+export(pureCMAES)
+
 export(qpspecial)
 export(linesearch_ww, linesearch_sw)
 # export(bfgsmin)
 # export(cgmin)
 # export(ralg)
 
-export(fnRosenbrock, grRosenbrock)
-export(fnRastrigin, grRastrigin)
-export(fnNesterov, grNesterov)
-export(fnHald, grHald)
+export(genTestfn)
+export(maxquad)
 
 # S3/S4 Methods
