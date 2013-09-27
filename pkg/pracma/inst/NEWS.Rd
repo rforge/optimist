@@ -863,14 +863,14 @@
     }
 }
 
-\section{Changes in Version 0.4.4 (2001-05-23)}{
+\section{Changes in Version 0.4.4 (2011-05-23)}{
     \itemize{
       \item Dirichlet's eta() and Riemann's zeta() function.
       \item rmserr() different accuracy measures; std_err() standard error.
     }
 }
 
-\section{Changes in Version 0.4.3 (2001-05-22)}{
+\section{Changes in Version 0.4.3 (2011-05-22)}{
     \itemize{
       \item polypow() and polytrans() for polynomials.
       \item polyApprox() polynomial approximation using Chebyshev.
@@ -878,7 +878,7 @@
     }
 }
 
-\section{Changes in Version 0.4.2 (2001-05-17)}{
+\section{Changes in Version 0.4.2 (2011-05-17)}{
     \itemize{
       \item segm_intersect() and segm_distance() segment distances.
       \item inpolygon().
