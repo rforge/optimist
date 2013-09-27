@@ -17,6 +17,8 @@ export(nelmin, nelminb)
 
 export(pureCMAES)
 
+export(fminviz, flineviz)
+
 export(qpspecial)
 export(linesearch_ww, linesearch_sw)
 # export(bfgsmin)

@@ -93,3 +93,5 @@ a_gr <- shor$gr
 n_gr <- function(x) adagio:::ns.grad(shor$fn, x)    # internal gradient
 a_gr(x); n_gr(x) 
 }
+
+\keyword{ testfunctions }
