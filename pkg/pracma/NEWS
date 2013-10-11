@@ -3,9 +3,14 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.5.7 (2013-10-11)
+
+    o runs.test() implements the statstical 'Runs test'.
+    o Corrected parameter 'waypoints' in cintegral().
+
 CHANGES IN VERSION 1.5.6 (2013-09-22)
 
-    o odregress() orthogonal distance (or: total least-squares) regression
+    o odregress() orthogonal distance (or: total least-squares) regression.
     o Changed maintainer name to its long form (CRAN request).
 
 CHANGES IN VERSION 1.5.5 (2013-09-11)
