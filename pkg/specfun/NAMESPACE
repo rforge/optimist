@@ -1,0 +1,14 @@
+##
+##  NAMESPACE
+##
+
+useDynLib(specfun)
+
+## Public routines
+#exportPattern("^[[:alpha:]]+")
+export(sp.gamma, sp.lgamma)
+export(sp.beta)
+export(sp.psi)
+export(sp.hypergeom)
+
+## S3 and S4 Methods
