@@ -1,0 +1,16 @@
+------------------------------------------------------------------------------
+  SPECFUN                                                               NEWS
+------------------------------------------------------------------------------
+
+
+CHANGES IN VERSION 0.2-0 (2013-11-7)
+
+    o Initialized the package with the following functions:
+      (lower and upper incomplete) Gamma function, 
+      (incomplete) Beta function, Psi function, and
+      Gauss' Hypergeometric function 2F1
+    o NEWS added and submitted to CRAN.
+
+CHANGES IN VERSION 0.1-0 (2013-11-3)
+
+    o Setup package `specfun' and submitted to R-Forge

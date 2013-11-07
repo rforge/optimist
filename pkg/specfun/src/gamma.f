@@ -171,3 +171,48 @@ C
 20      IF (KF.EQ.1) GL=DEXP(GL)
         RETURN
         END
+
+
+        SUBROUTINE INCOG(A,X,GIN,GIM,GIP)
+C
+C       ===================================================
+C       Purpose: Compute the incomplete gamma function
+C                g(a,x), G(a,x) and P(a,x)
+C       Input :  a   --- Parameter ( a > 170 )
+C                x   --- Argument 
+C       Output:  GIN --- g(a,x)
+C                GIM --- G(a,x)
+C                GIP --- P(a,x)
+C       Routine called: GAMMA for computing G(x)
+C       ===================================================
+C
+        IMPLICIT DOUBLE PRECISION (A-H,O-Z)
+        XAM=-X+A*DLOG(X)
+        IF (X.EQ.0.0) THEN
+           GIN=0.0
+           CALL GAMMA(A,GA)
+           GIM=GA
+           GIP=0.0
+        ELSE IF (X.LE.1.0+A) THEN
+           S=1.0D0/A
+           R=S
+           DO 10 K=1,60
+              R=R*X/(A+K)
+              S=S+R
+              IF (DABS(R/S).LT.1.0D-15) GO TO 15
+10         CONTINUE
+15         GIN=DEXP(XAM)*S
+           CALL GAMMA(A,GA)
+           GIP=GIN/GA
+           GIM=GA-GIN
+        ELSE IF (X.GT.1.0+A) THEN
+           T0=0.0D0
+           DO 20 K=60,1,-1
+              T0=(K-A)/(1.0D0+K/(X+T0))
+20         CONTINUE
+           GIM=DEXP(XAM)/(X+T0)
+           CALL GAMMA(A,GA)
+           GIN=GA-GIM
+           GIP=1.0D0-GIM/GA
+        ENDIF
+        END

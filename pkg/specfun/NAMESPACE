@@ -6,8 +6,8 @@ useDynLib(specfun)
 
 ## Public routines
 #exportPattern("^[[:alpha:]]+")
-export(sp.gamma, sp.lgamma)
-export(sp.beta)
+export(sp.gamma, sp.lgamma, sp.gammainc)
+export(sp.beta, sp.betainc)
 export(sp.psi)
 export(sp.hypergeom)
 

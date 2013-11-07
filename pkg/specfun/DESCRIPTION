@@ -1,12 +1,12 @@
 Package: specfun
 Type: Package
 Title: Special Functions
-Version: 0.1-7
-Date: 2013-11-04
+Version: 0.2-0
+Date: 2013-11-07
 Author: Hans Werner Borchers
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Description:
-    Special Functions in Mathematics and Physics.
+    Special Functions from Mathematics and Physics.
 License: GPL (>= 3)
 LazyLoad: yes
 LazyData: yes
