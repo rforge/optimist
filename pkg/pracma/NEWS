@@ -3,9 +3,9 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.5.8 (2013-10-20)
+CHANGES IN VERSION 1.5.8 (2013-11-20)
 
-    o Removed pltcross().
+    o Removed pltcross() and kmeanspp().
 
 CHANGES IN VERSION 1.5.7 (2013-10-11)
 
@@ -428,7 +428,7 @@ CHANGES IN VERSION 0.8.8 (2011-12-06)
 CHANGES IN VERSION 0.8.7 (2011-11-30)
 
     o deg2rad(), rad2deg().
-    o figure() Matlab style.
+    o figure() Matlab style and pltcross() plotting crosses.
 
 CHANGES IN VERSION 0.8.6 (2011-11-21)
 

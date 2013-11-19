@@ -5,13 +5,13 @@
 
 \section{Changes in Version 1.5.8 (2013-08-20)}{
     \itemize{
-      \item Removed pltcross().
+      \item Removed pltcross() and kmeanspp().
     }
 }
 
 \section{Changes in Version 1.5.7 (2013-10-11)}{
     \itemize{
-      \item runs.test() implements the statistical 'Runs test'.
+      \item runs.test() implements the statistical `Runs test'.
       \item Corrected parameter `waypoints' in cintegral().
     }
 }
@@ -576,7 +576,7 @@
 \section{Changes in Version 0.8.7 (2011-11-30)}{
     \itemize{
       \item deg2rad(), rad2deg().
-      \item figure() Matlab style.
+      \item figure() Matlab style and pltcross() plotting crosses.
     }
 }
 
