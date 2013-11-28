@@ -4,7 +4,7 @@ Title: Practical Numerical Math Functions
 Version: 1.5.8
 Date: 2013-11-28
 Author: Hans Werner Borchers
-Maintainer: Hans W Borchers <hwborchers@googlemail.com>
+Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1)
 Description:
     Functions from numerical analysis and linear algebra, numerical 
