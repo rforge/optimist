@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.6.0 (2013-12-06)
+
+    o integral3() now handles functions as inner interval limits.
+    o poly_crossings() calculates crossing points of two polygons.
+    o erfz() complex error function vectorized (thanks to Michael Lachmann).
+
 CHANGES IN VERSION 1.5.9 (2013-11-30)
 
     o muller() implements Muller's root-finding method [Mueller, 1956],
