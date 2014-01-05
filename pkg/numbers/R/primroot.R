@@ -14,8 +14,8 @@ modpower <- function(n, k, m) {
     b <- n %% m
     if (b > 9e7) {
         # warning("Integer overflow: value of base 'n' is too big.")
-        n <- as.bigz(n); m <- as.bigz(m)
-        k <- as.bigz(k)
+        n <- gmp::as.bigz(n); m <- gmp::as.bigz(m)
+        k <- gmp::as.bigz(k)
         b <- n %% m
     }
     r <- 1

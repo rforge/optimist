@@ -10,7 +10,7 @@ primeFactors <- function(n) {
     }
     if (n < 4) return(n) 
 
-    if (n < 2^53) {
+    if (n <= 2^53 - 1) {
         f <- c()
         p <- Primes(floor(sqrt(n)))
         d <- which(n %% p == 0)
@@ -25,7 +25,8 @@ primeFactors <- function(n) {
         if (n > 1) f <- c(f, n)
 
     } else {
-        f <- gmp::factorize(n)
+        warning("Argument 'n' too big: use 'gmp::factorize()' for this.")
+        f <- NA
     }
 
     return(f)

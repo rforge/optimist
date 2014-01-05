@@ -2,6 +2,10 @@
   numbers                                                               NEWS
 ------------------------------------------------------------------------------
 
+Version 0.4.5 (2014-01-03)
+
+  o Imports 'gmp'.
+  o Primes() avoids creating additional memory, doubled its speed.
 
 Version 0.4.3 (2013-11-16)
 
@@ -10,7 +14,6 @@ Version 0.4.3 (2013-11-16)
 
 Version 0.4.1 (2013-03-30)
 
-  o Package now depends on 'gmp'.
   o mersenne() computes Mersenne prime numbers.
   o Renamed factorize() to primeFactors() (avoid masking ...)
 
