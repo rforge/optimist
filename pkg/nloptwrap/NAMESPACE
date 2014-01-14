@@ -2,6 +2,10 @@
 ### NAMESPACE
 ###
 
+## Depending on packages
+# importFrom(nloptr, nloptr.default.options)
+import(nloptr)
+
 ## Public routines
 export(nl.grad, nl.jacobian)
 export(nl.opts)

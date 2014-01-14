@@ -2,6 +2,10 @@
   nloptwrap                                                             NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 0.5-7 (2014-01-14)
+
+    o The package imports 'nloptr' in the NAMESPACE file.
+
 CHANGES IN VERSION 0.5-6 (2014-01-14)
 
     o Unchanged version, version number increased to be able

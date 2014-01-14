@@ -15,7 +15,6 @@ mma <- function(x0, fn, gr = NULL, lower = NULL, upper = NULL,
         gr <- function(x) .gr(x, ...)
     }
 
-
     if (!is.null(hin)) {
         .hin <- match.fun(hin)
         hin <- function(x) (-1) * .hin(x)   # change  hin >= 0  to  hin <= 0 !
