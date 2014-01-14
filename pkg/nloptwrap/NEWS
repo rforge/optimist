@@ -2,8 +2,12 @@
   nloptwrap                                                             NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 0.5-6 (2014-01-14)
 
-CHANGES IN VERSION 0.5.5 (2013-08-06)
+    o Unchanged version, version number increased to be able
+      to resubmit to CRAN -- last version got rejected.
+
+CHANGES IN VERSION 0.5-5 (2013-08-06)
 
     o Added agmented Lagrangian approach for the following local solvers:
       COBYLA, LBFGS, MMA, and SLSQP
