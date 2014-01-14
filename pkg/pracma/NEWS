@@ -2,9 +2,10 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-CHANGES IN VERSION 1.6.1 (2013-12-25)
+CHANGES IN VERSION 1.6.1 (2014-01-14)
 
-    o Removed NEWS.Rd and NEWS.pdf in favour of ChangeLog.
+    o samp_entropy() complements approx_entropy() for short time series.
+    o Removed NEWS.Rd and NEWS.pdf in favour of NEWS.
 
 CHANGES IN VERSION 1.6.0 (2013-12-06)
 
