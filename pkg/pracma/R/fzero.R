@@ -1,21 +1,29 @@
 ##
-##  f z e r o . R
+##  f z e r o . R  Brent-Dekker Algorithm
 ##
 
 
-fzero <- function(f, x0, ..., maxiter = 100, tol = .Machine$double.eps^(1/2)) {
-    if (!is.numeric(x0) || length(x0) > 2)
-        stop("Argument 'x0' must be a scalar or a vector of length 2.")
+fzero <- function(f, x, ..., maxiter = 100, tol = .Machine$double.eps^(1/2)) {
+    if (!is.numeric(x) || length(x) > 2)
+        stop("Argument 'x' must be a scalar or a vector of length 2.")
 
-    if (length(x0) == 2) {
-        zero <- zeroin(f, x0, ..., tol = tol)
+    err <- try(fun <- match.fun(f), silent = TRUE)
+    if (class(err) == "try-error") {
+        stop("Argument function 'f' not known in parent environment.")
     } else {
-        if (x0 != 0) dx <- x0/50
-        else         dx <-  1/50
+        f <- function(x) fun(x, ...)
+    }
+
+    if (length(x) == 2) {
+        zero <- brent_dekker(f, x[1], x[2], maxiter = maxiter, tol = tol)
+
+    } else {
+        if (x != 0) dx <- x/50
+        else        dx <- 1/50
         sqrt2 <- sqrt(2)
 
-        a <- b <- x0
-        fa <- fb <- f(x0, ...)
+        a <- b <- x
+        fa <- fb <- f(x)
         if (fa == 0) return(list(x = a, fval = fa))
 
         iter <- 0
@@ -23,102 +31,90 @@ fzero <- function(f, x0, ..., maxiter = 100, tol = .Machine$double.eps^(1/2)) {
             iter <- iter + 1
             dx <- sqrt2 * dx
             a  <- a - dx
-            fa <- f(a, ...)
+            fa <- f(a)
             if (fa * fb <= 0) break
             b  <- b + dx
-            fb <- f(b, ...)
+            fb <- f(b)
         }
         if (iter == maxiter) {
             warning("Maximum number of iterations exceeded; no zero found.")
             return(list(x = NA, fval = NA))
         }
-        zero <- zeroin(f, c(a, b), ..., tol = tol)
+        zero <- brent_dekker(f, a, b, maxiter = maxiter, tol = tol)
     }
-    x.zero <- zero$root
-    f.zero <- zero$f.root
 
-    return(list(x = x.zero, fval = f.zero))
+    return(list(x = zero$root, fval = zero$f.root))
 }
 
 
-zeroin <- function(f, interval, ..., tol = .Machine$double.eps^(1/2)) {
-    if (!is.numeric(interval) || length(interval) != 2)
-        stop("Argument 'interval' must be a numeric vector of length 1.")
+brent_dekker <- function(f, a, b,
+                        maxiter = 100, tol = .Machine$double.eps^0.5)
+# Brent and Dekker's root finding method,
+# based on bisection, secant method and quadratic interpolation
+{
+    stopifnot(is.numeric(a), is.numeric(b),
+              length(a) == 1, length(b) == 1)
 
-    a <- interval[1]; fa <- f(a, ...); nf <- 1
-    if (fa == 0)
-        return(list(root = a, f.root = fa, f.calls = nf, estim.prec = 0.0))
-    b <- interval[2]; fb <- f(b, ...); nf <- nf + 1
-    if (fb == 0)
-        return(list(root = b, f.root = fb, f.calls = nf, estim.prec = 0.0))
-    if (sign(fa) == sign(fb))
-        stop("Function 'f' must change sign on the interval.")
+	x1 <- a; f1 <- f(x1)
+	if (f1 == 0) return(list(root = a, f.root = 0, f.calls = 1, estim.prec = 0))
+	x2 <- b; f2 <- f(x2)
+	if (f2 == 0) return(list(root = b, f.root = 0, f.calls = 1, estim.prec = 0))
+	if (f1*f2 > 0.0)
+	    stop("Brent-Dekker: Root is not bracketed in [a, b].")
 
-    # Initialize
-    cc <- a
-    fc <- fa
-    d  <- b - cc
-    e <- d
+	x3 <- 0.5*(a+b)
+	# Beginning of iterative loop
+	niter <- 1
+	while (niter <= maxiter) {
+		f3 <- f(x3)
+		if (abs(f3) < tol) {
+		    x0 <- x3
+		    break
+		}
 
-    # Main loop
-    while (fb != 0) {
-        if (sign(fa) == sign(fb)) {
-           a <- cc; fa <- fc
-           d <- b - cc;  e <- d
-        }
-        if (abs(fa) < abs(fb)) {
-           cc <- b;  b <- a;   a <- cc
-           fc <- fb; fb <- fa; fa <- fc
-        }
+		# Tighten brackets [a, b] on the root
+		if (f1*f3 < 0.0) b <- x3 else a <- x3
+		if ( (b-a) < tol*max(abs(b), 1.0) ) {
+		    x0 <- 0.5*(a + b)
+		    break
+	    }
 
-        # Convergence test and possible exit
-        m <- 0.5 * (a - b)
-        tol <- 2.0 * tol * max(abs(b), 1.0)
-        if (abs(m) <= tol || (fb == 0.0)) {
-           break
-        }
+		# Try quadratic interpolation
+		denom <- (f2 - f1)*(f3 - f1)*(f2 - f3)
+		numer <- x3*(f1 - f2)*(f2 - f3 + f1) + f2*x1*(f2 - f3) + f1*x2*(f3 - f1)
+		# if denom==0, push x out of bracket to force bisection
+		if (denom == 0) {
+			dx <- b - a
+		} else {
+			dx <- f3*numer/denom
+		}
 
-        # Choose bisection or interpolation
-        if (abs(e) < tol || abs(fc) <= abs(fb)) {
-           # Bisection
-           d <- m
-           e <- m
-        } else {
-           # Interpolation
-           s <- fb/fc
-           if (a == cc) {
-              # Linear interpolation (secant)
-              p <- 2.0 * m * s
-              q <- 1.0 - s
-           } else {
-              # Inverse quadratic interpolation
-              q <- fc/fa
-              r <- fb/fa
-              p <- s * (2.0 * m * q * (q - r) - (b - cc) * (r - 1.0))
-              q <- (q - 1.0) * (r - 1.0) * (s - 1.0)
-           }
+		x <- x3 + dx
+		# If interpolation goes out of bracket, use bisection.
+		if ((b - x)*(x - a) < 0.0) {
+			dx <- 0.5*(b - a)
+			x  <- a + dx;
+		}
 
-           if (p > 0) q <- -q else p <- -p
-           # Is interpolated point acceptable
-           if (2.0*p < 3.0*m*q - abs(tol*q) && p < abs(0.5*e*q)) {
-              e <- d
-              d <- p/q
-           } else {
-              d <- m
-              e <- m
-           }
-        }
+		# Let x3 <-- x & choose new x1, x2 so that x1 < x3 < x2.
+		if (x1 < x3) {
+			x2 <- x3; f2 <- f3
+		} else {
+			x1 <- x3; f1 <- f3
+		}
 
-        # Next point
-        cc <- b
-        fc <- fb
-        if (abs(d) > tol) {
-           b <- b + d
-        } else {
-           b <- b - sign(b-a) * tol
-        }
-        fb <- f(b, ...); nf <- nf + 1
-    }
+		niter <- niter + 1
+		if (abs(x - x3) < tol) {
+		    x0 <- x
+		    break
+	    }
+		x3 <- x;
+	}
 
-    return(list(root = b, f.root = fb, f.calls = nf, estim.prec = m))
+    if (niter > maxiter)
+        warning("Maximum numer of iterations, 'maxiter', has been reached.")
+
+    prec <- min(abs(x1-x3), abs(x2-x3))
+    return(list(root = x0, f.root = f(x0),
+                f.calls = niter+2, estim.prec = prec))
 }
