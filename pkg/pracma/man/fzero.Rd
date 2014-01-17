@@ -55,7 +55,7 @@ brent_dekker(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
   in Octave uses a more sophisticated approach with cubic interpolation.
 }
 \seealso{
-  \code{\link{uniroot}}, \code{\link{ridder}}, \code{\link{newtonRaphson}}
+  \code{\link{uniroot}}, \code{\link{ridders}}, \code{\link{newtonRaphson}}
 }
 \examples{
 fzero(sin, 3)                    # 3.141593
