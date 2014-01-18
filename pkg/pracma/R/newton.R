@@ -18,6 +18,10 @@ newtonRaphson <- function(fun, x0, dfun = NULL, ...,
 	diff  <- tol + 1
 	while (diff >= tol && niter <= maxiter) {
 		niter <- niter + 1
+        if (dfx == 0) {
+            warning("Slope is zero: no further improvement possible.")
+            break
+        }
 		diff  <- - fx/dfx
 		x <- x + diff
 		diff <- abs(diff)

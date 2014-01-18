@@ -1,5 +1,5 @@
 ##
-##  f z e r o . R  Brent-Dekker Algorithm
+##  f z e r o . R
 ##
 
 
@@ -14,107 +14,208 @@ fzero <- function(f, x, ..., maxiter = 100, tol = .Machine$double.eps^(1/2)) {
         f <- function(x) fun(x, ...)
     }
 
+    zin <- NULL
     if (length(x) == 2) {
-        zero <- brent_dekker(f, x[1], x[2], maxiter = maxiter, tol = tol)
+        if (x[1] <= x[2]) {
+            a <- x[1]; b <- x[2]
+        } else {
+            warning("Left endpoint bigger than right one: exchanged points.")
+            a <- x[2]; b <- x[1]
+        }
+        zin <- .zeroin(f, a, b, maxiter = maxiter, tol = tol)
 
-    } else {
-        if (x != 0) dx <- x/50
-        else        dx <- 1/50
-        sqrt2 <- sqrt(2)
-
-        a <- b <- x
-        fa <- fb <- f(x)
+    } else {  # try to get b
+        a <- x; fa <- f(a)
         if (fa == 0) return(list(x = a, fval = fa))
-
-        iter <- 0
-        while (fa * fb > 0 && iter < maxiter) {
-            iter <- iter + 1
-            dx <- sqrt2 * dx
-            a  <- a - dx
-            fa <- f(a)
-            if (fa * fb <= 0) break
-            b  <- b + dx
+        if (a == 0) {
+            aa <- 1
+        } else {
+            aa <- a
+        }
+        bb <- c(0.9*aa, 1.1*aa, aa-1, aa+1, 0.5*aa, 1.5*aa,
+                -aa, 2*aa, -10*aa, 10*aa)
+        for (b in bb) {
             fb <- f(b)
+            if (fb == 0) return(list(x = b, fval = fb))
+            if (sign(fa) * sign(fb) < 0) {
+                zin <- .zeroin(f, a, b, maxiter = maxiter, tol = tol)
+                break
+            }
         }
-        if (iter == maxiter) {
-            warning("Maximum number of iterations exceeded; no zero found.")
-            return(list(x = NA, fval = NA))
-        }
-        zero <- brent_dekker(f, a, b, maxiter = maxiter, tol = tol)
     }
 
-    return(list(x = zero$root, fval = zero$f.root))
+    if (is.null(zin)) {
+        warning("No interval w/ function 'f' changing sign was found.")
+        return(list(x = NA, fval = NA))
+    } else {
+        x1 <- zin$bra[1]; x2 <- zin$bra[2]
+        f1 <- zin$ket[1]; f2 <- zin$ket[2]
+        x0 <- sum(zin$bra)/2; f0 <- f(x0)
+        if (f0 < f1 && f0 < f2) {
+            return(list(x = x0, fval = f0))
+        } else if (f1 <= f2) {
+            return(list(x = x1, fval = f1))
+        } else {
+            return(list(x = x2, fval = f2))
+        }
+    }
 }
 
 
-brent_dekker <- function(f, a, b,
-                        maxiter = 100, tol = .Machine$double.eps^0.5)
-# Brent and Dekker's root finding method,
-# based on bisection, secant method and quadratic interpolation
-{
+.zeroin <- function(f, a, b, maxiter = 100, tol = 1e-07) {
     stopifnot(is.numeric(a), is.numeric(b),
-              length(a) == 1, length(b) == 1)
+                length(a) == 1, length(b) == 1)
 
-	x1 <- a; f1 <- f(x1)
-	if (f1 == 0) return(list(root = a, f.root = 0, f.calls = 1, estim.prec = 0))
-	x2 <- b; f2 <- f(x2)
-	if (f2 == 0) return(list(root = b, f.root = 0, f.calls = 1, estim.prec = 0))
-	if (f1*f2 > 0.0)
-	    stop("Brent-Dekker: Root is not bracketed in [a, b].")
+    mu <- 0.5
+    eps <- .Machine$double.eps
+    info <- 0
 
-	x3 <- 0.5*(a+b)
-	# Beginning of iterative loop
-	niter <- 1
-	while (niter <= maxiter) {
-		f3 <- f(x3)
-		if (abs(f3) < tol) {
-		    x0 <- x3
-		    break
-		}
+    ## Set up and prepare ...
+    if (a > b) {
+        tt <- a; a <- b; b <- tt
+    }
+    fa <- f(a); fb <- f(b) 
+    nfev <- 2
+    if (sign(fa) * sign(fb) > 0)
+        stop("Function must differ in sign at interval endpoints.")
 
-		# Tighten brackets [a, b] on the root
-		if (f1*f3 < 0.0) b <- x3 else a <- x3
-		if ( (b-a) < tol*max(abs(b), 1.0) ) {
-		    x0 <- 0.5*(a + b)
-		    break
-	    }
+    itype <- 1
+    if (abs(fa) < abs(fb)) {
+        u <- a; fu <- fa
+    } else {
+        u <- b; fu <- fb
+    }
+    d <- e <- u
+    fd <- fe <- fu
 
-		# Try quadratic interpolation
-		denom <- (f2 - f1)*(f3 - f1)*(f2 - f3)
-		numer <- x3*(f1 - f2)*(f2 - f3 + f1) + f2*x1*(f2 - f3) + f1*x2*(f3 - f1)
-		# if denom==0, push x out of bracket to force bisection
-		if (denom == 0) {
-			dx <- b - a
-		} else {
-			dx <- f3*numer/denom
-		}
+    mba <- mu * (b - a)
+    niter <- 0
+    while (niter < maxiter) {
+        if (itype == 1) {
+            # The initial test
+            if ((b-a) <= 2*(2*abs(u)*eps + tol)) {
+                x <- u; fval <- fu
+                info <- 1
+                break
+            }
+            if (abs (fa) <= 1e3*abs(fb) && abs(fb) <= 1e3*abs(fa)) {
+                # Secant step.
+                c <- u - (a - b) / (fa - fb) * fu
+            } else {
+                # Bisection step.
+                c <- 0.5 * (a + b)
+            }
+            d <- u; fd <- fu
+            itype <- 5
 
-		x <- x3 + dx
-		# If interpolation goes out of bracket, use bisection.
-		if ((b - x)*(x - a) < 0.0) {
-			dx <- 0.5*(b - a)
-			x  <- a + dx;
-		}
+        } else if (itype == 2 || itype == 3) {
+            l <- length(unique(c(fa, fb, fd, fe)))
+            if (l == 4) {
+                # Inverse cubic interpolation.
+                q11 <- (d - e) * fd / (fe - fd)
+                q21 <- (b - d) * fb / (fd - fb)
+                q31 <- (a - b) * fa / (fb - fa)
+                d21 <- (b - d) * fd / (fd - fb)
+                d31 <- (a - b) * fb / (fb - fa)
+                q22 <- (d21 - q11) * fb / (fe - fb)
+                q32 <- (d31 - q21) * fa / (fd - fa)
+                d32 <- (d31 - q21) * fd / (fd - fa)
+                q33 <- (d32 - q22) * fa / (fe - fa)
+                c <- a + q31 + q32 + q33;
+            }
+            if (l < 4 || sign(c - a) * sign(c - b) > 0) {
+                # Quadratic interpolation + newton
+                a0 <- fa
+                a1 <- (fb - fa)/(b - a)
+                a2 <- ((fd - fb)/(d - b) - a1) / (d - a)
+                # Modification 1: this is simpler and does not seem to be worse.
+                c <- a - a0/a1
+                if (a2 != 0) {
+                    c <- a - a0/a1
+                    for (i in 1:itype) {
+                        pc <- a0 + (a1 + a2*(c - b))*(c - a)
+                        pdc <- a1 + a2*(2*c - a - b)
+                        if (pdc == 0) {
+                            c <- a - a0/a1
+                            break
+                        }
+                        c <- c - pc/pdc
+                    }
+                }
+            }
+            itype <- itype + 1 
+            
+        } else if (itype == 4) {
+            # Double secant step.
+            c <- u - 2*(b - a)/(fb - fa)*fu
+            # Bisect if too far.
+            if (abs (c - u) > 0.5*(b - a)) {
+                c <- 0.5 * (b + a)
+            }
+            itype <- 5
 
-		# Let x3 <-- x & choose new x1, x2 so that x1 < x3 < x2.
-		if (x1 < x3) {
-			x2 <- x3; f2 <- f3
-		} else {
-			x1 <- x3; f1 <- f3
-		}
+        } else if (itype == 5) {
+            # Bisection step.
+            c <- 0.5 * (b + a)
+            itype <- 2
+        }
 
-		niter <- niter + 1
-		if (abs(x - x3) < tol) {
-		    x0 <- x
-		    break
-	    }
-		x3 <- x;
-	}
+        # Don't let c come too close to a or b.
+        delta <- 2 * 0.7 * (2 * abs(u) * eps + tol)
+        if ((b - a) <= 2*delta) {
+            c <- (a + b)/2
+        } else {
+            c <- max(a + delta, min(b - delta, c))
+        }
 
-    if (niter > maxiter)
-        warning("Maximum numer of iterations, 'maxiter', has been reached.")
+        # Calculate new point.
+        x <- c;
+        fval <- fc <- f(c)
+        niter <- niter + 1; nfev <- nfev + 1
 
-    prec <- min(abs(x1-x3), abs(x2-x3))
-    return(list(root = x0, f.root = f(x0),
-                f.calls = niter+2, estim.prec = prec))
+        # Mod2: skip inverse cubic interpolation if nonmonotonicity is detected.
+        if (sign(fc - fa) * sign(fc - fb) >= 0) {
+          ## The new point broke monotonicity. 
+          ## Disable inverse cubic.
+          fe <- fc
+        } else {
+          e <- d; fe <- fd
+        }
+
+        # Bracketing.
+        if (sign(fa) * sign(fc) < 0) {
+            d <- b; fd <- fb
+            b <- c; fb <- fc
+        } else if (sign(fb) * sign(fc) < 0) {
+            d <- a; fd <- fa
+            a <- c; fa <- fc
+        } else if (fc == 0) {
+            a <- b <- c; fa <- fb <- fc
+            info <- 1
+            break
+        } else {
+            # This should never happen.
+            stop("zeroin: zero point could not be bracketed")
+        }
+
+        if (abs(fa) < abs(fb)) {
+          u <- a; fu <- fa
+        } else {
+          u <- b; fu <- fb
+        }
+        if (b - a <= 2*(2 * abs (u) * eps + tol)) {
+          info <- 1
+          break
+        }
+
+        # Skip bisection step if successful reduction.
+        if (itype == 5 && (b - a) <= mba) {
+          itype <- 2
+        }
+        if (itype == 2) {
+          mba <- mu * (b - a)
+        }
+    } # endwhile
+
+    return(list(bra = c(a, b), ket = c(fa, fb), niter = niter, info = info))
 }
