@@ -2,12 +2,18 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.6.3 (2014-01-25)
+
+    o lambertWp() improved inner accuracy from 1e-12 to 1e-15.
+    o complexstepJ() renamed to jacobian_csd(); introduced grad_csd().
+    o hessian_csd() applies Richardson's method as the second step.
+
 CHANGES IN VERSION 1.6.2 (2014-01-19)
 
     o Removed zeroin(); for fzero() a variation of Brent-Dekker is used,
       that applies cubic instead of quadratic interpolation.
     o brent_dekker() renamed brentDekker(); it returns a list now.
-    o corrected an error in newtonRaphson.
+    o corrected an oversight in newtonRaphson.
 
 CHANGES IN VERSION 1.6.1 (2014-01-14)
 

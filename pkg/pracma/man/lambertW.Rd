@@ -43,7 +43,7 @@ lambertWp(z)
 \examples{
 ##  Examples
 lambertWp(0)          #=> 0
-lambertWp(1)          #=> 0.5671432904...  Omega constant
+lambertWp(1)          #=> 0.5671432904097838...  Omega constant
 lambertWp(exp(1))     #=> 1
 lambertWp(-log(2)/2)  #=> -log(2)
 
