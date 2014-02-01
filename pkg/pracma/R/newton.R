@@ -35,6 +35,30 @@ newtonRaphson <- function(fun, x0, dfun = NULL, ...,
 }
 
 
+halley <- function(fun, x0,
+                   maxiter = 100, tol = .Machine$double.eps^0.5) {
+    f0 <- fun(x0)
+    if (abs(f0) < tol^(3/2))
+        return(list(root = x0, f.root = f0, maxiter = 0, estim.prec = 0))
+
+    f1 <- fderiv(fun, x0, 1)
+    f2 <- fderiv(fun, x0, 2)
+    x1 <- x0 - 2*f0*f1 / (2*f1^2 - f0*f2)
+
+    niter = 1
+    while (abs(x1 - x0) > tol && niter < maxiter) {
+        x0 <- x1
+        f0 <- fun(x0)
+        f1 <- fderiv(fun, x0, 1)
+        f2 <- fderiv(fun, x0, 2)
+        x1 <- x0 - 2*f0*f1 / (2*f1^2 - f0*f2)
+        niter <- niter + 1
+    }
+    return(list(root = x1, f.root = fun(x1),
+                iter = niter, estim.prec = abs(x1 - x0)))
+}
+
+
 newtonHorner <- function(p, x0, 
                          maxiter = 50, tol = .Machine$double.eps^0.5) {
     n <- length(p) - 1
