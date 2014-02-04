@@ -5,6 +5,7 @@
 CHANGES IN VERSION 1.6.4 (2014-02-02)
 
     o halley() Halley's variant of the Newton-Raphson method.
+    o numderiv() corrected Richardson's method by breaking the loop.
 
 CHANGES IN VERSION 1.6.3 (2014-01-25)
 
