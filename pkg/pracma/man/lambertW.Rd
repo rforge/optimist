@@ -1,5 +1,6 @@
 \name{lambertWp}
 \alias{lambertWp}
+\alias{D_lambertWp}
 \title{
   Lambert's W Function
 }
@@ -8,6 +9,8 @@
 }
 \usage{
 lambertWp(z)
+
+D_lambertWp(z) 
 }
 \arguments{
   \item{z}{Numeric vector of real numbers \code{>= -1/e}.}
@@ -20,7 +23,10 @@ lambertWp(z)
   The value is calculated using an iteration that stems from applying
   Newton's method. This iteration is quite fast.
 
-  The function is not really vectorized, but at least returns a vector of
+  \code{D_lambertWp} returns the exact derivative of \code{lambertWp},
+  based on the fact that \code{lambertWp} is the inverse of \code{x*exp(x)}.
+
+  The functions is not really vectorized, but at least return a vector of
   values when presented with a numeric vector of length \code{>= 2}.
 }
 \value{

@@ -25,3 +25,15 @@ lambertWp <- function(z) {
         sapply(z, lambertWp)
     }
 }
+
+D_lambertWp <- function(z) {
+    if (!is.numeric(z))
+        stop("Argument 'z' must be a numeric (real) vector.")
+
+    if (length(z) == 1) {
+        zw <- lambertWp(z)
+        return( 1 / (1+zw) / exp(zw) )
+    } else {
+        sapply(z, D_lambertWp)
+    }
+}
