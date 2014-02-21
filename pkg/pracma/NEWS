@@ -2,6 +2,10 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.6.5 (2014-02-21)
+
+    o lsqnonneg() changed to an active-set approach.
+
 CHANGES IN VERSION 1.6.4 (2014-02-05)
 
     o halley() Halley's variant of the Newton-Raphson method.
