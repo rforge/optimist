@@ -25,7 +25,7 @@ bisect <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
 }
 
 
-regulaFalsi <- function(f, a, b, maxiter=100, tol=.Machine$double.eps^0.5)
+regulaFalsi <- function(f, a, b, maxiter = 100, tol = .Machine$double.eps^0.5)
 #Regula Falsi search for zero of a univariate function in a bounded interval
 {
 	x1 <- a;      x2 <- b
@@ -78,4 +78,29 @@ secant <- function(fun, a, b, ...,
 		warning("Maximum number of iterations 'maxiter' was reached.")
 	}
 	return(list(root=x3, f.root=f3, iter=n, estim.prec=2*abs(x3-x2)))
+}
+
+
+bisect2 <- function(f, a, b, maxiter = 100)
+# Bisection search, trimmed for exactness, not no. of iterations
+{
+	if (f(a)*f(b) > 0) stop("f(a) and f(b) must have different signs.")
+	x1 <- min(a, b); x2 <- max(a,b)
+	xm <- (x1+x2)/2.0
+	n <- 1
+	while (x1 < xm && xm < x2) {
+		n <- n+1
+		if (sign(x1) != sign(x2) && x1 != 0 && x2 != 0) {
+		    xm <- 0.0
+		    if (f(xm) == 0.0) {x1 <- x2 <- xm; break}
+		}
+		if (sign(f(x1)) != sign(f(xm))) {
+			x2 <- xm
+		} else {
+			x1 <- xm
+		}
+		xm <- (x1 + x2) / 2.0
+		if (n >= maxiter) break
+	}
+	return(list(root=xm, f.root=f(xm), iter=n, estim.prec=abs(x1-x2)))
 }

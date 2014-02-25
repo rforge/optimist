@@ -2,9 +2,10 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
-CHANGES IN VERSION 1.6.5 (2014-02-21)
+CHANGES IN VERSION 1.6.5 (2014-02-24)
 
     o lsqnonneg() changed to an active-set approach.
+    o bisect2() trimmed bisection to return almost exact results.
 
 CHANGES IN VERSION 1.6.4 (2014-02-05)
 
