@@ -2,14 +2,18 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.6.7 (2014-05-18)
+
+    o [tbd.]
+
 CHANGES IN VERSION 1.6.6 (2014-04-12)
 
-    o Corrected rref() (pointed out by Peter Audano).
+    o Corrected rref() (as pointed out by Peter Audano).
 
 CHANGES IN VERSION 1.6.5 (2014-02-24)
 
     o lsqnonneg() changed to an active-set approach.
-    o bisect2() trimmed bisection to return almost exact results.
+    o bisect() trimmed bisection to return almost exact results.
 
 CHANGES IN VERSION 1.6.4 (2014-02-05)
 
