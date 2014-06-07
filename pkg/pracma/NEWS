@@ -2,6 +2,11 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.6.8 (2014-06-07)
+
+    o nelmin() a more efficient and accurate version of Nelder-Mead.
+    o nelminb() Nelder-Mead in bounded regions (applies a transformation).
+
 CHANGES IN VERSION 1.6.7 (2014-05-23)
 
     o trisolve() stopping for singular tridiagonal matrices.
