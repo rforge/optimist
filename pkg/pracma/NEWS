@@ -2,6 +2,10 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.6.9 (2014-06-14)
+
+    o Version 1.6.8 "Failed to build" on R-Forge.
+
 CHANGES IN VERSION 1.6.8 (2014-06-07)
 
     o nelmin() a more efficient and accurate version of Nelder-Mead.
