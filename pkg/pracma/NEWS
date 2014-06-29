@@ -2,9 +2,15 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+CHANGES IN VERSION 1.7.0 (2014-06-30)
+
+    o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
+    o ode78() ODE solver using Fehlberg (7,8) coefficients.
+
 CHANGES IN VERSION 1.6.9 (2014-06-14)
 
     o Version 1.6.8 "Failed to build" on R-Forge.
+      [Maybe it's time to move pracma to a github repository.]
 
 CHANGES IN VERSION 1.6.8 (2014-06-07)
 
