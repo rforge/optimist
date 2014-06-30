@@ -8,9 +8,9 @@
   Provides complex line integrals.
 }
 \usage{
-line_integral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
+line_integral(fun, waypoints, method = NULL, reltol = 1e-8, ...)
 
-cintegral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
+cintegral(fun, waypoints, method = NULL, reltol = 1e-8, ...)
 }
 \arguments{
   \item{fun}{integrand, complex (vectorized) function.}
@@ -40,18 +40,18 @@ cintegral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
 points <- c(0, 1+1i, 1-1i, 0)           # direction mathematically negative
 f <- function(z) 1 / (2*z -1)
 I <- line_integral(f, points)
-abs(I - (0-pi*1i))                      # 5.329071e-15 ; residuum 2 pi 1i * 1/2
+abs(I - (0-pi*1i))                      # 0 ; residuum 2 pi 1i * 1/2
 
 f <- function(z) 1/z
 points <- c(-1i, 1, 1i, -1, -1i)
 I <- line_integral(f, points)           # along a rectangle around 0+0i
-abs(I - 2*pi*1i)                        #=> 2.131628e-14 ; residuum: 2 pi i * 1
+abs(I - 2*pi*1i)                        #=> 0 ; residuum: 2 pi i * 1
 
 N <- 100
 x <- linspace(0, 2*pi, N)
 y <- cos(x) + sin(x)*1i
 J <- line_integral(f, waypoints = y)    # along a circle around 0+0i
-abs(I - J)                              #=> 2.131634e-14; same residuum
+abs(I - J)                              #=> 5.015201e-17; same residuum
 }
 \keyword{ math }
 
