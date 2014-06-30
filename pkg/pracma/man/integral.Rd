@@ -1,7 +1,5 @@
 \name{integral}
 \alias{integral}
-\alias{line_integral}
-\alias{cintegral}
 \title{
   Adaptive Numerical Integration
 }
@@ -12,7 +10,7 @@
 \usage{
 integral(fun, xmin, xmax,
             method = c("Kronrod","Richardson","Clenshaw","Simpson","Romberg"),
-            vectorized = TRUE, arrayValued = FALSE, waypoints = NULL,
+            vectorized = TRUE, arrayValued = FALSE,
             reltol = 1e-8, abstol = 0, ...)
 }
 \arguments{
