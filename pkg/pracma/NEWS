@@ -6,6 +6,8 @@ CHANGES IN VERSION 1.7.0 (2014-06-30)
 
     o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
     o ode78() ODE solver using Fehlberg (7,8) coefficients.
+    o cintegral() renamed to line_integral()
+      (alias cintegral() is deprecated until version 1.7.5).
 
 CHANGES IN VERSION 1.6.9 (2014-06-14)
 

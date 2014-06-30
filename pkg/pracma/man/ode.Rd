@@ -3,7 +3,7 @@
 \alias{ode45}
 \alias{ode78}
 \title{
-  Runge-Kutta
+  Non-stiff ODE solvers
 }
 \description{
   Runge-Kutta (2, 3)-method with variable step size, resp. (4,5)-method
@@ -92,7 +92,7 @@ lines(sol$t, sol$y[, 1], col = "blue")
 lines(sol$t, sol$y[, 2], col = "darkgreen")
 grid()}
 
-# Example: pendulum
+##  Example: pendulum
 m = 1.0;  l = 1.0   # [kg] resp. [m]
 g = 9.81; b = 0.7   # [m/s^2] resp. [N s/m]
 fp = function(t, x)
@@ -102,6 +102,18 @@ y0 = c(30*pi/180, 0.0)
 sol = ode45(fp, t0, tf, y0, hmax = 0.1)
 \dontrun{
 matplot(sol$t, sol$y, type = "l", lty = 1)
+grid()}
+
+##  Example: enforced pendulum
+g <- 9.81
+L <- 1.0; Y <- 0.25; w <- 2.5
+f <- function(t, y) {
+    as.matrix(c(y[2], -g/L * sin(y[1]) + w^2/L * Y * cos(y[1]) * sin(w*t)))
+}
+y0 <- as.matrix(c(0, 0))
+sol <- ode78(f, 0.0, 60.0, y0, hmax = 0.05)
+\dontrun{
+plot(sol$t, sol$y[, 1], type="l", col="blue")
 grid()}
 }
 \keyword{ ode }

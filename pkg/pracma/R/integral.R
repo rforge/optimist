@@ -45,7 +45,7 @@ integral <- function(fun, xmin, xmax,
 }
 
 
-cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
+line_integral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
     stopifnot(is.complex(waypoints) || is.numeric(waypoints))
     if (length(waypoints) <= 1) return(0 + 0i)
 
@@ -67,4 +67,9 @@ cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
     }
 
     return(Q)
+}
+
+cintegral <- function (fun, waypoints, method = NULL, reltol = 1e-6, ...) {
+    warning("cintegral() is deprecated: use line_integral() instead.")
+    line_integral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
 }
