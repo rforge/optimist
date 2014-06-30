@@ -1,4 +1,4 @@
-\name{line integral}
+\name{line_integral}
 \alias{line_integral}
 \alias{cintegral}
 \title{
@@ -25,7 +25,7 @@ cintegral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
   curve, arbitrary line integrals can be approximated.
 
   \code{line_integral} will accept the same methods as \code{integral};
-  default is \code{quadgk}.
+  default is \code{integrate} from Base R.
 
   \code{cintegral} is the deprecated alias.
 }
@@ -40,18 +40,18 @@ cintegral(fun, waypoints, method = NULL, reltol = 1e-6, ...)
 points <- c(0, 1+1i, 1-1i, 0)           # direction mathematically negative
 f <- function(z) 1 / (2*z -1)
 I <- line_integral(f, points)
-abs(I - (0-pi*1i))                      # 3.788081e-13 ; residuum 2 pi 1i * 1/2
+abs(I - (0-pi*1i))                      # 5.329071e-15 ; residuum 2 pi 1i * 1/2
 
 f <- function(z) 1/z
 points <- c(-1i, 1, 1i, -1, -1i)
 I <- line_integral(f, points)           # along a rectangle around 0+0i
-abs(I - 2*pi*1i)                        #=> 0 ; residuum: 2 pi i * 1
+abs(I - 2*pi*1i)                        #=> 2.131628e-14 ; residuum: 2 pi i * 1
 
 N <- 100
 x <- linspace(0, 2*pi, N)
 y <- cos(x) + sin(x)*1i
 J <- line_integral(f, waypoints = y)    # along a circle around 0+0i
-abs(I - J)                              #=> 2.230056e-17; same residuum
+abs(I - J)                              #=> 2.131634e-14; same residuum
 }
 \keyword{ math }
 
