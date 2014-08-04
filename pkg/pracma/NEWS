@@ -2,6 +2,12 @@
   pracma                                                                NEWS
 ------------------------------------------------------------------------------
 
+
+CHANGES IN VERSION 1.7.1 (2014-08-03)
+
+    o bits() binary representation of a number as string.
+    o agmean() returns AGM, no of iterations, and estimated precision.
+
 CHANGES IN VERSION 1.7.0 (2014-06-30)
 
     o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
