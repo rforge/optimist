@@ -3,10 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.7.1 (2014-08-03)
+CHANGES IN VERSION 1.7.1 (2014-08-12)
 
     o bits() binary representation of a number as string.
     o agmean() returns AGM, no of iterations, and estimated precision.
+    o trapz() tiny improvement on error handling.
 
 CHANGES IN VERSION 1.7.0 (2014-06-30)
 
