@@ -78,5 +78,5 @@ pchipfun <- function(xi, yi) {
     if (n <= 2)
         stop("At least three points needed for cubic interpolation.")
 
-    f <- function(x) pchip(xi, yi, x)
+    function(x) pchip(xi, yi, x)
 }

@@ -3,10 +3,12 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.7.2 (2014-08-24)
+CHANGES IN VERSION 1.7.2 (2014-09-08)
 
     o pchipfun() function wrapper around pchip();
       missing error handling in pchip() was added.
+    o hurst() removed, functionality merged with hurstexp().
+    o Nile overflow data set 1871--1984 added as time series.
 
 CHANGES IN VERSION 1.7.1 (2014-08-12)
 
