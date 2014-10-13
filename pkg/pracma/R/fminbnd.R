@@ -20,9 +20,8 @@ fminbnd <- function(f, a, b, ..., maxiter = 1000, maximum = FALSE,
     phi <- 0.5 * ( 3.0 - sqrt ( 5.0 ) )
 
     # Set tolerances
-    eps  <- .Machine$double.eps
-    tol1 <- 1 + eps
-    eps  <- sqrt(eps)
+    tol1 <- 1 + eps()
+    eps0 <- sqrt(eps())
     tol3 <- tol / 3
 
     sa <- a; sb <- b
@@ -34,9 +33,9 @@ fminbnd <- function(f, a, b, ..., maxiter = 1000, maximum = FALSE,
 
     niter <- 1
     while ( niter <= maxiter ) {
-        xm  <- 0.5 * ( sa + sb )
-        t1 <-  eps * abs ( x ) + tol/3
-        t2  <- 2.0 * t1
+        xm <-  0.5 * ( sa + sb )
+        t1 <- eps0 * abs ( x ) + tol/3
+        t2 <-  2.0 * t1
 
         #  Check the stopping criterion.
         if ( abs ( x - xm ) <= t2 - (dx <- ( sb - sa ) / 2 ) ) break

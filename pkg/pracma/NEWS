@@ -3,12 +3,24 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.7.4 (2014-11-01)
+
+    o [tbd.]
+
+CHANGES IN VERSION 1.7.4 (2014-10-13)
+
+    o hooke_jeeves() replaced by a much more efficient implementation
+      and equipped with a special approach to bound constraints.
+    o nelder_mead() replaced by a much more efficient implementation
+      and utilizing a transformation to handle bound constraints;
+      functions nelmin() and nelminb() are not exported anymore.
+
 CHANGES IN VERSION 1.7.3 (2014-10-11)
 
     o quadinf() now uses the double exponential method with the
       tanh-sinh quadrature scheme for (semi-)infinite intervals.
-    o Renamed brentDekker() to brent_dekker().
-    o Removed the non-exported and too slow .quadcc() function.
+    o Removed the not-exported and too slow .quadcc() function.
+    o brent() alias for brentDekker(), newton() for newtonRaphson().
 
 CHANGES IN VERSION 1.7.2 (2014-09-08)
 
@@ -987,3 +999,4 @@ INITIAL VERSION 0.1-0
     o This package provides R implementations of more advanced math
       functions from Matlab and Octave (and the Euler Math Toolbox)
       with a special view on optimization and time series routines.
+  
