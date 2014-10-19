@@ -3,9 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.7.4 (2014-11-01)
+CHANGES IN VERSION 1.7.5 (2014-10-20)
 
-    o [tbd.]
+    o fminbnd() much improved implementation of Brent's method;
+      added challenging example by Trefethen to the help page.
+    o lambertWn() for the second (real) branch of Lambert W.
 
 CHANGES IN VERSION 1.7.4 (2014-10-13)
 
@@ -70,7 +72,6 @@ CHANGES IN VERSION 1.6.4 (2014-02-05)
 
     o halley() Halley's variant of the Newton-Raphson method.
     o numderiv() corrected Richardson's method by breaking the loop.
-    o D_lambertWp() exact derivative of the lambertWp() function.
 
 CHANGES IN VERSION 1.6.3 (2014-01-25)
 
