@@ -3,11 +3,23 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.7.7 (2014-11-01)
+
+    o lufact() LU factorization with partial pivoting;
+      lusys() solves linear systems through Gaussian elimination.
+
+CHANGES IN VERSION 1.7.6 (2014-10-30)
+
+    o ode23s() for stiff ordinary differential equations refining
+      Rosenbrock's method (supply Jacobian if available).
+    o euler_heun() Euler-Heun ODE solver has been corrected.
+
 CHANGES IN VERSION 1.7.5 (2014-10-20)
 
     o fminbnd() much improved implementation of Brent's method;
       added challenging example by Trefethen to the help page.
     o lambertWn() for the second (real) branch of Lambert W.
+    o Function name alias cintegral() removed.
 
 CHANGES IN VERSION 1.7.4 (2014-10-13)
 
@@ -41,8 +53,7 @@ CHANGES IN VERSION 1.7.0 (2014-06-30)
 
     o ode45() ODE solver using Dormand-Prince (4,5) coefficients.
     o ode78() ODE solver using Fehlberg (7,8) coefficients.
-    o cintegral() renamed to line_integral()
-      (alias cintegral() is deprecated until version 1.7.5).
+    o cintegral() renamed to line_integral().
 
 CHANGES IN VERSION 1.6.9 (2014-06-14)
 
@@ -387,7 +398,7 @@ CHANGES IN VERSION 1.1.2 (2012-06-13)
     o hooke-jeeves() Hooke-Jeeves algorithm for direct search.
     o fletcher_powell() Davidon-Fletcher-Powell method for function 
       minimization (alternative to BFGS approach).
-    o steepest_descent() minimization of functions using steepest descent.
+    o steep_descent() minimization of functions using steepest descent.
 
 CHANGES IN VERSION 1.1.1 (2012-06-10)
 
