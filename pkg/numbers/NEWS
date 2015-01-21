@@ -2,6 +2,13 @@
   numbers                                                               NEWS
 ------------------------------------------------------------------------------
 
+
+Version 0.4-9 (2014-12-30)
+
+  o ordpn() order of a prime number in n!, i.e. n faculty.
+  o fibonacci() and lucas() corrected; the recursive computation
+    has been replaced by an iterative approach.
+
 Version 0.4-7 (2014-08-03)
 
   o agm() exact to machine accuracy; returns only the AGM value. 
