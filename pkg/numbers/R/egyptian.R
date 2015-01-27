@@ -144,7 +144,7 @@ egyptian_methods <- function(a, b) {
 # Add the following modern methods to egyptian_methods:
 #
 #   - greedy
-#   - Bleicher-Erdös
+#   - Bleicher-Erdos
 #   - Tenenbaum-Yokota
 #   - continued fractions
 #

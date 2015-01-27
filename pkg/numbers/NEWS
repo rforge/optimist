@@ -3,10 +3,13 @@
 ------------------------------------------------------------------------------
 
 
-Version 0.5-1 (2015-01-27)
+Version 0.5-2 (2015-01-28)
 
   o miller_rabin() executes the probabilistic Miller-Rabin primality
     test, faster than isPrime(), but still slower than gmp::isprime().
+
+Version 0.5-1 (2015-01-27)
+
   o egyptian_complete() returns the number of solutions found.
   o legendre_sym() returned Boolean nonsense, has been corrected. 
 
