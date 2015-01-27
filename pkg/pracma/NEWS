@@ -3,9 +3,9 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.8.0 (2014-12-20)
+CHANGES IN VERSION 1.8.0 (2015-01-26)
 
-    o [tbd.]
+    o hurstexp() amended for vectors of uneven length.
 
 CHANGES IN VERSION 1.7.9 (2014-11-15)
 

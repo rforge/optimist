@@ -3,6 +3,13 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.5-1 (2015-01-27)
+
+  o miller_rabin() executes the probabilistic Miller-Rabin primality
+    test, faster than isPrime(), but still slower than gmp::isprime().
+  o egyptian_complete() returns the number of solutions found.
+  o legendre_sym() returned Boolean nonsense, has been corrected. 
+
 Version 0.4-9 (2014-12-30)
 
   o ordpn() order of a prime number in n!, i.e. n faculty.
