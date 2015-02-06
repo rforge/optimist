@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.1 (2015-02-06)
+
+    o sumalt() accelerating (infinite) alternating sums.
+    o Option 'fast=FALSE' in circlefit() to avoid optim().
+    o Added Gauss' AGM-based computation of pi to agmean(). 
+
 CHANGES IN VERSION 1.8.0 (2015-01-26)
 
     o hurstexp() amended for vectors of uneven length.
