@@ -20,7 +20,7 @@
 }
 \references{
   R. Weron (2001). Estimating long range dependence: finite sample properties and
-  confidence intervals. arXiv: \url{http://arxiv.org/pdf/cond-mat/0103510v2.pdf}.
+  confidence intervals. arXiv.org:cond-mat0103510.pdf .
 }
 \examples{
 data(nile)                      # loads "nile" data frame

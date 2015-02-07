@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.2 (2015-02-07)
+
+    o Deleted some URLs that were not working properly anymore.
+    o Special functions gathered under topics 'specfun' resp. 'specmat'.
+
 CHANGES IN VERSION 1.8.1 (2015-02-06)
 
     o sumalt() accelerating (infinite) alternating sums.
