@@ -3,6 +3,13 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.5-4 (2015-02-12)
+
+   o dropletPi() realizes the droplet algorithm for pi;
+     droplet_e() has been renamed to dropletE().
+   o radical() computes the radical of n, i.e the product of
+     unique prime factors of n.
+
 Version 0.5-2 (2015-01-28)
 
   o miller_rabin() executes the probabilistic Miller-Rabin primality
