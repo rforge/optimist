@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------
 
 
-Version 0.5-4 (2015-03-14)
+Version 0.5-5 (2015-03-14)
 
    o Pi-day 3.14.15 9:26:53.58 contribution:
      dropletPi() realizes the droplet/spigot algorithm for pi;
