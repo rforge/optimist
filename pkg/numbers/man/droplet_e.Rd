@@ -1,15 +1,15 @@
-\name{dropletE}
-\alias{dropletE}
+\name{dropletPi}
 \alias{dropletPi}
+\alias{dropletE}
 \title{
-  Droplet Algorithm for e and pi
+  Droplet Algorithm for pi and e
 }
 \description{
-  Generates digits for pi and the Euler number e.
+  Generates digits for pi resp. the Euler number e.
 }
 \usage{
-dropletE(n)
 dropletPi(n)
+dropletE(n)
 }
 \arguments{
   \item{n}{number of digits after the decimal point; should not exceed 1000
@@ -22,8 +22,8 @@ dropletPi(n)
   Leibniz series and the socalled "radix conversion".
 }
 \value{
-  String containing ``2.718281828..." resp. "3.1415926..."
-  with \code{n} digits after the decimal point.
+  String containing ``3.1415926..." resp. ``2.718281828..." with
+  \code{n} digits after the decimal point (i.e., internal decimal places).
 }
 \references{
   Borwein, J., and K. Devlin (2009). The Computer as Crucible: An Introduction
