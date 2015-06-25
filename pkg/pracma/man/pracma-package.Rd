@@ -180,7 +180,7 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
   Wolfram MathWorld: \url{http://mathworld.wolfram.com/}.  
 
   Zhang, S., and J. Jin (1996). Computation of Special Functions.
-  John Wiley & Sons. \url{http://jin.ece.illinois.edu/specfunc.html}
+  John Wiley & Sons.
 }
 \seealso{
   The R package `matlab' contains some of the basic routines from Matlab,
