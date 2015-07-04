@@ -13,7 +13,7 @@
 }
 \details{
   The list of prime numbers up to \code{n} is generated using the "sieve of
-  Erasthostenes". This approach is reasonably fast, but may require a lot of
+  Eratosthenes". This approach is reasonably fast, but may require a lot of
   main memory when \code{n} is large.
 
   \code{Primes} computes first all primes up to \code{sqrt(n2)} and then

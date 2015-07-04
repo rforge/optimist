@@ -6,6 +6,7 @@
 eulersPhi <- function(n) {
     if (!isNatural(n))
         stop("Argument 'n' must be a single positive integers.")
+    if (n == 1) return(1)
 
     m <- n
     for (p in unique(primeFactors(n)))
