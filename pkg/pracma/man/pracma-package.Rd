@@ -67,7 +67,7 @@ Practical Numerical Math Routines
   functions and bear the same signature as their Matlab cousins if possible:
   
   \code{accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,}\cr
-  \code{beep, blank, blkdiag, bsxfun,}\cr
+  \code{beep, bernoulli, blank, blkdiag, bsxfun,}\cr
   \code{cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,}\cr
   \code{    cot, coth, cross, csc, csch, cumtrapz,}\cr
   \code{dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,}\cr
@@ -92,8 +92,8 @@ Practical Numerical Math Routines
   \code{rad2deg, randi, randn, randsample, rat, rats, regexp, regexpi,}\cr
   \code{    regexpreg, rem, repmat, roots, rosser, rot90, rref, runge,}\cr
   \code{sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,}\cr
-  \code{    squareform, std, str2num, strcat, strcmp, strcmpi, strfind, strfindi,}\cr
-  \code{    strjust, strrep, subspace,}\cr
+  \code{    squareform, std, str2num, strcat, strcmp, strcmpi,}\cr
+  \code{    strfind, strfindi, strjust, subspace,}\cr
   \code{tic, toc, trapz, tril, trimmean, triplequad, triu,}\cr
   \code{vander, vectorfield, ver,}\cr
   \code{what, who, whos, wilkinson,}\cr
@@ -104,7 +104,7 @@ Practical Numerical Math Routines
   (on request of Bill Venables and because of Brian Ripley's CRAN policies):
 
   \code{Diag, factos, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (<- null)},\cr
-  \code{Poly, Rank, Real, Reshape, strTrim, Toeplitz, Trace, uniq (<- unique).}
+  \code{Poly, Rank, Real, Reshape, strRep, strTrim, Toeplitz, Trace, uniq (<- unique).}
 
   To use ``ans'' instead of ``ans()'' -- as is common practice in Matlab --
   type (and similar for other Matlab commands):

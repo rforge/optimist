@@ -9,7 +9,7 @@ matlab <- function() {
   "and bear the same signature as their Matlab cousins as far as possible:",
   "
   accumarray, acot, acoth, acsc, acsch, and, angle, ans, arrayfun, asec, asech,
-  beep, blank, blkdiag, bsxfun,
+  beep, bernoulli, blank, blkdiag, bsxfun,
   cart2pol, cart2sph, cd, ceil, circshift, clear, compan, cond, conv,
       cot, coth, cross, csc, csch, cumtrapz,
   dblquad, deblank, deconv, deg2rad, detrend, deval, disp, dot,
@@ -35,7 +35,7 @@ matlab <- function() {
       rem, repmat, roots, rosser, rot90, rref, runge,
   sec, sech, semilogx, semilogy, sinc, size, sortrows, sph2cart, sqrtm,
       squareform, std, str2num, strcat, strcmp, strcmpi, strfind, strfindi,
-      strjust, strrep, subspace,
+      strjust, subspace,
   tic, toc, trapz, tril, trimmean, triplequad, triu,
   vander, vectorfield, ver,
   what, who, whos, wilkinson,
@@ -45,7 +45,7 @@ matlab <- function() {
   "avoid shadowing functions from R base or one of its recommended packages:",
   "
   Diag, factors, finds, Fix, Imag, Lcm, Mode, Norm, nullspace (null),
-  Poly, Rank, Real, Reshape, strTrim, Toeplitz, Trace, uniq (unique).", 
+  Poly, Rank, Real, Reshape, strRep, strTrim, Toeplitz, Trace, uniq (unique).", 
   "",
   "To use 'ans' instead of 'ans()' (i.e., as is common practice in Matlab)",
   "type (and similar for other Matlab commands):",

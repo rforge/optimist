@@ -6,7 +6,7 @@ Date: 2015-07-01
 Author: Hans Werner Borchers
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Depends: R (>= 3.0.0)
-Imports: gmp (>= 0.5-1)
+Sugests: gmp (>= 0.5-1)
 Description:
     Provides some number-theoretic functions for R.
 License: GPL (>= 3)
