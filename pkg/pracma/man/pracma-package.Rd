@@ -84,7 +84,7 @@ Practical Numerical Math Routines
   \code{    lsqlin, lsqnonlin, lsqnonneg, lu,}\cr
   \code{magic, meshgrid, mkpp, mldivide, mod, mrdivide,}\cr
   \code{nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,}\cr
-  \code{ode23, ones, or, orth,}\cr
+  \code{ode23, ode23s, ones, or, orth,}\cr
   \code{pascal, pchip, pdist, pdist2, peaks, perms, piecewise, pinv, plotyy,}\cr
   \code{    pol2cart, polar, polyfit, polyint, polylog, polyval, pow2, ppval,}\cr
   \code{    primes, psi, pwd,}\cr

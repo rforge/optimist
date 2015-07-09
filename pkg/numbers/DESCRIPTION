@@ -1,12 +1,12 @@
 Package: numbers
 Type: Package
 Title: Number-Theoretic Functions
-Version: 0.5-8
-Date: 2015-07-01
+Version: 0.5-9
+Date: 2015-07-09
 Author: Hans Werner Borchers
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Depends: R (>= 3.0.0)
-Sugests: gmp (>= 0.5-1)
+Suggests: gmp (>= 0.5-1)
 Description:
     Provides some number-theoretic functions for R.
 License: GPL (>= 3)

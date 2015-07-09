@@ -26,7 +26,7 @@ matlab <- function() {
       lsqlin, lsqnonlin, lsqnonneg, lu,
   magic, meshgrid, mkpp, mldivide, mod, mrdivide,
   nchoosek, ndims, nextpow2, nnz, normest, nthroot, null, num2str, numel,
-  ode23, ones, or, orth,
+  ode23, ode23s, ones, or, orth,
   pascal, pchip, pdist, pdist2, peaks, perms, piecewise, pinv, plotyy,
       pol2cart,polar, polyfit, polyint, polylog, polyval, pow2, ppval,
       primes, psi, pwd,
