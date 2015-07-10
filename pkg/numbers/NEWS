@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.6-0 (2015-07-10)
+
+  o Spelling changes in the documentation.
+
 Version 0.5-9 (2015-07-09)
 
   o Changed package 'gmp' status from "Imports:" to "Suggests:";
