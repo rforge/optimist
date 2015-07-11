@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.6 (2015-07-1)
+
+  o Removed too non-existing links pointing Gander's pages at the ETHZ
+
 CHANGES IN VERSION 1.8.5 (2015-07-07)
 
     o Added 'Imports' field in description and 'import' in namespace,
