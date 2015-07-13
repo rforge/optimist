@@ -3,9 +3,10 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.8.6 (2015-07-1)
+CHANGES IN VERSION 1.8.6 (2015-07-11)
 
-  o Removed too non-existing links pointing Gander's pages at the ETHZ
+    o Removed two non-existing links pointing to Gander's pages at the ETHZ.
+    o Removed a link explaining approximate entropy.
 
 CHANGES IN VERSION 1.8.5 (2015-07-07)
 
