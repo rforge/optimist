@@ -4,6 +4,9 @@
 
 useDynLib(adagio)
 
+importFrom("graphics", "grid", "lines", "plot", "points")
+importFrom("stats", "rnorm", "runif")
+
 # Public routines
 export(fnRosenbrock, grRosenbrock,
        fnRastrigin, grRastrigin,

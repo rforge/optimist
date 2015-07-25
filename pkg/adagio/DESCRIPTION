@@ -6,6 +6,7 @@ Date: 2015-07-25
 Author: Hans Werner Borchers
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Depends: R (>= 3.0.0)
+Imports: graphics, stats
 Description:
     The R package 'adagio' will provide methods and algorithms for
     discrete optimization and (evolutionary) global optimization.
