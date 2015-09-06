@@ -6,6 +6,7 @@ useDynLib(adagio)
 
 importFrom("graphics", "grid", "lines", "plot", "points")
 importFrom("stats", "rnorm", "runif")
+importFrom("quadprog", "solve.QP")
 
 # Public routines
 export(fnRosenbrock, grRosenbrock,
@@ -28,5 +29,7 @@ export(simpleEA, simpleDE)
 export(pureCMAES)
 
 export(fminviz, flineviz)
+
+export(lsqlincon)
 
 # S3/S4 Methods

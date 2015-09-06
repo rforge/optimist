@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.6.2 (2015-09-06)
+
+    o lsqlincon() solves linear least-squares problems with linear equality
+      and inequality constraints, as well as bound constraints, internally
+      applying solve.QP from the 'quadprog' package.
+
 Changes in Version 0.6.1 (2015-07-25)
 
     o Reorganized test functions; removed genTestfn() and (re-)introduced
