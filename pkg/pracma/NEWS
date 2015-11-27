@@ -3,14 +3,15 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.8.8 (2015-07-21)
+CHANGES IN VERSION 1.8.8 (2015-10-28)
 
-    o tbd.
+    o Option 'minpeakdistance' for function findpeaks() added
+      (thanks to Razvan Chereji for providing a workable approach).
 
 CHANGES IN VERSION 1.8.7 (2015-07-20)
 
     o Removed invperm().
-	o 'linear' is now the default method for interp1().
+    o 'linear' is now the default method for interp1().
     o Cases n = 0, 1 for legendre() corrected (thanks to Nuzhdin Yury).
 
 CHANGES IN VERSION 1.8.6 (2015-07-11)
