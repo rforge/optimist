@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.8.9 (2015-12-02)
+
+    o tbd.
+    o Important bug fix for polyApprox() (thanks to Max Marchi).
+
 CHANGES IN VERSION 1.8.8 (2015-10-28)
 
     o Option 'minpeakdistance' for function findpeaks() added
