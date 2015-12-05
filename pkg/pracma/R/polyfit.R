@@ -16,6 +16,50 @@ polyfit <- function(x, y, n = 1) {
     return(p)
 }
 
+
+polyfix <- function(x, y, n, xfix, yfix)
+{
+    stopifnot(is.numeric(x), is.numeric(y), is.numeric(xfix), is.numeric(yfix))
+    nfit = length(x)
+    if (length(y) != nfit)
+        stop("Arguments 'x' and 'y' must have the same length.")
+    nfix = length(xfix)
+    if (length(yfix) != nfix)
+        stop("Arguments 'xfix' and 'yfix' must have the same length.")
+
+    if (!is.numeric(n) || n < 0 || floor(n) != ceiling(n))
+        stop("Argument 'n' must be an integer.")
+    if (n < nfix-1) {
+        stop("Argument 'n' shall be greater or equal to 'nfix-1'.")
+    } else if (n == nfix-1) {
+        warning("Data points can not be taken into account.")
+        return(polyfit(xfix, yfix, n))
+    }
+
+    A <- ones(nfix, n+1)
+    for (i in 1:(n+1))
+        A[, i] <- ones(nfix, 1) * xfix^(n+1-i)
+
+    pc <- qr.solve(A[,(n+2-nfix):ncol(A)], yfix)  # Satifies A*pc = yfix
+
+    pcfull <- matrix(0, n+1, 1)
+    pcfull[(n+2-nfix):(n+1)] <- pc
+
+    yfit <- y - polyval(pc, x)
+
+    B <- nullspace(A)
+    X <- matrix(0, nfit,n+1)
+    for(i in 1:(n+1))
+        X[, i] <- matrix(1, nfit,1) * x^(n+1-i)
+
+    z = qr.solve(X %*% B, yfit)  # Least squares solution of X*B*z = yfit
+    p0 <- B %*% z                # Satisfies A*p0 = 0
+    p <- p0 + pcfull             # Satisfies A*p = b
+
+    return(c(p))
+}
+
+
 polyfit2 <- function(x, y, n = 1, p0 = NULL) {
     if (!is.numeric(x) || !is.numeric(y))
         stop("Arguments 'x' and 'y' must be numeric.")

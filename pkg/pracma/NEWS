@@ -3,9 +3,10 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.8.9 (2015-12-02)
+CHANGES IN VERSION 1.8.9 (2015-12-05)
 
-    o tbd.
+    o polyfix() fits a polynomial that exactly passes through given
+	  fixed points. polyfit2() will be deprecated in future versions.
     o Important bug fix for polyApprox() (thanks to Max Marchi).
 
 CHANGES IN VERSION 1.8.8 (2015-10-28)
