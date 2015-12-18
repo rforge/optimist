@@ -3,10 +3,28 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.9.2 (2016-01-01)
+
+    o hibertcurve(n) generates the Hilbert curve of order n.
+
+CHANGES IN VERSION 1.9.1 (2015-12-28)
+
+    o linprog() now utilizes function lp() in package 'lpSolve'.
+	o intlinprog() solves mixed integer linear problems (MILP).
+	o pracma now imports package 'lpSolve'.
+
+CHANGES IN VERSION 1.9.0 (2015-12-17)
+
+    o quadprog() solves quadratic programming problems (QP) with linear
+      equality and inequality constraints, based on package 'quadprog'.
+    o lsqlincon() solves linear least-squares problems with linear equality 
+      and inequality constraints.
+    o pracma now imports package 'quadprog'.
+
 CHANGES IN VERSION 1.8.9 (2015-12-05)
 
     o polyfix() fits a polynomial that exactly passes through given
-	  fixed points. polyfit2() will be deprecated in future versions.
+	    fixed points. polyfit2() will be deprecated in future versions.
     o Important bug fix for polyApprox() (thanks to Max Marchi).
 
 CHANGES IN VERSION 1.8.8 (2015-10-28)
