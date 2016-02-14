@@ -3,7 +3,7 @@
 ##
 
 
-require(quadprog)
+# require(quadprog)
 quadprog <- function(
     C, d,                     # min! 1/2 x'Cx + d'x
     A = NULL,   b = NULL,     # A x <= b
