@@ -3,30 +3,27 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.9.2 (2016-00-00)
+CHANGES IN VERSION 1.9.1 (2016-02-15)
 
-    o linprog() now utilizes function lp() in package 'lpSolve'.
-	  o intlinprog() solves mixed integer linear problems (MILP).
-	  o pracma now imports package 'lpSolve'.
-
-CHANGES IN VERSION 1.9.1 (2016-02-14)
-
-    o fractalcurve() generates the fractal curves of order n, the
-	    Hilbert, Sierpinski, Snowflake, Dragon, and Molecule curve.
-    o ode23(), ode23s() changed the type of the returned t-component.
+    o fractalcurve() generates some fractal curves of order n, i.e. the
+      Hilbert, Sierpinski, Snowflake, Dragon, and Molecule curves.
+    o ode23(), ode23s() changed the type of the returned components,
+      so it is similar to what is returned by ode45() and ode78().
+    o arclength() corrected a boundary condition ('on the left'), and
+      added how to generate an arc-length parametrization of a curve.
 
 CHANGES IN VERSION 1.9.0 (2015-12-17)
 
     o quadprog() solves quadratic programming problems (QP) with linear
       equality and inequality constraints, based on package 'quadprog'.
     o lsqlincon() solves linear least-squares problems with linear equality 
-      and inequality constraints.
+      *and* inequality constraints.
     o pracma now imports package 'quadprog'.
 
 CHANGES IN VERSION 1.8.9 (2015-12-05)
 
     o polyfix() fits a polynomial that exactly passes through given
-	  fixed points. polyfit2() will be deprecated in future versions.
+      fixed points. polyfit2() will be deprecated in future versions.
     o Important bug fix for polyApprox() (thanks to Max Marchi).
 
 CHANGES IN VERSION 1.8.8 (2015-10-28)
