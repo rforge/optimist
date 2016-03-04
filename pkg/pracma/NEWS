@@ -3,14 +3,28 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.9.3 (2016-04-01)
+
+    o shooting() solves the boundary-value problem for linear 2nd order ODEs,
+      and shooting_nl() solves nonlinear problems with 'finite elements'.
+    o bvp() now solves boundary value problems for nonlinear 2nd order ODEs
+	  using a 'finite differences' approach.
+    o bvp_linear() solves the boundary value problem for linear ODEs
+	  by applying an ODE solver to the homogeneous problem.
+
+CHANGES IN VERSION 1.9.2 (2016-03-04)
+
+    o romberg() corrected an error estimation that diminished the accuracy.
+    o trapzfun() realizes trapezoidal integration with iterated calculations.
+
 CHANGES IN VERSION 1.9.1 (2016-02-15)
 
     o fractalcurve() generates some fractal curves of order n, i.e. the
       Hilbert, Sierpinski, Snowflake, Dragon, and Molecule curves.
-    o ode23(), ode23s() changed the type of the returned components,
-      so it is similar to what is returned by ode45() and ode78().
-    o arclength() corrected a boundary condition ('on the left'), and
-      added how to generate an arc-length parametrization of a curve.
+    o ode23(), ode23s() changed the size of the returned components,
+      now it is similar to what is returned by ode45() and ode78().
+    o arclength() corrected a boundary condition ('on the left'), added
+      an example how to generate an arc-length parametrization of a curve.
 
 CHANGES IN VERSION 1.9.0 (2015-12-17)
 
