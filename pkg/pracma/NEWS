@@ -3,14 +3,15 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.9.3 (2016-04-01)
+CHANGES IN VERSION 1.9.4 (planned)
 
-    o shooting() solves the boundary-value problem for linear 2nd order ODEs,
-      and shooting_nl() solves nonlinear problems with 'finite elements'.
-    o bvp() now solves boundary value problems for nonlinear 2nd order ODEs
-	  using a 'finite differences' approach.
-    o bvp_linear() solves the boundary value problem for linear ODEs
-	  by applying an ODE solver to the homogeneous problem.
+    o bvp4c() solves the general boundary value problem for nonlinear ODEs.
+
+CHANGES IN VERSION 1.9.3 (2016-05-28)
+
+    o bvp() now solves boundary value problems for linear 2nd order ODEs
+      using a 'finite differences' approach and a tridiagonal solver.
+    o polyfit2() has been removed, use polyfix() instead.
 
 CHANGES IN VERSION 1.9.2 (2016-03-04)
 
@@ -31,7 +32,8 @@ CHANGES IN VERSION 1.9.0 (2015-12-17)
     o quadprog() solves quadratic programming problems (QP) with linear
       equality and inequality constraints, based on package 'quadprog'.
     o lsqlincon() solves linear least-squares problems with linear equality 
-      *and* inequality constraints.
+      *and* inequality constraints (as well as bound constraints), internally
+      applying solve.QP from the 'quadprog' package.
     o pracma now imports package 'quadprog'.
 
 CHANGES IN VERSION 1.8.9 (2015-12-05)

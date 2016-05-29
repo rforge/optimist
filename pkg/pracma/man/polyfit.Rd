@@ -1,7 +1,6 @@
 \name{polyfit,polyfix}
 \alias{polyfit}
 \alias{polyfix}
-\alias{polyfit2}
 \title{Fitting by Polynomial}
 \description{
   Polynomial curve fitting
@@ -10,15 +9,12 @@
 polyfit(x, y, n)
 
 polyfix(x, y, n, xfix, yfix)
-
-polyfit2(x, y, n = 1, p0 = NULL)  
 }
  \arguments{
   \item{x}{x-coordinates of points}
   \item{y}{y-coordinates of points}
   \item{n}{degree of the fitting polynomial}
   \item{xfix,yfix}{x- and y-coordinates of points to be fixed}
-  \item{p0}{Point \code{p0 = [x0, y0]} }
 }
 \details{
   \code{polyfit} finds the coefficients of a polynomial of degree \code{n}
@@ -26,9 +22,6 @@ polyfit2(x, y, n = 1, p0 = NULL)
   least-squares sense. In \code{polyfit}, if \code{x}, \code{y} are matrices
   of the same size, the coordinates are taken elementwise. Complex values are 
   not allowed.
-
-  \code{polyfit2} finds a polynomial that fits the data in a least-squares
-  sense, but also passes through \code{y0} for \code{x=x0}. [Deprecated]
 
   \code{polyfix} finds a polynomial that fits the data in a least-squares
   sense, but also passes exactly through all the points with coordinates
@@ -40,8 +33,8 @@ polyfit2(x, y, n = 1, p0 = NULL)
   vector representing a polynomial.
 }
 \note{
-  Please not that \code{polyfit2} is deprecated; please use \code{polyfix}
-  instead.
+  Please not that \code{polyfit2} is has been removed since 1.9.3; please use
+  \code{polyfix} instead.
 }
 \seealso{
   \code{\link{poly}}, \code{\link{polyval}}
