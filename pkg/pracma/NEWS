@@ -3,9 +3,14 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.9.4 (planned)
+CHANGES IN VERSION 1.9.5 (planned)
 
     o bvp4c() solves the general boundary value problem for nonlinear ODEs.
+
+CHANGES IN VERSION 1.9.4 (2016-07-09)
+
+    o rortho() renamed to randortho(), the underlying code was buggy (not
+	  truely random) and has been replace, thanks to Jan Tuitman for the tip.
 
 CHANGES IN VERSION 1.9.3 (2016-05-28)
 
