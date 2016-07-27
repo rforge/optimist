@@ -7,11 +7,13 @@ CHANGES IN VERSION 1.9.5 (planned)
 
     o bvp4c() solves the general boundary value problem for nonlinear ODEs.
 
-CHANGES IN VERSION 1.9.4 (2016-07-09)
+CHANGES IN VERSION 1.9.4 (2016-07-27)
 
-    o rortho() renamed to randortho(), the underlying code was buggy (not
-	  truely random) and has been replace, thanks to Jan Tuitman for the tip.
-
+    o rortho() renamed to randortho(), the underlying code was buggy
+	  (not truely random) and has been replaced, thanks to Jan Tuitman.
+	o an error in the final step of calculating approx_energy() was
+	  corrected, thanks to Daniel Krefl.
+	  
 CHANGES IN VERSION 1.9.3 (2016-05-28)
 
     o bvp() now solves boundary value problems for linear 2nd order ODEs
