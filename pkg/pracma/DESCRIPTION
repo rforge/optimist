@@ -1,8 +1,8 @@
 Package: pracma
 Type: Package
 Title: Practical Numerical Math Functions
-Version: 1.9.4
-Date: 2016-07-27
+Version: 1.9.5
+Date: 2016-09-06
 Author: Hans Werner Borchers
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1)
