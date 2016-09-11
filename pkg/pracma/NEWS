@@ -6,13 +6,13 @@
 CHANGES IN VERSION 1.9.7 (planned)
 
     o bvp4c() solves the general boundary value problem for nonlinear ODEs.
-	o pracma will be using the ECOS solver instead of the 'quadprog' package.
-
-CHANGES IN VERSION 1.9.6 (2016-09-07)
-
-    o haversine() Haversine formula for geographical distances on earth.
 	o shooting() implements the shooting method for boundary value problems
 	  of second order differential equations.
+	o pracma will be using the ECOS solver instead of the 'quadprog' package.
+
+CHANGES IN VERSION 1.9.6 (2016-09-11)
+
+    o haversine() Haversine formula for geographical distances on earth.
 	o trigonometric functions accepting degrees instead of inputs in radians:
 	  sind   cosd   tand   cotd   secd   cscd
 	  asind  acosd  atand  acotd  asecd  acscd  atan2d
