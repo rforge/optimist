@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.3.0 (2016-10-01)
+
+    o binpacking() solves the bin packing problem (for integers).
+
 Changes in Version 0.2.3 (2012-02-08)
 
     o subsetsum() solves the subsetsum problem (for integers).

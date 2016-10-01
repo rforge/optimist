@@ -6,3 +6,4 @@ useDynLib('knapsack')
 
 export(knapsack)
 export(subsetsum)
+export(binpacking)

@@ -1,8 +1,8 @@
 Package: knapsack
 Type: Package
 Title: Knapsack Routines
-Version: 0.2.4
-Date: 2012-02-09
+Version: 0.3.0
+Date: 2016-10-01
 Author: Hans W Borchers
 Maintainer: HwB <hwborchers@googlemail.com>
 Depends: R (>= 2.11.1)
