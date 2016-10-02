@@ -3,7 +3,7 @@
 ##
 
 
-binpacking <- function(weights, cap) {
+binpacking <- function(weights, cap, back = -1, jck = 0, lb = 0) {
     stopifnot(is.numeric(weights), is.numeric(cap))
     if (length(cap) != 1)
         stop("Argument 'cap' must be a scalar (i.e., of length 1).")
@@ -29,10 +29,12 @@ binpacking <- function(weights, cap) {
 
     z <- -1                     # solution found: 0
     xstar <- numeric(n)         # xstar[j]: which bin item j belongs to
-    jdim <- n                   # dimension of all dummy arrays
-    back <- -1                  # exact solution: -1, else no. of backtracks 
-    jck <- 1                    # no input check:  0, else 1
-    lb <- sum(weights)/cap      # lower bound on solution value
+    jdim <- as.integer(n)       # dimension of all dummy arrays
+    # back <- as.integer(back)  # exact solution: -1, else no. of backtracks 
+    # jck <- as.integer(jck)    # no input check:  0, else 1
+    # lb <- as.integer(lb)      # lower bound, lb >= sum(weights)/cap
+    alb <- ceiling(sum(weights)/cap)
+    if (lb < alb) lb <- alb     # lower bound on solution value
 
     # dummy arrays
     wr <- xstarr <- dum <- res <- rel <- x <- r <- wa <- vector("integer", jdim)
