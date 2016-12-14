@@ -1,7 +1,7 @@
 Package: pracma
 Type: Package
-Version: 1.9.6
-Date: 2016-09-11
+Version: 1.9.7
+Date: 2016-12-14
 Title: Practical Numerical Math Functions
 Author: Hans Werner Borchers [aut, cre]
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>

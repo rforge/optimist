@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.6-3 (2016-12-01)
+
+  o corrected a 'tiny' bug in modpower(), pointed out by Nathan Carter.
+
 Version 0.6-1 (2015-07-13)
 
   o bell() generates Bell numbers.
