@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.6-5 (2017-01-10)
+
+  o cf2num() converts (generalized) continued fractions to numbers,
+    with special care for approximating infinite fractions.
+
 Version 0.6-3 (2016-12-20)
 
   o divisors() lists all divisors of a number n from its prime factors.
