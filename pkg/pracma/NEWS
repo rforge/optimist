@@ -3,10 +3,12 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 1.9.x (planned)
+CHANGES IN VERSION 1.9.8 (2017-01-10)
 
-    o whittaker()
-    o tbd.
+    o whittaker() finally implemented avoiding the sparse matrix package.
+    o nelder_mead() now applies adaptive parameters for the simplicial
+	  search, depending on the dimension of the objective function.
+    o psinc(x,n), the so-called periodic sinc function.
 
 CHANGES IN VERSION 1.9.7 (2016-12-14)
 
