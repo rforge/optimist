@@ -3,17 +3,21 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 1.9.9 (2017-01-10)
+
+    o Slightly changed the description lines on request of CRAN.
+
 CHANGES IN VERSION 1.9.8 (2017-01-10)
 
     o whittaker() finally implemented avoiding the sparse matrix package.
     o nelder_mead() now applies adaptive parameters for the simplicial
-	  search, depending on the dimension of the objective function.
+      search, depending on the dimension of the problem space.
     o psinc(x,n), the so-called periodic sinc function.
 
 CHANGES IN VERSION 1.9.7 (2016-12-14)
 
     o shooting() implements the shooting method for boundary value problems
-        of second order differential equations.
+      of second order differential equations.
     o interp2() corrected the help page with size(z) = length(y)*length(x).
     o Corrected a small oversight on the help page of Gauss-Laguerre.
 
@@ -63,8 +67,7 @@ CHANGES IN VERSION 1.9.0 (2015-12-17)
     o quadprog() solves quadratic programming problems (QP) with linear
       equality and inequality constraints, based on package 'quadprog'.
     o lsqlincon() solves linear least-squares problems with linear equality 
-      *and* inequality constraints (as well as bound constraints), internally
-      applying solve.QP from the 'quadprog' package.
+      *and* inequality constraints (as well as bound constraints).
     o pracma now imports package 'quadprog'.
 
 CHANGES IN VERSION 1.8.9 (2015-12-05)
