@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.6-6 (2017-01-10)
+
+  o Extended the description line considerably by request of CRAN.
+
 Version 0.6-5 (2017-01-10)
 
   o cf2num() converts (generalized) continued fractions to numbers,
