@@ -9,7 +9,7 @@ Depends: R (>= 3.0.0)
 Suggests: gmp (>= 0.5-1)
 Description:
     Provides number-theoretic functions for factorization, prime numbers,
-	twin primes, primitive roots, modular inverses, extended GCD, Farey 
-	series and continuous fractions. Included are some divisor functions,
-	or Euler's Phi function and Egyptian fractions.
+    twin primes, primitive roots, modular inverses, extended GCD, Farey 
+    series and continuous fractions. Included are some divisor functions,
+    or Euler's Phi function and Egyptian fractions.
 License: GPL (>= 3)
