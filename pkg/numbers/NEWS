@@ -3,9 +3,16 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.6-7 (2017-01-15)
+
+  o modlog() the modular (or: discrete) logarithm.
+  o primroot() got a new keyword 'all=FALSE' to return all primitive
+    roots if it is TRUE. Also, isPrimroot() with the obvious meaning.
+
 Version 0.6-6 (2017-01-10)
 
   o Extended the description line considerably by request of CRAN.
+  o Finally completed the "?`numbers-package`" entry of the help.
 
 Version 0.6-5 (2017-01-10)
 
