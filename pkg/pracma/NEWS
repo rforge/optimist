@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.0.0 (2017-01-16)
+
+    o incgam(x,a) computes the incomplete upper gamma function using
+	  the R function pgamma for higher precision than gammainc().
+
 CHANGES IN VERSION 1.9.9 (2017-01-10)
 
     o Slightly changed the description lines on request of CRAN.
