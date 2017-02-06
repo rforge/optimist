@@ -60,7 +60,7 @@ anms(fn, x0, ...,
   elaborate implementation of Nelder-Mead see the package `dfoptim'.
 }
 \seealso{
-  \code{\link{hooke_jeeves}}
+  \code{\link{optim}}
 }
 \examples{
 ##  Rosenbrock function
