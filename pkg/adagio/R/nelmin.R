@@ -1,11 +1,11 @@
 ##
-##  n e l m i n . R  Nelder-Mead function minimization
+##  n e l d e r m e a d . R  Nelder-Mead function minimization
 ##
 
 
-nelmin <- function(fn, x0, ..., adapt = TRUE,
-            tol = 1e-10, maxfeval = 1e4, 
-			step = rep(1.0, length(x0))) {
+neldermead <- function(fn, x0, ..., adapt = TRUE,
+                tol = 1e-10, maxfeval = 1e4, 
+			    step = rep(1.0, length(x0))) {
     stopifnot(is.numeric(x0), is.numeric(step))
     n <- length(x0)
     if (length(step) != n)
@@ -226,15 +226,15 @@ nelmin <- function(fn, x0, ..., adapt = TRUE,
 } # end of function
 
 
-nelminb <- function(fn, x0, ..., lower, upper, adapt = TRUE,
-                    tol = 1e-10, maxfeval = 10000,
-                    step = rep(1, length(x0))) {
+neldermeadb <- function(fn, x0, ..., lower, upper, adapt = TRUE,
+                        tol = 1e-10, maxfeval = 10000,
+                        step = rep(1, length(x0))) {
 	Trf <- transfinite(lower, upper, length(x0))
 	h <- Trf$h; hinv <- Trf$hinv
 
 	f <- function(x) fn(hinv(x), ...)  # f must be defined on all of R^n
-    S <- nelmin(f, h(x0), adapt = adapt,
-                tol = tol, maxfeval = maxfeval, step = step)
+    S <- neldermead(f, h(x0), adapt = adapt,
+                    tol = tol, maxfeval = maxfeval, step = step)
     S$xmin <- hinv(S$xmin)
 
     return(S)
