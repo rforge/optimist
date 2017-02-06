@@ -44,7 +44,7 @@ hooke_jeeves(x0, f, lb = NULL, ub = NULL, tol = 1e-08,
   For a similar implementation of Hooke-Jeeves see the `dfoptim' package.
 }
 \seealso{
-  \code{\link{nelder_mead}}
+  \code{\link{anms}}
 }
 \examples{
 ##  Rosenbrock function
