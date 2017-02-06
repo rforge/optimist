@@ -105,7 +105,7 @@ neldermead(psf, x0)         #  0 0 0 0, needs maximum number of function calls
 lower <- c(-Inf, 0,   0)
 upper <- c( Inf, 0.5, 1)
 x0 <- c(0, 0.1, 0.1)
-neldermeadb(fnRosenbrock, c(0, 0.1, 0.1), lower, upper)
+neldermeadb(fnRosenbrock, c(0, 0.1, 0.1), lower = lower, upper = upper)
 # $xmin = c(0.7085595, 0.5000000, 0.2500000)
 # $fmin = 0.3353605
 
