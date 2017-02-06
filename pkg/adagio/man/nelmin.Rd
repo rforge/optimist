@@ -9,15 +9,18 @@
   optimization / function minimization.
 }
 \usage{
-nelmin(fn, x0, tol = 1e-10, ..., 
-        maxfeval = 1e4, step = rep(1.0, length(x0)))
+nelmin(fn, x0, ..., adapt = TRUE,
+            tol = 1e-10, maxfeval = 10000, 
+			step = rep(1.0, length(x0)))
 
-nelminb(fn, x0, lower, upper, tol = 1e-10, ..., 
-        maxfeval = 10000, step = rep(1, length(x0)))
+nelminb(fn, x0, ..., lower, upper, adapt = TRUE,
+            tol = 1e-10, maxfeval = 10000,
+            step = rep(1, length(x0)))
 }
 \arguments{
   \item{fn}{nonlinear function to be minimized.}
   \item{x0}{starting point for the iteration.}
+  \item{adapt}{logical; adapt to parameter dimension.}
   \item{tol}{terminating limit for the variance of function values;
              can be made *very* small, like \code{tol=1e-50}.}
   \item{maxfeval}{maximum number of function evaluations.}
@@ -37,6 +40,10 @@ nelminb(fn, x0, lower, upper, tol = 1e-10, ...,
   Ertel 1974, Benyon 1976, and Hill 1978. For another elaborate implementation 
   of Nelder-Mead in R based on Matlab code by Kelley see package `dfoptim'.
 
+  The option \code{adapt=TRUE} uses the adaption of Nelder-Mead coefficients
+  to the dimension of the parameter space, following [Gao and Han, 2010].
+  It especially reduces the number of function calls.
+
   \code{nelminb} uses \code{transfinite} to define the function on all of R^n
   and to retransform the solution to the bounded domain. The starting value is
   not allowed to lie on the boundary.
@@ -55,6 +62,9 @@ nelminb(fn, x0, lower, upper, tol = 1e-10, ...,
 
   O'Neill, R. (1971). Algorithm AS 47: Function Minimization Using a Simplex 
   Procedure. Applied Statistics, Volume 20(3), pp. 338-345.
+
+  Gao, F., and L. Han (2010). Implementing the Nelder-Mead implex algorithm
+  with adaptive parameters. Comput. Optim. Appl. (online).
 }
 \note{
   Original FORTRAN77 version by R O'Neill; MATLAB version by John Burkardt
