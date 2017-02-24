@@ -3,15 +3,16 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 2.0.2 (2017-02-07)
+CHANGES IN VERSION 2.0.2 (2017-02-23)
 
+    o isposdef() test for positive definiteness of a (real) matrix.
     o hooke_jeeves() removed; similar implementations are available
 	  in packages 'dfoptim::hjk[b]' and 'adagio::hookejeeves'.
 
 CHANGES IN VERSION 2.0.1 (2017-02-06)
 
     o nelder_mead() replaced by an adaptive Nelder-Mead implementation,
-	  anms(), following F. Gao and L.Han.
+	  anms(), following F. Gao and L. Han.
 	o fminsearch() now calls this new version of Nelder-Mead.
 
 CHANGES IN VERSION 2.0.0 (2017-01-26)
