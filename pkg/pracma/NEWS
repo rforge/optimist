@@ -3,6 +3,16 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.0.4 (2017-04-01)
+
+    o hessenberg() computes the Hessenberg form of a matrix through
+	  Householder transformations (this is named hess() in MATLAB).
+
+CHANGES IN VERSION 2.0.3 (2017-03-23)
+
+    o Corrected functions with conditions in control statements with
+	  conditions of length greater than one: rem().
+
 CHANGES IN VERSION 2.0.2 (2017-02-23)
 
     o isposdef() test for positive definiteness of a (real) matrix.
