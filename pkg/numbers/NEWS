@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.6-8 (2017-03-26)
+
+  o intnthroot() calculates the integer n-th root.
+
 Version 0.6-7 (2017-01-15)
 
   o modlog() the modular (or: discrete) logarithm.
@@ -103,10 +107,8 @@ Version 0.3-1 (2012-10-04)
 
   o chinese() Chinese Remainder Theorem.
   o egypt_methods(), egypt_complete() Egyptian fractions
-  o zeck() Zeckendorf representation
-
-  o Improving modular arithmetics:
-      - mod(), rem(), div().
+  o zeck() Zeckendorf representation.
+  o Improving modular arithmetics: mod(), rem(), div().
 
 Version 0.2-1 (2012-09-25)
 

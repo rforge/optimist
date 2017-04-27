@@ -5,8 +5,8 @@
 }
 \description{
   Realizes the modular (or discrete) logarithm modulo a prime number
-  \code{p}, that is determines the unique exponent \eqn{n} such that
-  \eqn{g^n = x \mathrm{mod} p}.
+  \eqn{p}, that is determines the unique exponent \eqn{n} such that
+  \eqn{g^n = x \, \mathrm{mod} \, p}, \code{g} a primitive root.
 }
 \usage{
   modlog(g, x, p)
@@ -18,8 +18,9 @@
 }
 \details{
   The method is in principle a complete search, cut short by "Shank's 
-  trick", see Forster (1996, pp. 65ff). \code{g} has to be a primitive
-  root modulo \code{p}, otherwise exponentiation is not bijective.
+  trick", the giantstep-babystep approach, see Forster
+  (1996, pp. 65f). \code{g} has to be a primitive root modulo \code{p},
+  otherwise exponentiation is not bijective.
 }
 \value{
   Returns an integer.
@@ -32,5 +33,5 @@
   \code{\link{primroot}}
 }
 \examples{
-modlog(11, 998, 1009)  # 505
+modlog(11, 998, 1009)  # 505 , i.e., 11^505 = 998 mod 1009
 }
