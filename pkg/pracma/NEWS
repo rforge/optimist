@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.0.6 (2017-06-08)
+
+    o polyvalm() evaluates a polynomial in the matrix sense.
+	o arnoldi() Arnoldi iteration (incl. Hessenberg matrix).
+
 CHANGES IN VERSION 2.0.5 (2017-04-30)
 
 	o integral() redesigned, less methods, several starting intervals
