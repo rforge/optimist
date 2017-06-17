@@ -3,12 +3,14 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 2.0.7 (2017-06-09)
+CHANGES IN VERSION 2.0.7 (2017-06-17)
 
+    o bernstein() generates the Bernstein polynomial B_,_().
+	o legendre(n,_) corrected for n=0, thanks to Peter W. Marcy.
     o fletcher_powell() renamed to cgmin(), constraint gradient method;
       as such it will be used in fminsearch() with method name 'CG'.
 
-CHANGES IN VERSION 2.0.6 (2017-06-08)
+CHANGES IN VERSION 2.0.6 (2017-06-06)
 
     o polyvalm() evaluates a polynomial in the matrix sense.
     o arnoldi() Arnoldi iteration (incl. Hessenberg matrix).
