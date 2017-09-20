@@ -3,10 +3,11 @@
 ------------------------------------------------------------------------------
 
 
-CHANGES IN VERSION 2.0.8 (2017-08-18)
+CHANGES IN VERSION 2.0.8 (2017-09-20)
 
     o Package byte-compiled on loading (Requires R version >= 3.4.0).
     o findpeaks() function not checking for NAs (reported by Wesley Burr).
+	o fplot() extra parameters were not handed over to plotting routine.
 
 CHANGES IN VERSION 2.0.7 (2017-06-17)
 
