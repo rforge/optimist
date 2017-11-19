@@ -1,12 +1,13 @@
 Package: pracma
 Type: Package
-Version: 2.0.8
-Date: 2017-09-20
+Version: 2.1.0
+Date: 2017-11-21
 Title: Practical Numerical Math Functions
 Author: Hans Werner Borchers [aut, cre]
 Maintainer: Hans W. Borchers <hwborchers@googlemail.com>
-Depends: R (>= 3.0.0)
-Imports: graphics, grDevices, stats, utils, quadprog
+Depends: R (>= 3.1.0)
+Imports: graphics, grDevices, stats, utils
+Suggests: quadprog
 Description:
     Provides a large number of functions from numerical analysis and
     linear algebra, numerical optimization, differential equations,
