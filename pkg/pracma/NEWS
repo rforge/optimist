@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.1.2 (2018-01-21)
+
+    o poisson2disk() approximate Poisson disk distribution
+    o Corrected small bug in findpeaks(), reported by Mike Badescu.
+
 CHANGES IN VERSION 2.1.1 (2017-11-21)
 
     o Added a field "Authors@R" in the DESCRIPTION, deleted others.

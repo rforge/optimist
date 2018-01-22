@@ -1,3 +1,7 @@
+# pracma 2.1.2 (2018-01-14)
+
+* poisson2disk() approximate Poisson disk distribution
+* Corrected small bug in findpeaks(), reported by Mike Badescu.
 
 # pracma 2.1.1 (2017-11-21)
 
