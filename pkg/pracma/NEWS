@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.1.4 (2018-01-29)
+
+    o shubert() implements one-dimensional Shubert-Piyavskii method.
+    o fminsearch() and anms() stop for one-dimensional minimization.
+
 CHANGES IN VERSION 2.1.3 (2018-01-23)
 
     o bsxfun() now uses sweep() for matrices in search of higher speed.

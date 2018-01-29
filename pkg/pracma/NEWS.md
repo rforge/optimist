@@ -1,3 +1,8 @@
+# pracma 2.1.4 (2018-01-29)
+
+* shubert() implements one-dimensional Shubert-Piyavskii method.
+* fminsearch() and anms() stop for one-dimensional minimization.
+
 # pracma 2.1.3 (2018-01-23)
 
 * bsxfun() now uses sweep() for matrices in search of higher speed.
