@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.7.1 (2018-05-16)
+
+    o Removed 'adagio-package.Rd' on request of K. Hornick, CRAN.
+
 Changes in Version 0.7.0 (2017-06-28)
 
     o pureCMAES() added a break statement, proposed by R. Biedrzycki.
