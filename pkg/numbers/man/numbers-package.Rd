@@ -1,26 +1,28 @@
 \name{numbers-package}
 \alias{numbers-package}
+\alias{numbers}
 \docType{package}
 \title{
-  Number-Theoretic Functions for R
+\packageTitle{numbers}
 }
 \description{
-  Provides number-theoretic functions for factorization, prime 
-  numbers, twin primes, primitive roots, modular logarithm and
-  inverses, extended GCD, Farey series and continuous fractions.
-  Includes Legendre and Jacobi symbols, some divisor functions,
-  Euler's Phi function, etc.
+\packageDescription{numbers}
 }
 \details{
-  Although R does not have a true integer data type, integers can be
-  represented exactly up to 2^53-1 . The numbers package attempts to 
-  provided basic number-theoretic functions that will work correcty
-  and relatively fast up to this level.
+
+The DESCRIPTION file:
+\packageDESCRIPTION{numbers}
+\packageIndices{numbers}
+
+Although R does not have a true integer data type, integers can be
+represented exactly up to 2^53-1 . The numbers package attempts to 
+provided basic number-theoretic functions that will work correcty
+and relatively fast up to this level.
 }
 \author{
-  Hans Werner Borchers
+\packageAuthor{numbers}
 
-  Maintainer: Hans W. Borchers \email{hwborchers@googlemail.com}
+Maintainer: \packageMaintainer{numbers}
 }
 \references{
   Hardy, G. H., and E. M. Wright (1980). An Introduction to the

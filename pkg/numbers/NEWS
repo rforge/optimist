@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.7-1 (2018-05-16)
+
+  o Removed 'numbers-package.Rd' on request of K. Hornick, CRAN.
+
 Version 0.6-8 (2017-03-26)
 
   o intnthroot() calculates the integer n-th root.
