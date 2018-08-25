@@ -1,4 +1,4 @@
-# pracma 2.1.5 (2018-08-25)
+# pracma 2.1.6 (2018-09-09)
 
 * Si(), Ci() sine and cosine integral functions added.
 
