@@ -1,5 +1,9 @@
 # pracma NEWS
 
+## pracma 2.1.7 (2018-09-24)
+
+* Removed the deprecated 'rortho' function, use randortho() instead.
+
 ## pracma 2.1.6 (2018-09-09)
 
 * Si(), Ci() sine and cosine integral functions added.
