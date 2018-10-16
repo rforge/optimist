@@ -1,5 +1,9 @@
 # pracma NEWS
 
+## pracma 2.1.8 (2018-10-16)
+
+* Corrected a bug in hessenberg() thanks to Ben Ubah.
+
 ## pracma 2.1.7 (2018-09-24)
 
 * Removed the deprecated 'rortho' function, use randortho() instead.
