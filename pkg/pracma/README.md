@@ -73,7 +73,7 @@ functions and bear the same signature as their Matlab cousins if possible:
     eig, eigint, ellipj, ellipke, eps, erf, erfc, erfcinv, erfcx, erfi, erfinv,  
     errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar, ezsurf,  
     fact, fftshift, figure, findpeaks, findstr, flipdim, fliplr, flipud,  
-    fminbnd, fminsearch, fplot, fprintf, fsolve, fzero,  
+    fminbnd, fminsearch, fminunc, fmincon, fplot, fprintf, fsolve, fzero,  
     gammainc, gcd, geomean, gmres, gradient,  
     hadamard, hankel, harmmean, hilb, histc, humps, hypot,  
     idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,  

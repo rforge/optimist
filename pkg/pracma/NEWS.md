@@ -1,8 +1,14 @@
 # pracma NEWS
 
+## pracma 2.1.9 (2018-11-22)
+
+* Renamed 'cgmin' to its original name 'fletcher_powell',
+  alias 'cgmin' is deprecated since this version.
+* Removed alias 'normest2' that was anyway non-existing.
+
 ## pracma 2.1.8 (2018-10-16)
 
-* Corrected a bug in hessenberg() thanks to Ben Ubah.
+* Corrected a bug in hessenberg() reported by Ben Ubah.
 
 ## pracma 2.1.7 (2018-09-24)
 
@@ -53,8 +59,7 @@
 
 * bernstein() generates the Bernstein polynomial B_,_().
 * legendre(n,_) corrected for n=0, thanks to Peter W. Marcy.
-* fletcher_powell() renamed to cgmin(), constraint gradient method;
-  as such it will be used in fminsearch() with method name 'CG'.
+* cgmin() alias for fletcher_powell(), a constraint gradient method.
 
 ## pracma 2.0.6 (2017-06-06)
 

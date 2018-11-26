@@ -75,7 +75,7 @@ Practical Numerical Math Routines
   \code{eig, eigint, ellipj, ellipke, eps, erf, erfc, erfcinv, erfcx, erfi, erfinv,}\cr
   \code{    errorbar, expint, expm, eye, ezcontour, ezmesh, ezplot, ezpolar, ezsurf,}\cr
   \code{fact, fftshift, figure, findpeaks, findstr, flipdim, fliplr, flipud,}\cr
-  \code{    fminbnd, fminsearch, fplot, fprintf, fsolve, fzero,}\cr
+  \code{    fminbnd, fminsearch, fminunc, fmincon, fplot, fprintf, fsolve, fzero,}\cr
   \code{gammainc, gcd, geomean, gmres, gradient,}\cr
   \code{hadamard, hankel, harmmean, hilb, histc, humps, hypot,}\cr
   \code{idivide, ifft, ifftshift, inpolygon, integral, integral2, integral3,}\cr
