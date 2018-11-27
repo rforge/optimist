@@ -1,7 +1,7 @@
 Package: pracma
 Type: Package
-Version: 2.1.9
-Date: 2018-11-22
+Version: 2.2.0
+Date: 2018-11-27
 Title: Practical Numerical Math Functions
 Authors@R: person("Hans W.", "Borchers", 
                   email="hwborchers@googlemail.com", 

@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.0 (2018-11-27)
+
+    o Reintroduced 'nelder_mead()' and 'hooke_jeeves()'.
+    o 'fminsearch' now only calls 'Nelder-Mead' or 'Hooke-Jeeves',
+      that is derivative-free methods.
+
 CHANGES IN VERSION 2.1.9 (2018-11-22)
 
     o Renamed 'cgmin' to its original name 'fletcher_powell',

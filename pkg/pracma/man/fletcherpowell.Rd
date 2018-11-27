@@ -1,4 +1,4 @@
-\name{Fletcher-Powell}
+\name{fletcher_powell}
 \alias{fletcher_powell}
 \alias{cgmin}
 \title{

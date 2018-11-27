@@ -1,8 +1,14 @@
 # pracma NEWS
 
+## pracma 2.2.0 (2018-11-27)
+
+* Reintroduced 'nelder_mead()' and 'hooke_jeeves()'.
+* 'fminsearch' now only calls 'Nelder-Mead' or 'Hooke-Jeeves'
+  that is derivative-free methods.
+
 ## pracma 2.1.9 (2018-11-22)
 
-* Renamed 'cgmin' to its original name 'fletcher_powell',
+* Renamed 'cgmin()' to its original name 'fletcher_powell',
   alias 'cgmin' is deprecated since this version.
 * Removed alias 'normest2' that was anyway non-existing.
 
