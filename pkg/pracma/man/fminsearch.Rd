@@ -7,7 +7,7 @@
   Find minimum of multivariable functions using derivative-free methods.
 }
 \usage{
-fminsearch(fn, x0, ..., lower = NULL, upper = NULL,
+fminsearch(fn, x0, ..., lower = NULL, upper = NULL, dfree = TRUE,
            method = c("Nelder-Mead", "Hooke-Jeeves"),
            minimize = TRUE, maxiter = 1000, tol = 1e-08)
 }
@@ -16,6 +16,7 @@ fminsearch(fn, x0, ..., lower = NULL, upper = NULL,
   \item{x0}{point considered near to the optimum.}
   \item{...}{additional variables to be passed to the function.}
   \item{lower, upper}{lower and upper bounds constraints.}
+  \item{dfree}{logical; DEPRECATED, only 'dfree=TRUE' is possible.}
   \item{method}{"Nelder-Mead" (default) or "Hooke-Jeeves"; can be abbreviated.}
   \item{minimize}{logical; shall a minimum or a maximum be found.}
   \item{maxiter}{maximal number of iterations}

@@ -1,10 +1,17 @@
 # pracma NEWS
 
+## pracma 2.2.1 (2018-11-30)
+
+* fminunc() unconstrained minimization of nonlinear objective
+  function, based on stripped-down 'Rvmmin' code by John Nash.
+* 'fmincon()' minimization of nonlinear objective function with
+  constraints; wraps suggested package NlcOptim with SQP method.
+
 ## pracma 2.2.0 (2018-11-27)
 
 * Reintroduced 'nelder_mead()' and 'hooke_jeeves()'.
-* 'fminsearch' now only calls 'Nelder-Mead' or 'Hooke-Jeeves'
-  that is derivative-free methods.
+* fminsearch() now calls 'Nelder-Mead' or 'Hooke-Jeeves',
+  i.e., derivative-free methods only; 'dfree=F' gets deprecated.
 
 ## pracma 2.1.9 (2018-11-22)
 

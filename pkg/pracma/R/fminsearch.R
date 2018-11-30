@@ -3,7 +3,7 @@
 ##
 
 
-fminsearch <- function(fn, x0, ..., lower = NULL, upper = NULL,
+fminsearch <- function(fn, x0, ..., lower = NULL, upper = NULL, dfree = TRUE,
                        method = c("Nelder-Mead", "Hooke-Jeeves"),
                        minimize = TRUE, maxiter = 1000, tol = 1e-08) {
 
@@ -15,6 +15,12 @@ fminsearch <- function(fn, x0, ..., lower = NULL, upper = NULL,
 	}
 
     method <- match.arg(method)
+    if (!dfree) {
+        method <- "Nelder-Mead"
+        message ("*** 'method' is set to 'Nelder-Mead. ***")
+        warning("'dfree = FALSE' is DEPRECATED: Use fminunc or fmincon!")
+    }
+
     scl <- if(minimize) 1 else -1
     fun <- match.fun(fn)
     fn <- function(x) scl * fun(x, ...)
