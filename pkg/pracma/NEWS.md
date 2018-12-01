@@ -1,5 +1,9 @@
 # pracma NEWS
 
+## pracma 2.2.2 (2018-11-30)
+
+* Corrected "length > 1 in coercion to logical" in expm().
+
 ## pracma 2.2.1 (2018-11-30)
 
 * fminunc() unconstrained minimization of nonlinear objective
