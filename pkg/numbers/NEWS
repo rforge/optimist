@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.7-3 (2018-12-02)
+
+  o modsqrt() calculates the square root modulo primes.
+
 Version 0.7-1 (2018-05-16)
 
   o Removed 'numbers-package.Rd' on request of K. Hornick, CRAN.
