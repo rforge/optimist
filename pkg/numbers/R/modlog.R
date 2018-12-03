@@ -45,6 +45,13 @@ modinv <- function(n, m) {
 
 
 modsqrt <- function(a, p) {
+    stopifnot(is.numeric(a), length(a) == 1,
+              is.numeric(p), length(p) == 1)
+    if (ceiling(a) != floor(a) || a < 0)
+        stop("Argument 'a' must be an integer greater or equal 0.")
+    if(ceiling(p) != floor(p) || !isPrime(p))
+        stop("Argument 'p' must be a prime number.")
+
     if (a == 0 || p == 2) {
         return(0)
     } else if (legendre_sym(a, p) != 1) {

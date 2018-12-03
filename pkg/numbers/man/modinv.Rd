@@ -16,12 +16,16 @@ modsqrt(a, p)
 }
 \details{
   The modular inverse of \code{n} modulo \code{m} is the unique natural
-  number \code{0 < n0 < m} such that \code{n * n0 = 1 mod m}.
+  number \code{0 < n0 < m} such that \code{n * n0 = 1 mod m}. It is a
+  simple application of the extended GCD algorithm.
 
   The modular square root of \code{a} modulo a prime \code{p} is a number
   \code{x} such that \code{x^2 = a mod p}. If \code{x} is a solution, then
   \code{p-x} is also a solution module \code{p}. The function will always
-  return the smaller value. 
+  return the smaller value.
+
+  \code{modsqrt} implements the Tonelli-Shanks algorithm which also works
+  for square roots modulo prime powers. The general case is NP-hard.
 }
 \value{
   A natural number smaller \code{m}, if \code{n} and \code{m} are coprime,
