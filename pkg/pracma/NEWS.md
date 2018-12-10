@@ -1,5 +1,17 @@
 # pracma NEWS
 
+## pracma 2.2.4 (2018-12-12)
+
+* qpsolve() minimizes quadratic forms such as 0.5*t(x)*x-d*x
+  with linear quality and inequality constraints.
+* fmincon() now has an 'augmented Lagrangian' option with a
+  'variable metric' approach as inner solver.
+
+## pracma 2.2.3 (2018-12-10)
+
+* linearproj() linear projection onto a linear subspace, and
+  affineproj() linear projection onto an affine subspace of R^n.
+
 ## pracma 2.2.2 (2018-11-30)
 
 * Corrected "length > 1 in coercion to logical" in expm().
