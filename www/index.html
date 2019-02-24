@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Your description goes here" />
+  <meta name="keywords" content="your,keywords,goes,here" />
+  <meta name="author" content="Your Name" />
+  <link rel="stylesheet" type="text/css" href="the-grid.css" title="The Grid" media="all" />
+  <title>R-Forge Optimist Project</title>
+</head>
+
+<body>
+<div id="width960">
+  <div id="header" class="row">
+    <div class="col c12">
+      <h1><a href="index.html">R-Forge Optimist Project</a></h1>
+      <p class="slogan"><i>Hans Werner Borchers, ABB Corporate Research</i></p>
+      <p><a href="index.html"><img src="images/header.jpg" alt="Practical Math" /></a></p>
+    </div>
+  </div>
+	
+  <div class="row">
+    <div id="sidebar" class="col c3">
+      <ul class="menu">
+        <li><a href="pracma.html">pracma Package</a><br />Pracmatic Math<br />
+            and Matlab compatibility</li>
+        <li><a href="">adagio Package</a><br />Discrete and Global<br />
+            Optimization</li>
+        <li><a href="">knapsack Package</a><br />Knapsack Routines<br />
+            by Martello and Toth</li>
+        <li><a href="">convoi Package</a><br />Convex Optimization<br />
+            [not yet ready]</li>
+        <li><p></p>
+            <br /><a href="">R in Math Articles</a><br />
+            One-page solutions for some challenging pure Mathematics computations in R</li>
+      </ul>
+    </div>
+
+    <div id="content" class="col c9">
+      <div class="row">
+        <div class="col c9">
+
+            <h2 id="the_pracma_package">The pracma Package</h2>
+
+            <h3 id="description">Description</h3>
+
+            <p>This package provides R implementations of more advanced functions in
+              numerical analysis, with a special view on on optimization and time
+              series routines. Uses Matlab/Octave function names where appropriate
+              to simplify porting.</p>
+
+            <p>Some of these implementations are the result of courses on Scientific
+              Computing (&#8220;Wissenschaftliches Rechnen&#8221;) and are mostly intended to
+              demonstrate how to implement certain algorithms in R/S. Others are
+              implementations of algorithms found in textbooks.</p>
+
+            <h3 id="details">Details</h3>
+
+            <p>The package encompasses functions from all areas of numerical analysis,
+              for example:</p>
+
+            <p>
+            <b>Root finding and minimization of univariate functions</b>,<br />
+            e.g. Newton-Raphson, Brent-Dekker, Fibonacci or `golden ratio&#8217; search.</p>
+            <p>
+            <b>Handling polynomials</b>,<br />
+            including roots and polynomial fitting,
+            e.g. Laguerre&#8217;s and Muller&#8217;s methods.</p>
+            <p>
+            <b>Interpolation and function approximation</b>,<br />
+            barycentric Lagrange interpolation, Pade and rational interpolation,
+            Chebyshev or trigonometric approximation.</p>
+            <p>
+            <b>Some special functions</b>,<br />
+            e.g. Fresnel integrals, Riemann&#8217;s Zeta or the complex Gamma function,
+            and Lambert&#8217;s W computed iteratively through Newton&#8217;s method.</p>
+            <p>
+            <b>Special matrices</b>, e.g. Hankel, Rosser, Wilkinson</p>
+            <p>
+            <b>Numerical differentiation and integration</b>,<br />
+            Richardson approach and &#8220;complex step&#8221; derivatives, adaptive
+            Simpson and Lobatto integration and adaptive Gauss-Kronrod quadrature.</p>
+            <p>
+            <b>Solvers for ordinary differential equations and systems</b>,<br />
+            classical Runge-Kutta, ODE23, or Adams-Bashford-Moulton method.</p>
+            <p>
+            Some functions from <b>number theory</b>,<br />
+            such as primes and prime factorization, continuous fractions, the
+            extended Euclidean algorithm, primitive roots, etc.</p>
+            <p>
+            <b>Sorting routines</b>, e.g. recursive quickstep.</p>
+            <p>
+            Several functions for <b>string manipulation and regular search</b>,<br />
+            all wrapped and named similar to their Matlab analogues.</p>
+
+            <h3>Goals</h3>
+
+            <p>It serves two main goals:</p>
+
+            <p>Collecting R scripts that can be demonstrated in courses on
+            Numerical Analysis or Scientific Computing, using R/S as the chosen
+            programming language.</p>
+
+            <p>Wrapping functions with appropriate Matlab names to simplify
+            porting programs from Matlab or Octave to R.</p>
+
+            <p>Besides that, many of these functions could be called in R applications
+            as they do not have comparable counterparts in R packages (at least at
+            this moment).</p>
+
+            <h3>References</h3>
+
+            <p>All referenced books have been utilized in one way or another.
+            Web links have been provided where reasonable.</p>
+
+            <p>Abramowitz, M., and I. A. Stegun (1972). Handbook of Mathematical Functions
+              (with Formulas, Graphs, and Mathematical Tables). Dover, New York.
+              \url{http://www.nr.com/aands/}.</p>
+
+            <p>Arndt, J. (2010). Matters Computational: Ideas, Algorithms, Source Code.
+              Springer-Verlag, Berlin Heidelberg Dordrecht.
+              FXT: a library of algorithms: \url{http://www.jjj.de/fxt/}.</p>
+
+            <p>Cormen, Th. H., Ch. E. Leiserson, and R. L. Rivest (2009). Introduction
+              to Algorithms. Third Edition, The MIT Press, Cambridge, MA.</p>
+
+            <p>Gautschi, W. (1997). Numerical Analysis: An Introduction.
+              Birkhaeuser, Boston.</p>
+
+            <p>Gentle, J. E. (2009). Computational Statistics.
+              Springer Science+Business Media LCC, New York.</p>
+
+            <p>Hazewinkel, M., Editor (2002). Encyclopaedia of Mathematics.
+              Springer-Verlag, Berlin Heidelberg New York.
+              \url{http://eom.springer.de/}.</p>
+
+            <p>MathWorld.com (2011).
+              Matlab Central: \url{http://www.mathworks.com/matlabcentral/}.
+              Mathtools.net: \url{http://www.mathtools.net/}.</p>
+
+            <p>NIST: National Institute of Standards and Technology.
+              Olver, F. W. J., et al. (2010). NIST Handbook of Mathematical Functions.
+              Cambridge University Press. 
+              Internet: NIST Digital Library of Mathematical Functions, 
+              \url{http://dlmf.nist.gov/};
+              Dictionary of Algorithms and Data Structures,
+              \url{http://xlinux.nist.gov/dads/};
+              Guide to Available Mathematical Software, \url{http://gams.nist.gov/}</p>
+
+            <p>Press, W. H., S. A. Teukolsky, W. T Vetterling, and B. P. Flannery (2007).
+              Numerical Recipes: The Art of Numerical Computing. Third Edition, incl.
+              Numerical Recipes Software, Cambridge University Press, New York.
+              \url{http://www.nrbook.com/a/bookcpdf.php} [chapters], or
+              \url{http://apps.nrbook.com/c/index.html} [pages].</p>
+
+            <p>Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
+              Second Edition, Springer-Verlag, Berlin Heidelberg.</p>
+
+            <p>Skiena, St. S. (2008). The Algorithm Design Manual. Second Edition,
+              Springer-Verlag, London. The Stony Brook Algorithm Repository:
+              \url{http://www.cs.sunysb.edu/~algorith/}.</p>
+
+            <p>Stoer, J., and R. Bulirsch (2002). Introduction to Numerical Analysis.
+              Third Edition, Springer-Verlag, New York.</p>
+
+            <p>Strang, G. (2007). Computational Science and Engineering.
+              Wellesley-Cambridge Press.
+              Matlab Codes: \url{http://www-math.mit.edu/cse/}</p>
+
+            <p>Weisstein, E. W. (2003). CRC Concise Encyclopedia of Mathematics.
+              Second Edition, Chapman &amp; Hall/CRC Press.
+              Wolfram MathWorld: \url{http://mathworld.wolfram.com/}.  </p>
+
+            <p>Zhang, S., and J. Jin (1996). Computation of Special Functions.
+              John Wiley &amp; Sons. \url{http://jin.ece.illinois.edu/specfunc.html}
+            }</p>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+	
+  <div id="footer" class="row">
+    <div class="col c12">
+      <p>&copy; 2012 Hans W Borchers, Heidelberg Germany</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
