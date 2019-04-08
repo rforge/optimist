@@ -1,5 +1,12 @@
 # pracma NEWS
 
+## pracma 2.2.5 (2019-04-08)
+
+* fsolve() and broyden() are no longer applicable to univariate 
+  functions (Morrison-Sherman formula not working in this case).
+* Alias cgmin() and option 'dfree=F' in fminsearch() are removed,
+  both have been deprecated since half a year.
+
 ## pracma 2.2.4 (2018-12-12)
 
 * qpsolve() minimizes quadratic forms such as 0.5*t(x)*x-d*x
