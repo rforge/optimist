@@ -8,12 +8,10 @@
   roots(p)
 }
 \arguments{
-  \item{p}{vector of real numbers representing the polynomial}
+  \item{p}{vector of real or complex numbers representing the polynomial}
 }
 \details{
-  For solution the function computes the eigenvalues of the companion matrix.
-
-  At the moment, only real coefficients are allowed.
+  The function computes the eigenvalues of the companion matrix.
 }
 \value{
   a vector holding the roots of the polynomial

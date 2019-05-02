@@ -1,5 +1,11 @@
 # pracma NEWS
 
+## pracma 2.2.6 (2019-05-02)
+
+* All polynomial functions now accept complex coefficients, 
+  esp. roots() finds roots for complex polynomials.
+* Fixed a bug in laguerre() for zeros of complex polynomials.
+
 ## pracma 2.2.5 (2019-04-08)
 
 * fsolve() and broyden() are no longer applicable to univariate 

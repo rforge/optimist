@@ -4,8 +4,9 @@
 
 roots <- function(p) {
     if (is.null(p) || length(p) == 0) return(matrix(0, nrow=0, ncol=0))
-    if ( !is.vector(p, mode="numeric"))
-        stop("Argument p must be a vector of real numbers.")
+    if ( !is.vector(p, mode="numeric") &&
+         !is.vector(p, mode="complex") )
+        stop("Argument p must be a vector of real or complex numbers.")
     if (length(p) == 1) return(matrix(0, nrow=0, ncol=0))
 
     # Find non-zero entries in p

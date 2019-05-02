@@ -3,6 +3,12 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.6 (2019-05-02)
+
+    o All polynomial functions now accept complex coefficients, 
+      esp. roots() finds roots for complex polynomials.
+    o Fixed a bug in laguerre() for zeros of complex polynomials.
+
 CHANGES IN VERSION 2.2.5 (2019-04-08)
 
     o fsolve() and broyden() are no longer applicable to univariate 

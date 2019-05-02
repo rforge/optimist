@@ -6,7 +6,9 @@
 poly2str <- function(p, svar = "x", smul = "*",
                      d = options("digits")$digits) {
     if (length(p) == 0) return("")
-    if (!is.numeric(p))
+    if (is.complex(p))
+        stop("Printing of complex coefficients not yet implemented.")
+    else if (!is.numeric(p))
         stop("Argument 'p' must be a numeric vector.")
 
     while (p[1] == 0 && length(p) > 1)
