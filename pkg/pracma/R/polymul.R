@@ -21,3 +21,13 @@ polymul <- function(p, q){
 
     return(r)
 }
+
+
+polydiv <- function(p, q) {
+    if (length(q) == 1)
+        return(list(d = p/q, r = 0))
+    qr <- deconv(p,q)
+    d <- zapsmall(qr$q); r <- zapsmall(qr$r)
+    return(list(d = d, r = r))
+}
+

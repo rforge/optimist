@@ -21,3 +21,17 @@ roots <- function(p) {
     A <- compan(q)
     return(c(r, eig(A)))
 }
+
+
+mroots <- function(p) {
+    q  <- polyder(p);      d <- polygcf(p, q)
+    pr <- deconv(p, d)$q; rr <- roots(pr)
+    r <- c()
+    for (i in 1:length(rr)) {
+        r <- c(r, rep(rr[i], mroot(p, rr[i])))
+    }
+    if (length(p)-1 != length(r))
+        warning("Not all roots be determined accurately enough.")
+    return(r)
+}
+
