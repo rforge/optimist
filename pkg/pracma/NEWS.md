@@ -1,5 +1,14 @@
 # pracma NEWS
 
+## pracma 2.2.7 (2019-05-21)
+
+* Polynomial division with polydiv(); for two plynomials
+  polygcf() finds the greatest common factor; and rootmult()
+  returns the multiplicity of a polynomial root (or 0).
+* polyroots() refines the result of roots() in case of roots
+  with multiplicities (where roots() is quite inaccurate).
+
+
 ## pracma 2.2.6 (2019-05-02)
 
 * All polynomial functions now accept complex coefficients, 

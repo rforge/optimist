@@ -3,6 +3,14 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.7 (2019-05-21)
+
+    o Polynomial division with polydiv(); for two plynomials
+      polygcf() finds the greatest common factor; and rootmult()
+      returns the multiplicity of a polynomial root (or 0).
+    o polyroots() refines the result of roots() in case of roots
+      with multiplicities (where roots() is quite inaccurate).
+
 CHANGES IN VERSION 2.2.6 (2019-05-02)
 
     o All polynomial functions now accept complex coefficients, 
