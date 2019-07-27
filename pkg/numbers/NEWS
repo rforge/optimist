@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Version 0.7-4 (2019-07-27)
+
+  o Corrected hermiteNF(), suggested by Martin Hoffmann.
+
 Version 0.7-3 (2018-12-02)
 
   o modsqrt() calculates the square root modulo primes.
