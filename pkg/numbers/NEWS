@@ -3,8 +3,9 @@
 ------------------------------------------------------------------------------
 
 
-Version 0.7-4 (2019-07-27)
+Version 0.7-4 (2019-08-03)
 
+  o "length > 1 in coercion to logical" error corrected in mGCD() and mLCM().
   o Corrected hermiteNF(), suggested by Martin Hoffmann.
 
 Version 0.7-3 (2018-12-02)
