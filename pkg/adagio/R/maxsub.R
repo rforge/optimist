@@ -103,7 +103,7 @@ maxsub2d <- function(A) {
 #         for (j in i:(n+1)) {
 #             a <- numeric(n)
 #             a[1] <- S[j, 1] - S[i-1, 1]
-#             for (k in 2:n)
+#             for (k in 2:m)    ### HwB replaced n with m -- 2019-12-12
 #                 a[k] <- S[j, k] - S[(i-1), k] - sum(a[1:(k-1)])
 #             ms <- maxsub(a)
 #             if (ms$sum > mm) {

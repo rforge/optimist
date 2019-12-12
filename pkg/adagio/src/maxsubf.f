@@ -56,7 +56,7 @@ C Maximal Sum Subrectangle Problem
         do 3008 j = i, n+1 
           aa(1) = s(j, 1) - s(i-1, 1)
           b = aa(1)
-          do 3010 k = 2, n 
+          do 3010 k = 2, m
             aa(k) = s(j, k) - s(i-1, k) - b
             b = b + aa(k)
  3010     continue

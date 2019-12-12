@@ -3,6 +3,10 @@
 ------------------------------------------------------------------------------
 
 
+Changes in Version 0.7.2 (2019-12-12)
+
+    o Corrected maxsub2d() and Fortran, fix provided by Yogesh Bansal.
+
 Changes in Version 0.7.1 (2018-05-16)
 
     o Removed 'adagio-package.Rd' on request of K. Hornick, CRAN.
