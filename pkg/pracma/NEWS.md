@@ -1,5 +1,11 @@
 # pracma NEWS
 
+
+## pracma 2.2.8 (2019-07-09)
+
+* erfi() returns real values when the input values are all real.
+* hypot() now allows for scalar plus numeric vector as inputs.
+
 ## pracma 2.2.7 (2019-05-21)
 
 * Polynomial division with polydiv(); for two plynomials
@@ -7,7 +13,6 @@
   returns the multiplicity of a polynomial root (or 0).
 * polyroots() refines the result of roots() in case of roots
   with multiplicities (where roots() is quite inaccurate).
-
 
 ## pracma 2.2.6 (2019-05-02)
 

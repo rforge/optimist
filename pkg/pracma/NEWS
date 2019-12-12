@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.8 (2019-07-09)
+
+    o erfi() returns real values when the input values are all real.
+    o hypot() allows for scalar plus numeric vector as inputs.
+
 CHANGES IN VERSION 2.2.7 (2019-05-21)
 
     o Polynomial division with polydiv(); for two plynomials
