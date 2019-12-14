@@ -1,6 +1,11 @@
 # pracma NEWS
 
 
+## pracma 2.2.9 (2019-12-14)
+
+* Changed URL reference of Abramowitz and Stegun (link missing).
+* Link to R Base HTML help page gave a warning (for Windows).
+
 ## pracma 2.2.8 (2019-07-09)
 
 * erfi() returns real values when the input values are all real.

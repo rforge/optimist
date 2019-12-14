@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.2.9 (2019-12-14)
+
+    o Changed URL reference of Abramowitz and Stegun (link missing).
+    o Link to R Base HTML help page gave a warning (for Windows).
+
 CHANGES IN VERSION 2.2.8 (2019-07-09)
 
     o erfi() returns real values when the input values are all real.
