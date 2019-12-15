@@ -4,7 +4,8 @@
 ## pracma 2.2.9 (2019-12-15)
 
 * Changed URL reference of Abramowitz and Stegun (link missing).
-* Fixed warnings with the 'try' construct in inv() and broyden().
+* Fixed warning with the 'try' construct in several functions
+  using 'if(inherits(e, "try-error"))' (help from Bert Gunter).
 * Link to R Base HTML help page gave a warning (for Windows).
 
 ## pracma 2.2.8 (2019-07-09)
