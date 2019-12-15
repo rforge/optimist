@@ -11,10 +11,12 @@ inv <- function(a) {
 		stop("Matrix 'a' must be square.")
 
 	e <- try(b <- solve(a), silent=TRUE)
-	if (class(e) == "try-error") {
+	if (class(e) == "matrix")
+	    return(b)
+	else {
 		warning("Matrix appears to be singular.")
 		b <- rep(Inf, length(a))
 		dim(b) <- dim(a)
+		return(b)
 	}
-	return(b)
 }

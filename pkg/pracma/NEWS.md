@@ -1,9 +1,10 @@
 # pracma NEWS
 
 
-## pracma 2.2.9 (2019-12-14)
+## pracma 2.2.9 (2019-12-15)
 
 * Changed URL reference of Abramowitz and Stegun (link missing).
+* Fixed warnings with the 'try' construct in inv() and broyden().
 * Link to R Base HTML help page gave a warning (for Windows).
 
 ## pracma 2.2.8 (2019-07-09)
