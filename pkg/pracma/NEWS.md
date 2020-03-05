@@ -1,6 +1,11 @@
 # pracma NEWS
 
 
+## pracma 2.3.0 (2020-03-05)
+
+* circlefit(): option 'fast' is deprecated and will not be used.
+* ndims() now returns 1 for vectors and 0 for empty objects.
+
 ## pracma 2.2.9 (2019-12-15)
 
 * Changed URL reference of Abramowitz and Stegun (link missing).
