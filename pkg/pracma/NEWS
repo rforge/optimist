@@ -3,6 +3,11 @@
 ------------------------------------------------------------------------------
 
 
+CHANGES IN VERSION 2.3.1 (2021-01-13)
+
+    o 'ellipke' help page: compute the circumference of an ellipse.
+    o 'Mode()' now handling all types of NAs (thx. Michael Henry).
+
 CHANGES IN VERSION 2.3.0 (2020-04-09)
 
     o circlefit(): option 'fast' is deprecated and will not be used.

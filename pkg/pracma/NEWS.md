@@ -1,6 +1,11 @@
 # pracma NEWS
 
 
+## pracma 2.3.1 (2021-01-13)
+
+* 'ellipke' help page: compute circumference of an ellipse.
+* 'Mode()' now handling all types of NAs (thx. Michael Henry).
+
 ## pracma 2.3.0 (2020-04-09)
 
 * circlefit(): option 'fast' is deprecated and will not be used.
