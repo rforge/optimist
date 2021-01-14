@@ -1,6 +1,10 @@
 # pracma NEWS
 
 
+## pracma 2.3.2 (2021-01-14)
+
+* Removed and corrected URL addresses from 'http' to 'https'.
+
 ## pracma 2.3.1 (2021-01-13)
 
 * 'ellipke' help page: compute circumference of an ellipse.
