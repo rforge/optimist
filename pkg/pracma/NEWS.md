@@ -1,7 +1,7 @@
 # pracma NEWS
 
 
-## pracma 2.3.2 (2021-01-14)
+## pracma 2.3.2 (2021-01-16)
 
 * Removed and corrected URL addresses from 'http' to 'https'.
 
