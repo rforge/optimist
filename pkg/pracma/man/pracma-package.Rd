@@ -152,7 +152,7 @@ Maintainer: Hans W Borchers  <hwborchers@googlemail.com>
   Press, W. H., S. A. Teukolsky, W. T Vetterling, and B. P. Flannery (2007).
   Numerical Recipes: The Art of Numerical Computing. Third Edition, incl.
   Numerical Recipes Software, Cambridge University Press, New York.
-  \url{http://www.nrbook.com/}.
+  URL: numerical.recipes/book/book.html.
 
   Quarteroni, A., R. Sacco, and F. Saleri (2007). Numerical Mathematics.
   Second Edition, Springer-Verlag, Berlin Heidelberg.

@@ -1,6 +1,10 @@
 # pracma NEWS
 
 
+## pracma 2.3.3 (2021-01-19)
+
+* Forgot to correct URL addresses in the Readme.md file.
+
 ## pracma 2.3.2 (2021-01-16)
 
 * Removed and corrected URL addresses from 'http' to 'https'.
