@@ -1,7 +1,7 @@
 # pracma NEWS
 
 
-## pracma 2.3.3 (2021-01-19)
+## pracma 2.3.3 (2021-01-22)
 
 * Forgot to correct URL addresses in the Readme.md file.
 
