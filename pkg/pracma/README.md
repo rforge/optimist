@@ -120,7 +120,7 @@ but unfortunately not any of the higher math routines.
 
   Abramowitz, M., and I. A. Stegun (1972). Handbook of Mathematical Functions
   (with Formulas, Graphs, and Mathematical Tables). Dover, New York.
-  <https://www.cs.bham.ac.uk/~aps/research/projects/as/>.
+  URL: www.math.ubc.ca/~cbm/aands/notes.htm
 
   Arndt, J. (2010). Matters Computational: Ideas, Algorithms, Source Code.
   Springer-Verlag, Berlin Heidelberg Dordrecht.
